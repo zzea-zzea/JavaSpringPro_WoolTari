@@ -1,0 +1,2173 @@
+@charset "UTF-8";
+/* 메인 히어로 글씨체  */
+@font-face {
+	font-family: 'InkLipquid';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff')format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 섹션타이틀 */
+@font-face {
+	font-family: 'TmoneyRoundWindExtraBold';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff')format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 로고타이틀 */
+@font-face {
+	font-family: 'SDSamliphopangche_Basic';
+	src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff')format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/*메인 나머지 텍스트 */
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {background-color: #fff;color: #333;}
+h1, h2, h3, h4, h5, h6 {margin: 0;}
+h2 {color: #000;font-weight: 600;}
+h4 {color: #000;font-size: 13px;font-weight: 700;letter-spacing: 2px;text-transform: uppercase;line-height: 2;}
+h5 {color: #626262;font-size: 14px;font-weight: 500;}
+a {letter-spacing: 2px;text-decoration: none;color: #71c55d;}
+a:hover {color: #92d283;}
+ul {letter-spacing: 1px;}
+li {	color: #626262;font-size: 13px;font-weight: 400;letter-spacing: 2px;line-height: 30px;text-transform: capitalize;}
+p {color: #505050;font-size: 14px;font-weight: 300;letter-spacing: 0.5px;line-height: 2;margin-bottom: 20px;}
+span {letter-spacing: 1px;}
+.container-full {padding-left: 0;padding-right: 0;}
+.btn {border: 1px solid #fff;border-radius: 50px;color: #fff;font-size: 11px;font-weight: 600;padding: 15px 40px;text-transform: uppercase;transition: all 0.5s ease-in-out 0s;}
+.btn-default:hover {color: #fff;background-color: #e6e6e6;border-color: #adadad;}
+.Btn_green_border {text-align: center;text-transform: uppercase;border-radius: 50px;border: 2px solid #71c55d;text-decoration: none;width: 100px;font-size: 13px;letter-spacing: 2px;transition: 0.5s;line-height: 30px;margin-left: 15px;}
+.Btn_green_border:hover {background: #71c55d;color: #fff;}
+.fa {text-decoration: none;font-size: 13px;}
+main{font-family: 'Cafe24SsurroundAir';}
+.ma{padding-top: 120px;}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+	background: #fff;
+	z-index: 997;
+	transition: all 0.5s ease;
+	box-shadow: 0 3px 7px rgb(0 0 0/ 10%);
+	padding: 10px 0;
+}
+
+#header.header-scrolled {
+	background: #fff1ec;
+	padding: 7px 0;
+}
+
+#header #logo h1 {
+	color: #505050;
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+#header #logo h1 #logotxt {
+	font-size: 33px;
+	font-family: "SDSamliphopangche_Basic";
+}
+
+#header #logo h1 a:hover {
+	color: #db7777;
+}
+
+#header #logo h1 a {
+	color: #555;
+	transition: 0.5s;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#header #logo h1 a span {
+	color: #b96c6c;
+}
+
+#header #logo img {
+	padding: 0;
+	margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+	padding: 0;
+	font-family: "Cafe24SsurroundAir";
+}
+
+.navbar ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+	align-items: center;
+}
+
+.navbar .btn_green {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 36px;
+	font-size: 15px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0px 22px;
+	margin-left: 10px;
+}
+
+.navbar .btn_green:hover {
+	background: #f2b09b;
+	transition: 0.5s;
+	color: #fff;
+}
+
+.navbar li {
+	position: relative;
+}
+
+.navbar a, .navbar a:focus {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0 10px 30px;
+	font-size: 18px;
+	color: #5b5b5b;;
+	font-weight: 900;
+	white-space: nowrap;
+	transition: 0.3s;
+	letter-spacing: 0;
+}
+
+.navbar a i, .navbar a:focus i {
+	font-size: 12px;
+	line-height: 0;
+	margin-left: 5px;
+}
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a
+	{
+	color: #F2B09B;
+}
+
+.navbar .dropdown.le {
+	margin-right: 10px;
+}
+
+.navbar .dropdown ul {
+	display: block;
+	position: absolute;
+	left: 30px;
+	top: calc(100% + 30px);
+	margin: 0;
+	padding: 5px 0;
+	z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+	background: #fff;
+	box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+	transition: 0.3s;
+	border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+	min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+	padding: 8px 20px;
+	font-size: 16px;
+	text-transform: none;
+}
+
+.navbar .dropdown ul a i {
+	font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover,
+	.navbar .dropdown ul li:hover>a {
+	color: #F2B09B;
+}
+
+.navbar .dropdown:hover>ul {
+	opacity: 1;
+	top: 104%;
+	visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+	top: 0;
+	left: calc(100% - 30px);
+	visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+	opacity: 1;
+	top: 0;
+	left: 100%;
+	visibility: visible;
+}
+
+@media ( max-width : 1366px) {
+	.navbar .dropdown .dropdown ul {
+		left: -90%;
+	}
+	.navbar .dropdown .dropdown:hover>ul {
+		left: -100%;
+	}
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+	color: #222;
+	font-size: 28px;
+	cursor: pointer;
+	display: none;
+	line-height: 0;
+	transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+	color: #fff;
+}
+
+@media ( max-width : 991px) {
+	.mobile-nav-toggle {
+		display: block;
+	}
+	.navbar ul {
+		display: none;
+	}
+}
+
+.navbar-mobile {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(34, 34, 34, 0.9);
+	transition: 0.3s;
+	z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.navbar-mobile ul {
+	display: block;
+	position: absolute;
+	top: 55px;
+	right: 15px;
+	bottom: 15px;
+	left: 15px;
+	padding: 10px 0;
+	border-radius: 6px;
+	background-color: #fff;
+	overflow-y: auto;
+	transition: 0.3s;
+}
+
+.navbar-mobile a {
+	padding: 10px 20px;
+	font-size: 15px;
+	color: #222;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a
+{
+	color: #71c55d;
+}
+
+.navbar-mobile .getstarted {
+	margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+	position: static;
+	display: none;
+	margin: 10px 20px;
+	padding: 10px 0;
+	z-index: 99;
+	opacity: 1;
+	visibility: visible;
+	background: #fff;
+	box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+	min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+	padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+	font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover,
+	.navbar-mobile .dropdown ul li:hover>a {
+	color: #71c55d;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+	width: 100%;
+	height: calc(100vh - 40px);
+	background: url(../img/main_bg.png) center bottom no-repeat;
+	background-size: 100%;
+	position: relative;
+	margin-top: 40px;
+}
+
+@media ( min-width : 1025px) {
+	#hero {
+		background-attachment: fixed;
+	}
+}
+
+#hero .hero-container {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+#hero .hero-container .dou {
+	font-size: 16px;
+	color: #adadad;
+}
+
+#hero h1 {
+	margin: 0 0 10px 0;
+	font-size: 70px;
+	font-weight: 700;
+	line-height: 75px;
+	font-family: "InkLipquid";
+	color: #db7777;
+}
+
+#hero h1 span {
+	margin: 0 0 10px 0;
+	font-size: 65px;
+	font-weight: 700;
+	line-height: 75px;
+	font-family: "InkLipquid";
+	color: #bd7373;
+}
+
+@media ( max-width : 768px) {
+	#hero h1 {
+		font-size: 28px;
+		line-height: 36px;
+	}
+}
+
+#hero h2 {
+	color: #777;
+	margin-bottom: 30px;
+	font-size: 34px;
+	font-family: "InkLipquid";
+	font-weight: 300;
+}
+
+@media ( max-width : 768px) {
+	#hero h2 {
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 30px;
+	}
+}
+
+#hero .imgdivbox {
+	height: 450px;
+}
+
+#hero img {
+	max-width: 95%;
+	margin-bottom: 30px;
+	width: 700px;
+	animation: motion 0.8s ease-in-out 0s infinite alternate;
+}
+
+@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
+#hero .arrowimg {
+	width: 20px;
+	margin: 0;
+}
+
+#hero .btns a {
+	color: #555;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 4px 20px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+@media ( max-width : 575px) {
+	#hero .btns a {
+		margin: 4px 8px;
+	}
+}
+
+#hero .btns a:hover {
+	color: #b96c6c;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+	overflow: hidden;
+}
+
+.padd-section {
+	padding: 150px 0 80px 0;
+}
+
+@media ( max-width : 992px) {
+	.padd-section {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.section-title {
+	margin-bottom: 80px;
+}
+
+@media ( max-width : 992px) {
+	.section-title {
+		margin-bottom: 40px;
+	}
+}
+
+.section-title h2 {
+	font-size: 45px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	text-transform: capitalize;
+}
+
+.section-title .separator {
+	margin: 0;
+	letter-spacing: 2px;
+}
+
+.separator {
+	color: #626262;
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 30px;
+	text-transform: capitalize;
+}
+
+/* Get Started Section
+--------------------------------*/
+#get-started {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+}
+
+#get-started .feature-block {
+	border-radius: 30px;
+	background: #fff none repeat scroll 0 0;
+	padding: 30px 20px;
+	transition: all 0.5s ease-in-out 0s;
+	box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+#get-started .feature-block.fam {
+	background: #f0faf7;
+}
+
+#get-started .feature-block.sin {
+	background: #fef4e8;
+}
+
+#get-started .feature-block img {
+	height: 205px;
+	margin-bottom: 30px;
+	width: 165px;
+}
+
+#get-started .feature-block.ri {
+	background: aliceblue;
+}
+
+#get-started .feature-block.ri img {
+	width: 256px;
+}
+
+@media ( max-width : 991px) {
+	#get-started .feature-block {
+		margin-bottom: 30px;
+	}
+}
+
+#get-started .feature-block h4 {
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+
+#get-started .feature-block p {
+	margin-bottom: 20px;
+}
+
+#get-started .feature-block a {
+	color: #505050;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: 0.3s;
+}
+
+#get-started .feature-block a:hover {
+	color: #71c55d;
+}
+
+/* Info Section
+--------------------------------*/
+#info {
+	height: 100%;
+	width: 100%;
+}
+
+#info .feature-block {
+	background: #fff none repeat scroll 0 0;
+	padding: 30px 20px;
+	margin-bottom: 30px;
+	border-radius: 30px;
+	box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+#info .feature-block:hover {
+	box-shadow: 0 0 35px rgb(0 0 0/ 40%);
+	transition: all 1s ease-in-out 0s;
+}
+
+#info .feature-block img {
+	height: 80px;
+	margin-bottom: 20px;
+	width: 62px;
+}
+
+#info
+ 
+.feature-block
+ 
+h4 {
+	margin: 15px 0 5px;
+}
+
+#info
+ 
+.feature-block
+ 
+p {
+	margin-bottom: 25px;
+}
+
+#info
+ 
+.feature-block
+ 
+a {
+	font-size: 12px;
+	color: #222;
+}
+
+/* Swiper Section
+--------------------------------*/
+#swiper {
+	position: relative;
+	height: 100%;
+	color: #000;
+}
+
+#swiper .swiper-container {
+	width: 100%;
+	height: 220px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#swiper .swiper-slide {
+	animation: slide 8s infinite;
+	text-align: center;
+	font-size: 18px;
+	/* height: calc((100% - 30px) / 2); */
+	height: 110px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#swiper .swiper-slide .sm {
+	width: 330px;
+}
+
+
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	10% {margin-left: 0;} 
+	25% {margin-left: -16%;} 
+	35% {margin-left: -16%;} 
+	50% {margin-left: -33%;}
+	60% {margin-left: -33%;}
+	75% {margin-left: -50%;}
+	85% {margin-left: -50%;}
+	100% {margin-left: 0;}
+}
+/* Pricing Table Section
+--------------------------------   
+#pricing .block-pricing {
+	background: #fff;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	border-radius: 15px;
+	text-align: center;
+}
+
+@media ( max-width : 991px) {
+	#pricing
+ 
+.block-pricing {
+		margin-bottom: 30px;
+	}
+}
+
+#pricing .block-pricing .table {
+	margin-bottom: 0;
+	padding: 30px 15px;
+	max-width: 100%;
+	width: 100%;
+}
+
+#pricing .block-pricing .table h4 {
+	padding-bottom: 30px;
+}
+
+btn
+
+#pricing .block-pricing h2 {
+	margin-bottom: 30px;
+}
+
+#pricing .block-pricing ul {
+	list-style: outside none none;
+	margin: 10px auto;
+	max-width: 240px;
+	padding: 0;
+}
+
+#pricing .block-pricing ul li {
+	border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+	padding: 12px 0;
+	text-align: center;
+}
+
+#pricing .block-pricing ul li b {
+	color: #3c4857;
+}
+
+#pricing .block-pricing .table .table_btn a {
+	background: #f8b6a1;
+	color: #fff;
+	margin: 0;
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+#pricing .block-pricing .table .table_btn a:hover {
+	background: #d39987;
+	color: #fff;
+}
+
+#pricing .block-pricing .table .table_btn a .fa {
+	font-size: 13px;
+	margin-right: 5px;
+}*/
+
+/* Agency Section
+--------------------------------*/
+#backCloud {
+	background: url(../img/main_bg.png) center bottom no-repeat;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+	font-family: 'Cafe24SsurroundAir';
+	background: #fdebe5;
+	padding: 80px 0;
+}
+
+.footer .footer-logo .navbar-brand {
+	color: #b26969;
+	display: inline-block;
+	float: none;
+	font-family: "SDSamliphopangche_Basic";
+	font-size: 30px;
+	font-weight: bold;
+	height: 49%;
+	letter-spacing: 0.2em;
+	padding-left: 0;
+	padding-top: 0;
+}
+
+.footer .footer-logo p {
+	color: #b96c6c;
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.footer .list-menu>h4 {
+	color: #b96c6c;
+	padding-left: 5px;
+	padding-bottom: 4px;
+}
+
+.footer .list-menu ul li a {
+	color: #b96c6c;
+	font-size: 12px;
+	padding-left: 5px;
+	text-decoration: none;
+	letter-spacing: 2px;
+}
+
+.footer .copyrights {
+	background: #b96c6c;
+	margin-top: 50px;
+	text-align: center;
+	padding: 25px;
+}
+
+.footer .copyrights p, .footer .copyrights .credits {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	letter-spacing: 0;
+}
+
+.footer .copyrights p a, .footer .copyrights .credits a {
+	letter-spacing: 0;
+	color: #b96c6c;
+}
+
+.footer .col-sm-6.col-md-3.col-lg-2 {
+	width: 10%;
+	margin: 0 auto;
+}
+
+.footer .wooltxt {
+	display: contents;
+}
+
+.footer .wooltxt p {
+	color: #b96c6c;
+	font-weight: bold;
+	font-size: medium;
+}
+/*--------------------------------------------------------------
+# 육아정보
+--------------------------------------------------------------*/
+.childcare_main {
+	background: aliceblue;
+}
+
+.childcare_box {
+	width: 65%;
+	padding: 120px 40px 0;
+	margin: 0 auto;
+}
+
+.childcare_box ul {
+	padding: 0;
+	margin: 0;
+}
+
+.childcare_box ul li {
+	list-style: none;
+	margin-top: 10px;
+}
+
+.childcare_box .side_bar {
+	float: left;
+	width: 290px;
+}
+
+.childcare_box .side_bar .side_bar_content {
+	background: #cfdae3;
+	padding: 20px 30px;
+	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
+	border-radius: 15px;
+	margin-bottom: 10px;
+}
+
+.childcare_box .side_bar .side_bar_content .hide {
+	display: none;
+}
+
+.childcare_box .side_bar .side_bar_content svg {
+	width: 26px;
+	float: right;
+	opacity: 0.4;
+	margin-top: 2px;
+}
+
+.childcare_box .side_bar .side_bar_content a {
+	font-size: 17px;
+	font-weight: bolder;
+	display: inline-block;
+	color: #626262;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+
+.childcare_box .side_bar .side_bar_content ul li a {
+	font-size: 15px;
+	font-weight: 100;
+	margin-left: 20px;
+}
+
+.childcare_box .side_bar .side_bar_content ul li a:hover {
+	transition: all 0.5s ease-in-out 0s;
+	color: #fff;
+	font-weight: 900;
+}
+
+.childcare_box .side_bar .side_bar_content .hide .sideli.on a {
+	color: #fff;
+	font-weight: 900;
+}
+
+.childcare_box .childcare_section .childcare_section_title {
+	margin-left: 40px;
+}
+
+.childcare_box .childcare_section .childcare_section_title h2 {
+	margin-bottom: 10px;
+}
+
+.childcare_box .childcare_section .childcare_section_title span {
+	font-size: 13px;
+}
+
+.childcare_box .childcare_section .childcare_content {
+	display: table;
+	padding: 20px 0 0 40px;
+	margin-bottom: 50px;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu
+	{
+	background: #fff;
+	padding: 25px;
+	width: 98%;
+	display: inline-table;
+	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
+	margin-bottom: 15px;
+	border-radius: 15px;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu.ho:hover
+	{
+	background: #c1d0dd;
+	transition: all 0.7s ease-in-out 0s;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu  .foldsvg
+	{
+	width: 24px;
+	float: right;
+	opacity: 0.3;
+}
+.childcare_box .childcare_section .childcare_content .childcare_content_menu  .secsvg
+	{
+	width: 50px;
+    margin-right: 15px;
+    height: 50px;
+    padding: 0;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu a
+	{
+	font-size: 18px;
+    font-weight: bold;
+	cursor: pointer;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu span
+	{
+	margin: 0;
+	word-break: keep-all;
+	margin-top: 12px;
+	font-size: 0.9em;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub
+	{
+	padding-top: 15px;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub.hide
+	{
+	display: none;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub .childcare_content_menu_sub_insp
+	{
+	width: 100%;
+	background: #c1d0dd;
+	border-radius: 15px;
+	padding: 25px;
+	margin-top: 30px;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub .childcare_content_menu_sub_insp h4
+	{
+	font-weight:100;
+	margin-bottom: 3px;
+	  display: inline-block;
+}
+
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub .childcare_content_menu_sub_insp span
+	{
+	font-size: 0.8em;
+}
+.childcare_box .childcare_section .childcare_content .childcare_content_menu .childcare_content_menu_sub .childcare_content_menu_sub_insp svg
+	{
+	    display: inline-block;
+	    width: 70px;
+	    margin-right: 10px;
+	    opacity: 1;
+	    float: left;
+}
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 게시판 페이지
+페이지 파일명 : content.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 180px;
+}
+
+#border {
+	height: 1000px;
+}
+
+#border .community_first_box {
+	/* 	height: 1000px; */
+	height: 700px;
+	margin: 150px auto;
+	width: 1000px;
+}
+
+#border .community_first_box .community_title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+#border .community_first_box .search {
+	position: relative;
+	padding: 20px 0px;
+}
+
+#border .community_first_box .search .search_main {
+	position: absolute;
+	right: 30px;
+}
+
+#border .community_first_box .search .search_main .search_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+#border .community_first_box .search .search_main .new_write_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+#border .community_first_box .community_content_table {
+	
+}
+
+#border .community_first_box .community_content_table_main {
+	
+}
+
+#border .community_first_box .community_content_table_main .board_list {
+	margin: 30px auto;
+	width: 100%;
+}
+
+#border .community_first_box .community_content_table_main .board_list tr
+	{
+	border-bottom: 1PX solid pink;
+	line-height: 35px;
+}
+
+#border .community_first_box .community_content_table_main .board_list tr td
+	{
+	font-size: small;
+}
+
+#border .community_first_box .community_content_table .new_write {
+	position: relative;
+}
+
+.paging {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 0;
+	text-align: center;
+}
+
+.paging a {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 5px 10px;
+	border-radius: 100px;
+	font-size: 12px;
+	/*    margin-top: 30px;  */
+}
+
+.paging a:first-child {
+	margin-left: 0;
+}
+
+.paging a.bt {
+	border: 1px solid pink;
+	background: #eee;
+}
+
+.paging a.num {
+	border: 1px solid pink;
+	font-weight: 600;
+	color: pink;
+}
+
+.paging a.num.on {
+	background: pink;
+	color: #fff;
+}
+/*------------ 커뮤니티 css end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 게시판 페이지
+페이지 파일명 : content_view.jsp
+*/
+.locate {
+	margin-top: 110px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 360px;
+}
+
+#border {
+	height: 1000px;
+}
+
+.community_first_view {
+	height: 1000px;
+	margin: 150px auto;
+	width: 1000px;
+}
+
+.community_first_view .community_first_view_title {
+	text-align: center;
+	margin: 15px;
+	background: #f8f8f8;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.community_first_view .community_first_view_title h3 {
+	font-size: 40px;
+	font-family: 'SDSamliphopangche_Basic';
+}
+
+.community_first_view .community_first_view_title span {
+	color: pink;
+}
+
+.community_first_view, community_content_view {
+	height: 800px;
+	padding: 0 130px;
+}
+
+.community_first_view .community_content_view_title {
+	height: 50px;
+	padding: 10px 15px;
+	border-radius: 14px;
+	padding: 6px;
+	margin: 0px 0;
+	border: 2px solid #f8f8f8;
+	text-align: center;
+	padding: 10px 15px;
+}
+
+.community_first_view .community_imfo {
+	display: inline-block;
+	font-size: small;
+}
+
+.community_first_view .community_imfo dl:first-child::before {
+	display: none;
+}
+
+.community_first_view .community_imfo dl {
+	position: relative;
+	display: inline-block;
+	margin: 0px 15px;
+}
+
+.community_first_view .community_imfo dt, .community_first_view .community_imfo dd
+	{
+	display: inline-block;
+}
+
+.community_content_view .community_imfo_retouch_delet {
+	margin-left: 50px;
+	display: inline-block;
+}
+
+.community_first_view .community_imfo_retouch_delet .btn_content {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+.community_first_view .community_content_view_imfo {
+	height: 600px;
+	padding: 30px 30px;
+	line-height: 2;
+	word-break: keep-all;
+	background: #f8f8f8;
+	border-radius: 20px;
+	padding: 40px;
+	margin-bottom: 10px;
+	word-wrap: break-word;
+}
+
+
+.community_comment {
+	height: 100px;
+}
+
+.community_comment .comment {
+	margin-left: 20px;
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+}
+
+.community_comment_box .community_comment .comment_sumit {
+	margin-left: 14px;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+.border .community_first_view .community_first_view_text h3 {
+	padding: 0px 15px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.community_comment_box {
+	height: 300px;
+	margin: 0px auto;
+	margin-top: 100px;
+}
+
+.reply .reply_image input {
+	width: 30px;
+	height: 30px;
+}
+
+.reply .reply_image {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.reply .reply_name {
+	display: inline-block;
+	font-weight: bolder;
+	margin-left: 10px;
+}
+
+.reply .reply_show {
+	font-size: 20px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.reply .reply_date {
+	display: inline-table;
+	margin-left: 10px;
+}
+
+.community_reply {
+	visibility: hidden;
+	margin-top: 15px;
+}
+
+.community_reply .reply_sumit {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.reply_del_ret button {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.community_comment .comment_image {
+	width: 30px;
+	height: 30px;
+}
+
+.reply_re {
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+}
+
+.comment_image_re {
+	width: 30px;
+	height: 30px;
+}
+
+.reply_cancle {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.community_first_view .image {
+	height: 80px;
+}
+
+.community_first_view .image .content_image {
+	height: 60px;
+	width: 60px;
+}
+
+.community_first_view .blank {
+	height: 100px;
+}
+/*------------ 게시판 css end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 게시판 수정
+페이지 파일명 : retouch_content.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 330px;
+}
+
+.write_first_box {
+	height: 800px;
+	margin: 150px auto;
+	width: 800px;
+}
+
+.write_first_box .write_title .title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.write_first_box .write_title .title span {
+	color: pink;
+}
+
+.write_first_box .new_write_title {
+	margin: 0 auto;
+	height: 150px;
+	position: relative;
+}
+
+.write_first_box .new_write_title .title {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .input_title {
+	position: absolute;
+	left: 60px;
+	top: 10px;
+	border: none;
+	outline: none;
+	background: #f8f8f8;
+	border-radius: 20px;
+}
+
+.write_first_box .new_write_title .category {
+	position: absolute;
+	left: 10px;
+	top: 60px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .category_sel {
+	position: absolute;
+	left: 80px;
+	top: 60px;
+}
+
+.write_first_box .new_write_title .phone {
+	position: absolute;
+	top: 110px;
+}
+
+.write_first_box .new_write_title .writer {
+	position: absolute;
+	left: 200px;
+	top: 60px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .write_user {
+	position: absolute;
+	left: 255px;
+	top: 60px;
+}
+
+.write_first_box .new_write_title .date {
+	position: absolute;
+	left: 320px;
+	top: 60px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .write_date {
+	position: absolute;
+	left: 360px;
+	top: 60px;
+}
+
+.write_first_box .new_write_content_box .new_write_content {
+	margin: 0 auto;
+}
+
+.write_first_box .new_write_content_box .new_write_content .new_content
+	{
+	outline: none;
+	border: none;
+	background: #f8f8f8;
+	border-radius: 20px;
+	word-wrap: break-word;
+	border-radius: 20px;
+}
+
+.write_first_box .new_write_content_box .counter {
+	float: right;
+}
+
+.new_write_content_box .input_btn {
+	text-align: center;
+}
+
+.btn-delete {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.new_write_content_box .input_btn .input_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.new_write_content_box .input_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+/*------------ 게시판 수정 end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 새 글 쓰기
+페이지 파일명 : new_content.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 340px;
+}
+
+.write_first_box {
+	height: 800px;
+	margin: 100px auto;
+	width: 800px;
+}
+
+.write_first_box .new_title .title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.write_first_box .new_write_title {
+	margin: 0 auto;
+	height: 100px;
+	position: relative;
+}
+
+.write_first_box .new_write_content_box .new_write_content {
+	margin: 0 auto;
+}
+
+.write_first_box .new_write_content_box .new_write_content .new_content
+	{
+	outline: none;
+	/* 	border: none; */
+	height: 500px;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+.write_first_box .new_write_content_box .counter {
+	float: right;
+}
+
+.write_first_box .new_write_title .phone {
+	position: absolute;
+	left: 10px;
+	top: 110px;
+}
+
+.write_first_box .new_write_title .write_title .left_title {
+	position: relative;
+	width: 600px;
+}
+
+.write_first_box .new_write_title .write_title .left_title .title {
+	position: absolute;
+	left: 10px;
+	top: 25px;
+	font-weight: bold;
+}
+
+.write_first_box .new_write_title .write_title .left_title .input_title
+	{
+	position: absolute;
+	left: 50px;
+	top: 25px;
+}
+
+.write_first_box .new_write_title .write_title .rigth_category {
+	position: absolute;
+	left: 550px;
+	width: 200px;
+	height: 60px;
+	
+}
+
+.write_first_box .new_write_title .write_title .rigth_category .category
+	{
+	position: absolute;
+	left: 50px;
+	top: 25px;
+	font-weight: bold;
+}
+
+.write_first_box .new_write_title .write_title .rigth_category .category_sel
+	{
+	position: absolute;
+	left: 120px;
+	top: 25px;
+}
+
+.write_first_box .new_write_content_box .input_img .preview {
+	width: 600px;
+	height: 50px;
+}
+
+.btn-delete {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.new_write_content_box .input_btn {
+	text-align: center;
+}
+
+.new_write_content_box .input_btn .input_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.new_write_content_box .input_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+/*------------ 게시판 수정 end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 새 공지사항 쓰기
+페이지 파일명 : new_notice.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 340px;
+}
+
+.write_first_box {
+	height: 800px;
+	margin: 100px auto;
+	width: 800px;
+}
+
+.write_first_box .notice_title .title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.write_first_box .new_notice_title {
+	margin: 0 auto;
+	height: 100px;
+	position: relative;
+}
+
+.write_first_box .new_notice_title .notice_title .left_title {
+	position: relative;
+	width: 600px;
+}
+
+.write_first_box .new_notice_title .notice_title .left_title .title {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-weight: bold;
+}
+
+.write_first_box .new_notice_title .notice_title .left_title .input_title
+	{
+	position: absolute;
+	left: 50px;
+	top: 25px;
+}
+
+.write_first_box .new_write_content_box .new_write_content {
+	margin: 0 auto;
+}
+
+.write_first_box .new_write_content_box .new_write_content .new_content
+	{
+	outline: none;
+	/* 	border: none; */
+	height: 500px;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+.write_first_box .new_write_content_box .counter {
+	float: right;
+}
+
+.write_first_box .new_write_content_box .input_img .preview {
+	width: 600px;
+	height: 50px;
+}
+
+.new_write_content_box .input_btn {
+	text-align: center;
+}
+
+.btn-delete {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.new_write_content_box .input_btn .input_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.new_write_content_box .input_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+/*------------ 게시판 수정 end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 공지사항 내용 보기
+페이지 파일명 : notice_view.jsp
+*/
+.locate {
+	margin-top: 110px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 370px;
+}
+
+#border {
+	height: 1000px;
+}
+
+.community_first_view {
+	height: 1000px;
+	margin: 150px auto;
+	width: 1000px;
+}
+
+.community_first_view .community_first_view_title {
+	text-align: center;
+	margin: 15px;
+	background: #f8f8f8;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.community_first_view .community_first_view_title h3 {
+	font-size: 40px;
+	font-family: 'SDSamliphopangche_Basic';
+}
+
+.community_first_view .community_first_view_title span {
+	color: pink;
+}
+
+.community_first_view, community_content_view {
+	height: 800px;
+	padding: 0 130px;
+}
+
+.community_first_view .community_content_view_title {
+	height: 50px;
+	padding: 10px 15px;
+	border-radius: 14px;
+	padding: 6px;
+	margin: 0px 0;
+	border: 2px solid #f8f8f8;
+	text-align: center;
+	padding: 10px 15px;
+}
+
+.community_first_view .community_imfo {
+	display: inline-block;
+	font-size: small;
+}
+
+.community_first_view .community_imfo dl:first-child::before {
+	display: none;
+}
+
+.community_first_view .community_imfo dl {
+	position: relative;
+	display: inline-block;
+	margin: 0px 15px;
+}
+
+.community_first_view .community_imfo dt, .community_first_view .community_imfo dd
+	{
+	display: inline-block;
+}
+
+.community_content_view .community_imfo_retouch_delet {
+	margin-left: 50px;
+	display: inline-block;
+}
+
+.community_first_view .community_imfo_retouch_delet .btn_content {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+.community_first_view .community_content_view_imfo {
+	height: 600px;
+	padding: 30px 30px;
+	line-height: 2;
+	word-break: keep-all;
+	background: #f8f8f8;
+	border-radius: 20px;
+	padding: 40px;
+	margin-bottom: 10px;
+	word-wrap: break-word;
+}
+
+.community_comment_box {
+	height: 300px;
+	margin: 15px auto;
+}
+
+.community_comment {
+	height: 100px;
+}
+
+.community_comment .comment {
+	margin-left: 20px;
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+}
+
+.community_comment_box .community_comment .comment_sumit {
+	margin-left: 14px;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+.border .community_first_view .community_first_view_text h3 {
+	padding: 0px 15px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.community_comment .comment_image {
+	width: 30px;
+	height: 30px;
+}
+
+.community_first_view .image {
+	height: 80px;
+}
+
+.community_first_view .image .content_image {
+	height: 60px;
+	width: 60px;
+}
+
+.community_first_view .blank {
+	height: 100px;
+}
+/*------------ 게시판 수정 end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 공지사항 
+페이지 파일명 : notice.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 240px;
+}
+
+#border {
+	height: 1000px;
+}
+
+#border .community_first_box {
+	/* 	height: 1000px; */
+	height: 700px;
+	margin: 150px auto;
+	width: 1000px;
+}
+
+#border .community_first_box .community_title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+#border .community_first_box .notice_write {
+	position: relative;
+	padding: 20px 0px;
+}
+
+#border .community_first_box .notice_write .notice_main {
+	position: absolute;
+	right: 30px;
+}
+
+#border .community_first_box .notice_write .notice_main .new_write_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+
+#border .community_first_box .community_content_table {
+	
+}
+
+#border .community_first_box .community_content_table_main {
+	
+}
+
+#border .community_first_box .community_content_table_main .board_list {
+	margin: 30px auto;
+	width: 100%;
+}
+
+#border .community_first_box .community_content_table_main .board_list tr
+	{
+	border-bottom: 1PX solid pink;
+	line-height: 35px;
+}
+
+#border .community_first_box .community_content_table_main .board_list tr td
+	{
+	font-size: small;
+}
+
+#border .community_first_box .community_content_table .new_write {
+	position: relative;
+}
+
+.paging {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 0;
+	text-align: center;
+}
+
+.paging a {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 5px 10px;
+	border-radius: 100px;
+	font-size: 12px;
+	/*    margin-top: 30px;  */
+}
+
+.paging a:first-child {
+	margin-left: 0;
+}
+
+.paging a.bt {
+	border: 1px solid pink;
+	background: #eee;
+}
+
+.paging a.num {
+	border: 1px solid pink;
+	font-weight: 600;
+	color: pink;
+}
+
+.paging a.num.on {
+	background: pink;
+	color: #fff;
+}
+/*------------ 게시판 수정 end ------------*/
+
+/*
+------------담당자 : 김진영,김지훈------------
+사용된 페이지 : 공지사항 수정
+페이지 파일명 : retouch_notice.jsp
+*/
+.locate {
+	margin-top: 100px;
+	margin-left: 20%;
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	width: 330px;
+}
+
+.write_first_box {
+	height: 800px;
+	margin: 150px auto;
+	width: 800px;
+}
+
+.write_first_box .write_title .title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.write_first_box .write_title .title span {
+	color: pink;
+}
+
+.write_first_box .new_write_title {
+	margin: 0 auto;
+	height: 150px;
+	position: relative;
+}
+
+.write_first_box .new_write_title .title {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .input_title {
+	position: absolute;
+	left: 60px;
+	top: 10px;
+	border: none;
+	outline: none;
+	background: #f8f8f8;
+	border-radius: 20px;
+}
+
+.write_first_box .new_write_title .writer {
+	position: absolute;
+	left: 10px;
+	top: 60px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .write_user {
+	position: absolute;
+	left: 80px;
+	top: 60px;
+}
+
+.write_first_box .new_write_title .date {
+	position: absolute;
+	left: 200px;
+	top: 60px;
+	font-weight: 900;
+}
+
+.write_first_box .new_write_title .write_date {
+	position: absolute;
+	left: 255px;
+	top: 60px;
+}
+
+.write_first_box .new_write_content_box .new_write_content {
+	margin: 0 auto;
+}
+
+.write_first_box .new_write_content_box .new_write_content .new_content
+	{
+	outline: none;
+	border: none;
+	background: #f8f8f8;
+	border-radius: 20px;
+	word-wrap: break-word;
+	border-radius: 20px;
+}
+
+.write_first_box .new_write_content_box .counter {
+	float: right;
+}
+
+.new_write_content_box .input_btn {
+	text-align: center;
+}
+
+.btn-delete {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.new_write_content_box .input_btn .input_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.new_write_content_box .input_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+	padding: 0 15px;
+	margin-left: 10px;
+}
+/*------------ 게시판 수정 end ------------*/
