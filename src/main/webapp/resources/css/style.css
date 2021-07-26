@@ -2570,4 +2570,760 @@ contents{
 /*------------ 회원가입 end ------------*/
 
 
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 로그인페이지
+페이지 파일명 : login.jsp
+*/
+
+
+.login_box_menu {
+	width: 390px;
+	letter-spacing: 0.3;
+	font-family: 'Cafe24SsurroundAir';
+}
+
+.login_box_input_id_title, .login_box_input_pw_title{
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+ .login_body, login_box_input_btn{ 
+ 	font-size: 13px; 
+ 	line-height: 1.5; 
+ } 
+
+ .login_box_menu_field { 
+ 	border: 0; 
+ 	margin: 0 auto; 
+ } 
+
+.login_box_menu, .login_box_input {
+	margin: 20px 0 0;
+}
+
+.login_logo_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.login_box_menu{
+	margin-bottom: 10px;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+
+.login_box_input_id, .login_box_input_pw {
+	border: 1px solid #bcbcbc;
+	margin-bottom: 10px;
+	padding: 15px;
+	box-sizing: border-box;
+	border-radius: 8px;
+}
+
+.login_box_input_id_txt, .login_box_input_pw_txt {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	color: #000;
+	border: none;
+	outline: 0;
+}
+
+.login_box_input_btn {
+	margin: 0;
+	width: 100%;
+	padding: 9px;
+	 height: 54px; 
+	font-size: 20px;
+	border-radius: 10px;
+	border: 2px solid;
+	background: #b4bcc3;
+	color: #fff;
+	font-weight: bold;
+}
+
+.login_box_small_menu {
+	overflow: hidden;
+	padding: 10px 0 0;
+}
+
+.login_box_small_menu_join {
+	vertical-align: top;
+}
+
+.login_box_small_menu, .login_box_small_menu_find {
+	float: right;
+}
+
+
+
+.login_box_another_login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login_box_another_login, .login_box_another_login_line {
+/*	margin-top: 20px;*/
+/*	margin-bottom: 20px;*/
+	color: #bcbcbc;
+}
+
+.login_box_another_login, .login_box_another_login_line_text {
+	color: #797979;
+}
+
+.login_box_another_login, .login_box_another_login_list {
+	list-style: none;
+	flex-direction: column;
+}
+
+.login_box_another_login_list{
+    margin-right: 30px;   
+}
+
+.login_box_another_login, .login_box_another_login_list_naver, .login_box_another_login_list_kakao, .login_box_another_login_list_google {
+    	height: 48px;
+}
+
+.login_box_another_login_list_naver_img, .login_box_another_login_list_kakao_img, .login_box_another_login_list_google_img  {
+	width: 300px;
+	height: 48px;
+/*	border-radius: 10px;*/
+    border: 1px solid;
+}
+
+.login_box_another_login_list_naver,.login_box_another_login_list_kakao, .login_box_another_login_list_google {
+	border: 0;
+	outline: 0;
+	background-color: white;
+}
+
+.login_box_another_login_line_text {
+	font-size: 16px;
+}
+
+.login_logo_wrap_header {
+	color: #505050;
+	font-size: 30px;
+	font-weight: 600px;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.login_logo_wrap_header{
+	font-size: 50px;
+	font-family: "SDSamliphopangche_Basic";
+}
+
+.login_logo_wrap_header_txt:hover {
+	color: #db7777;
+}
+
+.login_logo_wrap_header_txt {
+	color: #555;
+	transition: 0.5s;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.login_logo_wrap_header_txt_dig {
+	color: #b96c6c;
+}
+
+.login_box_small_menu_join_link, .login_box_small_menu_find_link {
+	color: black;
+	text-decoration: none;
+}
+
+/*------------ 로그인 end ------------*/
+
+
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 아이디,비밀번호찾기, 새비밀번호변경 페이지
+페이지 파일명 : find_id.jsp, find_pw.jsp, change_pw.jsp
+*/
+
+.title_find_menu_id , .title_find_menu_pw, .title_find_menu_new_pw{
+    text-align: center;
+    border-bottom: 2px solid;
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-family: 'Cafe24SsurroundAir';
+    color: black;
+    margin-bottom: 20px;
+/*     position: absolute; */
+
+}
+
+
+.menu_choice_box_op {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto 30px;
+    font-family: 'Cafe24SsurroundAir';
+
+}
+
+.menu_choice_box_id, .menu_choice_box_pw {
+    list-style: none;
+    padding: 15px 0;
+    width: 150px;
+    opacity: 0.8;
+    text-align: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+    display: inline-block;
+}
+.menu_choice_box_id:hover{
+     opacity: 1;
+}
+.menu_choice_box_pw {
+    float: right;
+}
+
+.menu_id_box, .menu_pw_box, .menu_id_box_content, .menu_pw_box_content { /*  */
+    width: fit-content;
+    margin: 0 auto 40px;
+    
+}
+.menu_id_box_txt_email_btn:hover {
+    opacity: 1;    
+}
+.menu_pw_box_txt_email_btn:hover{
+	opacity: 1;   
+}
+.menu_id_box_txt_email_re_btn:hover{
+	opacity: 1; 
+}
+.menu_pw_box_txt_email_re_btn:hover{
+	opacity: 1;
+}
+
+.menu_id_box_txt_email_btn, .menu_pw_box_txt_email_btn, .menu_id_box_txt_email_re_btn, .menu_pw_box_txt_email_re_btn{
+    width: 80px;
+    line-height: 35px;
+    border-radius: 8px;
+    border: 0;
+    opacity: 0.8;
+    background: #248be2;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Cafe24SsurroundAir';
+
+}
+
+.menu_id_box, .menu_pw_box{ /*,  .inputtxt   */
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    outline: 0;
+    margin-bottom: 10px;
+    font-family: 'Cafe24SsurroundAir';
+    border-radius: 13px;
+    
+}
+
+.menu_id_box_find_btn, .menu_pw_box_find_btn {
+    width: 100%;
+    line-height: 50px;
+    border-radius: 8px;
+    border: 0;
+    opacity: 0.8;
+    background: #248be2;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+
+.menu_id_box_find, .menu_pw_box_find{
+    position: absolute;
+    bottom: 10px;
+    width: 393px;
+}
+
+ .menu_new_pw_btn{
+    position: absolute;
+    bottom: 10px;
+    width: 393px;
+    
+}
+ 
+ .menu_new_pw_box_small_text , .menu_new_pw_box_pw_re, .menu_id_box_txt_hide_small{
+font-size: 11px;
+font-weight: bold;
+font-family: 'Cafe24SsurroundAir';
+
+}
+.menu_new_pw_box_pw{
+   font-size: 11px;
+    font-weight: bold;
+    font-family: 'Cafe24SsurroundAir';
+    color: red;
+}
+
+ 
+.menu_id_box_txt_email_btn , .menu_id_box_txt_email_re_btn {
+	margin-left: 13px;
+}
+
+.menu_id_box_txt_hide{
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.menu_id_box_txt_hide_small{
+	position: absolute;
+	top: -6px;
+	left: 10px;
+}
+
+/*------------ 아이디,비밀번호찾기 end ------------*/
+
+
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 마이페이지, 마이페이지 수정창
+페이지 파일명 : mypage.jsp , mypage_revise.jsp
+*/
+
+.box_main{
+    position: relative;
+
+}
+
+.full {
+border-radius: 10px;
+     width: 550px;
+     padding: 30px;
+    margin: 0 auto;
+/*    margin-top: 0%;*/
+    border: 1px solid;
+    background-color: rgb(219,119,119 , 0.03);
+}
+
+.menu_choice_box {
+    position: relative;
+    top:250px;
+
+}
+.menu_tap{
+/*     position: absolute;*/
+/*    left: 30px;*/
+/*    top: 217px;*/
+}
+
+.menu_choice_box ul li {
+    list-style: none;
+    margin: 1px;
+    padding: 15px 0;
+    width: 150px;
+    opacity: 0.8;
+    text-align: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+/*    display: inline-block;*/
+    font-family: 'Cafe24SsurroundAir';
+    border: 1px solid;
+    background-color: white;
+}
+h3{
+    font-family: 'Cafe24SsurroundAir';
+    font-size: 24px;
+    align-items: center;
+}
+
+.my_info, .my_contact {
+	border: 3px solid #bcbcbc;
+	border-radius: 15px;
+    font-family: 'Cafe24SsurroundAir';
+    
+}
+header{
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.my_info div, .my_contact div {
+    border-bottom: 1px solid #bcbcbc;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.my_info, .my_contact {
+    position: relative;
+    padding-left: 10px;
+    
+}
+.my_info{
+    margin-bottom: 40px;
+}
+div{
+    padding-bottom: 40px;
+    
+}
+.name:hover , .birthday:hover, .gender:hover, .password:hover, .email:hover, .ph_num:hover{
+    opacity: 0.1;
+    background-color: dimgray;
+
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.btn_gup{
+    position: relative;
+}
+
+.save_btn{
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-family: 'Cafe24SsurroundAir';
+    border-radius: 15px;
+    position: absolute;
+    right: 0px;
+    
+}
+.ch_btn{
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-family: 'Cafe24SsurroundAir';
+    border-radius: 15px;
+}
+.my_info span{
+    position: absolute;
+    font-size: 22px;
+    font-family: 'Cafe24SsurroundAir';
+    margin-top: 30px;
+    right: 150px;
+
+}
+
+.my_contact span{
+     position: absolute;
+    font-size: 22px;
+    font-family: 'Cafe24SsurroundAir';
+    margin-top: 30px;
+    right: 150px;
+}
+.my_info input{
+     position: absolute;
+    font-size: 22px;
+    font-family: 'Cafe24SsurroundAir';
+    margin-top: 25px;
+    right: 150px;
+    width: 260px;
+}
+.my_contact input{
+         position: absolute;
+    font-size: 22px;
+    font-family: 'Cafe24SsurroundAir';
+    margin-top: 25px;
+    right: 150px;
+    width: 260px;
+}
+
+.menu_choice_box ul li:hover {
+background: rgba( 185, 108, 108, 0.5);
+}
+
+/*------------ 마이페이지 end ------------*/
+
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 후원내역창
+페이지 파일명 : support.jsp
+*/
+
+
+h3{
+    text-align: center;
+}
+
+h3:after{
+    content: "";
+    display: block;
+    width: 120px;
+    border-bottom: 2px solid;
+    margin: 0px auto;
+    
+}
+
+.sup_full{
+    margin: 0 auto;
+    border: 2px solid;
+    width: 500px;
+    height: 600px;
+    border-radius: 15px;
+    font-family: 'Cafe24SsurroundAir';
+    
+}
+
+.sup_box{
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 15px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(255,255,1, 0.1);
+    margin-bottom: 20px;
+}
+
+.sup_day{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 10px;
+
+}
+
+.sup_name{
+    position: absolute;
+    margin-top: 5px;
+    right: 10px;
+}
+.sup_amount{
+    position: absolute;
+    bottom: -2px;
+    margin-left: 10px;
+}
+.sup_total_amount{
+    position: absolute;
+    right: 10px;
+    bottom: -2px;
+}
+
+.sup_center{
+    position: absolute;
+    bottom: -33px;
+    margin-left: 10px;
+}
+
+.sup_receipt{
+    position: absolute;
+    right: 10px;
+    bottom: -33px;
+    
+    
+}
+.sup_receipt_btn{
+    border-radius: 15px;
+    font-family: 'Cafe24SsurroundAir';
+    height: 30px;
+    background-color: rgb(244,2,244,0.1)
+}
+
+/*------------ 후원내역창 end ------------*/
+
+
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 내가쓴글/댓글 창
+페이지 파일명 : comment.jsp
+*/
+
+.box_main{
+    position: relative;
+
+}
+
+h3{
+    position: absolute;
+    right: 46%; 
+    margin: 0 auto;
+    border-bottom: 2px solid;
+    font-size: 30px;
+}
+
+.my_writing , .my_comment{
+    border-bottom: 2px soild black;
+    border-top: 2px soild black;
+}
+
+.comment_full{
+     width: 700px;
+     padding: 40px;
+    margin: 0 auto;
+    background-color: rgb(219,119,119 , 0.03);
+}
+
+.small_title{
+    font-size: 20px;
+    font-family: Cafe24SsurroundAir;
+
+}
+
+.my_bulletin{
+    margin-bottom: 50px;
+    width: 700px;
+    height: 300px;
+    border-collapse: collapse;
+    
+/*    background: rgb(219,119,119 , 0.2);*/
+}
+.my_comments{
+
+    width: 700px;
+    height: 300px;
+    border-collapse: collapse;
+}
+
+.comment_head, bulletin_head{    
+    font-size: 18px;
+    font-family: Cafe24SsurroundAir;
+}
+
+
+
+.my_bulletin, .my_comments{
+    margin-top: 20px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    
+}
+tr,th {
+    text-align: center;
+    border-bottom: 1px solid black;
+/*    border-collapse: separate;*/
+}
+th{
+    background-color: rgb(234,234,234, 0.5);
+}
+
+tr{
+    font-size: 18px;
+    font-family: Cafe24SsurroundAir;
+}
+
+.my_comments_com, .my_bulletin_title{
+    width: 370px;
+}
+
+.my_bulletin_day, .my_comments_day {
+    width: 150px;
+}
+.my_bulletin_btn, .my_comments_btn {
+    width: 150px;
+}
+
+.my_bullentin_box{
+    background-color:
+}
+
+.option_box{
+    height: 0px;    
+}
+
+.option_box ul {
+    padding: 0;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+.option_box ul li {
+    list-style: none;
+    padding: 5px;
+    width: 40px;
+    height: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    height: 35px;
+}
+
+td{
+    height: 50px;
+}
+.option_modify{
+    background-color: rgb(0,84,255, 0.2);
+}
+
+.option_delete{
+    background-color: rgb(255,0,0, 0.2);
+}
+
+
+/*------------ 내가쓴글/댓글 end ------------*/
+
+
+/*
+------------담당자 : 이주현------------
+사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인
+페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp
+*/
+
+.modal_body{
+	box-sizing: border-box;
+}
+
+.modal-overlay {
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(0 0 0/ 34%);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-box {
+	background: white;
+	border-radius: 10px;
+	width: 450px;
+	height: 630px;
+	padding: 30px;
+	box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+}
+
+.modal-box.find {
+	height: 560px;
+	position: relative;
+}
+
+.modal-box.ch {
+	height: 400px;
+	position: relative;
+}
+
+.modal-close-box {
+	text-align: right;
+}
+
+.modal-close-btn {
+	background-color: white;
+	border: white;
+	float: right;
+}
+
+.modal-close-btn svg {
+	width: 20px;
+	opacity: 0.7;
+}
+
+.modal-open-btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+
+/*------------ 모덜창 end ------------*/
 
