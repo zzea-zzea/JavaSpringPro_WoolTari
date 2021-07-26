@@ -2346,7 +2346,23 @@ contents{
 페이지 파일명 : sign_up.jsp
 */
 
-.td_div_po {
+.signup_head {
+    font-family: 'Cafe24SsurroundAir';
+    font-size:45px;
+    color: rgb(189,115,115);
+    font-weight:700;
+    font-family: 'Cafe24SsurroundAir';
+    text-align: center;
+
+}
+
+
+.signup_body{
+    height: 100%;
+    line-height: 2.0;
+}
+
+.signup_td_div_po {
     width: 100%;
     border: 0px solid;
     position: relative;
@@ -2356,20 +2372,12 @@ contents{
     /*        --------------------------------------- */
 }
 
-.head {
-
-    font-family: 'Cafe24SsurroundAir';
-    font-size: 30px;
-    text-align: center;
-
-}
-
-.join_div{
+.signup_join_div{
 	position: relative;
 	top: 30px;
 }
 
-.td_div_po1 {
+.signup_td_div_po1_email {
     border: 0px solid;
     position: relative;
     padding: 20px 0;
@@ -2377,7 +2385,7 @@ contents{
 
 }
 
-.td_div_po input[type=button] {
+.signup_td_div_po input[type=button] {
     position: absolute;
     right: 0;
     width: 30%;
@@ -2392,7 +2400,7 @@ contents{
 
 }
 
-.button_div input[type=button] {
+.signup_button_div input[type=button] {
     height: 40px;
     width: 100px;
     color: #fff;
@@ -2411,7 +2419,7 @@ contents{
 
 
 
-.button_div input[type=submit] {
+.signup_button_div input[type=submit] {
     height: 40px;
     width: 100px;
     background: #bd7373;
@@ -2428,22 +2436,22 @@ contents{
 }
 
 
-.sign_in {
+.signup_sign_in_input {
     width: 65%;
     height: 30px
 }
 
-.sign_in.phone {
+.signup_sign_in_phone_input {
     width: 100px;
     height: 30px
 }
 
-.sign_in.email {
+.signup_sign_in_email_input {
     width: 100px;
     height: 30px
 }
 
-.verify_button {
+.signup_verify_button {
     width: 60px;
     font-size: 13px;
     font-weight: bold;
@@ -2456,10 +2464,7 @@ contents{
 
 }
 
-.email_busttons {
-}
-
-.sign_in_email_button1{
+.signup_sign_in_email_button1{
     width:70px;
     font-size: 13px;
     font-weight: bolder;
@@ -2473,7 +2478,7 @@ contents{
     left: 230px;
     bottom: 15px;
 }
-.sign_in_email_button2 {
+.signup_sign_in_email_button2 {
     width:70px;
     font-size: 13px;
     font-weight: bolder;
@@ -2488,7 +2493,7 @@ contents{
     bottom:15px;
 }
 
-.table1 {
+.signup_table1 {
     background: #f8f8f8;
     padding: 10px;
     border-radius: 20px;
@@ -2501,7 +2506,7 @@ contents{
     border-radius: 20px;
 }
 
-.table1 th {
+.signup_table1 th {
     font-family: 'Cafe24SsurroundAir';
 }
 
@@ -2512,47 +2517,55 @@ contents{
     position: absolute;
 }
 
-.small_text {
+.signup_small_text {
     font-size: 11px;
     color: #666699;
     letter-spacing: 0.5px;
 }
 
-#user_email_check_td {
+.signup_user_email_check_td_invisible {
     display: none;
 }
-.email_veri_text {
+
+.signup_email_veri_text {
    width: 220px;
     height: 30px;
     position: relative;
     top: 15px;
 }
-#user_email_check_tr {
 
+.signup_user_email_check_tr {
     width: 100%;
     position: relative;
     padding: 20px 0;
     
 }
 
-.pp {
+.signup_label_id_and_nickname {
     padding-bottom: 35px;
 }
 
 
-.tllll{
+.signup_signup_form{
     position: relative;
 }
-.bs_1{
+
+.signup_companyName_and_Number{
     display: none;
 }
 
-.pw_text{
+.signup_pw_text{
    font-size: 12px;
     font-weight: bold;
     font-family: 'Cafe24SsurroundAir';
     color: red;
 }
+
+.signup_email_selectbox{
+    width: 100px; 
+    height: 30px;
+}
+
 
 /*------------ 회원가입 end ------------*/
 
