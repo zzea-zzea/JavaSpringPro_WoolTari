@@ -2171,3 +2171,390 @@ btn
 	margin-left: 10px;
 }
 /*------------ 게시판 수정 end ------------*/
+
+
+/*
+------------담당자 : 정지원------------
+사용된 페이지 : 약관동의
+페이지 파일명 : terms_and_conditions.jsp
+*/
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wrap {
+  margin: auto;
+}
+
+.wrap .logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wrap .logo h1 {
+	font-family: 'Cafe24SsurroundAir';
+	margin: 0;
+	font-size: 30px;
+	color:#bd7373;
+}
+
+.wrap .contents {
+  padding: 60px;
+  background-color: #ffffff;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  height: 750px;
+  }
+  
+
+#form__wrap {
+  margin: 0 auto;
+  width: 460px;
+  font-size: 14px;
+ position: relative;
+}
+
+#form__wrap .terms__check__all {
+	margin-bottom: 35px;
+}
+
+#form__wrap .terms__check__all label {
+	margin-left: 5px;
+	text-decoration: underline;
+	text-underline-position: under;
+	position: relative;
+	right: 80px;
+	bottom:20px;
+
+}
+
+.terms__list .terms__box {
+/*  margin: 0px 0;*/
+/*    position: absolute;*/
+/*    top: 500px;*/
+}
+
+.contents label {
+  font-weight: 700;
+    position: relative;
+    right:130px;
+}
+
+label.required::after {
+	  margin-left: 4px;
+	  font-size: 13px;
+	  font-weight: 400;
+	  line-height: 24px;
+	  color: #0086ff;
+	  content: "(필수)";
+}
+
+.terms__list .terms__content {
+	height: 150px;
+	overflow: auto;
+	margin-top: 5px;
+	padding: 15px;
+	border: 1px solid #dadada;
+	background: #fff;
+	font-size: 12px;
+	width: 450px;
+	position:relative;
+	right: 80px;
+	bottom:20px;
+	    
+	}
+
+
+.next-button {
+    width: 120%;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    background: #bd7373;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    font-family: 'Cafe24SsurroundAir';
+    font-weight: bold;
+    position: relative;
+    right: 38px;
+    tio:-20px
+    font-size: 15px;
+    font-weight: bold;
+    bottom:30px;
+}
+
+
+@media (max-width: 768px) {
+  .wrap {
+    min-width: 280px;
+    padding: 20px;
+  }
+
+  #form__wrap {
+    max-width: 460px;
+    width: auto;
+  }
+}
+
+label {
+    display: block;
+}
+
+.all_ok {
+    position: absolute;
+}
+.all_ck {
+	position:relative;
+	right: 0px;
+	left: 0px;
+	bottom:40px;
+	}
+
+.all_agree {
+	position: relative;
+	right: 50px;
+	bottom:20px;
+	font-weight: 800;
+}
+        
+.privacy_label {
+    padding-left:20px;
+}
+
+        
+ .agree{
+    position: relative;
+    right: 100px;
+        }
+        
+contents{
+    position: relative;
+}
+ 
+ 
+/*------------ 약관동의 end ------------*/
+ 
+/*
+------------담당자 : 정지원------------
+사용된 페이지 : 회원가입
+페이지 파일명 : sign_up.jsp
+*/
+
+.td_div_po {
+    width: 100%;
+    border: 0px solid;
+    position: relative;
+    padding: 10px 0;
+    /*            -------사용 예----*/
+    font-family: 'Cafe24SsurroundAir';
+    /*        --------------------------------------- */
+}
+
+.head {
+
+    font-family: 'Cafe24SsurroundAir';
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.join_div{
+	position: relative;
+	top: 30px;
+}
+
+.td_div_po1 {
+    border: 0px solid;
+    position: relative;
+    padding: 20px 0;
+    height:50px;
+
+}
+
+.td_div_po input[type=button] {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    padding: 10px;
+    background: #bd7373;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 8px;
+    font-family: 'Cafe24SsurroundAir';
+
+}
+
+.button_div input[type=button] {
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: rgb(102, 102, 102);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 0;
+    position: relative;
+	bottom:40px;
+    font-family: 'Cafe24SsurroundAir';
+    top: 50px;
+    left: 20px
+
+}
+
+
+
+.button_div input[type=submit] {
+    height: 40px;
+    width: 100px;
+    background: #bd7373;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 0;
+    position: relative;
+/*    right: 440px;*/
+    left: 250px;
+    bottom:-50px;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+
+.sign_in {
+    width: 65%;
+    height: 30px
+}
+
+.sign_in.phone {
+    width: 100px;
+    height: 30px
+}
+
+.sign_in.email {
+    width: 100px;
+    height: 30px
+}
+
+.verify_button {
+    width: 60px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+    font-family: 'Cafe24SsurroundAir';
+
+}
+
+.email_busttons {
+}
+
+.sign_in_email_button1{
+    width:70px;
+    font-size: 13px;
+    font-weight: bolder;
+    border-radius: 40px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+    font-family: 'Cafe24SsurroundAir';
+    position: relative;
+    left: 230px;
+    bottom: 15px;
+}
+.sign_in_email_button2 {
+    width:70px;
+    font-size: 13px;
+    font-weight: bolder;
+    border-radius: 40px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+    font-family: 'Cafe24SsurroundAir';
+    position: relative;
+    left: 230px;
+    bottom:15px;
+}
+
+.table1 {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    top:-10px;
+}
+.table2{
+    background: #f8f8f8;
+    height:100px;
+    border-radius: 20px;
+}
+
+.table1 th {
+    font-family: 'Cafe24SsurroundAir';
+}
+
+
+.form1 {
+    border: 2px solid black;
+    padding: 20px;
+    position: absolute;
+}
+
+.small_text {
+    font-size: 11px;
+    color: #666699;
+    letter-spacing: 0.5px;
+}
+
+#user_email_check_td {
+    display: none;
+}
+.email_veri_text {
+   width: 220px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+}
+#user_email_check_tr {
+
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    
+}
+
+.pp {
+    padding-bottom: 35px;
+}
+
+
+.tllll{
+    position: relative;
+}
+.bs_1{
+    display: none;
+}
+
+.pw_text{
+   font-size: 12px;
+    font-weight: bold;
+    font-family: 'Cafe24SsurroundAir';
+    color: red;
+}
+
+/*------------ 회원가입 end ------------*/
+
+
+
