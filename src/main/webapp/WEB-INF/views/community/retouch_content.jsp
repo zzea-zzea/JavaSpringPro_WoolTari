@@ -4,7 +4,7 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="content.woo">
-		<div class="locate">
+		<div class="locate_retouch_content ma">
 			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 커뮤니티 ▶ 수정하기</div>
 		</div>
 		<div class="write_first_box">

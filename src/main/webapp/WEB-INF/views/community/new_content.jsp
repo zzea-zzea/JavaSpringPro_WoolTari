@@ -4,7 +4,7 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="new_content.woo">
-	<div class="locate">
+	<div class="locate_new_content ma">
 		<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 공지사항 ▶ 새 글 쓰기</div>
 	</div>
 	<div class="write_first_box">

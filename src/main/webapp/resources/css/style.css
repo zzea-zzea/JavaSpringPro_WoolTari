@@ -991,7 +991,7 @@ btn
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
 */
-.locate {
+.locate_content ma{
 	margin-top: 100px;
 	margin-left: 20%;
 	border-radius: 50px;
@@ -1120,9 +1120,7 @@ btn
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content_view.jsp
 */
-.locate {
-	margin-top: 110px;
-	margin-left: 20%;
+.locate_content_view{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1356,9 +1354,7 @@ btn
 사용된 페이지 : 게시판 수정
 페이지 파일명 : retouch_content.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_retouch_content ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1510,9 +1506,7 @@ btn
 사용된 페이지 : 새 글 쓰기
 페이지 파일명 : new_content.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_new_content ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1651,9 +1645,7 @@ btn
 사용된 페이지 : 새 공지사항 쓰기
 페이지 파일명 : new_notice.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_new_notice ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1760,290 +1752,10 @@ btn
 
 /*
 ------------담당자 : 김진영,김지훈------------
-사용된 페이지 : 공지사항 내용 보기
-페이지 파일명 : notice_view.jsp
-*/
-.locate {
-	margin-top: 110px;
-	margin-left: 20%;
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 370px;
-}
-
-#border {
-	height: 1000px;
-}
-
-.community_first_view {
-	height: 1000px;
-	margin: 150px auto;
-	width: 1000px;
-}
-
-.community_first_view .community_first_view_title {
-	text-align: center;
-	margin: 15px;
-	background: #f8f8f8;
-	border-radius: 20px;
-	padding: 20px;
-}
-
-.community_first_view .community_first_view_title h3 {
-	font-size: 40px;
-	font-family: 'SDSamliphopangche_Basic';
-}
-
-.community_first_view .community_first_view_title span {
-	color: pink;
-}
-
-.community_first_view, community_content_view {
-	height: 800px;
-	padding: 0 130px;
-}
-
-.community_first_view .community_content_view_title {
-	height: 50px;
-	padding: 10px 15px;
-	border-radius: 14px;
-	padding: 6px;
-	margin: 0px 0;
-	border: 2px solid #f8f8f8;
-	text-align: center;
-	padding: 10px 15px;
-}
-
-.community_first_view .community_imfo {
-	display: inline-block;
-	font-size: small;
-}
-
-.community_first_view .community_imfo dl:first-child::before {
-	display: none;
-}
-
-.community_first_view .community_imfo dl {
-	position: relative;
-	display: inline-block;
-	margin: 0px 15px;
-}
-
-.community_first_view .community_imfo dt, .community_first_view .community_imfo dd
-	{
-	display: inline-block;
-}
-
-.community_content_view .community_imfo_retouch_delet {
-	margin-left: 50px;
-	display: inline-block;
-}
-
-.community_first_view .community_imfo_retouch_delet .btn_content {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
-
-.community_first_view .community_content_view_imfo {
-	height: 600px;
-	padding: 30px 30px;
-	line-height: 2;
-	word-break: keep-all;
-	background: #f8f8f8;
-	border-radius: 20px;
-	padding: 40px;
-	margin-bottom: 10px;
-	word-wrap: break-word;
-}
-
-.community_comment_box {
-	height: 300px;
-	margin: 15px auto;
-}
-
-.community_comment {
-	height: 100px;
-}
-
-.community_comment .comment {
-	margin-left: 20px;
-	border: none;
-	border-bottom: 1px solid;
-	outline: none;
-}
-
-.community_comment_box .community_comment .comment_sumit {
-	margin-left: 14px;
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
-
-.border .community_first_view .community_first_view_text h3 {
-	padding: 0px 15px;
-	font-size: 1.8rem;
-	font-weight: bold;
-	text-align: center;
-}
-
-.community_comment .comment_image {
-	width: 30px;
-	height: 30px;
-}
-
-.community_first_view .image {
-	height: 80px;
-}
-
-.community_first_view .image .content_image {
-	height: 60px;
-	width: 60px;
-}
-
-.community_first_view .blank {
-	height: 100px;
-}
-/*------------ 게시판 수정 end ------------*/
-
-/*
-------------담당자 : 김진영,김지훈------------
-사용된 페이지 : 공지사항 
-페이지 파일명 : notice.jsp
-*/
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 240px;
-}
-
-#border {
-	height: 1000px;
-}
-
-#border .community_first_box {
-	/* 	height: 1000px; */
-	height: 700px;
-	margin: 150px auto;
-	width: 1000px;
-}
-
-#border .community_first_box .community_title {
-	padding: 15px 0;
-	text-align: center;
-}
-
-#border .community_first_box .notice_write {
-	position: relative;
-	padding: 20px 0px;
-}
-
-#border .community_first_box .notice_write .notice_main {
-	position: absolute;
-	right: 30px;
-}
-
-#border .community_first_box .notice_write .notice_main .new_write_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
-
-#border .community_first_box .community_content_table {
-	
-}
-
-#border .community_first_box .community_content_table_main {
-	
-}
-
-#border .community_first_box .community_content_table_main .board_list {
-	margin: 30px auto;
-	width: 100%;
-}
-
-#border .community_first_box .community_content_table_main .board_list tr
-	{
-	border-bottom: 1PX solid pink;
-	line-height: 35px;
-}
-
-#border .community_first_box .community_content_table_main .board_list tr td
-	{
-	font-size: small;
-}
-
-#border .community_first_box .community_content_table .new_write {
-	position: relative;
-}
-
-.paging {
-	margin-top: 20px;
-	text-align: center;
-	font-size: 0;
-	text-align: center;
-}
-
-.paging a {
-	display: inline-block;
-	margin-left: 10px;
-	padding: 5px 10px;
-	border-radius: 100px;
-	font-size: 12px;
-	/*    margin-top: 30px;  */
-}
-
-.paging a:first-child {
-	margin-left: 0;
-}
-
-.paging a.bt {
-	border: 1px solid pink;
-	background: #eee;
-}
-
-.paging a.num {
-	border: 1px solid pink;
-	font-weight: 600;
-	color: pink;
-}
-
-.paging a.num.on {
-	background: pink;
-	color: #fff;
-}
-/*------------ 게시판 수정 end ------------*/
-
-/*
-------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 공지사항 수정
 페이지 파일명 : retouch_notice.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_retouch_notice ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
