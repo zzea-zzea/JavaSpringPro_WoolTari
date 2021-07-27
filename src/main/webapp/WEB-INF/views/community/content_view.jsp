@@ -60,7 +60,7 @@
 					<input type="button" value="삭제" class="btn_content"
 						onclick="delete_check()"> <input type="button" value="수정"
 						class="btn_content"
-						onclick="location='${pageContext.request.contextPath}/retouch_content.woo'">
+						onclick="retouch_check()">
 				</div>
 				<div class="community_comment_box">
 					<div class="all_comment">댓글 1개</div>
@@ -135,6 +135,15 @@ $(document).ready(
 		if (answer == true) {
 			alert("등록되었습니다.");
 			location.replace("${pageContext.request.contextPath}/content_view.woo");
+		} else {
+		}
+	}
+	function retouch_check() {
+		var answer = confirm("수정하시겠습니까?.")
+		if (answer == true) {
+			alert("수정되었습니다.");
+			location
+					.replace('${pageContext.request.contextPath}/retouch_content.woo');
 		} else {
 		}
 	}

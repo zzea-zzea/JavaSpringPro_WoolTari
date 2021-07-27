@@ -91,4 +91,9 @@ public class MainController {
 		return mav;
 	}
 
+	@RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
+	public ModelAndView DonateMain(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("support/donate_main");
+		return mav;
+	}
 }

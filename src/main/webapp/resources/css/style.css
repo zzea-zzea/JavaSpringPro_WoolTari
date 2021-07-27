@@ -2634,5 +2634,259 @@ contents{
 }
 /*------------ 후원하기 end ------------*/
 
+/*
+------------담당자 : 김진영 ------------
+사용된 페이지 : 후원하기 메인
+페이지 파일명 : doanate_main.jsp
+*/
+.donate_line {
+	margin: auto;
+}
 
+.one_box {
+	width: 1200px;
+	margin: 150px auto;
+}
 
+.support_view_first_box {
+	width: 1000px;
+	height: 650px;
+	margin: 150px auto;
+}
+
+.support_view_title {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.support_view_title h3 {
+	font-size: 35px;
+}
+
+.support_view_title span {
+	color: pink;
+}
+
+.support_view_sponsor_title {
+	width: 1000px;
+	height: 50px;
+	margin: 30px;
+}
+
+.support_view_sponsor_title b {
+	font-size: 25px;
+	border-bottom: 4px solid pink;
+}
+
+.main_image_box {
+	width: 1000px;
+	height: 450px;
+}
+
+.main_image_box .support_image {
+	
+}
+
+.main_image_box .support_image input {
+	width: 1000px;
+	height: 400px;
+	position: relative;
+}
+
+.sponsorship_description_box {
+	width: 1000px;
+	height: 300px;
+	margin: 30px;
+}
+
+.sponsorship_description_box_image {
+	margin: 15px auto;
+	width: 400px;
+	height: 400px;
+	display: inline;
+}
+
+.sponsorship_description_box input {
+	width: 340px;
+	height: 230px;
+}
+
+.main_image_box .support_image p {
+	position: absolute;
+	top: 250px;
+	left: 500px;
+	font-size: 30px;
+	color: black;
+	font-weight: 900;
+}
+
+.support_view_sponsor_box {
+	width: 850px;
+	height: 300px;
+	margin: 0px auto;
+}
+
+.support_view_sponsor_image {
+	display: inline-block;
+	width: 280px;
+}
+
+.support_view_sponsor_image input {
+	width: 250px;
+	height: 250px;
+}
+
+.support_view_sponsor_select_combo {
+	display: inline-block;
+}
+
+.support_view_sponsor_select_combo .select_combo {
+	padding: 10px 10px;
+	border-radius: 30px;
+}
+
+.support_view_sponsor_Information {
+	height: 300px;
+	margin: 20px 0px;
+	width: 1000px;
+	border: 1px solid;
+}
+
+.support_view_sponsor_Information Information_box {
+	margin: 10px 10px;
+	position: absolute;
+	/* 	display: none; */
+}
+
+.support_view_sponsor_Information .Information_box p {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 40px;
+	/* 	display: none; */
+}
+
+.support_view_sponsor_Information .Information_box .information_0 {
+	
+}
+
+.support_view_sponsor_Information .Information_box .information_1 {
+	display: none;
+}
+
+.support_view_sponsor_Information .Information_box .information_2 {
+	display: none;
+}
+
+.support_view_sponsor_Information .Information_box .information_3 {
+	display: none;
+}
+
+.sponsorship_description_box_write {
+	display: inline-block;
+	width: 600px;
+	height: 400px;
+}
+
+.sponsorship_description_box_title {
+	list-style: none;
+	font-size: 20px;
+}
+
+.sponsorship_description_box_sub {
+	width: 1000px;
+	height: 450px;
+}
+
+.sponsorship_description_box_sub_title {
+	height: 50px;
+	text-align: center;
+}
+
+.sponsorship_description_box_sub_title h4 {
+	font-size: 25px;
+}
+
+.sponsorship_description_box_sub_image_box {
+	width: 1000px;
+	height: 400px;
+}
+
+.sponsorship_description_box_sub_image_one {
+	display: inline-block;
+	margin: 35px;
+	height: 300px;
+}
+
+.sponsorship_description_box_sub_image_one input {
+	width: 280px;
+	height: 250px;
+}
+
+.sponsorship_description_box_sub_image_one_title {
+	list-style: none;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.sponsorship_description_box_sub_image_two {
+	display: inline-block;
+	height: 300px;
+}
+
+.sponsorship_description_box_sub_image_two input {
+	width: 280px;
+	height: 250px;
+}
+
+.sponsorship_description_box_sub_image_two_title {
+	list-style: none;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.sponsorship_description_box_sub_image_thr {
+	display: inline-block;
+	margin: 35px;
+	height: 300px;
+}
+
+.sponsorship_description_box_sub_image_thr input {
+	width: 280px;
+	height: 250px;
+}
+
+.sponsorship_description_box_sub_image_thr_title {
+	list-style: none;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.support_next_page {
+	float: right;
+	padding-right: 10px;
+}
+
+.support_next_page input {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.sponsorship_description_box_sub_image_one li {
+	/* 	text-align: center; */
+	
+}
+
+.sponsorship_description_box_sub_image_two li {
+	/* 	text-align: center; */
+	
+}
+
+.sponsorship_description_box_sub_image_thr li {
+	text-align: center;
+}
+/*------------ 후원하기 메인 end ------------*/
