@@ -25,8 +25,14 @@ public class MainController {
 		return mav;
 	}
 
+	@RequestMapping(value = "info_policy.woo", method = RequestMethod.GET)
+	public ModelAndView Infopolicy(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("info/info_policy");
+		return mav;
+	}
+	
 	@RequestMapping(value = "info_childcare.woo", method = RequestMethod.GET)
-	public ModelAndView InfoChildCareStep1(HttpServletRequest request) {
+	public ModelAndView InfoChildCare(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("info/info_childcare");
 		return mav;
 	}
