@@ -23,7 +23,7 @@
 			<h3>후원방법</h3>
 		</div>
 		<hr>
-		<div class="choose_money">
+		<div class="choose_money"> 
 			<form action="">
 				<a class="choose_money_name">● 후원금액을 선택해주세요</a> <br> <input
 					type="radio" name="donate" value="1" />&nbsp;1만원 &nbsp;&nbsp; <input
