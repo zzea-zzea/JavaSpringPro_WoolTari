@@ -95,7 +95,7 @@
 					<div class="support_next_page">
 						<input type="submit" value="기부하기"> <a
 							href="${pageContext.request.contextPath}/content.woo"><input
-							type="button" value="돌아가기" onclick="confirm('돌아가시겠습니끼?')"></a>
+							type="button" value="돌아가기" onclick="confirm('돌아가시겠습니까?')"></a>
 					</div>
 				</div>
 			</div>
