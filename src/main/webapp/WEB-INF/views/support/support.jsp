@@ -197,7 +197,7 @@
 							class="checked_all_agree">모두 동의합니다</span>
 						</label>
 
-						<dr> <script>
+			 <script>
                 // 동의 모두선택 / 해제
                 const agreeChkAll = document.querySelector('input[name=agree_all]');
                 agreeChkAll.addEventListener('change', (e) => {
@@ -240,12 +240,11 @@
 									네이버는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.</div>
 							</li>
 						</ul>
-						</dr>
 					</div>
 				</div>
 			</div>
 			<div class="result_next_btn">
-				<a href="donate_type.jsp"><button>다음</button></a>
+				<a href="${pageContext.request.contextPath}/donate_type.woo"><button>다음</button></a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<button>취소</button>
 			</div>

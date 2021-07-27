@@ -2452,10 +2452,10 @@ contents{
 
 /* 페이지 파일명 : endsupport.jsp */
 .endsupport_box {
-	height: 1000px;
+	height: 700px;
 }
 .endsupport_first_box {
-	height: 1000px;
+	height: 700px;
 	margin: 150px auto;
 	width: 1000px;
 }
@@ -2508,7 +2508,19 @@ contents{
     color: hotpink;
    	margin-right: 40px;
 }
-
+.endsupport_btn {
+	margin-top: 30px;
+	text-align: center;
+}
+.endsupport_btn .end_btn {	
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
 /* 파일명 support.jsp */
 .one_box {
 	width: 1200px;

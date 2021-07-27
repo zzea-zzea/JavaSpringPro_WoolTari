@@ -23,7 +23,7 @@
 			<h3>후원방법</h3>
 		</div>
 		<hr>
-		<div class="choose_money">
+		<div class="choose_money"> 
 			<form action="">
 				<a class="choose_money_name">● 후원금액을 선택해주세요</a> <br> <input
 					type="radio" name="donate" value="1" />&nbsp;1만원 &nbsp;&nbsp; <input
@@ -67,7 +67,7 @@
 				입금자명 <input type="text" placeholder="이름을 입력해주세요">
 			</div>
 			<div class="result_btn">
-				<a href="endsupport.jsp"><button class="next_btn">다음단계</button></a>
+				<a href="${pageContext.request.contextPath}/endsupport.woo"><button class="next_btn">다음단계</button></a>
 				<button class="cancle_btn">취소</button>
 			</div>
 		</div>
