@@ -73,12 +73,6 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "notice.woo", method = RequestMethod.GET)
-	public ModelAndView Notice(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("notice/notice"); 
-		return mav;
-	}
-
 	@RequestMapping(value = "retouch_notice.woo", method = RequestMethod.GET)
 	public ModelAndView Retouch_Notice(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("notice/retouch_notice"); 
@@ -102,5 +96,5 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("support/support"); 
 		return mav;
 	}
-	
+
 }
