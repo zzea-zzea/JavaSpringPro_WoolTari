@@ -3,87 +3,9 @@
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-<script>
-	$(document).ready(
-			function() {
-				$(".side_bar_content>a").click(
-						function() {
-							if ($(this).parent(".side_bar_content").children(
-									"ul").is(':hidden')) {
-								$(this).parent(".side_bar_content").children(
-										"ul").slideDown();
-							} else {
-								$(this).parent(".side_bar_content").children(
-										"ul").slideUp();
-							}
-							// 				 $(this).parent(".side_bar_content").children("ul").slideToggle(100);
-							// 			 not(this).parent(".side_bar_content").children("ul").slideUp(100);
-						});
-
-				$(".childcare_content_menu>a").click(
-						function() {
-
-							// 			 $(this).parent(".childcare_content_menu").children("div").slideToggle("100");
-							if ($(this).parent(".childcare_content_menu")
-									.children("div").is(':hidden')) {
-								$('.childcare_content_menu>a').parent(
-										".childcare_content_menu").children(
-										"div").slideUp();
-								$(this).parent(".childcare_content_menu")
-										.children("div").slideDown();
-							} else {
-								$(this).parent(".childcare_content_menu")
-										.children("div").slideUp();
-							}
-						});
-				$(".info_content1").click(function() {
-					$('.childcare_section').hide();
-					$('.childcare_section:eq(0)').show();
-					$('#content1').attr('class', 'sideli on');
-					$('#content2').attr('class', 'sideli');
-					$('#content3').attr('class', 'sideli');
-					$('#content4').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
-				});
-				$(".info_content2").click(function() {
-					$('.childcare_section').hide();
-					$('.childcare_section:eq(1)').show();
-					$('#content1').attr('class', 'sideli');
-					$('#content2').attr('class', 'sideli on');
-					$('#content3').attr('class', 'sideli');
-					$('#content4').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideDown();
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
-				});
-				$(".info_content3").click(function() {
-					$('.childcare_section').hide();
-					$('.childcare_section:eq(2)').show();
-					$('#content1').attr('class', 'sideli');
-					$('#content2').attr('class', 'sideli');
-					$('#content3').attr('class', 'sideli on');
-					$('#content4').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
-				});
-				$(".info_content4").click(function() {
-					$('.childcare_section').hide();
-					$('.childcare_section:eq(3)').show();
-					$('#content1').attr('class', 'sideli');
-					$('#content2').attr('class', 'sideli');
-					$('#content3').attr('class', 'sideli');
-					$('#content4').attr('class', 'sideli on');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideDown();
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
-				});
-				$(".side_bar_content>a").eq(0).trigger("click");
-				$(".info_content1").trigger("click");
-			});
-</script>
-
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="info_childcare.woo">
+	<form action="info_childcare_step1.woo">
 	<main class="childcare_main">
 		<div class="childcare_box ma">
 			<div class="side_bar">
