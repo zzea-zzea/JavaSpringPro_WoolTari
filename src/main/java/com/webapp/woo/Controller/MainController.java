@@ -27,7 +27,7 @@ public class MainController {
 	
 	@RequestMapping(value = "info_step1.woo", method = RequestMethod.GET)
 	public ModelAndView InfoChildCareStep1(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("info/info_childcare_step1"); 
+		ModelAndView mav = new ModelAndView("info/info_childcare"); 
 		return mav;
 	}
 	
