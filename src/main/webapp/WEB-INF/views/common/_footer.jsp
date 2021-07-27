@@ -6,7 +6,7 @@
 
 			<div class="col-md-12 col-lg-4">
 				<div class="footer-logo">
-					<a class="navbar-brand" href="#">Wooltari</a>
+					<a class="navbar-brand" href="${pageContext.request.contextPath}/main.woo">Wooltari</a>
 					<p>
 						(04715) 서울특별시 성동구 왕십리로 303 (행당동, 미래능력개발교육원)<br>
 						민원안내 02-0000-6000 / 운영시간 월-금 9:00 – 18:00, 공휴일 제외<br>
@@ -20,7 +20,7 @@
 					<h4>정보</h4>
 					<ul class="list-unstyled">
 						<li><a href="#">정책 정보</a></li>
-						<li><a href="#">육아 정보</a></li>
+						<li><a href="${pageContext.request.contextPath}/info_step1.woo">육아 정보</a></li>
 						<li><a href="#">시설 / 병원</a></li>
 					</ul>
 				</div>
@@ -38,11 +38,7 @@
 
 			<div class="col-sm-6 col-md-3 col-lg-2">
 				<div class="list-menu">
-					<h4>소식</h4>
-					<ul class="list-unstyled">
-						<li><a href="#">커뮤니티</a></li>
-						<li><a href="#">공지사항</a></li>
-					</ul>
+					<h4><a href="${pageContext.request.contextPath}/content.woo">소식</a></h4>
 				</div>
 			</div>
 

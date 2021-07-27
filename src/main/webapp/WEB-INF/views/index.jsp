@@ -40,7 +40,7 @@
 								<p>
 									맞이하는 모든 상황에 대한 대처를<br>한눈에 정리해봤어요!
 								</p>
-								<a href="#">>>육아정보 바로 가기</a>
+								<a href="${pageContext.request.contextPath}/info_step1.woo">>>육아정보 바로 가기</a>
 							</div>
 						</div>
 
@@ -73,7 +73,7 @@
 								<p>
 									당신의 깨알 정보를 함께 하세요!<br>육아부터 나눔까지!
 								</p>
-								<a href="#">>>커뮤니티 바로 가기</a>
+								<a href="${pageContext.request.contextPath}/content.woo">>>커뮤니티 바로 가기</a>
 							</div>
 						</div>
 					</div>
@@ -186,100 +186,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- 	End  Swiper Section -->
-
-
-			<!--     ======= Pricing Section ======= -->
-			<!--     <section id="pricing" class="padd-section text-cente"> -->
-
-			<!--       <div class="container" data-aos="fade-up"> -->
-			<!--         <div class="section-title text-center"> -->
-
-			<!--           <h2>Meet With Price</h2> -->
-			<!--           <p class="separator">Integer cursus bibendum augue ac cursus .</p> -->
-			<!--         </div> -->
-
-			<!--         <div class="row" data-aos="fade-up" data-aos-delay="100"> -->
-
-			<!--           <div class="col-md-6 col-lg-3"> -->
-			<!--             <div class="block-pricing"> -->
-			<!--               <div class="table"> -->
-			<!--                 <h4>basic</h4> -->
-			<!--                 <h2>$29</h2> -->
-			<!--                 <ul class="list-unstyled"> -->
-			<!--                   <li><b>4 GB</b> Ram</li> -->
-			<!--                   <li><b>7/24</b> Tech Support</li> -->
-			<!--                   <li><b>40 GB</b> SSD Cloud Storage</li> -->
-			<!--                   <li>Monthly Backups</li> -->
-			<!--                   <li>Palo Protection</li> -->
-			<!--                 </ul> -->
-			<!--                 <div class="table_btn"> -->
-			<!--                   <a href="#" class="btn">Support Now</a> -->
-			<!--                 </div> -->
-			<!--               </div> -->
-			<!--             </div> -->
-			<!--           </div> -->
-
-			<!--           <div class="col-md-6 col-lg-3"> -->
-			<!--             <div class="block-pricing"> -->
-			<!--               <div class="table"> -->
-			<!--                 <h4>PERSONAL</h4> -->
-			<!--                 <h2>$29</h2> -->
-			<!--                 <ul class="list-unstyled"> -->
-			<!--                   <li><b>4 GB</b> Ram</li> -->
-			<!--                   <li><b>7/24</b> Tech Support</li> -->
-			<!--                   <li><b>40 GB</b> SSD Cloud Storage</li> -->
-			<!--                   <li>Monthly Backups</li> -->
-			<!--                   <li>Palo Protection</li> -->
-			<!--                 </ul> -->
-			<!--                 <div class="table_btn"> -->
-			<!--                   <a href="#" class="btn">Support Now</a> -->
-			<!--                 </div> -->
-			<!--               </div> -->
-			<!--             </div> -->
-			<!--           </div> -->
-
-			<!--           <div class="col-md-6 col-lg-3"> -->
-			<!--             <div class="block-pricing"> -->
-			<!--               <div class="table"> -->
-			<!--                 <h4>BUSINESS</h4> -->
-			<!--                 <h2>$29</h2> -->
-			<!--                 <ul class="list-unstyled"> -->
-			<!--                   <li><b>4 GB</b> Ram</li> -->
-			<!--                   <li><b>7/24</b> Tech Support</li> -->
-			<!--                   <li><b>40 GB</b> SSD Cloud Storage</li> -->
-			<!--                   <li>Monthly Backups</li> -->
-			<!--                   <li>Palo Protection</li> -->
-			<!--                 </ul> -->
-			<!--                 <div class="table_btn"> -->
-			<!--                   <a href="#" class="btn">Support Now</a> -->
-			<!--                 </div> -->
-			<!--               </div> -->
-			<!--             </div> -->
-			<!--           </div> -->
-
-			<!--           <div class="col-md-6 col-lg-3"> -->
-			<!--             <div class="block-pricing"> -->
-			<!--               <div class="table"> -->
-			<!--                 <h4>profeesional</h4> -->
-			<!--                 <h2>$29</h2> -->
-			<!--                 <ul class="list-unstyled"> -->
-			<!--                   <li><b>4 GB</b> Ram</li> -->
-			<!--                   <li><b>7/24</b> Tech Support</li> -->
-			<!--                   <li><b>40 GB</b> SSD Cloud Storage</li> -->
-			<!--                   <li>Monthly Backups</li> -->
-			<!--                   <li>Palo Protection</li> -->
-			<!--                 </ul> -->
-			<!--                 <div class="table_btn"> -->
-			<!--                   <a href="#" class="btn">Support Now</a> -->
-			<!--                 </div> -->
-			<!--               </div> -->
-			<!--             </div> -->
-			<!--           </div> -->
-			<!--         </div> -->
-			<!--       </div> -->
-			<!--     </section>End Pricing Section -->
-
 			<section id="backCloud" class="padd-section text-cente"></section>
 		</main>
 		<!-- main End -->
