@@ -26,10 +26,13 @@
 				<div class="endsupport_imfomation_four">
 					<p>단체명&nbsp;&nbsp;&nbsp;너나우리xxx</p>
 				</div>
+			<div class="endsupport_btn">
+				<a href="${pageContext.request.contextPath}/support.woo"><button class="end_btn">확인</button></a>
 			</div>
-			<div class="endsupport_receipt">
+			</div>
+<!-- 			<div class="endsupport_receipt"> -->
 				
-			</div>
+<!-- 			</div> -->
 		</div>
 	</div>
 	</form>

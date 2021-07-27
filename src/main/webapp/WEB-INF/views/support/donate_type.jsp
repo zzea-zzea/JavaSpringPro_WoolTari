@@ -67,7 +67,7 @@
 				입금자명 <input type="text" placeholder="이름을 입력해주세요">
 			</div>
 			<div class="result_btn">
-				<a href="endsupport.jsp"><button class="next_btn">다음단계</button></a>
+				<a href="${pageContext.request.contextPath}/endsupport.woo"><button class="next_btn">다음단계</button></a>
 				<button class="cancle_btn">취소</button>
 			</div>
 		</div>
