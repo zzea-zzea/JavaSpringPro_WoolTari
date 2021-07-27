@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- Model단: DAO, DS 빈 등록 (servlet-context.xml에서 이사옴) -->
+	
+	<!-- 별도 JDBC DS 빈 문맥을 연동 -->
+<!-- 	<import resource="dataSource/jdbc_ds.xml"/> -->
+	<!-- 별도 DBCP DS 빈 문맥을 연동 -->
+	<import resource="dataSource/dbcp_ds.xml"/>
+	
+	<bean id="jdbcTemplate"  class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />	
+	</bean>
+	
+<!-- 	<bean id="mbMysqlDao"  -->
+<!-- 		class="com.webapp.mysns.model.dao.impl.MemberMySqlDAOImpl"> -->
+<!-- 		<property name="dataSource" ref="ds" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="ds"  -->
+<!-- 	 class="org.springframework.jdbc.datasource.DriverManagerDataSource"  -->
+<!-- 		p:url="jdbc:mysql://localhost:3307/mysns_db"  -->
+<!-- 		p:username="java" p:password="1234"  -->
+<!-- 		p:driverClassName="com.mysql.jdbc.Driver" -->
+<!-- 	/> -->
 		
 </beans>
