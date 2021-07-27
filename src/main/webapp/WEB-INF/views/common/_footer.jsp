@@ -30,7 +30,7 @@
 				<div class="list-menu">
 					<h4>후원</h4>
 					<ul class="list-unstyled">
-						<li><a href="#">후원 안내</a></li>
+						<li><a href="${pageContext.request.contextPath}/donate_main.woo"">후원 안내</a></li>
 						<li><a href="${pageContext.request.contextPath}/support.woo">후원 하기</a></li>
 					</ul>
 				</div>
