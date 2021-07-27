@@ -6,8 +6,8 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="info_policy.woo">
-		<main class="childcare_main">
-			<div class="childcare_box ma">
+		<main class="policy_main">
+			<div class="policy_box ma">
 			
 			</div>
 		</main>
