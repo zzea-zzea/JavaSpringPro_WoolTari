@@ -20,7 +20,7 @@
 					<h4>정보</h4>
 					<ul class="list-unstyled">
 						<li><a href="#">정책 정보</a></li>
-						<li><a href="${pageContext.request.contextPath}/info_step1.woo">육아 정보</a></li>
+						<li><a href="${pageContext.request.contextPath}/info_childcare.woo">육아 정보</a></li>
 						<li><a href="#">시설 / 병원</a></li>
 					</ul>
 				</div>
