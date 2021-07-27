@@ -20,11 +20,7 @@
 						<li><a href="#">후원 안내</a></li>
 						<li><a href="#">후원 하기</a></li>
 					</ul></li>
-				<li class="dropdown le"><a href="#"><span>소식</span> <i class="bi bi-chevron-down"></i></a>
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/content.woo">커뮤니티</a></li>
-						<li><a href="${pageContext.request.contextPath}/notice.woo">공지사항</a></li>
-					</ul></li>
+				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
 
 				<li><a class="btn_green">Login</a></li>
 			</ul>
