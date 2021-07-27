@@ -87,25 +87,19 @@ public class MainController {
 	
 	@RequestMapping(value = "donate_type.woo", method = RequestMethod.GET)
 	public ModelAndView DonateType(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("notice/donate_type"); 
+		ModelAndView mav = new ModelAndView("support/donate_type"); 
 		return mav;
 	}
 
 	@RequestMapping(value = "endsupport.woo", method = RequestMethod.GET)
 	public ModelAndView EndSupport(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("notice/endsupport"); 
-		return mav;
-	}
-	
-	@RequestMapping(value = "nextsupport.woo", method = RequestMethod.GET)
-	public ModelAndView NextSupport(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("notice/nextsupport"); 
+		ModelAndView mav = new ModelAndView("support/endsupport"); 
 		return mav;
 	}
 	
 	@RequestMapping(value = "support.woo", method = RequestMethod.GET)
 	public ModelAndView Support(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("notice/support"); 
+		ModelAndView mav = new ModelAndView("support/support"); 
 		return mav;
 	}
 	

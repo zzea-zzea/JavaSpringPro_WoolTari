@@ -2569,4 +2569,346 @@ contents{
 
 /*------------ 회원가입 end ------------*/
 
+/*
+------------담당자 : 김진영 ------------
+사용된 페이지 : 후원하기
+페이지 파일명 : doanate_type.jsp
+*/
+
+.donate {
+	margin: 100px auto;
+	height: 500px;
+	width: 800px;
+	position: relative;
+}
+
+.donate .donate_type h3 {
+	font-weight: bold;
+	text-align: center;
+}
+
+.donate .choose_money .choose_money_name {
+	font-size: large;
+}
+
+.donate .choose_money .input_money {
+	width: 160px;
+}
+
+.donate .choose_type .choose_type_name {
+	font-size: large;
+}
+
+.donate .donate_card {
+	position: relative;
+	height: 300px;
+}
+
+.donate .donate_card {
+	visibility: hidden;
+	width: 800px;
+}
+
+.donate .donate_card .donate_card_title h3 {
+	
+}
+
+.donate .donate_card .result_btn {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+.donate .donate_card .result_btn .next_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.donate .donate_card .result_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.donate .donate_card {
+	position: relative;
+	height: 300px;
+	position: absolute;
+}
+
+.donate .donate_cash {
+	visibility: hidden;
+	width: 800px;
+}
+
+.donate .donate_cash .donate_card_title h3 {
+	
+}
+
+.donate .donate_cash .result_btn {
+	position: absolute;
+	right: 10px;
+	bottom: -56px;
+}
+
+.donate .donate_cash .result_btn .next_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.donate .donate_cash .result_btn .cancle_btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+.endsupport_box {
+	height: 1000px;
+}
+.endsupport_first_box {
+	height: 1000px;
+	margin: 150px auto;
+	width: 1000px;
+}
+.endsupport_title {
+	padding: 15px 0;
+}
+.endsupport_title h3 {
+	text-align: center;
+	font-weight: bolder;
+}
+.endsupport_imfomation {
+	border: 1px solid;
+	height: 400px;
+    margin: 100px auto;
+}
+.endsupport_imfomation .endsupport_imfomation_one {
+	height: 80px;
+}
+.endsupport_imfomation .endsupport_imfomation_one p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: bold;
+}
+.endsupport_imfomation .endsupport_imfomation_one span {
+	color: green;
+}
+.endsupport_imfomation_two {
+	height: 60px;
+}
+.endsupport_imfomation_two p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: normal;
+}
+.endsupport_imfomation_three {
+	height: 100px;
+}
+.endsupport_imfomation_three p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: bold;
+}
+.endsupport_imfomation_four {
+	height: 50px;
+}
+.endsupport_imfomation_four p {
+    float: right;
+    font-size: 20px;
+    font-weight: 500;
+    color: hotpink;
+   	margin-right: 40px;
+}
+
+/* 페이지 파일명 : endsupport.jsp */
+.endsupport_box {
+	height: 1000px;
+}
+.endsupport_first_box {
+	height: 1000px;
+	margin: 150px auto;
+	width: 1000px;
+}
+.endsupport_title {
+	padding: 15px 0;
+}
+.endsupport_title h3 {
+	text-align: center;
+	font-weight: bolder;
+}
+.endsupport_imfomation {
+	border: 1px solid;
+	height: 400px;
+    margin: 100px auto;
+}
+.endsupport_imfomation .endsupport_imfomation_one {
+	height: 80px;
+}
+.endsupport_imfomation .endsupport_imfomation_one p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: bold;
+}
+.endsupport_imfomation .endsupport_imfomation_one span {
+	color: green;
+}
+.endsupport_imfomation_two {
+	height: 60px;
+}
+.endsupport_imfomation_two p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: normal;
+}
+.endsupport_imfomation_three {
+	height: 100px;
+}
+.endsupport_imfomation_three p {
+	font-size: 20px;
+    margin: 40px;
+    font-weight: bold;
+}
+.endsupport_imfomation_four {
+	height: 50px;
+}
+.endsupport_imfomation_four p {
+    float: right;
+    font-size: 20px;
+    font-weight: 500;
+    color: hotpink;
+   	margin-right: 40px;
+}
+
+/* 파일명 support.jsp */
+.one_box {
+	width: 1200px;
+	height: 1600px;
+	margin: 150px auto;
+}
+
+.support_view_first_box {
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+.support_view_first_box .support_view_sponsor_title {
+	margin-bottom: 15px;
+}
+
+.support_view_first_box .support_view_sponsor_title b {
+	font-size: 30px;
+	color: pink;
+	font-weight: bolder;
+}
+
+.support_view_first_box .support_view_sponsor_box {
+	height: 350px;
+}
+
+.support_view_sponsor_box .support_view_sponsor_image input {
+	width: 300px;
+	height: 300px;
+}
+
+.support_view_sponsor_select_combo {
+	display: inline-block;
+}
+
+.support_view_sponsor_select_combo .select_combo {
+	padding: 10px 10px;
+	border-radius: 30px;
+}
+
+.support_view_sponsor_Information {
+	height: 300px;
+	margin: 20px 0px;
+	width: 1000px;
+	border: 1px solid;
+}
+
+.support_view_sponsor_Information Information_box {
+	margin: 10px 10px;
+}
+
+.support_view_sponsor_Information .Information_box p {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+.support_imformation_view {
+	width: 900px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.support_imformation_view .support_imformation_view_title h4 {
+	font-size: 15px;
+	font-weight: 900;
+}
+
+.sponsor_imformation_td {
+	margin: 20px;
+}
+
+.support_imformation_view .bs_1 {
+	display: none;
+}
+.agreement_first_view {
+	width: 800px;
+    margin: 0 auto;
+}
+.one_agree {
+	height: 100px;
+    overflow: auto;
+    margin-top: 5px;
+    padding: 15px;
+    border: 1px solid #dadada;
+    background: #fff;
+    font-size: 12px;
+    right: 130px;
+}
+.result_next_btn {
+	margin-top: 20px;
+	width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.result_next_btn button {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+.all_agree {
+	float: right;
+}
+.checked_all_agree {
+	float: right;
+}
+/*------------ 후원하기 end ------------*/
+
+
 
