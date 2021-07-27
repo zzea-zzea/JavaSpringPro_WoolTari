@@ -26,7 +26,7 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "info_policy.woo", method = RequestMethod.GET)
-	public ModelAndView Infopolicy(HttpServletRequest request) {
+	public ModelAndView InfoPolicy(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("info/info_policy");
 		return mav;
 	}
@@ -34,6 +34,12 @@ public class MainController {
 	@RequestMapping(value = "info_childcare.woo", method = RequestMethod.GET)
 	public ModelAndView InfoChildCare(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("info/info_childcare");
+		return mav;
+	}
+
+	@RequestMapping(value = "info_center.woo", method = RequestMethod.GET)
+	public ModelAndView InfoCenter(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("info/info_center");
 		return mav;
 	}
 

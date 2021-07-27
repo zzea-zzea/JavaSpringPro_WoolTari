@@ -943,7 +943,7 @@ section {
 .policy_box  .policy_content_search .selectpicker {
 	padding: 13px 40px;
 	margin-right: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: 0 0 20px rgb(0 0 0/ 13%); border : 0;
 	outline: none;
 	border: 0;
@@ -955,7 +955,7 @@ section {
 
 .policy_box  button {
 	padding: 13px 20px;
-	border-radius: 10px;
+	border-radius: 5px;
 	outline: none;
 	background: #f4b400;
 	color: #fff;
