@@ -9,7 +9,7 @@
 		</div>
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li class="dropdown"><a href="${pageContext.request.contextPath}/info_childcare.woo"><span>정보</span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown"><a href="${pageContext.request.contextPath}/info_policy.woo"><span>정보</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/info_policy.woo">정책 정보</a></li>
 						<li><a href="${pageContext.request.contextPath}/info_childcare.woo">육아 정보</a></li>
