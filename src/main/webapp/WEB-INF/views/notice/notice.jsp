@@ -4,7 +4,7 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="notice.woo">
-		<div class="locate">
+		<div class="locate_notice ma">
 			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▶ 커뮤니티</div>
 		</div>
 		<div id="border">

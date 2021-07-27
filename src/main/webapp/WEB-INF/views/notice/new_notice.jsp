@@ -4,13 +4,13 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="new_notice.woo">
-	<div class="locate">
+	<div class="locate_new_notice ma">
 		<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 커뮤니티 ▶ 새 글 쓰기</div>
 	</div>
 	<div class="write_first_box">
 		<div class="notice_title">
 			<h3 class="title">
-				<span>새</span> 글 쓰기
+				<span>새</span>글 쓰기
 			</h3>
 		</div>
 		<hr>

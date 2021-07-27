@@ -21,7 +21,7 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="retouch_notice.woo">
-		<div class="locate">
+		<div class="locate_retouch_notice ma">
 			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 공지사항 ▶ 수정하기</div>
 		</div>
 		<div class="write_first_box">

@@ -991,7 +991,7 @@ btn
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
 */
-.locate {
+.locate_content ma{
 	margin-top: 100px;
 	margin-left: 20%;
 	border-radius: 50px;
@@ -1120,9 +1120,7 @@ btn
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content_view.jsp
 */
-.locate {
-	margin-top: 110px;
-	margin-left: 20%;
+.locate_content_view{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1356,9 +1354,7 @@ btn
 사용된 페이지 : 게시판 수정
 페이지 파일명 : retouch_content.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_retouch_content ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1510,9 +1506,7 @@ btn
 사용된 페이지 : 새 글 쓰기
 페이지 파일명 : new_content.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_new_content ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1651,9 +1645,7 @@ btn
 사용된 페이지 : 새 공지사항 쓰기
 페이지 파일명 : new_notice.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_new_notice ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1763,9 +1755,7 @@ btn
 사용된 페이지 : 공지사항 내용 보기
 페이지 파일명 : notice_view.jsp
 */
-.locate {
-	margin-top: 110px;
-	margin-left: 20%;
+.locate_notice_view ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1924,9 +1914,7 @@ btn
 사용된 페이지 : 공지사항 
 페이지 파일명 : notice.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_notice ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;
@@ -1969,14 +1957,6 @@ btn
 	font-weight: bold;
 	padding: 0 15px;
 	margin-left: 10px;
-}
-
-#border .community_first_box .community_content_table {
-	
-}
-
-#border .community_first_box .community_content_table_main {
-	
 }
 
 #border .community_first_box .community_content_table_main .board_list {
@@ -2041,9 +2021,7 @@ btn
 사용된 페이지 : 공지사항 수정
 페이지 파일명 : retouch_notice.jsp
 */
-.locate {
-	margin-top: 100px;
-	margin-left: 20%;
+.locate_retouch_notice ma{
 	border-radius: 50px;
 	border: 2px solid #f2b09b;
 	background: #fff;

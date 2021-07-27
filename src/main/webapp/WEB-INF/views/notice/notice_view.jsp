@@ -31,7 +31,7 @@
 <body>
 	<%@ include file="../common/_link.jsp"%>
 	<form action="notice_view.woo">
-		<div class="locate">
+		<div class="locate_notice_view ma">
 			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 공지사항 ▶ 공지사항
 				보기</div>
 		</div>

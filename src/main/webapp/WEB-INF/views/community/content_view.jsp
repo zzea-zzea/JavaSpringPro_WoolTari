@@ -4,7 +4,7 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="content_view.woo">
-		<div class="locate">
+		<div class="locate_content_view ma">
 			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 커뮤니티 ▶ 게시글 보기
 			</div>
 		</div>
