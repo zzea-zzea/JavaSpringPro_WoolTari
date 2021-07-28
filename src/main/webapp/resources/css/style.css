@@ -3309,7 +3309,9 @@ contents{
 
 
 .menu_id_box .menu_id_box_content .email_btn,
- .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn {
+ .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn,
+ .menu_pw_box .menu_pw_box_content .email_btn,
+ .menu_pw_box .menu_pw_box_content .user_email_txt .email_re_btn, {
     width: 80px;
     line-height: 35px;
     border-radius: 8px;
