@@ -3190,9 +3190,9 @@ contents{
     margin-right: 30px;   
 }
 
-.login_box .login_box_menu .another_login, .login_box .login_box_menu .another_login .another_login_list button{
-    	height: 48px;
-}
+/* .login_box .login_box_menu .another_login, .login_box .login_box_menu .another_login .another_login_list button{ */
+/*     	height: 48px; */
+/* } */
 
 .login_box .login_box_menu .another_login .another_login_list button img{
 	width: 300px;
