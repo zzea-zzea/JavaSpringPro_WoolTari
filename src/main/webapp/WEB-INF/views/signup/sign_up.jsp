@@ -8,7 +8,7 @@
 
 	<%@ include file="../index.jsp" %>
 
-	<div class="modal-wrapper">
+<div class="modal-wrapper">
 		<div class="modal-wrapper-box">
 			<button id="modal-close-btn" class="modal-close-btn">
 				<svg xmlns="http://www.w3.org/2000/svg"
@@ -170,12 +170,12 @@
                     }
 
                     function div_show() {
-                        document.getElementById("user_email_check_td").style.display = "block";
+                        document.getElementById("signup_user_email_check_td_invisible").style.display = "block";
 
                     }
 
                     function div_hide() {
-                        document.getElementById("user_email_check_tr").style.display = "none";
+                        document.getElementById("signup_user_email_check_td_invisible").style.display = "none";
                     }
 
 
@@ -218,11 +218,11 @@
                         $('#selectBox').change(function(){
                             var result = $('#selectBox option:selected').val();
                             if( result == 'option2'){
-                                $('.bs_1').show();
-                                $('.hide_1').hide();
+                                $('.signup_companyName_and_Number').show();
+                                $('.signup_hide_company').hide();
                             }else{
-                                $('.bs_1').hide();
-                                $('.hide_1').show();
+                                $('.signup_companyName_and_Number').hide();
+                                $('.signup_hide_company').show();
                             }
                         });
                     });
@@ -236,25 +236,23 @@
 				<center>
 
 
+					<form name="form" method="get" id="signup_form"
+						onsubmit="formCheck(form);" class="signup_signup_form">
 
-					<form name="form" method="get" id="sign_up_form"
-						onsubmit="formCheck(form);" class="tllll">
-
-						<div id="h2_line" align="center">
-							<h2 align="center" style="color:#bd7373"	>회원가입</h2>
+						<div id="h2_line" align="center" class="signup_head">
+							<h2 align="center" style="color:#bd7373" >회원가입</h2>
 
 						</div>
 
-						<div id="signup_div" class ="join_div">
+						<div id="signup_div" class ="signup_join_div">
 
-
-							<table class="table1">
+							<table class="signup_table1">
 								<tr>
 									<th>구분</th>
 									<td>
-										<div class="td_div_po">
-											<select class="inputtxt sel" id="selectBox"
-												onclick="Change()" style="width: 100px; height: 30px">
+										<div class="signup_td_div_po">
+											<select class="signup_email_selectbox" id="selectBox"
+												onclick="Change()" >
 												<option value="option1" selected="selected">개인</option>
 												<option value="option2">사업자</option>
 											</select> <br>
@@ -264,28 +262,28 @@
 								</tr>
 
 								<tr>
-									<th class="pp">아이디</th>
+									<th class="signup_label_id_and_nickname">아이디</th>
 									<td>
-										<div class="td_div_po">
-											<input name="user_Id" type="text" class="sign_in"
+										<div class="signup_td_div_po">
+											<input name="user_Id" type="text" class="signup_sign_in_input"
 												id="sign_Id" onkeyup="chkID();" required> <input
 												type="button" value="click" a href="#"
-												onclick="alert('사용가능합니다')"> <span class="small_text"><br>*4~12자리
+												onclick="alert('사용가능합니다')"> <span class="signup_small_text"><br>*4~12자리
 												영대소문자와 숫자로만 입력가능합니다</span> <br>
-											<span class="pw_text" id="id_msg" onkeyup="chkID();"></span>
+											<span class="signup_pw_text" id="id_msg" onkeyup="chkID();"></span>
 										</div>
 									</td>
 								</tr>
 
 								<tr>
-									<th class="pp">별명</th>
+									<th class="signup_label_id_and_nickname">별명</th>
 									<td>
-										<div class="td_div_po">
+										<div class="signup_td_div_po">
 											<input name="userNickname" id="nick_name" type="text"
-												class="sign_in" maxlength="15" required onkeyup="chkNick();">
+												class="signup_sign_in_input" maxlength="15" required onkeyup="chkNick();">
 											<input type="button" value="click" a href="#"
-												onclick="alert('사용가능합니다')"> <span class="small_text"><br>*영대소문자,한글,숫자만
-												가능합니다</span><br> <span class="pw_text" id="nick_msg"
+												onclick="alert('사용가능합니다')"> <span class="signup_small_text"><br>*영대소문자,한글,숫자만
+												가능합니다</span><br> <span class="signup_pw_text" id="nick_msg"
 												onkeyup="chkNick();"></span>
 
 										</div>
@@ -296,11 +294,11 @@
 								<tr>
 									<th>비밀번호</th>
 									<td>
-										<div class="td_div_po">
-											<input type="password" required class="sign_in" id="user_pw"
+										<div class="signup_td_div_po">
+											<input type="password" required class="signup_sign_in_input" id="user_pw"
 												name="pswd" onkeyup="chkPW();"> <span
-												class="small_text"><br>*숫자,특수문자,영대소문자 조합 필수입니다</span><br>
-											<span class="pw_text" id="pw_msg" onkeyup="chkPW();"></span>
+												class="signup_small_text"><br>*숫자,특수문자,영대소문자 조합 필수입니다</span><br>
+											<span class="signup_pw_text" id="pw_msg" onkeyup="chkPW();"></span>
 										</div>
 
 									</td>
@@ -310,21 +308,21 @@
 								<tr>
 									<th>비밀번호 확인</th>
 									<td>
-										<div class="td_div_po">
-											<input type="password" id="pwck" required class="sign_in"
+										<div class="signup_td_div_po">
+											<input type="password" id="pwck" required class="signup_sign_in_input"
 												name="pswdCheck" onkeyup="passwordCheckFunc();"><br>
-											<span class="small_text" id="passwordCheckText"></span>
+											<span class="signup_small_text" id="passwordCheckText"></span>
 										</div>
 
 									</td>
 								</tr>
 
 
-								<tr id="comp_none1" class="hide_1">
+								<tr id="comp_none1" class="signup_hide_company">
 									<th>이름</th>
 									<td>
-										<div class="td_div_po">
-											<input type="text" name="user_name" class="sign_in"
+										<div class="signup_td_div_po">
+											<input type="text" name="user_name" class="signup_sign_in_input"
 												id="userName" maxlength="10" pattern="/^[가-힣]{1,}+$/">
 
 
@@ -333,40 +331,40 @@
 								</tr>
 
 
-								<tr id="company1" class="bs_1">
+								<tr id="company1" class="signup_companyName_and_Number">
 									<th>대표자 이름</th>
 									<td>
-										<div class="td_div_po">
+										<div class="signup_td_div_po">
 											<input type="text" required name="company_name"
-												class="sign_in" id="compName" pattern="/^[가-힣]+$/">
+												class="signup_sign_in_input" id="compName" pattern="/^[가-힣]+$/">
 										</div>
 									</td>
 								</tr>
 
-								<tr id="company2" class="bs_1">
+								<tr id="company2" class="signup_companyName_and_Number">
 									<th>사업자 번호</th>
 									<td>
-										<div class="td_div_po">
+										<div class="signup_td_div_po">
 											<input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												maxlength="3" name="comRegNum1" id="comNum1"
-												class="sign_in phone" onkeypress="comNumCheck1(this)"
+												class="sign_in_phone_input" onkeypress="comNumCheck1(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="comRegNum2" id="comNum2" maxlength="2"
-												class="sign_in phone" onkeypress="comNumCheck2(this)"
+												class="sign_in_phone_input" onkeypress="comNumCheck2(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="comRegNum3" id="comNum3" maxlength="5"
-												class="sign_in phone" required>
+												class="sign_in_phone_input" required>
 										</div>
 									</td>
 								</tr>
 
-								<tr id="comp_none2" class="hide_1">
+								<tr id="comp_none2" class="signup_hide_company">
 									<th>성별</th>
 									<td>
-										<div class="td_div_po">
+										<div class="signup_td_div_po">
 											<input type="radio" name="gender" checked> 여자 <input
 												type="radio" name="gender"> 남자
 										</div>
@@ -377,18 +375,18 @@
 								<tr>
 									<th>이메일</th>
 									<td>
-										<div class="td_div_po1">
-											<input type="text" class="sign_in email" name="str_email01"
+										<div class="signup_td_div_po1_email">
+											<input type="text" class="signup_sign_in_email_input" name="str_email01"
 												id="str_email01" required> @ <input type="text"
-												class="sign_in email" name="str_email02" id="str_email02"
+												class="signup_sign_in_email_input" name="str_email02" id="str_email02"
 												disabled value="naver.com"> <select
-												name="selectEmail" class="sign_in email" id="selectEmail">
+												name="selectEmail" class="signup_sign_in_email_input" id="selectEmail">
 												<option value="1">직접입력</option>
 												<option value="naver.com" selected>naver.com</option>
 												<option value="hanmail.net">hanmail.net</option>
 												<option value="hotmail.com">hotmail.com</option>
 												<option value="nate.com">nate.com</option>
-											</select> <input type="button" class="verify_button" value="send" a
+											</select> <input type="button" class="signup_verify_button" value="send" a
 												href="#" onclick="alert('인증메일을 보냈습니다');div_show();">
 										</div>
 									</td>
@@ -397,53 +395,52 @@
 
 								<!-- onclick 하면 나와야할 부분 -->
 
-								<tr id="user_email_check_tr">
+								<tr class="signup_user_email_check_tr">
 									<th>이메일인증</th>
-									<td id="user_email_check_td">
-										<div class="td_div_po2">
+									<td class="signup_user_email_check_td_invisible">
+										<div class="signup_td_div_po2">
 
-											<input type="text" class="email_veri_text"
+											<input type="text" class="signup_email_veri_text"
 												name="email_verify_text" id="email_verify" required>
-											<div class="email_busttons">
-												<input type="button" class="sign_in_email_button1"
+											
+												<input type="button" class="signup_sign_in_email_button1"
 													id="email_verify_button1" name="email_button"
 													value="confirm" a href="#" onclick="alert('인증되었습니다')">
 												<input type="button" id="email_verify_button2"
-													class="sign_in_email_button2" name="email_button"
+													class="signup_sign_in_email_button2" name="email_button"
 													value="resend" a href="#" onclick="alert('인증메일을 재발급되었습니다')">
-											</div>
 										</div>
 									</td>
 								</tr>
 
-								<tr id="comp_none3" class="hide_1">
+								<tr id="comp_none3" class="signup_hide_company">
 									<th>휴대폰 번호</th>
 									<td>
-										<div class="td_div_po">
+										<div class="signup_td_div_po">
 											<input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												required maxlength="3" name="userPhoneNum1"
-												id="userPhoneNum1" class="sign_in phone"
+												id="userPhoneNum1" class="sign_in_phone_input"
 												onkeypress="keycheck1(this)"> - <input type="text"
 												required
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="userPhoneNum2" id="userPhoneNum2" maxlength="4"
-												class="sign_in phone" onkeypress="keycheck2(this)">
+												class="sign_in_phone_input" onkeypress="keycheck2(this)">
 											- <input type="text" required
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="userPhoneNum3" id="userPhoneNum3" maxlength="4"
-												class="sign_in phone">
+												class="sign_in_phone_input">
 										</div>
 									</td>
 								</tr>
 
 
 
-								<tr id="comp_none4" class="hide_1">
+								<tr id="comp_none4" class="signup_hide_company">
 									<th>생년월일</th>
 									<td>
-										<div class="td_div_po">
-											<input type="date" required class="sign_in" id="userBday"
+										<div class="signup_td_div_po">
+											<input type="date" required class="signup_sign_in_input" id="userBday"
 												name="userBday">
 										</div>
 									</td>
@@ -458,11 +455,11 @@
 
 
 			</div>
-			<div class="button_div">
-				<input type="button" class="previous_button" id="prev_button"
+			<div class="signup_button_div">
+				<input type="button" class="signup_previous_button" id="prev_button"
 					value="Prev" onclick="alert('이전화면으로 돌아갑니다');"> <input
 					
-					type="submit" class="next_button" id="nxt_button" value="JOIN"
+					type="submit" class="signup_next_button" id="nxt_button" value="JOIN"
 					onclick="formCheck(form);">
 			</div>
 
@@ -512,6 +509,5 @@
 
 
 	</div>
-
-</body>
+    </body>
 </html>
