@@ -10,8 +10,7 @@
 			<div class="support_box ma">
 				<div class="support_content_title">
 					<h2>후원안내</h2>
-					<span>나눔이란 특정한 사람에 의해 실시되는 특별한 활동이 아니라 누구나 언제 어디서라도 참여할 수 있는
-						활동입니다!<br> 
+					<span>한 손은 나 자신을 돕는 손이고,다른 한 손은 다른 사람을 돕는 손이다.
 					</span>
 				</div>
 				<div class="support_content_benefits">

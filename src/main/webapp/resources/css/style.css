@@ -1076,14 +1076,29 @@ font-size: 20px;
 /*--------------------------------------------------------------
 # 후원안내
 --------------------------------------------------------------*/
-
-
 .support_box {
 	width: 1000px;
 	padding: 120px 40px 60px;
 	margin: 0 auto;
 	text-align: center;
 }
+.support_box.s {
+	width: 800px;
+}
+.support_box .nextbtn {
+	outline: 0;
+	border: 0;
+	background: #ee9700;
+	width: 200px;
+	line-height: 50px;
+	margin: 0 auto;
+	letter-spacing: 5px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 8px;
+}
+
 
 .support_box .support_content_box {
 	padding: 10px 40px;
@@ -1124,8 +1139,30 @@ font-size: 20px;
 	width: 180px;
 	margin-bottom: 20px;
 }
-.support_box  .support_content_benefits .support_content_benefits_ti.ba {
+
+.support_box  .support_content_benefits .support_content_benefits_ti.le
+	{
+	margin-left: 30px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_ti.ba
+	{
 	width: 100%;
+	margin: 0
+}
+
+.support_box  .support_content_benefits .table tbody tr {
+	line-height: 50px;
+}
+
+.support_box  .support_content_benefits .table tbody tr:first-child>td {
+	width: 80px;
+}
+
+.support_box  .support_content_benefits .table tbody tr td input {
+	outline: 0;
+	height: 40px;
+	border: 1px solid #dddddd;
 }
 
 .support_box  .support_content_benefits .support_content_benefits_ti h3
@@ -1135,13 +1172,16 @@ font-size: 20px;
 }
 
 .support_box  .support_content_benefits .support_content_benefits_txt {
-	padding: 40px;font-size: 15px;
+	padding: 40px;
+	font-size: 15px;
 	background: #fff1de;
 	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
 	border-radius: 15px;
 	margin-bottom: 30px;
 }
-.support_box  .support_content_benefits .support_content_benefits_txt span{
+
+.support_box  .support_content_benefits .support_content_benefits_txt span
+	{
 	margin-bottom: 10px;
 }
 
@@ -1160,6 +1200,55 @@ font-size: 20px;
 	font-size: 13px;
 }
 
+.support_box  .support_content_benefits .support_content_benefits_txt.sm
+	{
+	padding: 40px;
+	width: 650px;
+	display: table;
+	margin: 0 auto;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .support_content_benefits_con
+	{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .support_content_benefits_con.img
+	{
+	padding: 0 20px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .support_content_benefits_con .support_content_benefits_select_con
+	{
+	text-align: center;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .support_content_benefits_con .support_content_benefits_select_con.txt
+	{
+	margin-top: 55px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .support_content_benefits_con .support_content_benefits_select_con.txt p
+	{
+	margin: 0;
+}
+
+.support_box .support_content_benefits .support_content_benefits_txt .support_content_benefits_con img
+	{
+	width: 200px;
+	vertical-align: top;
+}
+
+.support_box .support_content_benefits .support_content_benefits_txt .support_content_benefits_con .support_content_benefits_select_con select
+	{
+	width: 225px;
+	outline: 0;
+	border: 1px solid #f8f8f8;
+	border-radius: 8px;
+	font-size: 18px;
+	padding: 20px;
+}
 
 .support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_me
 	{
@@ -1208,6 +1297,32 @@ font-size: 20px;
 .support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box p
 	{
 	font-size: 12px;
+}
+
+.support_box  .support_content_benefits .payment_content_benefits {
+	border-bottom: 1px solid #dddddd;
+	padding: 30px;
+}
+
+.form-check-input:checked {
+	background-color: #e59100;
+	border-color: #e59100;
+}
+
+.form-check-input {
+	vertical-align: middle;
+}
+
+.support_content_benefits .bankbook_no_name {
+	padding: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+.support_content_benefits .bankbook_no_name input {
+	outline: 0;
+	height: 40px;
+	border: 1px solid #dddddd;
+	margin-left: 20px;
 }
 
 /*------------담당자 : 김진영,김지훈------------
