@@ -29,8 +29,8 @@
             <div class="box_total_amount"><a>누적후원액 : </a><span>158,000원</span></div>
             <div class="box_center"><a>후원기관: </a><span> 품(pum)</span></div>
             <div class="box_receipt"><button class="box_receipt_btn">후원영수증</button></div>
-        </div> 
-        <%								}	
+        </div>  
+        <%								 }	
     	%> 
 	
         
