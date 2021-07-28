@@ -15,9 +15,9 @@
 						<li><a href="${pageContext.request.contextPath}/info_childcare.woo">육아 정보</a></li>
 						<li><a href="${pageContext.request.contextPath}/info_center.woo">시설 및 병원</a></li>
 					</ul></li>
-				<li class="dropdown"><a href="#"><span>후원</span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown"><a href="${pageContext.request.contextPath}/support_info.woo"><span>후원</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/donate_main.woo">후원 안내</a></li>
+						<li><a href="${pageContext.request.contextPath}/support_info.woo">후원 안내</a></li>
 						<li><a href="${pageContext.request.contextPath}/support.woo">후원 하기</a></li>
 					</ul></li>
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>

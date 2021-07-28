@@ -102,10 +102,15 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("support/support");
 		return mav;
 	}
-
-	@RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
-	public ModelAndView DonateMain(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("support/donate_main");
+	@RequestMapping(value = "support_info.woo", method = RequestMethod.GET)
+	public ModelAndView SupportInfo(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("support/support_info");
 		return mav;
 	}
+
+//	@RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
+//	public ModelAndView DonateMain(HttpServletRequest request) {
+//		ModelAndView mav = new ModelAndView("support/donate_main");
+//		return mav;
+//	}
 }

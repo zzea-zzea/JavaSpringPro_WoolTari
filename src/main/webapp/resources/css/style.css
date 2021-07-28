@@ -982,14 +982,6 @@ section {
 	height: 67px;
 }
 
-/* .policy_box  .policy_content_download { */
-/* 	height: 115px; */
-/* 	padding: 20px; */
-/* 	background: #fff; */
-/* 	box-shadow: 0 0 20px rgb(0 0 0/ 13%); */
-/* 	border-radius: 15px; */
-/* } */
-/*
 
 /*--------------------------------------------------------------
 # 시설및 병원
@@ -1081,8 +1073,143 @@ section {
 font-size: 20px;
 	}
 
------------
--담당자 : 김진영,김지훈------------
+/*--------------------------------------------------------------
+# 후원안내
+--------------------------------------------------------------*/
+.support_main {
+	background: moccasin;
+}
+
+.support_box {
+	width: 1000px;
+	padding: 120px 40px 60px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.support_box .support_content_box {
+	padding: 10px 40px;
+}
+
+.support_box  .support_content_title {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.support_box  .support_content_title h2 {
+	margin-bottom: 10px;
+}
+
+.support_box  .support_content_title span {
+	font-size: 13px;
+}
+
+.support_box  .support_content_benefits {
+	text-align: left;
+	margin: 30px 0;
+	padding: 10px;
+}
+.support_box  .support_content_benefits button {
+	width: 100%;
+    border: 0;
+    background: #ffa200;
+    box-shadow: 0 0 20px rgb(0 0 0 / 13%);
+    border-radius: 15px;
+    height: 60px;
+    font-size: 27px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_ti {
+	border-bottom: 10px solid #ffc258;
+	width: 180px;
+	margin-bottom: 20px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_ti h3
+	{
+	font-size: 25px;
+	margin-left: 10px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt {
+	padding: 40px;
+	background: #fff;
+	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
+	border-radius: 15px;
+	margin-bottom: 30px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt.bo
+	{
+	margin-bottom: 5px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .le
+	{
+	margin-left: 16px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_txt .fon
+	{
+	font-size: 13px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img {
+	
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_me
+	{
+	margin: 0 auto;
+	width: fit-content
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box
+	{
+	width: fit-content;
+	display: inline-block;
+	text-align: center;
+	margin: 1px;
+	padding: 40px 20px;
+	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
+	border-radius: 15px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box.sin
+	{
+	background: #fef4e8;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box.fam
+	{
+	background: #f0faf7;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box.ri
+	{
+	background: aliceblue;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box img
+	{
+	width: 180px;
+	height: 180px;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box h4
+	{
+	font-size: 15px;
+	margin: 10px 0;
+}
+
+.support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_box p
+	{
+	font-size: 12px;
+}
+
+/*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
 */
