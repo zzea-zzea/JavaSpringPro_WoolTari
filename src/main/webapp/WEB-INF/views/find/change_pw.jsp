@@ -71,38 +71,37 @@
                         <g>
                         </g>
                     </svg></button>
-                <div class="title_find_menu">
-                    <h3 class="title_find_menu_new_pw">새 비밀번호 변경</h3>
-                </div>
+               <div class="title_find_menu">
+				<h3 class="title_find_menu_new_pw">새 비밀번호 변경</h3>
+			</div>
 
-                <div class="menu_new_pw_box">
-                    <div class="menu_new_pw_box_content">
-                        <input class="menu_new_pw_box_txtpw" placeholder="새 비밀번호" type="password" id="password" onkeyup="chkPW();">
-                        <div>
-                            <span class="menu_new_pw_box_small_text">*숫자,특수문자,영대소문자 조합 필수</span>
-                            <br>
-                            <span class="menu_new_pw_box_pw" id="pw_msg" onkeyup="chkPW();"></span>
-                        </div>
+			<div class="menu_new_pw_box">
+				<div class="menu_new_pw_box_content">
+					<input class="box_txtpw" placeholder="새 비밀번호" type="password"
+						id="password" onkeyup="chkPW();">
+					<div class="menu_new_span_box">
+						<span class="small_text">*숫자,특수문자,영대소문자 조합 필수</span> <br> <span
+							class="menu_new_pw_box_pw" id="pw_msg" onkeyup="chkPW();"></span>
+					</div>
 
-                        <br>
-                        <input class="menu_new_pw_box_txtpw_re" placeholder="새 비밀번호 확인" type="password" id="password1" onkeyup="atPW();">
-                        <br>
-                        <span class="pw_ch" onkeyup="atPW();" id="pw_at_msg"></span>
-
+					<br> <input class="box_txtpw_re" placeholder="새 비밀번호 확인"
+						type="password" id="password1" onkeyup="atPW();"> <br>
+					<span class="menu_new_pw_box_pw" onkeyup="atPW();" id="pw_at_msg"></span>
 
 
 
 
-                    </div>
-                </div>
-                <div class="menu_new_pw_btn">
-                    <button class="menu_pw_box_new_btn" onclick="chkPW()">비밀번호 변경</button>
-                </div>
-            </div>
-        </div>
-<!--     </div> -->
 
-    <script type="text/javascript">
+				</div>
+			</div>
+			<div class="box_find">
+				<button class="find_btn" onclick="chkPW()">비밀번호 변경</button>
+			</div>
+		</div>
+	</div>
+	<!--     </div> -->
+
+	<script type="text/javascript">
         //      const modalOpenBtn = document.getElementById("modal-open-btn");
         const modalCloseBtn = document.getElementById("modal-close-btn");
         const modalWrapper = document.querySelector(".modal-wrapper");
@@ -136,4 +135,5 @@
 
 
 
-</body></html>
+</body>
+</html>
