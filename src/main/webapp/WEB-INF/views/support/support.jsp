@@ -38,6 +38,42 @@
 						</div>
 					</div>
 				</div>
+				<div class="support_content_benefits">
+					<div class="support_content_benefits_ti ba">
+						<h3>후원자 정보 입력</h3>
+					</div>
+					<table class="table table-striped ">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>컬럼2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>데이터2</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>데이터2</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>데이터2</td>
+							</tr>
+							<tr class="success">
+								<td>4</td>
+								<td>데이터2</td>
+							</tr>
+							<tr class="danger">
+								<td>5</td>
+								<td>데이터2</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
 			</div>
 		</main>
 	</form>

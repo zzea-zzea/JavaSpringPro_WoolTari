@@ -1124,6 +1124,9 @@ font-size: 20px;
 	width: 180px;
 	margin-bottom: 20px;
 }
+.support_box  .support_content_benefits .support_content_benefits_ti.ba {
+	width: 100%;
+}
 
 .support_box  .support_content_benefits .support_content_benefits_ti h3
 	{
