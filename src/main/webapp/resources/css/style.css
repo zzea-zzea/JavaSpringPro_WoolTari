@@ -2072,23 +2072,6 @@ font-size: 20px;
 페이지 파일명 : terms_and_conditions.jsp
 */
 
-@charset "UTF-8";
-
-@font-face {
-    font-family: 'SDSamliphopangche_Basic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff')format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Cafe24SsurroundAir';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*        ------------- 위에 폰트 쓸수있는 스타일시트 ------*/
 .modal_body{
    box-sizing: border-box;
 }
@@ -2180,7 +2163,6 @@ html,
 
 .terms_and_conditions_body .terms_and_conditions_wrap label {
     display: block;
-/*    ??*/
 }
 
 
@@ -2254,7 +2236,7 @@ html,
 	}
 
 
-.terms_and_conditions_wrap .label .terms_and_conditions_required::after {
+.terms_and_conditions_wrap .label required::after {
 	  margin-left: 4px;
 	  font-size: 13px;
 	  font-weight: 400;
@@ -2333,11 +2315,9 @@ html,
 */
 
 .signup_head {
-    font-family: 'Cafe24SsurroundAir';
     font-size:45px;
     color: rgb(189,115,115);
     font-weight:700;
-    font-family: 'Cafe24SsurroundAir';
     text-align: center;
 
 }
@@ -2353,9 +2333,6 @@ html,
     border: 0px solid;
     position: relative;
     padding: 10px 0;
-    /*            -------사용 예----*/
-    font-family: 'Cafe24SsurroundAir';
-    /*        --------------------------------------- */
 }
 
 .signup_join_div{
@@ -2382,7 +2359,6 @@ html,
     font-weight: bold;
     border: 0;
     border-radius: 8px;
-    font-family: 'Cafe24SsurroundAir';
 
 }
 
@@ -2397,7 +2373,6 @@ html,
     border: 0;
     position: relative;
 	bottom:40px;
-    font-family: 'Cafe24SsurroundAir';
     top: 50px;
     left: 20px
 
@@ -2415,10 +2390,8 @@ html,
     border-radius: 50px;
     border: 0;
     position: relative;
-/*    right: 440px;*/
     left: 250px;
     bottom:-50px;
-    font-family: 'Cafe24SsurroundAir';
 }
 
 
@@ -2446,8 +2419,6 @@ html,
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
-
 }
 
 .signup_sign_in_email_button1{
@@ -2459,7 +2430,6 @@ html,
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
     position: relative;
     left: 230px;
     bottom: 15px;
@@ -2473,7 +2443,6 @@ html,
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
     position: relative;
     left: 230px;
     bottom:15px;
@@ -2490,10 +2459,6 @@ html,
     background: #f8f8f8;
     height:100px;
     border-radius: 20px;
-}
-
-.signup_table1 th {
-    font-family: 'Cafe24SsurroundAir';
 }
 
 
@@ -2543,31 +2508,13 @@ html,
 .signup_pw_text{
    font-size: 12px;
     font-weight: bold;
-    font-family: 'Cafe24SsurroundAir';
     color: red;
 }
 
 .signup_email_selectbox{
     width: 100px; 
     height: 30px;
-@charset "UTF-8";
-
-@font-face {
-    font-family: 'SDSamliphopangche_Basic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff')format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Cafe24SsurroundAir';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*        ------------- 위에 폰트 쓸수있는 스타일시트 ------*/
-
+    
 
 .modal_body{
    box-sizing: border-box;
@@ -2640,11 +2587,9 @@ html,
 
 
 .signup_signup_form .signup_head {
-    font-family: 'Cafe24SsurroundAir';
     font-size:20px;
     color: rgb(189,115,115);
     font-weight:700;
-    font-family: 'Cafe24SsurroundAir';
     text-align: center;
 
 }
@@ -2666,9 +2611,6 @@ html,
     border: solid black 2px;
 }
 
-.signup_signup_form .signup_join_div .signup_table1.th {
-    font-family: 'Cafe24SsurroundAir';
-}
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po {
     width: 50%;
@@ -2725,7 +2667,6 @@ html,
 
 
 
-
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email {
     border: 0px solid;
     position: relative;
@@ -2733,7 +2674,6 @@ html,
     height:50px;
 
 }
-
 
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email .signup_sign_in_email_input {
@@ -2817,12 +2757,9 @@ html,
 
 
 .form1 {
-    border: 2px solid black;
     padding: 20px;
-    position: absolute;
+    position: relative;
 }
-
-
 
 
 .signup_form .signup_join_div .signup_table1 .signup_companyName_and_Number{
@@ -2857,7 +2794,6 @@ html,
     border-radius: 50px;
     border: 0;
     position: relative;
-/*    right: 440px;*/
     left: 1000px;
     bottom:-50px;
 }
@@ -3485,7 +3421,6 @@ html,
 .login_box .login_box_menu {
 	width: 390px;
 	letter-spacing: 0.3;
-	font-family: 'Cafe24SsurroundAir';
 }
 
 .login_box .login_box_menu fieldset {
@@ -3625,7 +3560,6 @@ html,
 
 .login_box .login_box_menu .login_logo_wrap h1{
 	font-size: 50px;
-	font-family: "SDSamliphopangche_Basic";
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt:hover {

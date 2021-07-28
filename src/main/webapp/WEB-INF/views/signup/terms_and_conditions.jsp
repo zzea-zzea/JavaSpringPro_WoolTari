@@ -7,6 +7,7 @@
 <body>
    
    <%@ include file="../index.jsp" %>
+   	<main class="terms_and_conditions_main"> 
    
       <form>
 
@@ -189,8 +190,9 @@ for(var i=0 ; i<chkbox.length ; i++) {
           </div>
           
     </form>
+</main>
 </body>
-    
+   
    
 
 

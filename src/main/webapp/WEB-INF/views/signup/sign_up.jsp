@@ -8,6 +8,8 @@
 
 	<%@ include file="../index.jsp" %>
 
+	<main class="sign_up_main"> 
+
 <div class="modal-wrapper">
 		<div class="modal-wrapper-box">
 			<button id="modal-close-btn" class="modal-close-btn">
@@ -509,5 +511,6 @@
 
 
 	</div>
+	</main>
     </body>
 </html>
