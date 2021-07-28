@@ -4,10 +4,8 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="content.woo">
-			<div class="locate_content ma">
-				<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▶ 커뮤니티</div>
-			</div>
-			<div id="border">
+	<main class="content_main"> 
+				<div id="border">
 				<div class="community_first_box">
 					<div class="community_title">
 						<h3>
@@ -73,6 +71,7 @@
 					<!-- 				 <a href="#" class="bt">마지막 페이지</a>  -->
 				</div>
 			</div>
+			</main>
 	</form>
 </body>
 </html>

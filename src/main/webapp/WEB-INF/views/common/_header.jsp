@@ -22,7 +22,7 @@
 					</ul></li>
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
 
-				<li><a class="btn_def">Login</a></li>
+				<li><a class="btn_def" href="${pageContext.request.contextPath}/login.woo">Login</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>
