@@ -77,17 +77,17 @@
 				<div class= "menu_pw_box">
 					<div class="menu_pw_box_content">
 
-						<input class="menu_pw_box_txt_name" placeholder="이름"> <br> 
-						<input class="menu_pw_box_txt_email" placeholder="이메일">
-						<button type="button" class="menu_pw_box_txt_email_btn"
+						<input class="txt_name" placeholder="이름"> <br> 
+						<input class="txt_email" placeholder="이메일">
+						<button type="button" class="email_btn"
 							onclick="alert('인증메일을 보냈습니다'); div_show();">확인</button>
 						<br>
 
-						<div id="user_email" style="display: none">
-							<input class="menu_pw_box_txt_email_num" placeholder="이메일 인증번호 확인"
+						<div id="user_email" style="display: none" class="menu_pw_hide_box">
+							<input class="txt_email_num" placeholder="이메일 인증번호 확인"
 								onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 
-							<button class="menu_pw_box_txt_email_re_btn">재발급</button>
+							<button class="email_re_btn">재발급</button>
 							<br>
 						</div>
 
@@ -98,8 +98,8 @@
 
 
 
-				<div class="menu_pw_box_find">
-					<button class="menu_pw_box_find_btn"><a onclick="location.href='change_pw.jsp'">비밀번호 찾기</button>
+				<div class="box_find">
+					<button class="find_btn"><a onclick="location.href='change_pw.jsp'">비밀번호 찾기</button>
 				</div>
 
 			</div>

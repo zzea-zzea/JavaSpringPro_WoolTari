@@ -62,46 +62,45 @@
 				</button>
 
 
-				<div class="title_find_menu">
+		<div class="title_find_menu">
 					<h3 class="title_find_menu_id">아이디 찾기</h3>
 				</div>
 				<div class="menu_choice_box">
 					<ul class="menu_choice_box_op">
 						<li class="menu_choice_box_id" style="background: rgba(185, 108, 108, 0.5);"><a>아이디
 								찾기</a></li>
-						<li class="menu_choice_box_pw"><a
-							onclick="location.href='find_pw.jsp'">비밀번호 찾기</a></li>
+						<li class="menu_choice_box_pw"><a>비밀번호 찾기</a></li>
 					</ul>
 				</div>
 
 				<div class="menu_id_box" id="input_box">
 					<div class="menu_id_box_content">
-						<select class="menu_id_box_content_choice_box" id="selectBox" onclick="Change()">
+						<select class="content_choice_box" id="selectBox" onclick="Change()">
 							<option value="1">개인</option>
 							<option value="2">사업자</option>
 						</select> <br> 
-						<input class="menu_id_box_txt_name" name="in_text"
+						<input class="txt_name" name="in_text"
 							placeholder="이름"> 
 							<br>
-						<div id="div1" style="display: none">
-							<input class="menu_id_box_txt_business_num" placeholder="사업자번호"
+						<div id="div1" style="display: none" class="menu_id_hide_box">
+							<input class="txt_business_num" placeholder="사업자번호"
 								name="in_text"
 								onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" /> <br>
-							<div class="menu_id_box_txt_hide">
-							<span class="menu_id_box_txt_hide_small">'-'을 제외한 번호만 입력해주세요</span>
+							<div class="txt_hide">
+							<span class="hide_small">'-'을 제외한 번호만 입력해주세요</span>
 						</div>
 						</div>
-						<input class="menu_id_box_txt_email" placeholder="이메일" name="in_text">
-						<button type="button" class="menu_id_box_txt_email_btn"
+						<input class="txt_email" placeholder="이메일" name="in_text">
+						<button type="button" class="email_btn"
 							onclick="alert('인증메일을 보냈습니다'); div_show();">확인</button>
 						<br>
 
-						<div id="user_email" style="display: none">
-							<input class="menu_id_box_txt_email_num" placeholder="이메일 인증번호 확인"
+						<div id="user_email" style="display: none" class="menu_id_hide_box">
+							<input class="txt_email_num" placeholder="이메일 인증번호 확인"
 								name="in_text"
 								onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 
-							<button class="menu_id_box_txt_email_re_btn">재발급</button>
+							<button class="email_re_btn">재발급</button>
 							<br>
 						</div>
 
@@ -110,8 +109,8 @@
 
 				</div>
 
-				<div class="menu_id_box_find">
-					<button class="menu_id_box_find_btn">아이디 찾기</button>
+				<div class="box_find">
+					<button class="find_btn">아이디 찾기</button>
 				</div>
 
 

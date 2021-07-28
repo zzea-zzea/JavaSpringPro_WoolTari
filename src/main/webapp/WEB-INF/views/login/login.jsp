@@ -61,44 +61,41 @@
 						<fieldset>
 							<header>
 								<div class="login_logo_wrap">
-									<h1 class="login_logo_wrap_header">
-										<a class="login_logo_wrap_header_txt"><span class="login_logo_wrap_header_txt_dig">W</span>ooltari</a>
+									<h1>
+										<a class="header_txt"><span class="txt_dig">W</span>ooltari</a>
 									</h1>
 								</div>
 							</header>
 							<div class="login_box_input">
-								<div class="login_box_input_id">
-									<label class="login_box_input_id_title">아이디</label> <input class="login_box_input_id_txt"
-										type="email" placeholder="아이디">
+								<div class="input_id_box">
+									<label>아이디</label> <input type="email" placeholder="아이디">
 								</div>
-								<div class="login_box_input_pw">
-									<label class="login_box_input_pw_title">비밀번호</label> <input class="login_box_input_pw_txt"
-										type="password" placeholder="비밀번호">
+								<div class="input_pw_box">
+									<label>비밀번호</label> <input type="password" placeholder="비밀번호">
 								</div>
 							</div>
-							<button type="submit" class="login_box_input_btn" disabled>LOGIN</button>
-							<div class="login_append">
-								<span class="login_box_small_menu_join"> <a href="" class="login_box_small_menu_join_link">회원가입</a></span>
-								<span class="login_box_small_menu_find"> <a href="find_id.jsp"
-									class="login_box_small_menu_find_link">아이디 / 비밀번호 찾기</a>
+							<button type="submit" class="login_btn" disabled>LOGIN</button>
+							<div class="login_box_small_menu">
+								<span class="menu_join"> <a class="join_link">회원가입</a></span>
+								<span class="menu_find"> <a class="find_link">아이디 / 비밀번호 찾기</a>
 								</span>
 							</div>
 						</fieldset>
-						<section class="login_box_another_login">
-							<h2 class="login_box_another_login_line">
-								────<a class="login_box_another_login_line_text">&nbsp;또는&nbsp;</a>────
+						<section class="another_login">
+							<h2 class="another_login_line">
+								────<a>&nbsp;또는&nbsp;</a>────
 							</h2>
-							<ul class="login_box_another_login_list">
-								<button type="button" class="login_box_another_login_list_naver">
+							<ul class="another_login_list">
+								<button type="button" class="login_naver">
 									<img src="img/%EB%84%A4%EC%9D%B4%EB%B2%84.PNG"
-										class="login_box_another_login_list_naver_img">
+										class="naver_img">
 								</button>
-								<button type="button" class="login_box_another_login_list_kakao">
+								<button type="button" class="login_kakao">
 									<img src="img/%EC%B9%B4%EC%B9%B4%EC%98%A4.PNG"
-										class="login_box_another_login_list_kakao_img">
+										class="kakao_img">
 								</button>
-								<button type="button" class="login_box_another_login_list_google">
-									<img src="img/%EA%B5%AC%EA%B8%80.PNG" class="login_box_another_login_list_google_img">
+								<button type="button" class="login_google">
+									<img src="img/%EA%B5%AC%EA%B8%80.PNG" class="google_img">
 								</button>
 							</ul>
 						</section>

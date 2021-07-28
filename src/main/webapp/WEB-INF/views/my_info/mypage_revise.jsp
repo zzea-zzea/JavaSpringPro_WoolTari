@@ -6,45 +6,45 @@
 <body>
 <%@ include file="../common/_header.jsp"%>
 
-    <div class="box_main">
-    <div class="menu_choice_box">
-        <ul class="menu_tap">
-        <li class="my_info" style="background: rgba( 185, 108, 108, 0.5);">내 정보관리</li>
-            <li class="my_support" onclick="location.href='support.jsp'">후원내역</li>
-            <li class="my_comment" onclick="location.href='comment.jsp'">내 글/댓글</li>
+   <div class="mypage_box_main">
+    <div class="main_choice_box">
+        <ul class="choice_menu_tap">
+        <li class="menu_tap_info" style="background: rgba( 185, 108, 108, 0.5);">내 정보관리</li>
+            <li class="menu_tap_support" onclick="location.href='support.jsp'">후원내역</li>
+            <li class="menu_tap_comment" onclick="location.href='comment.jsp'">내 글/댓글</li>
         </ul>
         </div>
     
-    <div class="full">
+    <div class="box_main_my">
         
         
-		<h3>내 정보관리</h3>
-		<div class="my_info">
+		<h3 class="box_main_my_title">내 정보관리</h3>
+		<div class="box_main_my_info">
 			 
-				<header class="header">개인정보</header>
+				<header class="info_title">개인정보</header>
                 <br><br><br>
-				<div class="name" ><a>이름</a><span>이주현</span></div>
-                <div class="nick" ><a>별명</a><input></div>
-				<div class="birthday"><a>생년월일</a><span>970221</span></div>
-				<div class="gender"><a>성별</a>
+				<div class="info_name" ><a>이름</a><span>이주현</span></div>
+                <div class="info_nick" ><a>별명</a><input class="info_input"></div>
+				<div class="info_birthday"><a>생년월일</a><span>970221</span></div>
+				<div class="info_gender"><a>성별</a>
                     <span>남자</span></div>
-				<div class="password"><a>비밀번호</a>
-                    <input type="password"></div>
+				<div class="info_password"><a>비밀번호</a>
+                    <input type="password"  class="info_input"></div>
 		
 		</div>
         
-		<div class="my_contact" >
-			<header class="header">연락처 정보</header>
+		<div class="box_main_my_contact" >
+			<header class="contact_title">연락처 정보</header>
             <br><br><br>
-			<div class="email"><a>이메일</a>
-            <input></div>
-			<div class="ph_num"><a>휴대전화</a>
-                <input></div>
+			<div class="contact_email"><a>이메일</a>
+            <input class="contact_input"></div>
+			<div class="contact_num"><a>휴대전화</a>
+                <input class="contact_input"></div>
 		</div>
         
-        <div class="btn_gup">
-        <button class="ch_btn">취소</button>
-        <button class="save_btn">수정완료</button>
+        <div class="box_main_my_btn_gup">
+        <button class="btn_cancel">취소</button>
+        <button class="btn_save">수정완료</button>
         </div>
 	</div>
 
