@@ -7,14 +7,22 @@
 <body>
    
    <%@ include file="../index.jsp" %>
+   	<main class="terms_and_conditions_main"> 
    
-        <div class="modal-wrapper">
-            <div class="modal-wrapper-box">
-                <button id="modal-close-btn" class="modal-close-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewbox="0 0 52.001 52.001" style="enable-background:new 0 0 52.001 52.001;" xml:space="preserve">
+      <form>
+
+	<div class="modal-wrapper">
+		<div class="modal-wrapper-box">
+			<button id="modal-close-btn" class="modal-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+					id="Capa_1" x="0px" y="0px" viewbox="0 0 52.001 52.001"
+					style="enable-background: new 0 0 52.001 52.001;"
+					xml:space="preserve">
                         <g>
                             <g>
-                                <path style="fill:#030104;" d="M47.743,41.758L33.955,26.001l13.788-15.758c2.343-2.344,2.343-6.143,0-8.486    c-2.345-2.343-6.144-2.342-8.486,0.001L26,16.91L12.743,1.758C10.4-0.584,6.602-0.585,4.257,1.757    c-2.343,2.344-2.343,6.143,0,8.486l13.788,15.758L4.257,41.758c-2.343,2.343-2.343,6.142-0.001,8.485    c2.344,2.344,6.143,2.344,8.487,0L26,35.091l13.257,15.152c2.345,2.344,6.144,2.344,8.487,0    C50.086,47.9,50.086,44.101,47.743,41.758z" />
+                                <path style="fill:#030104;"
+						d="M47.743,41.758L33.955,26.001l13.788-15.758c2.343-2.344,2.343-6.143,0-8.486    c-2.345-2.343-6.144-2.342-8.486,0.001L26,16.91L12.743,1.758C10.4-0.584,6.602-0.585,4.257,1.757    c-2.343,2.344-2.343,6.143,0,8.486l13.788,15.758L4.257,41.758c-2.343,2.343-2.343,6.142-0.001,8.485    c2.344,2.344,6.143,2.344,8.487,0L26,35.091l13.257,15.152c2.345,2.344,6.144,2.344,8.487,0    C50.086,47.9,50.086,44.101,47.743,41.758z" />
                             </g>
                         </g>
                         <g>
@@ -48,8 +56,7 @@
                         <g>
                         </g>
                     </svg>
-                </button>
-
+			</button>
         
   
 
@@ -77,18 +84,17 @@ for(var i=0 ; i<chkbox.length ; i++) {
       
     </script>
                 
-<body>
-
-    <div class="wrap">
-        <div class="logo">
+<body class="terms_and_conditions_body">
+    <div class="terms_and_conditions_wrap">
+        <div class="terms_and_conditions_wrap_logo">
             <h1><b>이용약관</b></h1>
         </div>
-        <div class="contents">
-            <form action="/" method="POST" id="form__wrap">
+        <div class="terms_and_conditions_wrap_contents_div">
+            <form action="/" method="POST" id="terms_and_conditions_form__wrap">
                 <div class="terms__check__all">
-                <div class= "all_agree">
+                <div class= "terms_and_conditions_wrap_input__check_all_agree">
                    
-                    <label for="agree_all" class="all_ck">
+                    <label for="agree_all" class="terms_and_conditions_wrap_input__check_all_agree_all_ck">
                         <input type="checkbox"  name="agree_all" id="agree_all">
                         <span class="checked_all">모두 동의합니다</span>
                     </label>
@@ -106,16 +112,16 @@ for(var i=0 ; i<chkbox.length ; i++) {
                         });
 
                     </script>
-                    <ul class="terms__list">
-                        <li class="terms__box">
-                            <div class="input__check">
-                                <label for="agree" class ="required">
+                    <ul class="terms_and_conditions_wrap_terms__list">
+                        <li class="terms_and_conditions_wrap_terms__box">
+                            <div class="terms_and_conditions_wrap_input__check">
+                                <label for="agree" class ="terms_and_conditions_required">
                                     <input type="checkbox" name="agree" value="1" required
                                            >
                                     <span>이용약관 동의</span>
                                 </label>
                             </div>
-                            <div class="terms__content">
+                            <div class="terms_and_conditions_wrap_terms__content">
                                 여러분을 환영합니다. 울타리 서비스 및 제품(이하 ‘서비스’)을 이용해
                                 주셔서 감사합니다. 본 약관은 다양한 울타리 서비스의 이용과 관련하여
                                 울타리 서비스를 제공하는 울타리 주식회사(이하 ‘울타리’)와 이를 이용하는
@@ -128,17 +134,17 @@ for(var i=0 ; i<chkbox.length ; i++) {
                             </div>
                         </li>
                         
-                                      <li class="terms__box">
-                            <div class="input__check">
+                                      <li class="terms_and_conditions_wrap_terms__box">
+                            <div class="terms_and_conditions_wrap_input__check">
                             <br>
-                                <label for="agree" class ="required">
+                                <label for="agree" class ="terms_and_conditions_required">
                                     <input type="checkbox" name="agree" value="1"  
                                            required>
                                       
                                     <span>개인정보 수집 및 이용 동의</span>
                                 </label>
                             </div>
-                            <div class="terms__content">
+                            <div class="terms_and_conditions_wrap_terms__content">
                                 개인정보보호법에 따라 울타리 회원가입 신청하시는 분께 수집하는
                                 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및
                                 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내
@@ -151,15 +157,15 @@ for(var i=0 ; i<chkbox.length ; i++) {
                             </div>
                         </li>
                         
-                        <li class="terms__box">
-                            <div class="input__check">
+                        <li class="terms_and_conditions_wrap_terms__box">
+                            <div class="terms_and_conditions_wrap_input__check">
                                 <label for="agree">
                                     <br>
                                     <input type="checkbox" name="agree" value="2">
                                     <span>이벤트, 혜택정보 수신동의<strong class="select_disable">(선택)</strong></span>
                                 </label>
                             </div>
-                            <div class="terms__content">
+                            <div class="terms_and_conditions_wrap_terms__content">
                                 울타리에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(울타리
                                 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스(별도
                                 회원 체계로 운영하거나 울타리 가입 이후 추가 가입하여 이용하는
@@ -174,16 +180,19 @@ for(var i=0 ; i<chkbox.length ; i++) {
 
 
             </form>
-             <button type="submit" class="next-button" onclick="agree();"
+             <button type="submit" class="terms_and_conditions_wrap_next-button" onclick="agree();"
                     >OK</button>
         </div>
         
     </div>
-</body>
-
-            </div>
+            </body>
         </div>
-    
+          </div>
+          
+    </form>
+</main>
+</body>
+   
    
 
 
@@ -202,4 +211,5 @@ for(var i=0 ; i<chkbox.length ; i++) {
                         modalWrapper.style.display = "none";
                     });
                 </script>
-</body></html>
+</html>
+       

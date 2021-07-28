@@ -1124,6 +1124,9 @@ font-size: 20px;
 	width: 180px;
 	margin-bottom: 20px;
 }
+.support_box  .support_content_benefits .support_content_benefits_ti.ba {
+	width: 100%;
+}
 
 .support_box  .support_content_benefits .support_content_benefits_ti h3
 	{
@@ -2072,81 +2075,182 @@ font-size: 20px;
 페이지 파일명 : terms_and_conditions.jsp
 */
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.modal_body{
+   box-sizing: border-box;
 }
 
-.wrap {
+.modal_body .modal-overlay {
+   background: rgba(255, 255, 255, 0.25);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal_body .modal-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgb(0 0 0/ 34%);
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal_body .modal-wrapper .modal-box {
+   background: white;
+   border-radius: 10px;
+   width: 450px;
+   height: 630px;
+   padding: 30px;
+   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+}
+
+.modal_body .modal-wrapper .modal-box.find {
+   height: 560px;
+   position: relative;
+}
+
+.modal_body .modal-wrapper .modal-box.ch {
+   height: 400px;
+   position: relative;
+}
+
+.modal-close-box {
+   text-align: right;
+}
+.modal_body .modal-wrapper .modal-box .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
+   background-color: white;
+   border: white;
+   float: right;
+}
+
+.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
+{
+   width: 20px;
+   opacity: 0.7;
+}
+
+.modal_body .modal-open-btn {
+   border-radius: 50px;
+   border: 2px solid #f2b09b;
+   background: #fff;
+   line-height: 32px;
+   font-size: 13px;
+   color: #b96c6c;
+   font-weight: bold;
+}
+    * {
+  box-sizing: border-box;
+}
+
+html,
+.terms_and_conditions_body{
+  height: 100%;
+  font-weight: 700;
+}
+
+.terms_and_conditions_body {
+  display: flex;
+  margin: 0;
+  background-color: #f5f6f7;
+}
+
+
+.terms_and_conditions_body .terms_and_conditions_wrap {
   margin: auto;
 }
 
-.wrap .logo {
-  text-align: center;
-  margin-bottom: 10px;
+.terms_and_conditions_body .terms_and_conditions_wrap label {
+    display: block;
 }
 
-.wrap .logo h1 {
-	font-family: 'Cafe24SsurroundAir';
+
+
+.terms_and_conditions_body .terms_and_conditions_wrap h1 {
 	margin: 0;
 	font-size: 30px;
 	color:#bd7373;
 }
 
-.wrap .contents {
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+ 
+
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div {
   padding: 60px;
   background-color: #ffffff;
   border: 1px solid #dadada;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   height: 750px;
+  position: relative;
   }
   
 
-#form__wrap {
+.terms_and_conditions_body .terms_and_conditions_wrap #terms_and_conditions_form__wrap {
   margin: 0 auto;
   width: 460px;
-  font-size: 14px;
- position: relative;
+  font-size: 600px;
+  position: relative;
+    
 }
 
-#form__wrap .terms__check__all {
+
+
+#terms_and_conditions_form__wrap .terms__check__all {
 	margin-bottom: 35px;
 }
 
-#form__wrap .terms__check__all label {
+#terms_and_conditions_form__wrap .terms__check__all label {
 	margin-left: 5px;
 	text-decoration: underline;
 	text-underline-position: under;
 	position: relative;
 	right: 80px;
-	bottom:20px;
+	bottom:50px;
 
 }
 
-.terms__list .terms__box {
-/*  margin: 0px 0;*/
-/*    position: absolute;*/
-/*    top: 500px;*/
-}
 
-.contents label {
+
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__all label {
   font-weight: 700;
     position: relative;
-    right:130px;
+    right:50px;
+    bottom:30px;
 }
 
-label.required::after {
+
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__all .terms_and_conditions_wrap_input__check_all_agree {
+	position: relative;
+	bottom:20px;
+	font-weight: 800;
+}
+
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__allterms_and_conditions_wrap_input__check_all_agree .terms_and_conditions_wrap_input__check_all_agree_all_ck {
+	position:relative;
+	bottom:100px;
+	}
+
+
+.terms_and_conditions_wrap .label required::after {
 	  margin-left: 4px;
 	  font-size: 13px;
 	  font-weight: 400;
 	  line-height: 24px;
 	  color: #0086ff;
 	  content: "(필수)";
+/*    ?? terms_and_conditions_wrap 클래스 안에 label들만. */
 }
 
-.terms__list .terms__content {
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__all .terms_and_conditions_wrap_terms__content {
+    
 	height: 150px;
 	overflow: auto;
 	margin-top: 5px;
@@ -2156,13 +2260,33 @@ label.required::after {
 	font-size: 12px;
 	width: 450px;
 	position:relative;
-	right: 80px;
+	right: 50px;
 	bottom:20px;
 	    
 	}
 
 
-.next-button {
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__all ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .terms_and_conditions_body .terms_and_conditions_wrap {
+    min-width: 280px;
+    padding: 20px;
+  }
+
+  #terms_and_conditions_form__wrap {
+    max-width: 460px;
+    width: auto;
+  }
+}
+
+
+.terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms_and_conditions_wrap_next-button {
     width: 120%;
     height: 40px;
     outline: none;
@@ -2172,64 +2296,18 @@ label.required::after {
     border: none;
     border-radius: 5px;
     transition-duration: 0.2s;
-    font-family: 'Cafe24SsurroundAir';
     font-weight: bold;
     position: relative;
-    right: 38px;
-    tio:-20px
-    font-size: 15px;
+    top:10px;
+    right: 37px;
+    font-size: 15;
     font-weight: bold;
-    bottom:30px;
-}
-
-
-@media (max-width: 768px) {
-  .wrap {
-    min-width: 280px;
-    padding: 20px;
-  }
-
-  #form__wrap {
-    max-width: 460px;
-    width: auto;
-  }
-}
-
-label {
-    display: block;
-}
-
-.all_ok {
-    position: absolute;
-}
-.all_ck {
-	position:relative;
-	right: 0px;
-	left: 0px;
-	bottom:40px;
-	}
-
-.all_agree {
-	position: relative;
-	right: 50px;
-	bottom:20px;
-	font-weight: 800;
-}
-        
-.privacy_label {
-    padding-left:20px;
 }
 
         
- .agree{
-    position: relative;
-    right: 100px;
-        }
-        
-contents{
-    position: relative;
-}
- 
+  
+
+
  
 /*------------ 약관동의 end ------------*/
  
@@ -2240,11 +2318,9 @@ contents{
 */
 
 .signup_head {
-    font-family: 'Cafe24SsurroundAir';
     font-size:45px;
     color: rgb(189,115,115);
     font-weight:700;
-    font-family: 'Cafe24SsurroundAir';
     text-align: center;
 
 }
@@ -2260,9 +2336,6 @@ contents{
     border: 0px solid;
     position: relative;
     padding: 10px 0;
-    /*            -------사용 예----*/
-    font-family: 'Cafe24SsurroundAir';
-    /*        --------------------------------------- */
 }
 
 .signup_join_div{
@@ -2289,7 +2362,6 @@ contents{
     font-weight: bold;
     border: 0;
     border-radius: 8px;
-    font-family: 'Cafe24SsurroundAir';
 
 }
 
@@ -2304,7 +2376,6 @@ contents{
     border: 0;
     position: relative;
 	bottom:40px;
-    font-family: 'Cafe24SsurroundAir';
     top: 50px;
     left: 20px
 
@@ -2322,10 +2393,8 @@ contents{
     border-radius: 50px;
     border: 0;
     position: relative;
-/*    right: 440px;*/
     left: 250px;
     bottom:-50px;
-    font-family: 'Cafe24SsurroundAir';
 }
 
 
@@ -2353,8 +2422,6 @@ contents{
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
-
 }
 
 .signup_sign_in_email_button1{
@@ -2366,7 +2433,6 @@ contents{
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
     position: relative;
     left: 230px;
     bottom: 15px;
@@ -2380,7 +2446,6 @@ contents{
     background: #b96c6c;
     color: #fff;
     height: 30px;
-    font-family: 'Cafe24SsurroundAir';
     position: relative;
     left: 230px;
     bottom:15px;
@@ -2397,10 +2462,6 @@ contents{
     background: #f8f8f8;
     height:100px;
     border-radius: 20px;
-}
-
-.signup_table1 th {
-    font-family: 'Cafe24SsurroundAir';
 }
 
 
@@ -2450,14 +2511,296 @@ contents{
 .signup_pw_text{
    font-size: 12px;
     font-weight: bold;
-    font-family: 'Cafe24SsurroundAir';
     color: red;
 }
 
 .signup_email_selectbox{
     width: 100px; 
     height: 30px;
+    
+
+.modal_body{
+   box-sizing: border-box;
 }
+
+.modal_body .modal-overlay {
+   background: rgba(255, 255, 255, 0.25);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal_body .modal-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgb(0 0 0/ 34%);
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal_body .modal-wrapper .modal-box {
+   background: white;
+   border-radius: 10px;
+   width: 450px;
+   height: 630px;
+   padding: 30px;
+   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+}
+
+.modal_body .modal-wrapper .modal-box.find {
+   height: 560px;
+   position: relative;
+}
+
+.modal_body .modal-wrapper .modal-box.ch {
+   height: 400px;
+   position: relative;
+}
+
+.modal-close-box {
+   text-align: right;
+}
+.modal_body .modal-wrapper .modal-box .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
+   background-color: white;
+   border: white;
+   float: right;
+}
+
+.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
+{
+   width: 20px;
+   opacity: 0.7;
+}
+
+.modal_body .modal-open-btn {
+   border-radius: 50px;
+   border: 2px solid #f2b09b;
+   background: #fff;
+   line-height: 32px;
+   font-size: 13px;
+   color: #b96c6c;
+   font-weight: bold;
+}
+
+
+.signup_signup_form .signup_head {
+    font-size:20px;
+    color: rgb(189,115,115);
+    font-weight:700;
+    text-align: center;
+
+}
+
+.signup_signup_form{
+    position: relative;
+}
+
+.signup_signup_form .signup_join_div {
+	position: relative;
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    border: solid black 2px;
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po {
+    width: 50%;
+    border: 0px solid;
+    position: relative;
+    padding: 10px 0;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_email_selectbox{
+    width: 100px; 
+    height: 30px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_label_id_and_nickname {
+    padding-bottom: 35px;
+}
+
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_label_id_and_nickname .signup_td_div_po .signup_sign_in_input [type=text]{
+    width: 65%;
+    height: 30px;
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po input[type=button] {
+    position: relative;
+    right: 0;
+    width: 40%;
+    padding: 10px;
+    background: #bd7373;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 8px;
+    left:200px;
+    bottom: 25px;
+   
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_small_text {
+    font-size: 11px;
+    color: #666699;
+    letter-spacing: 0.5px;
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_pw_text{
+   font-size: 12px;
+    font-weight: bold;
+    color: red;
+}
+
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email {
+    border: 0px solid;
+    position: relative;
+    padding: 20px 0;
+    height:50px;
+
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email .signup_sign_in_email_input {
+    width: 100px;
+    height: 30px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email .signup_verify_button {
+    width: 60px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr {
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible {
+    display: none;
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_email_veri_text {
+   width: 220px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button1{
+    width:70px;
+    font-size: 13px;
+    font-weight: bolder;
+    border-radius: 40px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+    position: relative;
+    left: 230px;
+    bottom: 15px;
+}
+
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button2 {
+    width:70px;
+    font-size: 13px;
+    font-weight: bolder;
+    border-radius: 40px;
+    border: 2px solid;
+    background: #b96c6c;
+    color: #fff;
+    height: 30px;
+    position: relative;
+    left: 230px;
+    bottom:15px;
+}
+
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_hide_company .signup_td_div_po .sign_in_phone_input {
+    width: 100px;
+    height: 30px
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_hide_company .signup_td_div_po .signup_sign_in_input{
+    width: 65%;
+    height: 30px
+    
+}
+
+
+.form1 {
+    padding: 20px;
+    position: relative;
+}
+
+
+.signup_form .signup_join_div .signup_table1 .signup_companyName_and_Number{
+    display: none;
+}
+
+
+.signup_signup_form .signup_button_div input[type=button] {
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: rgb(102, 102, 102);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 0;
+    position: relative;
+	bottom:40px;
+    top: 50px;
+    left: 20px;
+
+}
+
+
+.signup_signup_form .signup_button_div input[type=submit] {
+    height: 40px;
+    width: 100px;
+    background: #bd7373;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 0;
+    position: relative;
+    left: 1000px;
+    bottom:-50px;
+}
+
 
 
 /*------------ 회원가입 end ------------*/
@@ -3081,7 +3424,6 @@ contents{
 .login_box .login_box_menu {
 	width: 390px;
 	letter-spacing: 0.3;
-	font-family: 'Cafe24SsurroundAir';
 }
 
 .login_box .login_box_menu fieldset {
@@ -3221,7 +3563,6 @@ contents{
 
 .login_box .login_box_menu .login_logo_wrap h1{
 	font-size: 50px;
-	font-family: "SDSamliphopangche_Basic";
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt:hover {
@@ -3309,7 +3650,9 @@ contents{
 
 
 .menu_id_box .menu_id_box_content .email_btn,
- .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn {
+ .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn,
+ .menu_pw_box .menu_pw_box_content .email_btn,
+ .menu_pw_box .menu_pw_box_content .user_email_txt .email_re_btn, {
     width: 80px;
     line-height: 35px;
     border-radius: 8px;
