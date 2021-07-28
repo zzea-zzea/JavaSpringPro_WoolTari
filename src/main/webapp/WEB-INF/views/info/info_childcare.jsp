@@ -8,32 +8,31 @@
 			function() {
 				$(".side_bar_content>a").click(
 						function() {
-							if ($(this).parent(".side_bar_content").children(
-									"ul").is(':hidden')) {
-								$(this).parent(".side_bar_content").children(
-										"ul").slideDown();
+							if ($(this).parent(".side_bar_content").children("ul").is(':hidden')) {
+								$(this).parent(".side_bar_content").children("ul").slideDown();
 							} else {
-								$(this).parent(".side_bar_content").children(
-										"ul").slideUp();
+								$(this).parent(".side_bar_content").children("ul").slideUp();
 							}
 							// 				 $(this).parent(".side_bar_content").children("ul").slideToggle(100);
 							// 			 not(this).parent(".side_bar_content").children("ul").slideUp(100);
 						});
+				$(".side_bar_content>a").click(
+						function() {
+							if ($(this).parent(".side_bar_content").children("hide").is(':hidden')) {
+								$('.side_bar_content>a').parent(".side_bar_content").children("hide").slideUp();
+								$(this).parent(".side_bar_content").children("hide").slideDown();
+							} else {
+								$(this).parent(".side_bar_content").children("hide").slideUp();
+							}
+						});
 
 				$(".childcare_content_menu>a").click(
 						function() {
-
-							// 			 $(this).parent(".childcare_content_menu").children("div").slideToggle("100");
-							if ($(this).parent(".childcare_content_menu")
-									.children("div").is(':hidden')) {
-								$('.childcare_content_menu>a').parent(
-										".childcare_content_menu").children(
-										"div").slideUp();
-								$(this).parent(".childcare_content_menu")
-										.children("div").slideDown();
+							if ($(this).parent(".childcare_content_menu").children("div").is(':hidden')) {
+								$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideUp();
+								$(this).parent(".childcare_content_menu").children("div").slideDown();
 							} else {
-								$(this).parent(".childcare_content_menu")
-										.children("div").slideUp();
+								$(this).parent(".childcare_content_menu").children("div").slideUp();
 							}
 						});
 				$(".info_content1").click(function() {
@@ -266,11 +265,8 @@
 						</div>
 						<div class="childcare_content">
 							<div class="childcare_content_menu">
-								<svg class="secsvg" xmlns:dc="http://purl.org/dc/elements/1.1/"
-									xmlns:cc="http://creativecommons.org/ns#"
-									xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-									xmlns:svg="http://www.w3.org/2000/svg"
-									xmlns="http://www.w3.org/2000/svg"
+								<svg class="secsvg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"xmlns:svg="http://www.w3.org/2000/svg"
+								xmlns="http://www.w3.org/2000/svg"
 									xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 									xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 									width="109.00304mm" height="95.90564mm"

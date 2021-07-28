@@ -1211,15 +1211,6 @@ font-size: 20px;
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
 */
-.locate_content ma{
-	margin-top: 100px;
-	margin-left: 20%;
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 180px;
-}
-
 #border {
 	height: 1000px;
 }
@@ -1227,7 +1218,7 @@ font-size: 20px;
 #border .community_first_box {
 	/* 	height: 1000px; */
 	height: 700px;
-	margin: 150px auto;
+	margin: 100px auto;
 	width: 1000px;
 }
 
@@ -1340,12 +1331,6 @@ font-size: 20px;
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content_view.jsp
 */
-.locate_content_view{
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 360px;
-}
 
 #border {
 	height: 1000px;
@@ -1353,7 +1338,7 @@ font-size: 20px;
 
 .community_first_view {
 	height: 1000px;
-	margin: 150px auto;
+	margin: 100px auto;
 	width: 1000px;
 }
 
@@ -1574,16 +1559,10 @@ font-size: 20px;
 사용된 페이지 : 게시판 수정
 페이지 파일명 : retouch_content.jsp
 */
-.locate_retouch_content ma{
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 330px;
-}
 
 .write_first_box {
 	height: 800px;
-	margin: 150px auto;
+	margin: 100px auto;
 	width: 800px;
 }
 
@@ -1726,12 +1705,6 @@ font-size: 20px;
 사용된 페이지 : 새 글 쓰기
 페이지 파일명 : new_content.jsp
 */
-.locate_new_content ma{
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 340px;
-}
 
 .write_first_box {
 	height: 800px;
@@ -1865,12 +1838,6 @@ font-size: 20px;
 사용된 페이지 : 새 공지사항 쓰기
 페이지 파일명 : new_notice.jsp
 */
-.locate_new_notice ma{
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 340px;
-}
 
 .write_first_box {
 	height: 800px;
@@ -1975,16 +1942,10 @@ font-size: 20px;
 사용된 페이지 : 공지사항 수정
 페이지 파일명 : retouch_notice.jsp
 */
-.locate_retouch_notice ma{
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	width: 330px;
-}
 
 .write_first_box {
 	height: 800px;
-	margin: 150px auto;
+	margin: 100px auto;
 	width: 800px;
 }
 

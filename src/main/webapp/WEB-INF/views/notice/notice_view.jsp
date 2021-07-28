@@ -31,10 +31,7 @@
 <body>
 	<%@ include file="../common/_link.jsp"%>
 	<form action="notice_view.woo">
-		<div class="locate_notice_view ma">
-			<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 공지사항 ▶ 공지사항
-				보기</div>
-		</div>
+		<main class="notice_view">
 		<div id="border">
 			<div class="community_first_view">
 				<div class="community_first_view_title">
@@ -94,6 +91,7 @@
 			<!-- community_first_view -->
 		</div>
 		<!-- border -->
+		</main>
 	</form>
 </body>
 </html>

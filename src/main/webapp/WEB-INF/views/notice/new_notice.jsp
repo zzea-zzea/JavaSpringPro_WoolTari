@@ -4,44 +4,44 @@
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="new_notice.woo">
-	<div class="locate_new_notice ma">
-		<div class="lcoate_title">&nbsp;&nbsp;홈페이지 ▷ 소식 ▷ 커뮤니티 ▶ 새 글 쓰기</div>
-	</div>
-	<div class="write_first_box">
-		<div class="notice_title">
-			<h3 class="title">
-				<span>새</span>글 쓰기
-			</h3>
-		</div>
-		<hr>
-		<div class="new_notice_title">
-			<div class="notice_title">
-				<div class="left_title">
-					<p class="title">제목:</p>
-					<input type="text" class="input_title" placeholder="제목을 입력하세요."
-						size="60px">
+		<main class="new_notice_main">
+			<div class="write_first_box">
+				<div class="notice_title">
+					<h3 class="title">
+						<span>새</span>글 쓰기
+					</h3>
+				</div>
+				<hr>
+				<div class="new_notice_title">
+					<div class="notice_title">
+						<div class="left_title">
+							<p class="title">제목:</p>
+							<input type="text" class="input_title" placeholder="제목을 입력하세요."
+								size="60px">
+						</div>
+					</div>
+				</div>
+				<div class="new_write_content_box">
+					<div class="new_write_content">
+						<textarea class="new_content" name="new_content"
+							placeholder="내용 입력" rows="20" cols="111" maxlength="1024"
+							style="resize: none;"></textarea>
+						<div class="counter">(0 / 1024)</div>
+						<script>
+							
+						</script>
+					</div>
+					<div id="preview"></div>
+					<input type="file" name="upload" id='upload' class="inp-img"
+						accept=".gif, .jpg, .png" multiple="multiple">
+					<button type="button" class="btn-delete">삭제</button>
+					<div class="input_btn">
+						<button class="input_btn" onclick="write_check()">작성하기</button>
+						<button class="cancle_btn" onclick="cancle_check()">목록으로</button>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="new_write_content_box">
-			<div class="new_write_content">
-				<textarea class="new_content" name="new_content" placeholder="내용 입력"
-					rows="20" cols="111" maxlength="1024" style="resize: none;"></textarea>
-				<div class="counter">(0 / 1024)</div>
-				<script>
-					
-				</script>
-			</div>
-			<div id="preview"></div>
-			<input type="file" name="upload" id='upload' class="inp-img"
-				accept=".gif, .jpg, .png" multiple="multiple">
-			<button type="button" class="btn-delete">삭제</button>
-			<div class="input_btn">
-				<button class="input_btn" onclick="write_check()">작성하기</button>
-				<button class="cancle_btn" onclick="cancle_check()">목록으로</button>
-			</div>
-		</div>
-	</div>
+		</main>
 	</form>
 </body>
 <script
