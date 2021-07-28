@@ -11,7 +11,7 @@
 					modal_step:eq(1) 아이디
 					modal_step:eq(2) 비밀번호
 					modal_step:eq(3) 비번변경*/
-				 /*  . 클래스 # 아이디 */
+				 /*  . 클래스 # 아이디  */
 				$(".find_link").click(function() {
 					$('.modal_step').hide();
 					$('.modal_step:eq(1)').show();
