@@ -1076,9 +1076,7 @@ font-size: 20px;
 /*--------------------------------------------------------------
 # 후원안내
 --------------------------------------------------------------*/
-.support_main {
-	background: moccasin;
-}
+
 
 .support_box {
 	width: 1000px;
@@ -1101,7 +1099,7 @@ font-size: 20px;
 }
 
 .support_box  .support_content_title span {
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .support_box  .support_content_benefits {
@@ -1134,11 +1132,14 @@ font-size: 20px;
 }
 
 .support_box  .support_content_benefits .support_content_benefits_txt {
-	padding: 40px;
-	background: #fff;
+	padding: 40px;font-size: 15px;
+	background: #fff1de;
 	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
 	border-radius: 15px;
 	margin-bottom: 30px;
+}
+.support_box  .support_content_benefits .support_content_benefits_txt span{
+	margin-bottom: 10px;
 }
 
 .support_box  .support_content_benefits .support_content_benefits_txt.bo
@@ -1156,9 +1157,6 @@ font-size: 20px;
 	font-size: 13px;
 }
 
-.support_box  .support_content_benefits .support_content_benefits_img {
-	
-}
 
 .support_box  .support_content_benefits .support_content_benefits_img .support_content_benefits_img_me
 	{

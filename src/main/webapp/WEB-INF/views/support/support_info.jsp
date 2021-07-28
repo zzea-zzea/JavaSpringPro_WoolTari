@@ -11,8 +11,7 @@
 				<div class="support_content_title">
 					<h2>후원안내</h2>
 					<span>나눔이란 특정한 사람에 의해 실시되는 특별한 활동이 아니라 누구나 언제 어디서라도 참여할 수 있는
-						활동이며,<br> 가진 자가 일반적으로 베푸는 '주는 자와 받는자'의 관계에서 벗어나 한 인간으로서 다른
-						사람과 더불어 행하는 만 남과 나눔의 활동입니다.
+						활동입니다!<br> 
 					</span>
 				</div>
 				<div class="support_content_benefits">
@@ -69,11 +68,8 @@
 					</div>
 					<div class="support_content_benefits_txt">
 						<span>상단 메뉴 중 '후원 하기'에 접속 하신뒤 후원처 선택후 각 납입 방법에 따라 진행 하시면 됩니다.</span><br> 
-						<span>이를 통해 기부되는 기부금의 영수증은 이미지로 발급이 가능하며,</span><br> 
+						<span>이를 통해 기부되는 기부금의 영수증은 이미지로 발급이 가능하며,</span>
 						<span>후원 내역은 마이페이지 에서 확인이 가능 합니다</span>
-					</div>
-					<div class="support_content_benefits_button">
-					<button>후원 하러 가기</button>
 					</div>
 				</div>
 			</div>
