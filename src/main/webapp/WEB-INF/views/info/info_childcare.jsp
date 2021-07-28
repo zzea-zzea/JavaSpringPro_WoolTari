@@ -266,8 +266,7 @@
 						<div class="childcare_content">
 							<div class="childcare_content_menu">
 								<svg class="secsvg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"xmlns:svg="http://www.w3.org/2000/svg"
-								xmlns="http://www.w3.org/2000/svg"
-									xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+								xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 									xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 									width="109.00304mm" height="95.90564mm"
 									viewBox="0 0 109.00304 95.905648" version="1.1" id="svg3505"
