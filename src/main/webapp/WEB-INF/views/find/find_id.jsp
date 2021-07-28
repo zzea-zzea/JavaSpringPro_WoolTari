@@ -125,7 +125,7 @@
         const modalCloseBtn = document.getElementById("modal-close-btn");
         const modalWrapper = document.querySelector(".modal-wrapper");
 
-        //      console.log(modalWrapper.style);
+        //       console.log(modalWrapper.style);
 
         //      modalOpenBtn.addEventListener("click", () => {
         modalWrapper.style.display = "flex";
