@@ -2,28 +2,184 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		LocatlonBinding();
+	}
+	function LocatlonBinding() {
+		var childList;
+		var option;
+		var name = $("#parent option:checked").text();
+		switch ($("#parent").val()) {
+		case "서울시": chiledList 
+			= [
+				"종로구", "중구", "용산구", "성동구", "광진구",
+				"동대문구", "중랑구", "성북구", "강북구", "도봉구",
+				"노원구", "은평구", "서대문구", "마포구", "양천구",
+				"강서구", "구로구", "금천구", "영등포구", "동작구",
+				"관악구", "서초구", "강남구", "송파구", "강동구"
+				];
+		break;
+		case "경기도": chiledList
+			= [
+				"고양시", "과천시", "광명시", "광주시", "구리시",
+				"군포시", "김포시", "남양주시", "동두천시", "부천시",
+				"성남시", "수원시", "시흥시", "안산시", "안성시",
+				"안양시", "양주시", "여주시", "오산시", "용인시", "의왕시", 
+				"의정부시", "이천시", "파주시", "평택시", "포천시", "하남시",
+				"화성시", "가평군", "양평군", "연천군"];
+		break;
 
+		case "인천시": chiledList
+		= [	
+			"계양구", "남동구", "동구", "미추홀구", "부평구",
+			"서구", "수구", "중구", "강화군", "옹진군"
+			];
+		break;
+		
+		case "부산시": chiledList
+		= [	
+			"강서구", "금정구", "남구", "동구", "동래구",
+			"부산진구", "북구", "사상구", "사하구", "서구",
+			"수영구", "연제구", "영도구", "중구", "해운대구", "기장군"
+			];
+		break;
+		
+		case "대구시": chiledList
+		= [	
+			"남구", "달서구", "동구", "북구", "서구", "수성구", "중구", "달성군"
+			];
+		break;
+		
+		case "광주시": chiledList
+		= [	
+			"광산구", "남구", "동구", "북구", "서구"
+			];
+		break;
+		
+		case "대전시": chiledList
+		= [	
+			"대덕구", "동구", "서구", "유성구", "중구"
+			];
+		break;
+		
+		case "울산시": chiledList
+		= [	
+			"남구", "동구", "북구", "중구", "울주군"
+			];
+		break;
+		
+		case "세종시": chiledList
+		= [	
+			"조치원읍", "금남면", "부강면", "소정면", "연기면",
+			"연동면", "연서면", "장군면", "전동면", "전의면", 
+			"고운동", "다정동", "대평동", "도담동", "보람동",
+			"소담동", "새롬동", "아름동", "종촌동", "한솔동"
+			];
+		break;
+		
+		case "강원도": chiledList
+		= [	
+			"강릉시", "동해시", "삼척시", "속초시", "원주시",
+			"춘천시", "태백시", "고성군", "양구군", "양양군",
+			"영월군", "인제군", "정선군", "철원군", "평창군",
+			"홍천군", "화천군", "횡성군"
+			];
+		break;
+		
+		case "충청북도": chiledList
+		= [	
+			"제천시", "청주시", "충주시", "괴산군", "단양군",
+			"보은군", "영동군", "옥천군", "음성군", "증평군", "진천군"
+			];
+		break;
+		
+		case "충청남도": chiledList
+		= [	
+			"계룡시", "공주시", "논산시", "당진시", "보령시",
+			"서산시", "아산시", "천안시", "금산군", "부여군",
+			"서천군", "예산군", "청양군", "태안군", "홍성군"
+			];
+		break;
+		
+		case "전라북도": chiledList
+		= [	
+			"군산시", "김제시", "남원시", "익산시", "전주시",
+			"정읍시", "고창군", "무주군", "부안군", "순창군",
+			"완주군", "임실군", "장수군", "진안군"
+			];
+		break;
+		
+		case "전라남도": chiledList
+		= [	
+			"광양시", "나주시", "목포시", "순천시", "여수시",
+			"강진군", "고흥군", "곡성군", "구례군", "담양군",
+			"무안군", "보성군", "신안군", "영광군", "영암군",
+			"완도군", "장성군", "장흥군", "진도군", "함평군",
+			"해남군", "화순군"
+			];
+		break;
+		
+		case "경상북도": chiledList
+		= [	
+			"경산시", "경주시", "구미시", "김천시", "문경시",
+			"상주시", "안동시", "영주시", "영천시", "포항시",
+			"고령군", "군위군", "봉화군", "성주군", "영덕군",
+			"영양군", "예천군", "울릉군", "울진군", "의성군",
+			"청도군", "청송군", "칠곡군"
+			];
+		break;
+		
+		case "경상남도": chiledList
+		= [	
+			"거제시", "김해시", "밀양시", "사천시", "양산시",
+			"진주시", "창원시", "통영시", "거창군", "고성군",
+			"남해군", "산청군", "의령군", "창녕군", "하동군",
+			"함안군", "함양군", "합천군"
+			];
+		break;
+	}
+		
+
+		
+		$("#child").empty();
+		
+		for(var i = 0; i < chiledList.length; i++) {
+			option = "<option>" + chiledList[i] + "</option>"
+			$("#child").append(option);
+		}
+	}
+
+</script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="info_policy.woo">
 		<main class="policy_main">
 			<div class="policy_box ma">
 				<div class="policy_content_title">
-					<h2>'서울 특별시' &nbsp;정책 정보</h2>
+					<h2>'${name}' &nbsp;정책 정보</h2>
 					<span>동/구별 정책정보가 상이 할수 있습니다.자세한 문의는 각 동/구 청으로 확인 바랍니다.</span>
 				</div>
 				<div class="policy_content_search">
-					<select class="selectpicker le" data-size="5">
-						<option>서울특별시</option>
+					<select class="selectpicker le" data-size="5" id="parent" onchange="LocatlonBinding();">
+						<option>서울시</option>
 						<option>경기도</option>
-						<option>충청도</option>
-						<option>경상도</option>
-						<option>전라도</option>
-						<option>제주도</option>
-						<option>울릉도</option>
-					</select> <select class="selectpicker" data-size="5">
-						<option>Mustard</option>
-						<option>Relish</option>
+						<option>인천시</option>
+						<option>부산시</option>
+						<option>대구시</option>
+						<option>광주시</option>
+						<option>대전시</option>
+						<option>울산시</option>
+						<option>세종시</option>
+						<option>강원도</option>
+						<option>충청북도</option>
+						<option>충청남도</option>
+						<option>전라북도</option>
+						<option>전라남도</option>
+						<option>경상북도</option>
+						<option>경상남도</option>
+					</select> <select class="selectpicker" data-size="5" id="child">
+						
 					</select>
 					<button>검색</button>
 				</div>
