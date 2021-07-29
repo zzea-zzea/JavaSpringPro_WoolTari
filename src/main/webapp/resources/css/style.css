@@ -2190,78 +2190,6 @@ font-size: 20px;
 페이지 파일명 : terms_and_conditions.jsp
 */
 
-.modal_body{
-   box-sizing: border-box;
-}
-
-.modal_body .modal-overlay {
-   background: rgba(255, 255, 255, 0.25);
-   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.modal_body .modal-wrapper {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgb(0 0 0/ 34%);
-   display: none;
-   justify-content: center;
-   align-items: center;
-}
-
-.modal_body .modal-wrapper .modal-box {
-   background: white;
-   border-radius: 10px;
-   width: 450px;
-   height: 630px;
-   padding: 30px;
-   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
-}
-
-.modal_body .modal-wrapper .modal-box.find {
-   height: 560px;
-   position: relative;
-}
-
-.modal_body .modal-wrapper .modal-box.ch {
-   height: 400px;
-   position: relative;
-}
-
-.modal-close-box {
-   text-align: right;
-}
-.modal_body .modal-wrapper .modal-box .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
-   background-color: white;
-   border: white;
-   float: right;
-}
-
-.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
-{
-   width: 20px;
-   opacity: 0.7;
-}
-
-.modal_body .modal-open-btn {
-   border-radius: 50px;
-   border: 2px solid #f2b09b;
-   background: #fff;
-   line-height: 32px;
-   font-size: 13px;
-   color: #b96c6c;
-   font-weight: bold;
-}
-    * {
-  box-sizing: border-box;
-}
-
 html,
 .terms_and_conditions_body{
   height: 100%;
@@ -2632,75 +2560,6 @@ html,
 .signup_email_selectbox{
     width: 100px; 
     height: 30px;
-    
-
-.modal_body{
-   box-sizing: border-box;
-}
-
-.modal_body .modal-overlay {
-   background: rgba(255, 255, 255, 0.25);
-   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.modal_body .modal-wrapper {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgb(0 0 0/ 34%);
-   display: none;
-   justify-content: center;
-   align-items: center;
-}
-
-.modal_body .modal-wrapper .modal-box {
-   background: white;
-   border-radius: 10px;
-   width: 450px;
-   height: 630px;
-   padding: 30px;
-   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
-}
-
-.modal_body .modal-wrapper .modal-box.find {
-   height: 560px;
-   position: relative;
-}
-
-.modal_body .modal-wrapper .modal-box.ch {
-   height: 400px;
-   position: relative;
-}
-
-.modal-close-box {
-   text-align: right;
-}
-.modal_body .modal-wrapper .modal-box .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
-   background-color: white;
-   border: white;
-   float: right;
-}
-
-.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
-{
-   width: 20px;
-   opacity: 0.7;
-}
-
-.modal_body .modal-open-btn {
-   border-radius: 50px;
-   border: 2px solid #f2b09b;
-   background: #fff;
-   line-height: 32px;
-   font-size: 13px;
-   color: #b96c6c;
-   font-weight: bold;
 }
 
 
@@ -3532,6 +3391,85 @@ html,
 
 /*
 ------------담당자 : 이주현------------
+사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인
+페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp
+*/
+
+.modal_body{
+	box-sizing: border-box;
+}
+
+.modal_body .modal-overlay {
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal_body .modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(0 0 0/ 34%);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_body .modal-wrapper .modal-box {
+	background: white;
+	border-radius: 10px;
+	width: 450px;
+	height: 630px;
+	padding: 30px;
+	box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+}
+
+.modal_body .modal-wrapper .modal-box.find {
+	height: 560px;
+	position: relative;
+}
+
+.modal_body .modal-wrapper .modal-box.ch {
+	height: 400px;
+	position: relative;
+}
+
+.modal-close-box {
+	text-align: right;
+}
+.modal_body .modal-wrapper .modal-box .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
+	background-color: white;
+	border: white;
+	float: right;
+}
+
+.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
+{
+	width: 20px;
+	opacity: 0.7;
+}
+
+.modal_body .modal-open-btn {
+	border-radius: 50px;
+	border: 2px solid #f2b09b;
+	background: #fff;
+	line-height: 32px;
+	font-size: 13px;
+	color: #b96c6c;
+	font-weight: bold;
+}
+
+
+/*------------ 모덜창 end ------------*/
+
+
+/*
+------------담당자 : 이주현------------
 사용된 페이지 : 로그인페이지
 페이지 파일명 : login.jsp
 */
@@ -3792,7 +3730,9 @@ html,
     width: 180px;
 }
 
-.box_find .find_btn {
+.box_find .find_id_btn,
+.box_find .find_pw_btn,
+.box_find .find_new_pw_btn{
     width: 100%;
     line-height: 50px;
     border-radius: 8px;
@@ -4212,81 +4152,5 @@ background: rgba( 185, 108, 108, 0.5);
 /*------------ 내가쓴글/댓글 end ------------*/
 
 
-/*
-------------담당자 : 이주현------------
-사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인
-페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp
-*/
 
-.modal_body{
-	box-sizing: border-box;
-}
-
-.modal_body .modal-overlay {
-	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.modal_body .modal-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgb(0 0 0/ 34%);
-	display: none;
-	justify-content: center;
-	align-items: center;
-}
-
-.modal_body .modal-wrapper .modal-box {
-	background: white;
-	border-radius: 10px;
-	width: 450px;
-	height: 630px;
-	padding: 30px;
-	box-shadow: 0 0 20px rgb(0 0 0/ 20%);
-}
-
-.modal_body .modal-wrapper .modal-box.find {
-	height: 560px;
-	position: relative;
-}
-
-.modal_body .modal-wrapper .modal-box.ch {
-	height: 400px;
-	position: relative;
-}
-
-.modal-close-box {
-	text-align: right;
-}
-.modal_body .modal-wrapper .modal-box .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
-	background-color: white;
-	border: white;
-	float: right;
-}
-
-.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
-.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
-{
-	width: 20px;
-	opacity: 0.7;
-}
-
-.modal_body .modal-open-btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-}
-
-
-/*------------ 모덜창 end ------------*/
 

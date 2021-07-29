@@ -67,7 +67,7 @@
 				</div>
 				<div class="menu_choice_box">
 					<ul class="menu_choice_box_op">
-						<li class="menu_choice_box_id"><a onclick="location.href='find_id.jsp'">아이디
+						<li class="menu_choice_box_id"><a>아이디
 								찾기</a></li>
 						<li class="menu_choice_box_pw"
 							style="background: rgba(185, 108, 108, 0.5);"><a>비밀번호 찾기</a></li>
@@ -99,7 +99,7 @@
 
 
 				<div class="box_find">
-					<button class="find_btn"><a onclick="location.href='change_pw.jsp'">비밀번호 찾기</button>
+					<button class="find_btn"><a>비밀번호 찾기</button>
 				</div>
 
 			</div>
