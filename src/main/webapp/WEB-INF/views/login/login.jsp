@@ -141,7 +141,7 @@
 							</fieldset>
 							<section class="another_login">
 								<h2 class="another_login_line">
-									────<a>&nbsp;또는&nbsp;</a>────
+									────────<a>&nbsp;또는&nbsp;</a>────────
 								</h2>
 								<ul class="another_login_list">
 									<button type="button" class="login_naver">
@@ -239,15 +239,14 @@
 									<span class="hide_small">'-'을 제외한 번호만 입력해주세요</span>
 								</div>
 							</div>
-							<input class="txt_email" placeholder="이메일" name="in_text">
+							<input class="txt_email" placeholder="이메일" name="in_text_email">
 							<button type="button" class="email_btn"
-								onclick="alert('인증메일을 보냈습니다'); div_show();">확인</button>
+								onclick="alert('인증메일을 보냈습니다'); id_show();">확인</button>
 							<br>
 
-							<div id="user_email" style="display: none"
-								class="menu_id_hide_box">
+							<div id="user_email_1" style="display: none" class="menu_id_hide_box">
 								<input class="txt_email_num" placeholder="이메일 인증번호 확인"
-									name="in_text"
+									name="in_text_email"
 									onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 
 								<button class="email_re_btn">재발급</button>
@@ -260,12 +259,13 @@
 					</div>
 
 					<div class="box_find">
-						<button class="find_id_btn">아이디 찾기</button>
+						<a class="find_id_btn">아이디 찾기</a>
 					</div>
 
 
 				</div>
 			</div>
+			
 			<div class="modal_step">
 
 				<div class="modal-box find">
@@ -336,11 +336,10 @@
 							<input class="txt_name" placeholder="이름"> <br> <input
 								class="txt_email" placeholder="이메일">
 							<button type="button" class="email_btn"
-								onclick="alert('인증메일을 보냈습니다'); div_show();">확인</button>
+								onclick="alert('인증메일을 보냈습니다'); pw_show();">확인</button>
 							<br>
 
-							<div id="user_email" style="display: none"
-								class="menu_pw_hide_box">
+							<div id="user_email_2" style="display: none" class="menu_pw_hide_box">
 								<input class="txt_email_num" placeholder="이메일 인증번호 확인"
 									onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" />
 
@@ -356,13 +355,14 @@
 
 
 					<div class="box_find">
-						<button class="find_pw_btn">비밀번호 찾기</button>
+						<a class="find_pw_btn">비밀번호 찾기</a>
 					</div>
 
 				</div>
 
 
 			</div>
+			
 			<div class="modal_step">
 				<div class="modal-box ch">
 
@@ -435,7 +435,7 @@
 						</div>
 					</div>
 					<div class="box_find">
-						<button class="find_new_pw_btn" onclick="chkPW()">비밀번호 변경</button>
+						<a class="find_new_pw_btn" onclick="chkPW()">비밀번호 변경</a>
 					</div>
 				</div>
 			</div>
@@ -466,25 +466,30 @@
             if (key == 2) {
                 document.all["div1"].style.display = "block";
 
-                var el = document.getElementsByName('in_text');
+                var el = document.getElementsByName('in_text_email');
                 for (var i = 0; i < el.length; i++) {
                     el[i].value = '';
                 }
-                document.getElementById("user_email").style.display = "none";
+                document.getElementById("user_email_1").style.display = "none";
 
 
             } else
                 document.all["div1"].style.display = "none";
-            var el = document.getElementsByName('in_text');
+            var el = document.getElementsByName('in_text_email');
             for (var i = 0; i < el.length; i++) {
                 el[i].value = '';
             }
-            document.getElementById("user_email").style.display = "none";
+            document.getElementById("user_email_1").style.display = "none";
         }
 
         
-        function div_show() {
-            document.getElementById("user_email").style.display = "block";
+        function id_show() {
+            document.getElementById("user_email_1").style.display = "block";
+        }
+        
+        
+        function pw_show() {
+            document.getElementById("user_email_2").style.display = "block";
         }
         
         

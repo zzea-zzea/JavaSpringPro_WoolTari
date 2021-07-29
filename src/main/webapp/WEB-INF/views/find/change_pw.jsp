@@ -80,8 +80,9 @@
 					<input class="box_txtpw" placeholder="새 비밀번호" type="password"
 						id="password" onkeyup="chkPW();">
 					<div class="menu_new_span_box">
-						<span class="small_text">*숫자,특수문자,영대소문자 조합 필수</span> <br> <span
-							class="menu_new_pw_box_pw" id="pw_msg" onkeyup="chkPW();"></span>
+						<span class="small_text">*숫자,특수문자,영대소문자 조합 필수</span> <br> 
+						<span
+class="menu_new_pw_box_pw" id="pw_msg" onkeyup="chkPW();"></span>
 					</div>
 
 					<br> <input class="box_txtpw_re" placeholder="새 비밀번호 확인"

@@ -3547,6 +3547,7 @@ html,
 .login_box .login_box_menu .login_box_small_menu {
 	overflow: hidden;
 	padding: 10px 0 0;
+	font-family: 'Cafe24SsurroundAir';
 }
 
 .login_box .login_box_menu .login_box_small_menu {
@@ -3599,11 +3600,13 @@ html,
 .login_box .login_box_menu .another_login .another_login_list button {
 	border: 0;
 	outline: 0;
+	margin: 5px;
 	background-color: white;
 }
 
 .login_box .login_box_menu .another_login .another_login_line{
 	font-size: 16px;
+	margin-top:15px;
 }
 
 .login_box .login_box_menu .login_logo_wrap h1 {
@@ -3627,6 +3630,7 @@ html,
 	transition: 0.5s;
 	display: inline-block;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt .txt_dig {
@@ -3703,10 +3707,11 @@ html,
 
 
 .menu_id_box .menu_id_box_content .email_btn,
- .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn,
- .menu_pw_box .menu_pw_box_content .email_btn,
- .menu_pw_box .menu_pw_box_content .user_email_txt .email_re_btn, {
-    width: 80px;
+.menu_id_box .menu_id_box_content .menu_id_hide_box .email_re_btn,
+.menu_pw_box .menu_pw_box_content .email_btn,
+.menu_pw_box .menu_pw_box_content .menu_pw_hide_box .email_re_btn{
+	
+  	 width: 80px;
     line-height: 35px;
     border-radius: 8px;
     border: 0;
@@ -3749,6 +3754,11 @@ html,
     position: absolute;
     bottom: 10px;
     width: 393px;
+     background-color: #248be2;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
 }
 
  .menu_new_pw_btn{
@@ -3764,8 +3774,8 @@ font-weight: bold;
 font-family: 'Cafe24SsurroundAir';
 
 }
-.menu_new_pw_box .menu_new_pw_box_content .menu_new_span_box .menu_new_pw_box_pw{
-   font-size: 11px;
+.menu_new_pw_box .menu_new_pw_box_content .menu_new_span_box .menu_new_pw_box_pw {
+   	font-size: 11px;
     font-weight: bold;
     font-family: 'Cafe24SsurroundAir';
     color: red;
@@ -3796,6 +3806,9 @@ font-family: 'Cafe24SsurroundAir';
 	position: absolute;
 	top: -6px;
 	left: 10px;
+	font-size: 11px;
+font-weight: bold;
+font-family: 'Cafe24SsurroundAir';
 }
 
 /*------------ 아이디,비밀번호찾기 end ------------*/
