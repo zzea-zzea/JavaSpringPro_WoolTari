@@ -2,7 +2,25 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#selectpicker_le").change(function() {
+		if($('#selectpicker_le option:selected').val() == '미혼모 시설') {
+			$('.support_title_option').text("미혼모 시설");
+			$('.support_content_option').html(
+					"경제적으로 취약한 미혼모,부가 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
+		} else if($('#selectpicker_le option:selected').val() == '한부모 가정') {
+			$('.support_title_option').text("한부모 가정");
+			$('.support_content_option').html(
+					"경제적으로 취약한 한부모가정이 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
+		} else if($('#selectpicker_le option:selected').val() == '법인 재단') {
+			$('.support_title_option').text("법인 재단");
+			$('.support_content_option').html(
+					"경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 <br> 기부금을 전달합니다");
+		}
+	});
+});
+</script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="support.woo">
@@ -22,15 +40,15 @@
 						</div>
 						<div class="support_content_benefits_con">
 							<div class="support_content_benefits_select_con">
-								<select class="selectpicker le" data-size="5">
-									<option>한부모 가정</option>
-									<option>미혼모시설</option>
-									<option>법인 재단</option>
+								<select class="selectpicker le" data-size="5" id="selectpicker_le">
+									<option value="한부모 가정">한부모 가정</option>
+									<option value="미혼모 시설">미혼모 시설</option>
+									<option value="법인 재단">법인 재단</option>
 								</select>
 							</div>
 							<div class="support_content_benefits_select_con txt">
-								<h4>미혼모 시설 지원</h4>
-								<p>
+								<h4 class="support_title_option">한부모 가정 시설</h4>
+								<p class="support_content_option">
 									경제적으로 취약한 미혼모,부가 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,
 									치료비를 위해 기부금을 전달합니다.
 								</p>
@@ -77,8 +95,8 @@
 							</tr>
 							<tr>
 								<td>주민등록번호</td>
-								<td><input type="text">&nbsp;-&nbsp;<input
-									type="text"></td>
+								<td><input type="text" maxlength="6">&nbsp;-&nbsp;<input
+									type="password" maxlength="7"></td>
 							</tr>
 							<tr>
 								<td>성명</td>

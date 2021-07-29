@@ -3,34 +3,551 @@
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>
-$(document).ready(
-		function() {
-			$("#showbtn").click(function() {
-				if($('#child option:selected').val() == '송파구') {
-					$('.policy_content_maintxt_span').text("서울시 송파구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				} else if ($('#child option:selected').val() == '종로구') {
-					$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '중구') {
-					$('.policy_content_maintxt_span').text("서울시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '용산구') {
-					$('.policy_content_maintxt_span').text("서울시 용산구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '성동구') {
-					$('.policy_content_maintxt_span').text("서울시 성동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '광진구') {
-					$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '광진구') {
-					$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '동대문구') {
-					$('.policy_content_maintxt_span').text("서울시 동대문구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '중랑구') {
-					$('.policy_content_maintxt_span').text("서울시 중랑구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '성북구') {
-					$('.policy_content_maintxt_span').text("서울시 성북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}else if ($('#child option:selected').val() == '강북구') {
-					$('.policy_content_maintxt_span').text("서울시 강북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-				}	
-			});
+$(document).ready(function() {
+	$("#child").change(function() {
+		if($('#parent option:selected').val() == '서울시'){
+			if($('#child option:selected').val() == '송파구') {
+				$('.policy_content_maintxt_span').text("서울시 송파구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '종로구') {
+				$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("서울시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '용산구') {
+				$('.policy_content_maintxt_span').text("서울시 용산구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '성동구') {
+				$('.policy_content_maintxt_span').text("서울시 성동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '광진구') {
+				$('.policy_content_maintxt_span').text("서울시 광진구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동대문구') {
+				$('.policy_content_maintxt_span').text("서울시 동대문구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중랑구') {
+				$('.policy_content_maintxt_span').text("서울시 중랑구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '성북구') {
+				$('.policy_content_maintxt_span').text("서울시 성북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강북구') {
+				$('.policy_content_maintxt_span').text("서울시 강북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '도봉구') {
+				$('.policy_content_maintxt_span').text("서울시 도봉구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '노원구') {
+				$('.policy_content_maintxt_span').text("서울시 노원구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '은평구') {
+				$('.policy_content_maintxt_span').text("서울시 은평구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서대문구') {
+				$('.policy_content_maintxt_span').text("서울시 서대문구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '마포구') {
+				$('.policy_content_maintxt_span').text("서울시 마포구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양천구') {
+				$('.policy_content_maintxt_span').text("서울시 양천구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강서구') {
+				$('.policy_content_maintxt_span').text("서울시 강서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '구로구') {
+				$('.policy_content_maintxt_span').text("서울시 구로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '금천구') {
+				$('.policy_content_maintxt_span').text("서울시 금천구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영등포구') {
+				$('.policy_content_maintxt_span').text("서울시 영등포구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동작구') {
+				$('.policy_content_maintxt_span').text("서울시 동작구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '관악구') {
+				$('.policy_content_maintxt_span').text("서울시 관악구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서초구') {
+				$('.policy_content_maintxt_span').text("서울시 서초구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강남구') {
+				$('.policy_content_maintxt_span').text("서울시 강남구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강동구') {
+				$('.policy_content_maintxt_span').text("서울시 강동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} 
+		}
+		
+		if($('#parent option:selected').val() == '경기도'){
+			if ($('#child option:selected').val() == '고양시') {
+				$('.policy_content_maintxt_span').text("경기도 고양시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '과천시') {
+				$('.policy_content_maintxt_span').text("경기도 과천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '광명시') {
+				$('.policy_content_maintxt_span').text("경기도 광명시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '광주시') {
+				$('.policy_content_maintxt_span').text("경기도 광주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '구리시') {
+				$('.policy_content_maintxt_span').text("경기도 구리시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '군포시') {
+				$('.policy_content_maintxt_span').text("경기도 군포시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '김포시') {
+				$('.policy_content_maintxt_span').text("경기도 김포시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남양주시') {
+				$('.policy_content_maintxt_span').text("경기도 남양주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동두천시') {
+				$('.policy_content_maintxt_span').text("경기도 동두천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부천시') {
+				$('.policy_content_maintxt_span').text("경기도 부천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '성남시') {
+				$('.policy_content_maintxt_span').text("경기도 성남시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '수원시') {
+				$('.policy_content_maintxt_span').text("경기도 수원시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '시흥시') {
+				$('.policy_content_maintxt_span').text("경기도 시흥시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '안산시') {
+				$('.policy_content_maintxt_span').text("경기도 안산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '안성시') {
+				$('.policy_content_maintxt_span').text("경기도 안성시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '안양시') {
+				$('.policy_content_maintxt_span').text("경기도 안양시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양주시') {
+				$('.policy_content_maintxt_span').text("경기도 양주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '여주시') {
+				$('.policy_content_maintxt_span').text("경기도 여주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '오산시') {
+				$('.policy_content_maintxt_span').text("경기도 오산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '용인시') {
+				$('.policy_content_maintxt_span').text("경기도 용인시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '의왕시') {
+				$('.policy_content_maintxt_span').text("경기도 의왕시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '의정부시') {
+				$('.policy_content_maintxt_span').text("경기도 의정부시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '이천시') {
+				$('.policy_content_maintxt_span').text("경기도 이천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '파주시') {
+				$('.policy_content_maintxt_span').text("경기도 파주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '평택시') {
+				$('.policy_content_maintxt_span').text("경기도 평택시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '포천시') {
+				$('.policy_content_maintxt_span').text("경기도 포천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '하남시') {
+				$('.policy_content_maintxt_span').text("경기도 하남시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '화성시') {
+				$('.policy_content_maintxt_span').text("경기도 화성시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '가평군') {
+				$('.policy_content_maintxt_span').text("경기도 가평군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양평군') {
+				$('.policy_content_maintxt_span').text("경기도 양평군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '연천군') {
+				$('.policy_content_maintxt_span').text("경기도 연천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}	
+		if($('#parent option:selected').val() == '인천시'){	
+			if ($('#child option:selected').val() == '계양구') {
+				$('.policy_content_maintxt_span').text("인천시 계양구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남동구') {
+				$('.policy_content_maintxt_span').text("인천시 남동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동구') {
+				$('.policy_content_maintxt_span').text("인천시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '미추홀구') {
+				$('.policy_content_maintxt_span').text("인천시 미추홀구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부평구') {
+				$('.policy_content_maintxt_span').text("인천시 부평구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서구') {
+				$('.policy_content_maintxt_span').text("인천시 서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '수구') {
+				$('.policy_content_maintxt_span').text("인천시 수구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("인천시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강화군') {
+				$('.policy_content_maintxt_span').text("인천시 강화군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '옹진군') {
+				$('.policy_content_maintxt_span').text("인천시 옹진군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '부산시'){
+			if ($('#child option:selected').val() == '강서구') {
+				$('.policy_content_maintxt_span').text("부산시 강서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '금정구') {
+				$('.policy_content_maintxt_span').text("부산시 금정구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남구') {
+				$('.policy_content_maintxt_span').text("부산시 남구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동구') {
+				$('.policy_content_maintxt_span').text("부산시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동래구') {
+				$('.policy_content_maintxt_span').text("부산시 동래구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부산진구') {
+				$('.policy_content_maintxt_span').text("부산시 부산진구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '북구') {
+				$('.policy_content_maintxt_span').text("부산시 북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '사상구') {
+				$('.policy_content_maintxt_span').text("부산시 사상구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '사하구') {
+				$('.policy_content_maintxt_span').text("부산시 사하구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서구') {
+				$('.policy_content_maintxt_span').text("부산시 서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '수영구') {
+				$('.policy_content_maintxt_span').text("부산시 수영구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '연제구') {
+				$('.policy_content_maintxt_span').text("부산시 연제구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영도구') {
+				$('.policy_content_maintxt_span').text("부산시 영도구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("부산시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '해운대구') {
+				$('.policy_content_maintxt_span').text("부산시 해운대구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '기장군') {
+				$('.policy_content_maintxt_span').text("부산시 기장군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '대구시'){
+				if ($('#child option:selected').val() == '남구') {
+					$('.policy_content_maintxt_span').text("대구시 남구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '달서구') {
+					$('.policy_content_maintxt_span').text("대구시 달서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '동구') {
+					$('.policy_content_maintxt_span').text("대구시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '북구') {
+					$('.policy_content_maintxt_span').text("대구시 북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '서구') {
+					$('.policy_content_maintxt_span').text("대구시 서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '수성구') {
+					$('.policy_content_maintxt_span').text("대구시 수성구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '중구') {
+					$('.policy_content_maintxt_span').text("대구시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				} else if ($('#child option:selected').val() == '달성군') {
+					$('.policy_content_maintxt_span').text("대구시 달성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+				}
+		}
+		if($('#parent option:selected').val() == '광주시'){
+			if ($('#child option:selected').val() == '광산구') {
+				$('.policy_content_maintxt_span').text("광주시 광산구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남구') {
+				$('.policy_content_maintxt_span').text("광주시 남구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동구') {
+				$('.policy_content_maintxt_span').text("광주시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '북구') {
+				$('.policy_content_maintxt_span').text("광주시 북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서구') {
+				$('.policy_content_maintxt_span').text("광주시 서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '대전시'){
+			if ($('#child option:selected').val() == '대덕구') {
+				$('.policy_content_maintxt_span').text("대전시 대덕구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동구') {
+				$('.policy_content_maintxt_span').text("대전시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서구') {
+				$('.policy_content_maintxt_span').text("대전시 서구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '유성구') {
+				$('.policy_content_maintxt_span').text("대전시 유성구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("대전시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '울산시'){
+			if ($('#child option:selected').val() == '남구') {
+				$('.policy_content_maintxt_span').text("울산시 남구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동구') {
+				$('.policy_content_maintxt_span').text("울산시 동구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '북구') {
+				$('.policy_content_maintxt_span').text("울산시 북구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("울산시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '울주군') {
+				$('.policy_content_maintxt_span').text("울산시 울주군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '세종시'){
+			if ($('#child option:selected').val() == '조치원읍') {
+				$('.policy_content_maintxt_span').text("세종시 조치원읍 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '금남면') {
+				$('.policy_content_maintxt_span').text("세종시 금남면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부강면') {
+				$('.policy_content_maintxt_span').text("세종시 부강면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '소정면') {
+				$('.policy_content_maintxt_span').text("세종시 소정면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '연기면') {
+				$('.policy_content_maintxt_span').text("세종시 연기면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '연동면') {
+				$('.policy_content_maintxt_span').text("세종시 연동면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '연서면') {
+				$('.policy_content_maintxt_span').text("세종시 연서면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '장군면') {
+				$('.policy_content_maintxt_span').text("세종시 장군면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '전동면') {
+				$('.policy_content_maintxt_span').text("세종시 전동면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '전의면') {
+				$('.policy_content_maintxt_span').text("세종시 전의면 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고운동') {
+				$('.policy_content_maintxt_span').text("세종시 고운동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '다정동') {
+				$('.policy_content_maintxt_span').text("세종시 다정동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '대평동') {
+				$('.policy_content_maintxt_span').text("세종시 대평동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '도담동') {
+				$('.policy_content_maintxt_span').text("세종시 도담동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '보람동') {
+				$('.policy_content_maintxt_span').text("세종시 보람동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '소담동') {
+				$('.policy_content_maintxt_span').text("세종시 소담동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '새롬동') {
+				$('.policy_content_maintxt_span').text("세종시 새롬동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '아름동') {
+				$('.policy_content_maintxt_span').text("세종시 아름동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '종촌동') {
+				$('.policy_content_maintxt_span').text("세종시 종촌동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '한솔동') {
+				$('.policy_content_maintxt_span').text("세종시 한솔동 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '강원도'){
+			if ($('#child option:selected').val() == '강릉시') {
+				$('.policy_content_maintxt_span').text("강원도 강릉시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '동해시') {
+				$('.policy_content_maintxt_span').text("강원도 동해시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '삼척시') {
+				$('.policy_content_maintxt_span').text("강원도 삼척시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '속초시') {
+				$('.policy_content_maintxt_span').text("강원도 속초시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '원주시') {
+				$('.policy_content_maintxt_span').text("강원도 원주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '춘천시') {
+				$('.policy_content_maintxt_span').text("강원도 춘천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '태백시') {
+				$('.policy_content_maintxt_span').text("강원도 태백시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고성군') {
+				$('.policy_content_maintxt_span').text("강원도 고성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양구군') {
+				$('.policy_content_maintxt_span').text("강원도 양구군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양양군') {
+				$('.policy_content_maintxt_span').text("강원도 양양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영월군') {
+				$('.policy_content_maintxt_span').text("강원도 영월군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '인제군') {
+				$('.policy_content_maintxt_span').text("강원도 인제군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '정선군') {
+				$('.policy_content_maintxt_span').text("강원도 정선군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '철원군') {
+				$('.policy_content_maintxt_span').text("강원도 철원군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '평창군') {
+				$('.policy_content_maintxt_span').text("강원도 평창군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '홍천군') {
+				$('.policy_content_maintxt_span').text("강원도 홍천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '화천군') {
+				$('.policy_content_maintxt_span').text("강원도 화천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '횡성군') {
+				$('.policy_content_maintxt_span').text("강원도 횡성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} 
+		}
+		if($('#parent option:selected').val() == '충청북도'){
+			if ($('#child option:selected').val() == '제천시') {
+				$('.policy_content_maintxt_span').text("충청북도 제천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '청주시') {
+				$('.policy_content_maintxt_span').text("충청북도 청주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '충주시') {
+				$('.policy_content_maintxt_span').text("충청북도 충주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '괴산군') {
+				$('.policy_content_maintxt_span').text("충청북도 괴산군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '단양군') {
+				$('.policy_content_maintxt_span').text("충청북도 단양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '보은군') {
+				$('.policy_content_maintxt_span').text("충청북도 보은군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영동군') {
+				$('.policy_content_maintxt_span').text("충청북도 영동군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '옥천군') {
+				$('.policy_content_maintxt_span').text("충청북도 옥천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '음성군') {
+				$('.policy_content_maintxt_span').text("충청북도 음성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '증평군') {
+				$('.policy_content_maintxt_span').text("충청북도 증평군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '진천군') {
+				$('.policy_content_maintxt_span').text("충청북도 진천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '충청남도'){
+			if ($('#child option:selected').val() == '계룡시') {
+				$('.policy_content_maintxt_span').text("충청남도 계룡시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '공주시') {
+				$('.policy_content_maintxt_span').text("충청남도 공주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '논산시') {
+				$('.policy_content_maintxt_span').text("충청남도 논산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '당진시') {
+				$('.policy_content_maintxt_span').text("충청남도 당진시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '보령시') {
+				$('.policy_content_maintxt_span').text("충청남도 보령시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서산시') {
+				$('.policy_content_maintxt_span').text("충청남도 서산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '아산시') {
+				$('.policy_content_maintxt_span').text("충청남도 아산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '천안시') {
+				$('.policy_content_maintxt_span').text("충청남도 천안시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '금산군') {
+				$('.policy_content_maintxt_span').text("충청남도 금산군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부여군') {
+				$('.policy_content_maintxt_span').text("충청남도 부여군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '서천군') {
+				$('.policy_content_maintxt_span').text("충청남도 서천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '예산군') {
+				$('.policy_content_maintxt_span').text("충청남도 예산군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '청양군') {
+				$('.policy_content_maintxt_span').text("충청남도 청양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '태안군') {
+				$('.policy_content_maintxt_span').text("충청남도 태안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '홍성군') {
+				$('.policy_content_maintxt_span').text("충청남도 홍성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '전라북도'){
+			if ($('#child option:selected').val() == '군산시') {
+				$('.policy_content_maintxt_span').text("전라북도 군산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '김제시') {
+				$('.policy_content_maintxt_span').text("전라북도 김제시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남원시') {
+				$('.policy_content_maintxt_span').text("전라북도 남원시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '익산시') {
+				$('.policy_content_maintxt_span').text("전라북도 익산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '전주시') {
+				$('.policy_content_maintxt_span').text("전라북도 전주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '정읍시') {
+				$('.policy_content_maintxt_span').text("전라북도 정읍시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고창군') {
+				$('.policy_content_maintxt_span').text("전라북도 고창군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '무주군') {
+				$('.policy_content_maintxt_span').text("전라북도 무주군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '부안군') {
+				$('.policy_content_maintxt_span').text("전라북도 부안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '순창군') {
+				$('.policy_content_maintxt_span').text("전라북도 순창군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '완주군') {
+				$('.policy_content_maintxt_span').text("전라북도 완주군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '임실군') {
+				$('.policy_content_maintxt_span').text("전라북도 임실군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '장수군') {
+				$('.policy_content_maintxt_span').text("전라북도 장수군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '진안군') {
+				$('.policy_content_maintxt_span').text("전라북도 진안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '전라남도'){
+			if ($('#child option:selected').val() == '광양시') {
+				$('.policy_content_maintxt_span').text("전라남도 광양시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '나주시') {
+				$('.policy_content_maintxt_span').text("전라남도 나주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '목포시') {
+				$('.policy_content_maintxt_span').text("전라남도 목포시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '순천시') {
+				$('.policy_content_maintxt_span').text("전라남도 순천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '여수시') {
+				$('.policy_content_maintxt_span').text("전라남도 여수시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '강진군') {
+				$('.policy_content_maintxt_span').text("전라남도 강진군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고흥군') {
+				$('.policy_content_maintxt_span').text("전라남도 고흥군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '곡성군') {
+				$('.policy_content_maintxt_span').text("전라남도 곡성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '구례군') {
+				$('.policy_content_maintxt_span').text("전라남도 구례군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '담양군') {
+				$('.policy_content_maintxt_span').text("전라남도 담양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '무안군') {
+				$('.policy_content_maintxt_span').text("전라남도 무안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '보성군') {
+				$('.policy_content_maintxt_span').text("전라남도 보성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '신안군') {
+				$('.policy_content_maintxt_span').text("전라남도 신안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영광군') {
+				$('.policy_content_maintxt_span').text("전라남도 영광군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영암군') {
+				$('.policy_content_maintxt_span').text("전라남도 영암군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '완도군') {
+				$('.policy_content_maintxt_span').text("전라남도 완도군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '장성군') {
+				$('.policy_content_maintxt_span').text("전라남도 장성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '장흥군') {
+				$('.policy_content_maintxt_span').text("전라남도 장흥군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '진도군') {
+				$('.policy_content_maintxt_span').text("전라남도 진도군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '함평군') {
+				$('.policy_content_maintxt_span').text("전라남도 함평군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '해남군') {
+				$('.policy_content_maintxt_span').text("전라남도 해남군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '화순군') {
+				$('.policy_content_maintxt_span').text("전라남도 화순군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '전라남도'){
+			if ($('#child option:selected').val() == '경산시') {
+				$('.policy_content_maintxt_span').text("전라남도 경산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '경주시') {
+				$('.policy_content_maintxt_span').text("전라남도 경주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '구미시') {
+				$('.policy_content_maintxt_span').text("전라남도 구미시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '김천시') {
+				$('.policy_content_maintxt_span').text("전라남도 김천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '문경시') {
+				$('.policy_content_maintxt_span').text("전라남도 문경시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '상주시') {
+				$('.policy_content_maintxt_span').text("전라남도 상주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '안동시') {
+				$('.policy_content_maintxt_span').text("전라남도 안동시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영주시') {
+				$('.policy_content_maintxt_span').text("전라남도 영주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영천시') {
+				$('.policy_content_maintxt_span').text("전라남도 영천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '포항시') {
+				$('.policy_content_maintxt_span').text("전라남도 포항시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고령군') {
+				$('.policy_content_maintxt_span').text("전라남도 고령군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '군위군') {
+				$('.policy_content_maintxt_span').text("전라남도 군위군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '봉화군') {
+				$('.policy_content_maintxt_span').text("전라남도 봉화군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '성주군') {
+				$('.policy_content_maintxt_span').text("전라남도 성주군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영덕군') {
+				$('.policy_content_maintxt_span').text("전라남도 영덕군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '영양군') {
+				$('.policy_content_maintxt_span').text("전라남도 영양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '예천군') {
+				$('.policy_content_maintxt_span').text("전라남도 예천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '울릉군') {
+				$('.policy_content_maintxt_span').text("전라남도 울릉군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '울진군') {
+				$('.policy_content_maintxt_span').text("전라남도 울진군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '의성군') {
+				$('.policy_content_maintxt_span').text("전라남도 의성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '청도군') {
+				$('.policy_content_maintxt_span').text("전라남도 청도군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '청송군') {
+				$('.policy_content_maintxt_span').text("전라남도 청송군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '칠곡군') {
+				$('.policy_content_maintxt_span').text("전라남도 칠곡군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
+		if($('#parent option:selected').val() == '경상남도'){
+			if ($('#child option:selected').val() == '거제시') {
+				$('.policy_content_maintxt_span').text("경상남도 거제시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '김해시') {
+				$('.policy_content_maintxt_span').text("경상남도 김해시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '밀양시') {
+				$('.policy_content_maintxt_span').text("경상남도 밀양시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '사천시') {
+				$('.policy_content_maintxt_span').text("경상남도 사천시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '양산시') {
+				$('.policy_content_maintxt_span').text("경상남도 양산시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '진주시') {
+				$('.policy_content_maintxt_span').text("경상남도 진주시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '창원시') {
+				$('.policy_content_maintxt_span').text("경상남도 창원시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '통영시') {
+				$('.policy_content_maintxt_span').text("경상남도 통영시 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '거창군') {
+				$('.policy_content_maintxt_span').text("경상남도 거창군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '고성군') {
+				$('.policy_content_maintxt_span').text("경상남도 고성군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '남해군') {
+				$('.policy_content_maintxt_span').text("경상남도 남해군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '산청군') {
+				$('.policy_content_maintxt_span').text("경상남도 산청군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '의령군') {
+				$('.policy_content_maintxt_span').text("경상남도 의령군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '창녕군') {
+				$('.policy_content_maintxt_span').text("경상남도 창녕군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '하동군') {
+				$('.policy_content_maintxt_span').text("경상남도 하동군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '함안군') {
+				$('.policy_content_maintxt_span').text("경상남도 함안군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '함양군') {
+				$('.policy_content_maintxt_span').text("경상남도 함양군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#child option:selected').val() == '합천군') {
+				$('.policy_content_maintxt_span').text("경상남도 합천군 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			}
+		}
 		});
+	});
 </script>
 <script type="text/javascript">
 	window.onload = function() {
@@ -199,22 +716,22 @@ function nameCilck() {
 				</div>
 				<div class="policy_content_search">
 					<select class="selectpicker le" data-size="5" id="parent" onchange="LocatlonBinding();">
-						<option>서울시</option>
-						<option>경기도</option>
-						<option>인천시</option>
-						<option>부산시</option>
-						<option>대구시</option>
-						<option>광주시</option>
-						<option>대전시</option>
-						<option>울산시</option>
-						<option>세종시</option>
-						<option>강원도</option>
-						<option>충청북도</option>
-						<option>충청남도</option>
-						<option>전라북도</option>
-						<option>전라남도</option>
-						<option>경상북도</option>
-						<option>경상남도</option>
+						<option value="서울시">서울시</option>
+						<option value="경기도">경기도</option>
+						<option value="인천시">인천시</option>
+						<option value="부산시">부산시</option>
+						<option value="대구시">대구시</option>
+						<option value="광주시">광주시</option>
+						<option value="대전시">대전시</option>
+						<option value="울산시">울산시</option>
+						<option value="세종시">세종시</option>
+						<option value="강원도">강원도</option>
+						<option value="충청북도">충청북도</option>
+						<option value="충청남도">충청남도</option>
+						<option value="전라북도">전라북도</option>
+						<option value="전라남도">전라남도</option>
+						<option value="경상북도">경상북도</option>
+						<option value="경상남도">경상남도</option>
 					</select>
 					<script type="text/javascript">
 					function LocatlonBindingClick() {
