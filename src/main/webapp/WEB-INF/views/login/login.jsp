@@ -35,8 +35,9 @@
 				$(".modal-open-btn").trigger("click");
 				
 				});
+</script>
+<script>
 
-	
 	function chkPW() {
         var reg = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$/;
 
