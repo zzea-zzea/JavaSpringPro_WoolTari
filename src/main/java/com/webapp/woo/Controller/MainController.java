@@ -30,7 +30,7 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("info/info_policy");
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "info_childcare.woo", method = RequestMethod.GET)
 	public ModelAndView InfoChildCare(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("info/info_childcare");
@@ -102,11 +102,13 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("support/support");
 		return mav;
 	}
+
 	@RequestMapping(value = "support_info.woo", method = RequestMethod.GET)
 	public ModelAndView SupportInfo(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("support/support_info");
 		return mav;
 	}
+
 	@RequestMapping(value = "login.woo", method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login/login");
