@@ -159,6 +159,7 @@ main{font-family: 'Cafe24SsurroundAir';}
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a
 	{
 	color: #F2B09B;
+	text-decoration: none;
 }
 
 .navbar .dropdown.le {
