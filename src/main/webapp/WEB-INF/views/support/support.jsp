@@ -16,8 +16,18 @@ $(document).ready(function() {
 		} else if($('#selectpicker_le option:selected').val() == '법인 재단') {
 			$('.support_title_option').text("법인 재단");
 			$('.support_content_option').html(
-					"경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 <br> 기부금을 전달합니다");
+					"경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 기부금을 전달합니다");
 		}
+	});
+	$(document).ready(function() {
+		$(".form-check-input").change(function() {
+		var fruitValue = $('form-check-input :checked').val();
+		if($('form-check-input :checked').val() == "option1") {
+			$('bankbook_no_name_span').empty();
+		}
+		
+		})
+		
 	});
 });
 </script>
@@ -132,7 +142,7 @@ $(document).ready(function() {
 						</div>
 					</div>
 					<div class="bankbook_no_name">
-						<span>후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 울타리 팀장 김지혜)</span>
+						<span class="bankbook_no_name_span">후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 울타리 팀장 김지혜)</span>
 					</div>
 					<div class="bankbook_no_name">
 						<span>입금자 명 </span>
