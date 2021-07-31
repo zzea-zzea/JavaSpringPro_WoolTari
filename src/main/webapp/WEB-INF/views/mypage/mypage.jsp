@@ -58,6 +58,7 @@
 									</tbody>
 								</table>
 								<button class="edit_btn">수정</button>
+								<button class="edit_btn re">탈퇴</button>
 							</div>
 
 						</div>
