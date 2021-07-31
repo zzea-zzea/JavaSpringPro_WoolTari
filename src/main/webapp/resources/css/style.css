@@ -734,6 +734,7 @@ section {
 --------------------------------------------------------------*/
 .childcare_main {
 	background: aliceblue;
+	height: 1000px;
 }
 
 .childcare_box {
@@ -755,6 +756,10 @@ section {
 .childcare_box .side_bar {
 	float: left;
 	width: 290px;
+}
+.childcare_box .side_bar.my {
+	width: 190px;
+	text-align: center;
 }
 
 .childcare_box .side_bar .side_bar_content {
@@ -819,6 +824,9 @@ section {
 	padding: 20px 0 0 40px;
 	margin-bottom: 50px;
 }
+.childcare_box .childcare_section .childcare_content.my {
+width: 100%;
+	}
 
 .childcare_box .childcare_section .childcare_content .childcare_content_menu
 	{
@@ -1329,13 +1337,33 @@ font-size: 20px;
 /*--------------------------------------------------------------
 # 마이페이지
 --------------------------------------------------------------*/
-.childcare_box .info_content .childcare_content .childcare_content_myinfo{
-	border: 1px solid;
-	width:100%;
-	padding: 40px;
+.childcare_main.my {
+	background: #f8f9fa;
 }
 
+.childcare_content_menu.mypage table tr .phone_si input {
+	width: 30%;
+}
 
+.childcare_content_menu.mypage .table tbody tr:first-child>td {
+	width: 66px;
+}
+
+.childcare_content_menu.mypage .edit_btn {
+	border-radius: 8px;
+	border: 0;
+	width: 100%;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.childcare_content_menu.mypage .edit_btn:hover {
+	background: #bcbcbc;
+}
+
+.side_bar.my .side_bar_content {
+	background: #d8dfe7;
+}
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
