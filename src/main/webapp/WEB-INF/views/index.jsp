@@ -10,7 +10,7 @@
 		<section id="hero">
 			<div class="hero-container" data-aos="fade-in">
 				<h1>
-					저는 <span>"한부모"</span> 입니다.d
+					저는 <span>"한부모"</span> 입니다.
 				</h1>
 				<h2>가족의 형태는 다양할 뿐, 우리도 가족 입니다.</h2>
 				<div class="imgdivbox">

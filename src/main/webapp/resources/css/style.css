@@ -1326,6 +1326,16 @@ font-size: 20px;
 	margin-left: 20px;
 }
 
+/*--------------------------------------------------------------
+# 마이페이지
+--------------------------------------------------------------*/
+.childcare_box .info_content .childcare_content .childcare_content_myinfo{
+	border: 1px solid;
+	width:100%;
+	padding: 40px;
+}
+
+
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
