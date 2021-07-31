@@ -1,100 +1,99 @@
 package com.webapp.woo.model.vo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class MemberVO {
-
-	private int Member_id;
-	private String UserId;
-	private String UserPw;
-	private String UserName;
-	private String PhoneNumber;
-	private String Brithday;
-	private String NickName;
-	private int Gender;
-	private String Email;
-	private int isMember;
-	private String NumMember;
-	private String Buisness;
-
+	private int MemberIndex; // 순서번호		
+	private String Id; //아이디
+	private String Pw; //비밀번호
+	private String Name; //이름 
+	private String Phone; //전화번호		
+	private String Brith;  //생일
+	private String NickName; //별명
+	private int Gender;	// 성별				
+	private String Email; // 이메일
+	private int IsMember; //회원인지? 사업자인지?
+	private String NumMember; // 주민번호
+	private String Buisness; // 사업자번호
 	
 	
 	
-	
-	
-	
-	public MemberVO(String userId, String userPw) {
+	public MemberVO(String id, String pw, String name, String phone, String brith, String nickName, int gender,
+			String email, int isMember, String buisness) {
 		super();
-		UserId = userId;
-		UserPw = userPw;
-	}
-	
-
-
-
-	public MemberVO(String userName, String email, int isMember) {
-		super();
-		UserName = userName;
-		Email = email;
-		this.isMember = isMember;
-	}
-
-
-
-
-
-
-	public MemberVO(int member_id, String userId, String userPw, String userName, String phoneNumber, String brithday,
-			String nickName, int gender, String email, int isMember, String numMember, String buisness) {
-		super();
-		Member_id = member_id;
-		UserId = userId;
-		UserPw = userPw;
-		UserName = userName;
-		PhoneNumber = phoneNumber;
-		Brithday = brithday;
+		Id = id;
+		Pw = pw;
+		Name = name;
+		Phone = phone;
+		Brith = brith;
 		NickName = nickName;
 		Gender = gender;
 		Email = email;
-		this.isMember = isMember;
+		IsMember = isMember;
+		Buisness = buisness;
+	}
+	public MemberVO(String name, String email, int isMember) {
+		super();
+		Name = name;
+		Email = email;
+		IsMember = isMember;
+	}
+	public MemberVO(String id, String pw) {
+		super();
+		Id = id;
+		Pw = pw;
+	}
+	public MemberVO(int memberIndex, String id, String pw, String name, String phone, String brith, String nickName,
+			int gender, String email, int isMember, String numMember, String buisness) {
+		super();
+		MemberIndex = memberIndex;
+		Id = id;
+		Pw = pw;
+		Name = name;
+		Phone = phone;
+		Brith = brith;
+		NickName = nickName;
+		Gender = gender;
+		Email = email;
+		IsMember = isMember;
 		NumMember = numMember;
 		Buisness = buisness;
 	}
-	public int getMember_id() {
-		return Member_id;
+	public int getMemberIndex() {
+		return MemberIndex;
 	}
-	public void setMember_id(int member_id) {
-		Member_id = member_id;
+	public void setMemberIndex(int memberIndex) {
+		MemberIndex = memberIndex;
 	}
-	public String getUserId() {
-		return UserId;
+	public String getId() {
+		return Id;
 	}
-	public void setUserId(String userId) {
-		UserId = userId;
+	public void setId(String id) {
+		Id = id;
 	}
-	public String getUserPw() {
-		return UserPw;
+	public String getPw() {
+		return Pw;
 	}
-	public void setUserPw(String userPw) {
-		UserPw = userPw;
+	public void setPw(String pw) {
+		Pw = pw;
 	}
-	public String getUserName() {
-		return UserName;
+	public String getName() {
+		return Name;
 	}
-	public void setUserName(String userName) {
-		UserName = userName;
+	public void setName(String name) {
+		Name = name;
 	}
-	public String getPhoneNumber() {
-		return PhoneNumber;
+	public String getPhone() {
+		return Phone;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		PhoneNumber = phoneNumber;
+	public void setPhone(String phone) {
+		Phone = phone;
 	}
-	public String getBrithday() {
-		return Brithday;
+	public String getBrith() {
+		return Brith;
 	}
-	public void setBrithday(String brithday) {
-		Brithday = brithday;
+	public void setBrith(String brith) {
+		Brith = brith;
 	}
 	public String getNickName() {
 		return NickName;
@@ -115,10 +114,10 @@ public class MemberVO {
 		Email = email;
 	}
 	public int getIsMember() {
-		return isMember;
+		return IsMember;
 	}
 	public void setIsMember(int isMember) {
-		this.isMember = isMember;
+		IsMember = isMember;
 	}
 	public String getNumMember() {
 		return NumMember;
@@ -134,15 +133,11 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [Member_id=" + Member_id + ", UserId=" + UserId + ", UserPw=" + UserPw + ", UserName="
-				+ UserName + ", PhoneNumber=" + PhoneNumber + ", Brithday=" + Brithday + ", NickName=" + NickName
-				+ ", Gender=" + Gender + ", Email=" + Email + ", isMember=" + isMember + ", NumMember=" + NumMember
-				+ ", Buisness=" + Buisness + "]";
+		return "MemberVO [MemberIndex=" + MemberIndex + ", Id=" + Id + ", Pw=" + Pw + ", Name=" + Name + ", Phone="
+				+ Phone + ", Brith=" + Brith + ", NickName=" + NickName + ", Gender=" + Gender + ", Email=" + Email
+				+ ", IsMember=" + IsMember + ", NumMember=" + NumMember + ", Buisness=" + Buisness + "]";
 	}
 	
+
 	
 }
-	
-	
-	
-	

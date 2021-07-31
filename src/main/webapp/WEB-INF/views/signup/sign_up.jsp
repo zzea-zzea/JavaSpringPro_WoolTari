@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-<link rel="stylesheet" href="../css/sign_up.css">
+
 
 
 <body>
-
 	<%@ include file="../index.jsp" %>
+<form action="sign_up.woo">
 
 	<main class="sign_up_main"> 
 
@@ -512,5 +512,7 @@
 
 	</div>
 	</main>
+ </form>
     </body>
+
 </html>

@@ -134,7 +134,7 @@
 								</div>
 								<button type="submit" class="login_btn" disabled>LOGIN</button>
 								<div class="login_box_small_menu">
-									<span class="menu_join"> <a class="join_link">회원가입</a></span> <span
+									<span class="menu_join"> <a class="join_link"  href="${pageContext.request.contextPath}/sign_up.woo">회원가입</a></span> <span
 										class="menu_find"> <a class="find_link">아이디 / 비밀번호
 											찾기</a>
 									</span>
