@@ -1360,6 +1360,9 @@ font-size: 20px;
 .childcare_content_menu.mypage .edit_btn.re {
 background: #d9abab;
 }
+.childcare_content_menu.mypage .edit_btn.re:hover {
+background: #b38c8c;
+}
 
 .childcare_content_menu.mypage .edit_btn:hover {
 	background: #bcbcbc;
