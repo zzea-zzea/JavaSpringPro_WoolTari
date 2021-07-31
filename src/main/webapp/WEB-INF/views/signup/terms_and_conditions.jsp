@@ -9,11 +9,17 @@
    <%@ include file="../index.jsp" %>
    	<main class="terms_and_conditions_main"> 
    
+ 
+
+	<title>울타리 이용약관</title>
+
+  <body style="box-sizing: border-box">
       <form>
 
-	<div class="modal-wrapper">
-		<div class="modal-wrapper-box">
-			<button id="modal-close-btn" class="modal-close-btn">
+	<div class="modal-wrapper_join2">
+        <div class="modal_step">
+		<div class="modal-wrapper-box_join2">
+			<button id="modal-close-btn" class="modal-close-btn_join2">
 				<svg xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
 					id="Capa_1" x="0px" y="0px" viewbox="0 0 52.001 52.001"
@@ -119,6 +125,7 @@ for(var i=0 ; i<chkbox.length ; i++) {
                                     <input type="checkbox" name="agree" value="1" required
                                            >
                                     <span>이용약관 동의</span>
+                                    <span class = "required_span"> (필수)</span>
                                 </label>
                             </div>
                             <div class="terms_and_conditions_wrap_terms__content">
@@ -141,7 +148,8 @@ for(var i=0 ; i<chkbox.length ; i++) {
                                     <input type="checkbox" name="agree" value="1"  
                                            required>
                                       
-                                    <span>개인정보 수집 및 이용 동의</span>
+                                    <span >개인정보 수집 및 이용 동의</span>
+                                    <span class = "required_span"> (필수)</span>
                                 </label>
                             </div>
                             <div class="terms_and_conditions_wrap_terms__content">
@@ -162,7 +170,7 @@ for(var i=0 ; i<chkbox.length ; i++) {
                                 <label for="agree">
                                     <br>
                                     <input type="checkbox" name="agree" value="2">
-                                    <span>이벤트, 혜택정보 수신동의<strong class="select_disable">(선택)</strong></span>
+                                    <span>이벤트, 혜택정보 수신동의 <strong class="select_disable" font>(선택)</strong></span>
                                 </label>
                             </div>
                             <div class="terms_and_conditions_wrap_terms__content">
@@ -188,18 +196,17 @@ for(var i=0 ; i<chkbox.length ; i++) {
             </body>
         </div>
           </div>
-          
+          </div>
     </form>
-</main>
 </body>
-   
+    
    
 
 
     <script>
                     //                    const modalOpenBtn = document.getElementById("modal-open-btn");
-                    const modalCloseBtn = document.getElementById("modal-close-btn");
-                    const modalWrapper = document.querySelector(".modal-wrapper");
+                    const modalCloseBtn = document.getElementById("modal-close-btn2");
+                    const modalWrapper = document.querySelector(".modal-wrapper_join2");
 
                     //                    console.log(modalWrapper.style);
 

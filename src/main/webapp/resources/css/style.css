@@ -2228,7 +2228,6 @@ font-size: 20px;
 사용된 페이지 : 약관동의
 페이지 파일명 : terms_and_conditions.jsp
 */
-
 html,
 .terms_and_conditions_body{
   height: 100%;
@@ -2248,6 +2247,7 @@ html,
 
 .terms_and_conditions_body .terms_and_conditions_wrap label {
     display: block;
+/*    ??*/
 }
 
 
@@ -2270,7 +2270,7 @@ html,
   border: 1px solid #dadada;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  height: 750px;
+  height: 630px;
   position: relative;
   }
   
@@ -2321,19 +2321,24 @@ html,
 	}
 
 
-.terms_and_conditions_wrap .label required::after {
+.terms_and_conditions_wrap .required_span {
 	  margin-left: 4px;
-	  font-size: 13px;
-	  font-weight: 400;
+	  font-size: 15px;
+	  font-weight: 700;
 	  line-height: 24px;
 	  color: #0086ff;
 	  content: "(필수)";
+      text-decoration: underline;
+      text-underline-position: under;
+
+
+    
 /*    ?? terms_and_conditions_wrap 클래스 안에 label들만. */
 }
 
 .terms_and_conditions_body .terms_and_conditions_wrap .terms_and_conditions_wrap_contents_div .terms__check__all .terms_and_conditions_wrap_terms__content {
     
-	height: 150px;
+	height: 130px;
 	overflow: auto;
 	margin-top: 5px;
 	padding: 15px;
@@ -2387,7 +2392,6 @@ html,
 }
 
         
-  
 
 
  
@@ -2399,223 +2403,27 @@ html,
 페이지 파일명 : sign_up.jsp
 */
 
-.signup_head {
-    font-size:45px;
-    color: rgb(189,115,115);
-    font-weight:700;
-    text-align: center;
-
-}
-
-
-.signup_body{
-    height: 100%;
-    line-height: 2.0;
-}
-
-.signup_td_div_po {
-    width: 100%;
-    border: 0px solid;
-    position: relative;
-    padding: 10px 0;
-}
-
-.signup_join_div{
-	position: relative;
-	top: 30px;
-}
-
-.signup_td_div_po1_email {
-    border: 0px solid;
-    position: relative;
-    padding: 20px 0;
-    height:50px;
-
-}
-
-.signup_td_div_po input[type=button] {
-    position: absolute;
-    right: 0;
-    width: 30%;
-    padding: 10px;
-    background: #bd7373;
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    border: 0;
-    border-radius: 8px;
-
-}
-
-.signup_button_div input[type=button] {
-    height: 40px;
-    width: 100px;
-    color: #fff;
-    background: rgb(102, 102, 102);
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: 0;
-    position: relative;
-	bottom:40px;
-    top: 50px;
-    left: 20px
-
-}
-
-
-
-.signup_button_div input[type=submit] {
-    height: 40px;
-    width: 100px;
-    background: #bd7373;
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: 0;
-    position: relative;
-    left: 250px;
-    bottom:-50px;
-}
-
-
-.signup_sign_in_input {
-    width: 65%;
-    height: 30px
-}
-
-.signup_sign_in_phone_input {
-    width: 100px;
-    height: 30px
-}
-
-.signup_sign_in_email_input {
-    width: 100px;
-    height: 30px
-}
-
-.signup_verify_button {
-    width: 60px;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 2px solid;
-    background: #b96c6c;
-    color: #fff;
-    height: 30px;
-}
-
-.signup_sign_in_email_button1{
-    width:70px;
-    font-size: 13px;
-    font-weight: bolder;
-    border-radius: 40px;
-    border: 2px solid;
-    background: #b96c6c;
-    color: #fff;
-    height: 30px;
-    position: relative;
-    left: 230px;
-    bottom: 15px;
-}
-.signup_sign_in_email_button2 {
-    width:70px;
-    font-size: 13px;
-    font-weight: bolder;
-    border-radius: 40px;
-    border: 2px solid;
-    background: #b96c6c;
-    color: #fff;
-    height: 30px;
-    position: relative;
-    left: 230px;
-    bottom:15px;
-}
-
-.signup_table1 {
-    background: #f8f8f8;
-    padding: 10px;
-    border-radius: 20px;
-    position: relative;
-    top:-10px;
-}
-.table2{
-    background: #f8f8f8;
-    height:100px;
-    border-radius: 20px;
-}
-
-
-.form1 {
-    border: 2px solid black;
-    padding: 20px;
-    position: absolute;
-}
-
-.signup_small_text {
-    font-size: 11px;
-    color: #666699;
-    letter-spacing: 0.5px;
-}
-
-.signup_user_email_check_td_invisible {
-    display: none;
-}
-
-.signup_email_veri_text {
-   width: 220px;
-    height: 30px;
-    position: relative;
-    top: 15px;
-}
-
-.signup_user_email_check_tr {
-    width: 100%;
-    position: relative;
-    padding: 20px 0;
-    
-}
-
-.signup_label_id_and_nickname {
-    padding-bottom: 35px;
-}
-
-
-.signup_signup_form{
-    position: relative;
-}
-
-.signup_companyName_and_Number{
-    display: none;
-}
-
-.signup_pw_text{
-   font-size: 12px;
-    font-weight: bold;
-    color: red;
-}
-
-.signup_email_selectbox{
-    width: 100px; 
-    height: 30px;
-}
-
-
 .signup_signup_form .signup_head {
+    font-family: 'Cafe24SsurroundAir';
     font-size:20px;
     color: rgb(189,115,115);
     font-weight:700;
+    font-family: 'Cafe24SsurroundAir';
     text-align: center;
+    position: relative;
+    bottom: 40px;
 
 }
 
 .signup_signup_form{
     position: relative;
+    width: 105%;
+    right: 15px;
 }
 
 .signup_signup_form .signup_join_div {
 	position: relative;
+    bottom: 60px;
 }
 
 
@@ -2624,15 +2432,44 @@ html,
     padding: 10px;
     border-radius: 20px;
     position: relative;
-    border: solid black 2px;
+    top:auto;
+    right:5px;
+    border: red solid 2px;
 }
 
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po {
-    width: 50%;
-    border: 0px solid;
+    
     position: relative;
     padding: 10px 0;
+    border: solid brown 2px;
+    width: 400px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po #sign_Id {
+    position: relative;
+    top:2px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po #nick_name{
+    position: relative;
+    top:2px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po #user_pw {
+    position: relative;
+    top:7px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po #pwck {
+    position: relative;
+    top:7px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_email_label{
+    position: relative;
+    top:10px;
+    
 }
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_email_selectbox{
@@ -2640,22 +2477,20 @@ html,
     height: 30px;
 }
 
-.signup_signup_form .signup_join_div .signup_table1 .signup_label_id_and_nickname {
-    padding-bottom: 35px;
-}
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_sign_in_input{
+    
+    width: 55px;
+    height: 50px;
+    position: relative;
+    border: solid pink 4px;
 
-
-
-.signup_signup_form .signup_join_div .signup_table1 .signup_label_id_and_nickname .signup_td_div_po .signup_sign_in_input [type=text]{
-    width: 65%;
-    height: 30px;
 }
 
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po input[type=button] {
+    
     position: relative;
-    right: 0;
-    width: 40%;
+    width: 30%;
     padding: 10px;
     background: #bd7373;
     color: #fff;
@@ -2663,8 +2498,7 @@ html,
     font-weight: bold;
     border: 0;
     border-radius: 8px;
-    left:200px;
-    bottom: 25px;
+    left:10px;
    
 }
 
@@ -2672,7 +2506,21 @@ html,
     font-size: 11px;
     color: #666699;
     letter-spacing: 0.5px;
+    position: relative;
+    top:4px;
+    
 }
+
+
+.signup_signup_form .signup_join_div .signup_table1
+.signup_label_id_and_nickname .signup_td_div_po .signup_sign_in_input .signup_small_text {
+    font-size: 11px;
+    color: #666699;
+    letter-spacing: 0.5px;
+    position:relative;
+  
+}
+
 
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_pw_text{
@@ -2680,6 +2528,7 @@ html,
     font-weight: bold;
     color: red;
 }
+
 
 
 
@@ -2692,9 +2541,11 @@ html,
 }
 
 
+
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email .signup_sign_in_email_input {
     width: 100px;
     height: 30px;
+
 }
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po1_email .signup_verify_button {
@@ -2702,33 +2553,35 @@ html,
     font-size: 13px;
     font-weight: bold;
     border-radius: 20px;
-    border: 2px solid;
     background: #b96c6c;
     color: #fff;
     height: 30px;
+    border: 2px solid;
+
 }
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr {
     width: 100%;
     position: relative;
     padding: 20px 0;
+    border: solid yellow 5px;
+ 
     
 }
 
 
-.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible {
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr #signup_user_email_check_td_invisible {
     display: none;
 }
 
 
-.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_email_veri_text {
-   width: 220px;
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr #signup_user_email_check_td_invisible .signup_td_div_po2 .signup_email_veri_text {
+    width: 220px;
     height: 30px;
     position: relative;
-    top: 15px;
 }
 
-.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button1{
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr #signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button1{
     width:70px;
     font-size: 13px;
     font-weight: bolder;
@@ -2738,13 +2591,11 @@ html,
     color: #fff;
     height: 30px;
     position: relative;
-    left: 230px;
-    bottom: 15px;
 }
 
 
 
-.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr .signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button2 {
+.signup_signup_form .signup_join_div .signup_table1 .signup_user_email_check_tr #signup_user_email_check_td_invisible .signup_td_div_po2 .signup_sign_in_email_button2 {
     width:70px;
     font-size: 13px;
     font-weight: bolder;
@@ -2754,36 +2605,39 @@ html,
     color: #fff;
     height: 30px;
     position: relative;
-    left: 230px;
-    bottom:15px;
+
 }
 
-
-
-.signup_signup_form .signup_join_div .signup_table1 .signup_hide_company .signup_td_div_po .sign_in_phone_input {
-    width: 100px;
-    height: 30px
+.signup_signup_form .signup_join_div .signup_table1 .signup_td_div_po .signup_sign_in_input{
+    width: 65%;
+    height: 30px;
 }
+
 
 .signup_signup_form .signup_join_div .signup_table1 .signup_hide_company .signup_td_div_po .signup_sign_in_input{
     width: 65%;
-    height: 30px
+    height: 30px; 
+}
+
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_hide_company .signup_td_div_po .sign_in_phone_input{
+    width:30%;
+    height:30px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_companyName_and_Number .signup_td_div_po .sign_in_comp_input{
+    width:30%;
+    height:30px;
+    border: solid orange 2px;
+}
+
+.signup_signup_form .signup_join_div .signup_table1 .signup_companyName_and_Number{
     
-}
-
-
-.form1 {
-    padding: 20px;
-    position: relative;
-}
-
-
-.signup_form .signup_join_div .signup_table1 .signup_companyName_and_Number{
     display: none;
 }
 
 
-.signup_signup_form .signup_button_div input[type=button] {
+.signup_button_div .signup_previous_button{
     height: 40px;
     width: 100px;
     color: #fff;
@@ -2793,14 +2647,13 @@ html,
     border-radius: 50px;
     border: 0;
     position: relative;
-	bottom:40px;
-    top: 50px;
-    left: 20px;
+	bottom: 60px;
+    left:50px;
 
 }
 
 
-.signup_signup_form .signup_button_div input[type=submit] {
+.signup_button_div .signup_next_button {
     height: 40px;
     width: 100px;
     background: #bd7373;
@@ -2810,14 +2663,97 @@ html,
     border-radius: 50px;
     border: 0;
     position: relative;
-    left: 1000px;
-    bottom:-50px;
+    left: 300px;
+    bottom:60px;
 }
-
 
 
 /*------------ 회원가입 end ------------*/
 
+/*
+------------담당자 : 정지원 ------------
+사용된 페이지 : 약관동의, 회원가입 모달
+페이지 파일명 : sign_up, terms_and_conditions.jsp
+*/
+
+.modal_body_join * {
+     box-sizing: border-box;
+ }
+
+ .modal_body_join .modal-wrapper_join {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgb(0 0 0 / 34%);
+     display: none;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .modal_body_join .modal-wrapper_join .modal-wrapper-box_join {
+    font-family: 'Cafe24SsurroundAir';
+     background: white;
+     border-radius: 10px;
+     width: 600px;
+     height: 850px;
+     padding: 30px;
+     box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+     position: relative;
+ }
+
+
+ .modal_body_join .modal-wrapper_join .modal-wrapper-box_join .modal-close-btn_join {
+     background-color: white;
+     border: white;
+     float: right;
+ }
+
+.modal_body_join .modal-wrapper_join .modal-wrapper-box_join .modal-close-btn_join .modal-close-btn svg {
+     width: 20px;
+     opacity: 0.7;
+ }
+
+/*------------*/
+
+.modal-wrapper_join2 {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgb(0 0 0 / 34%);
+     display: none;
+     justify-content: center;
+     align-items: center;
+ }
+/*모덜 사이즈 */
+.modal-wrapper_join2 .modal-wrapper-box_join2 {
+    font-family: 'Cafe24SsurroundAir';
+     background: white;
+     border-radius: 10px;
+     width: 540px;
+     height: 790px;
+     padding: 30px;
+     box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+     position: relative;
+ }
+/*-----------------*/
+
+ .modal-wrapper_join2 .modal-wrapper-box_join2 .modal-close-btn_join2 {
+     background-color: white;
+     border: white;
+     float: right;
+ }
+
+.modal-wrapper_join2 .modal-wrapper-box_join2 .modal-close-btn_join2 svg {
+     width: 20px;
+     opacity: 0.7;
+ }
+ 
+ 
+/*------------ 모달 css end ------------*/
 /*
 ------------담당자 : 김진영 ------------
 사용된 페이지 : 후원하기
