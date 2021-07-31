@@ -9,27 +9,31 @@ $(document).ready(function() {
 	         $('.support_title_option').text("미혼모 시설");
 	         $('.support_content_option').html(
 	               "경제적으로 취약한 미혼모,부가 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
+	         $(".imgClass").attr("src", "${path}/resources/img/main/main2.png");
 	      } else if($('#selectpicker_le option:selected').val() == '한부모 가정') {
 	         $('.support_title_option').text("한부모 가정");
 	         $('.support_content_option').html(
 	               "경제적으로 취약한 한부모가정이 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
+	         $(".imgClass").attr("src", "${path}/resources/img/main/main1.png");
 	      } else if($('#selectpicker_le option:selected').val() == '법인 재단') {
 	         $('.support_title_option').text("법인 재단");
 	         $('.support_content_option').html(
-	               "경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 기부금을 전달합니다");
+	               "경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 <br>기부금을 전달합니다");
+	         $(".imgClass").attr("src", "${path}/resources/img/main/main4.png");
 	      }
-	   });
-	   $(document).ready(function() {
-	      $(".form-check-input").change(function() {
-	      var fruitValue = $('form-check-input :checked').val();
-	      if($('form-check-input :checked').val() == "option1") {
-	         $('bankbook_no_name_span').empty();
-	      }
-	      
-	      })
-	      
 	   });
 	});
+$(document).ready(function () {
+	$(".form-check-input").click(function() {
+	
+		var cardorcash = $('input[name="payinlineRadioOptions"]:checked').val();
+		if(cardorcash == 'option2')	{
+			$('.bankbook_no_name_span').text("후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 울타리 팀장 김지혜)");
+		} else if(cardorcash == 'option1') {
+			$('.bankbook_no_name_span').text("");
+		}
+	});
+});
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
@@ -46,7 +50,7 @@ $(document).ready(function() {
 					</div>
 					<div class="support_content_benefits_txt sm">
 						<div class="support_content_benefits_con img">
-							<img src="${path}/resources/img/main/main1.png" alt="img">
+							<img class="imgClass" src="${path}/resources/img/main/main1.png" alt="img">
 						</div>
 						<div class="support_content_benefits_con">
 							<div class="support_content_benefits_select_con">
@@ -133,7 +137,7 @@ $(document).ready(function() {
 					</div>
 					<div class="payment_content_benefits">
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="payinlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
+							<input class="form-check-input" type="radio" name="payinlineRadioOptions" id="inlineRadio1" value="option1">
 							<label class="form-check-label" for="inlineRadio1">신용카드</label>
 						</div>
 						<div class="form-check form-check-inline">
@@ -142,7 +146,7 @@ $(document).ready(function() {
 						</div>
 					</div>
 					<div class="bankbook_no_name">
-						<span class="bankbook_no_name_span">후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 울타리 팀장 김지혜)</span>
+						<span class="bankbook_no_name_span"></span>
 					</div>
 					<div class="bankbook_no_name">
 						<span>입금자 명 </span>
