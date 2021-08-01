@@ -41,7 +41,7 @@ $(document).ready(function () {
 		<main class="support_main">
 			<div class="support_box s ma">
 				<div class="support_content_title">
-					<h2>후원하기ddd</h2>
+					<h2>후원하기</h2>
 					<span>선택한 사업에 후원하는 방법으로, 지원이 시급한 이웃에게 전달되어 도움을 줄 수 있습니다. </span>
 				</div>
 				<div class="support_content_benefits">

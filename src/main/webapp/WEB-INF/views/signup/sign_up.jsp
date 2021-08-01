@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-<link rel="stylesheet" href="../css/sign_up.css">
+
 
 
 <body>
-
 	<%@ include file="../index.jsp" %>
+<form action="sign_up.woo">
 
 	<main class="sign_up_main"> 
-
-<div class="modal-wrapper">
-		<div class="modal-wrapper-box">
-			<button id="modal-close-btn" class="modal-close-btn">
+  <title>울타리 회원가입</title>
+  <body class="modal_body_join">
+	<div class="modal-wrapper_join">
+        <div class="modal_step">
+		<div class="modal-wrapper-box_join">
+			<button id="modal-close-btn" class="modal-close-btn_join">
 				<svg xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
 					id="Capa_1" x="0px" y="0px" viewbox="0 0 52.001 52.001"
@@ -264,28 +266,30 @@
 								</tr>
 
 								<tr>
-									<th class="signup_label_id_and_nickname">아이디</th>
+									<th >아이디</th>
 									<td>
 										<div class="signup_td_div_po">
 											<input name="user_Id" type="text" class="signup_sign_in_input"
 												id="sign_Id" onkeyup="chkID();" required> <input
 												type="button" value="click" a href="#"
-												onclick="alert('사용가능합니다')"> <span class="signup_small_text"><br>*4~12자리
-												영대소문자와 숫자로만 입력가능합니다</span> <br>
+												onclick="alert('사용가능합니다')">
+                                            <span class="signup_small_text"><br>*4~12자리
+												영대소문자와 숫자로만 입력가능합니다</span><br> 
 											<span class="signup_pw_text" id="id_msg" onkeyup="chkID();"></span>
 										</div>
 									</td>
 								</tr>
 
 								<tr>
-									<th class="signup_label_id_and_nickname">별명</th>
+									<th >별명</th>
 									<td>
 										<div class="signup_td_div_po">
 											<input name="userNickname" id="nick_name" type="text"
 												class="signup_sign_in_input" maxlength="15" required onkeyup="chkNick();">
 											<input type="button" value="click" a href="#"
 												onclick="alert('사용가능합니다')"> <span class="signup_small_text"><br>*영대소문자,한글,숫자만
-												가능합니다</span><br> <span class="signup_pw_text" id="nick_msg"
+												가능합니다</span>
+                                            <br> <span class="signup_pw_text" id="nick_msg"
 												onkeyup="chkNick();"></span>
 
 										</div>
@@ -350,15 +354,15 @@
 											<input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												maxlength="3" name="comRegNum1" id="comNum1"
-												class="sign_in_phone_input" onkeypress="comNumCheck1(this)"
+												class="sign_in_comp_input" onkeypress="comNumCheck1(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="comRegNum2" id="comNum2" maxlength="2"
-												class="sign_in_phone_input" onkeypress="comNumCheck2(this)"
+												class="sign_in_comp_input" onkeypress="comNumCheck2(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
 												name="comRegNum3" id="comNum3" maxlength="5"
-												class="sign_in_phone_input" required>
+												class="sign_in_comp_input" required>
 										</div>
 									</td>
 								</tr>
@@ -375,7 +379,7 @@
 
 
 								<tr>
-									<th>이메일</th>
+									<th class= "signup_email_label">이메일</th>
 									<td>
 										<div class="signup_td_div_po1_email">
 											<input type="text" class="signup_sign_in_email_input" name="str_email01"
@@ -399,7 +403,7 @@
 
 								<tr class="signup_user_email_check_tr">
 									<th>이메일인증</th>
-									<td class="signup_user_email_check_td_invisible">
+									<td id="signup_user_email_check_td_invisible">
 										<div class="signup_td_div_po2">
 
 											<input type="text" class="signup_email_veri_text"
@@ -496,7 +500,7 @@
 		<script>
                     //                    const modalOpenBtn = document.getElementById("modal-open-btn");
                     const modalCloseBtn = document.getElementById("modal-close-btn");
-                    const modalWrapper = document.querySelector(".modal-wrapper");
+                    const modalWrapper = document.querySelector(".modal-wrapper_join ");
 
                     //                    console.log(modalWrapper.style);
 
@@ -511,6 +515,6 @@
 
 
 	</div>
-	</main>
+      </div>
     </body>
 </html>
