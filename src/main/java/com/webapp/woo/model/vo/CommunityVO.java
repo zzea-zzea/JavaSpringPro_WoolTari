@@ -1,101 +1,97 @@
 package com.webapp.woo.model.vo;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class CommunityVO {
 
-	private int BoardId;
-	private int Category;
-	private String Title;
-	private String Content;
-	private int View;
-	private Date WritteDate;
-	private String ImgPath;
-	private int MemberId;
+	private int board_index;
+	private int cate;
+	private String title;
+	private String content;
+	private int views;
+	private Timestamp write_date;
+	private String img_path;
+	private int member_index;
 	
 	
-	public CommunityVO(int boardId, int category, String title, int view, Date writteDate, int memberId) {
-		super();
-		BoardId = boardId;
-		Category = category;
-		Title = title;
-		View = view;
-		WritteDate = writteDate;
-		MemberId = memberId;
+	
+	public int getBoard_index() {
+		return board_index;
 	}
-
-	public CommunityVO(int boardId, int memberId) {
-		super();
-		BoardId = boardId;
-		MemberId = memberId;
+	public void setBoard_index(int board_index) {
+		this.board_index = board_index;
 	}
-
-	public CommunityVO(int boardId, int category, String title, String content, int view, Date writteDate,
-			String imgPath, int memberId) {
-		super();
-		BoardId = boardId;
-		Category = category;
-		Title = title;
-		Content = content;
-		View = view;
-		WritteDate = writteDate;
-		ImgPath = imgPath;
-		MemberId = memberId;
+	public int getCate() {
+		return cate;
 	}
+	public void setCate(int cate) {
+		this.cate = cate;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public int getViews() {
+		return views;
+	}
+	public void setViews(int views) {
+		this.views = views;
+	}
+	public Timestamp getWrite_date() {
+		return write_date;
+	}
+	public void setWrite_date(Timestamp write_date) {
+		this.write_date = write_date;
+	}
+	public String getImg_path() {
+		return img_path;
+	}
+	public void setImg_path(String img_path) {
+		this.img_path = img_path;
+	}
+	public int getMember_index() {
+		return member_index;
+	}
+	public void setMember_index(int member_index) {
+		this.member_index = member_index;
+	}
+	
 
+	public CommunityVO(int cate, String title, int views, Timestamp write_date, int member_index) {
+		super();
+		this.cate = cate;
+		this.title = title;
+		this.views = views;
+		this.write_date = write_date;
+		this.member_index = member_index;
+	}
+	public CommunityVO(int board_index, int cate, String title, String content, int views, Timestamp write_date,
+			String img_path, int member_index) {
+		super();
+		this.board_index = board_index;
+		this.cate = cate;
+		this.title = title;
+		this.content = content;
+		this.views = views;
+		this.write_date = write_date;
+		this.img_path = img_path;
+		this.member_index = member_index;
+	}
+	
 	@Override
 	public String toString() {
-		return "CommunityVO [BoardId=" + BoardId + ", Category=" + Category + ", Title=" + Title + ", Content="
-				+ Content + ", View=" + View + ", WritteDate=" + WritteDate + ", ImgPath=" + ImgPath + ", MemberId="
-				+ MemberId + "]";
-	}
-
-	public int getCategory() {
-		return Category;
-	}
-
-	public void setCategory(int category) {
-		Category = category;
-	}
-
-	public String getTitle() {
-		return Title;
-	}
-
-	public void setTitle(String title) {
-		Title = title;
-	}
-
-	public String getContent() {
-		return Content;
-	}
-
-	public void setContent(String content) {
-		Content = content;
-	}
-
-	public int getView() {
-		return View;
-	}
-
-	public void setView(int view) {
-		View = view;
-	}
-
-	public String getImgPath() {
-		return ImgPath;
-	}
-
-	public void setImgPath(String imgPath) {
-		ImgPath = imgPath;
-	}
-
-	public int getMemberId() {
-		return MemberId;
-	}
-
-	public void setMemberId(int memberId) {
-		MemberId = memberId;
+		return "CommunityVO [board_index=" + board_index + ", cate=" + cate + ", title=" + title + ", content="
+				+ content + ", views=" + views + ", write_date=" + write_date + ", img_path=" + img_path
+				+ ", member_index=" + member_index + "]";
 	}
 	
 	

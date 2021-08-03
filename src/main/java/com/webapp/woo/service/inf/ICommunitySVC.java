@@ -1,30 +1,59 @@
 package com.webapp.woo.service.inf;
 
+import java.util.List;
+
+import com.webapp.woo.model.vo.CommentVO;
+import com.webapp.woo.model.vo.Comment_deVO;
 import com.webapp.woo.model.vo.CommunityVO;
 
 public interface ICommunitySVC {
-	
+	int PAGE_SIZE = 15;
+
 	// 회원이 게시글을 만들 수 있다.
-	boolean WriteNewContent(int memberId);
-	
+	boolean WriteNewContent(CommunityVO CV);
+
 	// 회원이 게시글을 볼 수 있다.
-	CommunityVO selectOneContent(int memberId, int boardId);
-	
+	CommunityVO selectOneContent(int board_index, int member_index);
+
 	// 회원이 게시글에 댓글을 달 수 있다.
-	boolean Writecomment(int boardId, int memberId);
-	
-	// 회원이 게시글에 단 댓글을 수정하거나 삭제 할 수 있다.
-	boolean updateOneComment(int boardId, int memberId);
-	
+	boolean Writecomment(CommentVO CR, int member_index, int board_index);
+
+	// 회원이 게시글에 단 댓글을 수정 할 수 있다.
+	boolean updateOneComment(CommentVO CR);
+
 	// 회원이 게시글에 있는 댓글에 답글을 달 수 있다.
-	boolean WriteReply(int boardId, int commentId, int memberId);
-	
-	// 회원이 게시글에 있는 댓글에 자신이 쓴 댓글을 수정하거나 삭제할 수 있다.
-	boolean UpdateOneReply(int boardId, int commentId, int memberId);
-	
+	boolean WriteReply(Comment_deVO CD, int member_index, int commentId);
+
+	// 회원이 게시글에 있는 댓글에 자신이 쓴 댓글을 수정할 수 있다.
+	boolean UpdateOneReply(Comment_deVO CD);
+
 	// 회원이 자신의 게시글을 수정하거나 삭제 할 수 있다.
-	boolean updateOneContent(CommunityVO CV, int memberId);
-	
-	// 회원이 공지사항의 글을 볼 수 있다.
-	CommunityVO selectOneNotice(int memberId, int noticeId);
+	boolean updateOneContent(CommunityVO CV);
+
+	// 회원이 자신의 게시글을 삭제 할 수 있다.
+	boolean deleteBoard(int board_index);
+
+	// 회원이 자신의 댓글을 삭제 할 수 있다.
+	boolean deleteComment(int comment_index);
+
+	// 회원이 자신의 댓글에 답글에 삭제 할 수 있다.
+	boolean deleteComment_de(int comment_de_index);
+
+	// 조회수 증가
+	boolean increaseviews(int board_index);
+
+	// 게시글 페이지
+	List<CommunityVO> selectAllBoard(int pg);
+
+	// 최대 페이지 수 (전체 페이지 수)
+	int checkMaxPageNumber();
+
+	// 전체 게시글 레코드 수
+	int checkAllNumberOfBoard();
+
+	// 게시글 전부를 가져올 수 있다.
+	List<CommunityVO> CommunityList();
+
+	// 게시글을 카테고리로 검색 할 수 있다.
+	List<CommunityVO> searchboardforcate(int cate);
 }
