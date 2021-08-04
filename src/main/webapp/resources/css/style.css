@@ -1507,6 +1507,16 @@ background: #b38c8c;
 .table>:not(:last-child)>:last-child>*{
 	border-bottom-color: whitesmoke;
 }
+.btn_selected_gosite{
+	border: 0;
+    background: #a3adb7;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+.btn_selected_gosite:hover{
+    background: #8c96a1;
+}
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
