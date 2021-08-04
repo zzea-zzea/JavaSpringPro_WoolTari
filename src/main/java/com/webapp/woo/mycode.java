@@ -9,9 +9,16 @@ public class mycode {
 	public static final int MB_PW_NULL_EMPTY = 4;
 	public static final int MB_PW_MISMATCH = 5;
 	
+	
+	public static final int FIND_ERROR = 1;
+	public static final int FIND_SUCCESS = 2;
+	public static final int FIND_NULL = 3;
+	public static final int PHN_MISMATCH = 4;
+	public static final int LOGIN_ERROR = 5;
+	
 	public static final String[] LOGIN_MSGS = {
-		"로그인 일반 에러", "로그인 성공!", 
-		"로그인 회원 없음", "로그인 파람 에러",
+		"아이디찾기 일반 에러", "아이디찾기 성공!", 
+		"아이디  없음", "로그인 파람 에러",
 		"패스워드 파람 에러", "패스워드 불일치"
 	};
 }

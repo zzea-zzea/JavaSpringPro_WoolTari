@@ -35,6 +35,7 @@
 				$(".modal-open-btn").trigger("click");
 				
 				});
+	
 </script>
 <script>
 
@@ -60,7 +61,7 @@
 
 <body class="modal_body">
 	<%@ include file="../index.jsp"%>
-	<form action="login.woo">
+
 		<!-- 	<h2>모달창만들기</h2> -->
 		<a class="modal-open-btn" id="modal-open-btn">Login</a>
 		<!-- 	<div id="modal-overlay"> -->
@@ -124,17 +125,20 @@
 										</h1>
 									</div>
 								</header>
+								<form action="member_login.woo" method="post">
 								<div class="login_box_input">
 									<div class="input_id_box">
-										<label>아이디</label> <input type="email" placeholder="아이디">
+										<label>아이디</label> <input type="text"  name="id" placeholder="아이디">
 									</div>
 									<div class="input_pw_box">
-										<label>비밀번호</label> <input type="password" placeholder="비밀번호">
+										<label>비밀번호</label> <input type="password" name="pw" placeholder="비밀번호">
 									</div>
 								</div>
-								<button type="submit" class="login_btn" disabled>LOGIN</button>
+								
+								<input type="submit" class="login_btn" value="로그인" >
+								</form>
 								<div class="login_box_small_menu">
-									<span class="menu_join"> <a class="join_link"  href="${pageContext.request.contextPath}/sign_up.woo">회원가입</a></span> <span
+									<span class="menu_join"> <a class="join_link" href="${pageContext.request.contextPath}/sign_up.woo">회원가입</a></span> <span
 										class="menu_find"> <a class="find_link">아이디 / 비밀번호
 											찾기</a>
 									</span>
@@ -160,8 +164,10 @@
 							</section>
 						</div>
 					</div>
+				
 				</div>
 			</div>
+
 			<div class="modal_step">
 
 				<div class="modal-box find">
@@ -224,13 +230,14 @@
 						</ul>
 					</div>
 
+						<form action="member_findid.woo" method="post">
 					<div class="menu_id_box" id="input_box">
 						<div class="menu_id_box_content">
 							<select class="content_choice_box" id="selectBox"
 								onclick="Change()">
 								<option value="1">개인</option>
 								<option value="2">사업자</option>
-							</select> <br> <input class="txt_name" name="in_text"
+							</select> <br> <input class="txt_name" name="name"
 								placeholder="이름"> <br>
 							<div id="div1" style="display: none" class="menu_id_hide_box">
 								<input class="txt_business_num" placeholder="사업자번호"
@@ -240,7 +247,7 @@
 									<span class="hide_small">'-'을 제외한 번호만 입력해주세요</span>
 								</div>
 							</div>
-							<input class="txt_email" placeholder="이메일" name="in_text_email">
+							<input class="txt_email" placeholder="이메일" name="email">
 							<button type="button" class="email_btn"
 								onclick="alert('인증메일을 보냈습니다'); id_show();">확인</button>
 							<br>
@@ -260,9 +267,9 @@
 					</div>
 
 					<div class="box_find">
-						<a class="find_id_btn">아이디 찾기</a>
+						<input class="find_id_btn" type="submit" value="아이디 찾기">
 					</div>
-
+			</form>
 
 				</div>
 			</div>
@@ -331,11 +338,12 @@
 						</ul>
 					</div>
 
+					<form action="member_findpw.woo" method="post">
 					<div class="menu_pw_box">
 						<div class="menu_pw_box_content">
-
-							<input class="txt_name" placeholder="이름"> <br> <input
-								class="txt_email" placeholder="이메일">
+							<input class="txt_name" placeholder="아이디" name="id"> <br> 
+							<input
+								class="txt_email" placeholder="이메일" name="email">
 							<button type="button" class="email_btn"
 								onclick="alert('인증메일을 보냈습니다'); pw_show();">확인</button>
 							<br>
@@ -356,15 +364,16 @@
 
 
 					<div class="box_find">
-						<a class="find_pw_btn">비밀번호 찾기</a>
+						<input class="find_pw_btn" type="submit">비밀번호 찾기
 					</div>
-
+				</form>
 				</div>
 
 
 			</div>
 			
 			<div class="modal_step">
+
 				<div class="modal-box ch">
 
 
@@ -416,10 +425,11 @@
 						<h3 class="title_find_menu_new_pw">새 비밀번호 변경</h3>
 					</div>
 
+					<form action="member_updatepw.woo" method="POST"> 
 					<div class="menu_new_pw_box">
 						<div class="menu_new_pw_box_content">
 							<input class="box_txtpw" placeholder="새 비밀번호" type="password"
-								id="password" onkeyup="chkPW();">
+								id="password" onkeyup="chkPW();" name="pw">
 							<div class="menu_new_span_box">
 								<span class="small_text">*숫자,특수문자,영대소문자 조합 필수</span> <br> <span
 									class="menu_new_pw_box_pw" id="pw_msg" onkeyup="chkPW();"></span>
@@ -436,12 +446,14 @@
 						</div>
 					</div>
 					<div class="box_find">
-						<a class="find_new_pw_btn" onclick="chkPW()">비밀번호 변경</a>
+						<input type="submit" class="find_new_pw_btn" onclick="chkPW()" value="비밀번호 변경">
 					</div>
+					</form>
 				</div>
-			</div>
 
+			</div>
 		</div>
+				
 
 
 
@@ -509,6 +521,6 @@
         }
         
     </script>
-	</form>
+	
 </body>
 </html>

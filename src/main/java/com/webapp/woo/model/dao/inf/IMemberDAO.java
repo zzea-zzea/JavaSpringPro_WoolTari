@@ -17,19 +17,20 @@ public interface IMemberDAO {
 		
 		
 		// - 로그인 할 수 있다. (세션, 암호화 인증)
-		int loginProcess(String id);// 패스워드를 암호화 풀어서 리턴
 		String decryptPassword(String id);// 패스워드를 암호화 풀어서 리턴
+		String decryptPassword(int mbId); // 패스워드를 암호화 풀어서 리턴
 
 		// 아이디를 찾을 수 있다.
-		boolean findidMember(String name, String email);
+		MemberVO findidMember(String name, String email);
 
 		// 비밀번호를 찾을 수 있다.
-		boolean findpwMember(String name, String email);
+		MemberVO findpwMember(String id, String email);
 
 		// 비밀번호를 변경할 수 있다.
-		boolean updateOneMember(MemberVO mb); // 암호화
+		boolean updateMemberPw(MemberVO mb); // 암호화
 		
 		// 멤버 조회
 		MemberVO selectOneMember(int MemberIndex);
 		MemberVO selectOneMember(String ld);
+		MemberVO selectOneMemberEmail(String email);
 }
