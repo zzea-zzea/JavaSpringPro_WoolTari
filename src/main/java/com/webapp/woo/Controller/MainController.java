@@ -360,19 +360,7 @@ public class MainController {
       return mav;
    }
    
-   
-   @RequestMapping(value = "sign_up.woo", method = RequestMethod.GET)
-   public ModelAndView signup(HttpServletRequest request) {
-      ModelAndView mav = new ModelAndView("signup/terms_and_conditions");
-      return mav;
-   }
-   
-   @RequestMapping(value = "sign_up2.woo", method = RequestMethod.GET)
-   public ModelAndView signup2(HttpServletRequest request) {
-      ModelAndView mav = new ModelAndView("signup/sign_up");
-      return mav;
-   }
-      
+
 
 //   @RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
 //   public ModelAndView DonateMain(HttpServletRequest request) {
