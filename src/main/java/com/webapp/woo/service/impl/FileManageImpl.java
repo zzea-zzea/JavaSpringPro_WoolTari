@@ -72,11 +72,44 @@ public class FileManageImpl implements IFileManageSVC {
 		}
 
 		@Override
-		public HashMap<String, Object> writeMultipleUploadFilesWithInfo(List<MultipartFile> upfiles, String realPath,
+		public HashMap<String, Object> writeMultipleUploadFilesWithInfo(
+				List<MultipartFile> upfiles, String realPath,
 				HttpSession ses) {
-			// TODO Auto-generated method stub
-			return null;
+			// 정보:  
+			//     파일 개수,  파일 총량,  경로합..., 이미지파일%(종류)..
+			final String[] IMG_FILES = { ".jpg", ".png", ".gif", ".webp" };
+			long totalBytes = 0L; // 바이트 총량..
+			int imgCnt = 0;
+			StringBuffer filePaths = new StringBuffer(); 
+			for (int i = 0; i < upfiles.size(); i++) {
+				MultipartFile upfile = upfiles.get(i);
+				//
+				String oriFile = upfile.getOriginalFilename();
+				for (String fmt : IMG_FILES) {
+					if( oriFile.toLowerCase().endsWith(fmt) ) {
+						imgCnt++; break;
+					}
+				}
+				//	
+				totalBytes += upfile.getSize(); // volume
+				String singleFP = // signle file path..
+					writeUploadFile(upfile, realPath, ses);
+				if( singleFP != null ) 
+					filePaths.append(singleFP 
+							+ ( i < upfiles.size()-1 ? MULTI_FILE_SEP : "") );
+				else // null 예외?
+					System.out.println(i+"번 파일 업로드 실패함: "
+							+ upfile.getOriginalFilename());
+			}		
+			HashMap<String, Object> rMap = new HashMap<>();
+			rMap.put("countFiles", upfiles.size()); // 파일 개수
+			rMap.put("filePaths", filePaths.toString()); // 경로묶음
+			rMap.put("totalBytes", totalBytes); // 총용량 bytes
+			double totalMB = totalBytes / (1024.0*1024.0); // Mega bytes.bytes.
+			rMap.put("totalMB", totalMB); // 총용량 MB
+			rMap.put("imgFileRatio", ((double)imgCnt/upfiles.size())*100.0);
+						// 이미지 파일 비율 %
+			return rMap;
 		}
 
-		
 }

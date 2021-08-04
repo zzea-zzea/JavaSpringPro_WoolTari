@@ -1,60 +1,50 @@
 package com.webapp.woo.service.inf;
 
+import java.util.Date;
 import java.util.List;
 
-import com.webapp.woo.model.vo.CommentVO;
-import com.webapp.woo.model.vo.Comment_deVO;
+import org.springframework.stereotype.Service;
+
 import com.webapp.woo.model.vo.CommunityVO;
-
 public interface ICommunitySVC {
-	int PAGE_SIZE = 15;
+	
+	
+//	- 회원이 신규 게시글을 등록 할 수 있다.(세션, dao, 다수 파일업로드-사진/첨부)
+	int insertNewCommunityReturnKey2(CommunityVO at); 
+	
+	
+	//- 회원이 특정 게시글을 상세보기 할 수 있다. (조회수 증가 동반?)
+//	artilce_show.my?atId=x ; get, proc, dao
+	CommunityVO selectOneCommunity(int atId);	
+	
+	
+	//- 회원 자신이 쓴 특정 게시글을 편집/갱신 할 수 있다. (권한/롤/세션...)
+//	article_edit_form.my?atId=y; 소유자인증체크/세션, dao proc
+//	article_update.my ; post, doa, proc, session
+	int updateCommunity(CommunityVO at);
+	boolean increaseReadCount(int atId); //조회수 +1 증가 
+	
+	//- 회원이 자신이 쓴 글을 삭제 할 수 있다.
+//	artilce_remove.my?atId=z ; confirm, dao, proc, session..
+	boolean deleteCommunity(int atId);	
+	
+//	회원이 쓴 모든 게시글 가져오기?? (mypage..)
+	List<CommunityVO> selectAllCommunitysForMember(int mbId); // <<FK>>
+	
+//	비/회원은 전체 게시글을 리스트 조회할 수 있다. (페이지네이션, 정렬, 태깅-해시태그)
+	List<CommunityVO> selectAllArticles(int offset, int blockSize); // pg가 기준점, 범위로 분리
+	
+	// 전체 게시글 레코드 수 
+		int checkAllNumberOfCommunitys();
 
-	// 회원이 게시글을 만들 수 있다.
-	boolean WriteNewContent(CommunityVO CV);
-	int WriteNewContentReturnKey(CommunityVO CV);
+		
+	// 검색..............
+	//- 비/회원은 특정 키워드나 조건으로 게시글을 다수개 검색할 수 있다.
+//		article_search_form.my; 키워드.. 검색 폼 준비 get form..
+//		article_search.my; post dao pn order..
+	List<CommunityVO> searchCommunitys(String keyword, int offset, int limit
+			, String orderBy);
+	// 검색 일치 레코드 총수...
+	int checkAllNumberOfCommunitysForSearch(String k, String target);
 
-	// 회원이 게시글을 볼 수 있다.
-	CommunityVO selectOneContent(int boardIndex, int memberIndex);
-
-	// 회원이 게시글에 댓글을 달 수 있다.
-	boolean Writecomment(CommentVO CR, int memberIdex, int boardIndex);
-
-	// 회원이 게시글에 단 댓글을 수정 할 수 있다.
-	boolean updateOneComment(CommentVO CR);
-
-	// 회원이 게시글에 있는 댓글에 답글을 달 수 있다.
-	boolean WriteReply(Comment_deVO CD, int memberIdex, int commentId);
-
-	// 회원이 게시글에 있는 댓글에 자신이 쓴 댓글을 수정할 수 있다.
-	boolean UpdateOneReply(Comment_deVO CD);
-
-	// 회원이 자신의 게시글을 수정하거나 삭제 할 수 있다.
-	boolean updateOneContent(CommunityVO CV);
-
-	// 회원이 자신의 게시글을 삭제 할 수 있다.
-	boolean deleteBoard(int boardIndex);
-
-	// 회원이 자신의 댓글을 삭제 할 수 있다.
-	boolean deleteComment(int commentIndex);
-
-	// 회원이 자신의 댓글에 답글에 삭제 할 수 있다.
-	boolean deleteComment_de(int commentDeIndex);
-
-	// 조회수 증가
-	boolean increaseviews(int boardIndex);
-
-	// 게시글 페이지
-	List<CommunityVO> selectAllBoard(int pg);
-
-	// 최대 페이지 수 (전체 페이지 수)
-	int checkMaxPageNumber();
-
-	// 전체 게시글 레코드 수
-	int checkAllNumberOfBoard();
-
-	// 게시글 전부를 가져올 수 있다.
-	List<CommunityVO> CommunityList();
-
-	// 게시글을 카테고리로 검색 할 수 있다.
-	List<CommunityVO> searchboardforcate(int cate);
 }

@@ -3,7 +3,7 @@
 <%@ include file="../common/_link.jsp"%>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="content.woo">
+<!-- 	<form action="content.woo"> -->
 	<main class="content_main"> 
 				<div id="border">
 				<div class="community_first_box">
@@ -25,8 +25,10 @@
 								<option value="6">무료 나눔</option>
 							</select>
 							<button class="search_btn">검색</button>
+							
 							<a href="${pageContext.request.contextPath}/new_content.woo"><input type="submit"
 								class="new_write_btn" value="글쓰기"></a>
+							
 						</div>
 					</div>
 					<br>
@@ -72,6 +74,6 @@
 				</div>
 			</div>
 			</main>
-	</form>
+<!-- 	</form> -->
 </body>
 </html>
