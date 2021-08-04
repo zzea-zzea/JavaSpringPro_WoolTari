@@ -1,18 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 
 <body>
 	<%@ include file="../index.jsp" %>
-<form action="sign_up.woo">
+<form action="sign_up2.woo">
 
 	<main class="sign_up_main"> 
-  <title>울타리 회원가입</title>
+
+
+	<title>울타리 회원가입</title>
+
   <body class="modal_body_join">
 	<div class="modal-wrapper_join">
+
+
         <div class="modal_step">
+
+
 		<div class="modal-wrapper-box_join">
 			<button id="modal-close-btn" class="modal-close-btn_join">
 				<svg xmlns="http://www.w3.org/2000/svg"
@@ -111,25 +119,26 @@
 
 			<script>
                     function formCheck(form) {
-                        if (form.user_Id.value == "") {
+                        if (form.id.value == "") {
                             alert('아이디를 기입하세요');
-                            form.user_Id.focus();
+                            form.id.focus();
                             return;
                             
                         }
-                        if (form.user_Name.value == "") {
+                        if (form.name.value == "") {
                             alert('이름을 기입하세요');
-                            form.user_Name.focus();
+                            form.name.focus();
                             return;
                         }
-                        if (form.str_email01.value == "") {
+                        if (form.email.value == "") {
                             alert('이메일을 기입하세요');
-                            form.str_email01.focus();
+                            form.email.focus();
                             return;
                         }
-                        if (form.pswd.value == "") {
+                        if (form.pw.value == "") {
                             alert('암호를 기입하세요');
-                            form.pswd.focus();
+                            form.pw.focus();
+                            form.pw.focus();
                             return;
                         }
                           if (form.pswdCheck.value == "") {
@@ -138,7 +147,7 @@
                             return;
                         }
 
-                        alert(form.user_Id.value + '(' +
+                        alert(form.id.value + '(' +
                             form.user_Name.value + ") 님의 \n 회원가입이 완료되었습니다."
                         );
 
@@ -253,7 +262,7 @@
 							<table class="signup_table1">
 								<tr>
 									<th>구분</th>
-									<td>
+						<td>
 										<div class="signup_td_div_po">
 											<select class="signup_email_selectbox" id="selectBox"
 												onclick="Change()" >
@@ -269,7 +278,7 @@
 									<th >아이디</th>
 									<td>
 										<div class="signup_td_div_po">
-											<input name="user_Id" type="text" class="signup_sign_in_input"
+											<input name="id" type="text" class="signup_sign_in_input"
 												id="sign_Id" onkeyup="chkID();" required> <input
 												type="button" value="click" a href="#"
 												onclick="alert('사용가능합니다')">
@@ -281,10 +290,10 @@
 								</tr>
 
 								<tr>
-									<th >별명</th>
+									<th>별명</th>
 									<td>
 										<div class="signup_td_div_po">
-											<input name="userNickname" id="nick_name" type="text"
+											<input name="nickname" id="nick_name" type="text"
 												class="signup_sign_in_input" maxlength="15" required onkeyup="chkNick();">
 											<input type="button" value="click" a href="#"
 												onclick="alert('사용가능합니다')"> <span class="signup_small_text"><br>*영대소문자,한글,숫자만
@@ -302,7 +311,7 @@
 									<td>
 										<div class="signup_td_div_po">
 											<input type="password" required class="signup_sign_in_input" id="user_pw"
-												name="pswd" onkeyup="chkPW();"> <span
+												name="pw" onkeyup="chkPW();"> <span
 												class="signup_small_text"><br>*숫자,특수문자,영대소문자 조합 필수입니다</span><br>
 											<span class="signup_pw_text" id="pw_msg" onkeyup="chkPW();"></span>
 										</div>
@@ -328,7 +337,7 @@
 									<th>이름</th>
 									<td>
 										<div class="signup_td_div_po">
-											<input type="text" name="user_name" class="signup_sign_in_input"
+											<input type="text" name="name" class="signup_sign_in_input"
 												id="userName" maxlength="10" pattern="/^[가-힣]{1,}+$/">
 
 
@@ -341,7 +350,7 @@
 									<th>대표자 이름</th>
 									<td>
 										<div class="signup_td_div_po">
-											<input type="text" required name="company_name"
+											<input type="text" required name="name"
 												class="signup_sign_in_input" id="compName" pattern="/^[가-힣]+$/">
 										</div>
 									</td>
@@ -353,15 +362,15 @@
 										<div class="signup_td_div_po">
 											<input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												maxlength="3" name="comRegNum1" id="comNum1"
+												maxlength="3" name="buisness" id="comNum1"
 												class="sign_in_comp_input" onkeypress="comNumCheck1(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												name="comRegNum2" id="comNum2" maxlength="2"
+												name="buisness" id="comNum2" maxlength="2"
 												class="sign_in_comp_input" onkeypress="comNumCheck2(this)"
 												required> - <input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												name="comRegNum3" id="comNum3" maxlength="5"
+												name="buisness" id="comNum3" maxlength="5"
 												class="sign_in_comp_input" required>
 										</div>
 									</td>
@@ -382,7 +391,7 @@
 									<th class= "signup_email_label">이메일</th>
 									<td>
 										<div class="signup_td_div_po1_email">
-											<input type="text" class="signup_sign_in_email_input" name="str_email01"
+											<input type="text" class="signup_sign_in_email_input" name="email"
 												id="str_email01" required> @ <input type="text"
 												class="signup_sign_in_email_input" name="str_email02" id="str_email02"
 												disabled value="naver.com"> <select
@@ -425,16 +434,16 @@
 										<div class="signup_td_div_po">
 											<input type="text"
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												required maxlength="3" name="userPhoneNum1"
+												required maxlength="3" name="phone"
 												id="userPhoneNum1" class="sign_in_phone_input"
 												onkeypress="keycheck1(this)"> - <input type="text"
 												required
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												name="userPhoneNum2" id="userPhoneNum2" maxlength="4"
+												name="phone" id="userPhoneNum2" maxlength="4"
 												class="sign_in_phone_input" onkeypress="keycheck2(this)">
 											- <input type="text" required
 												onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-												name="userPhoneNum3" id="userPhoneNum3" maxlength="4"
+												name="phone" id="userPhoneNum3" maxlength="4"
 												class="sign_in_phone_input">
 										</div>
 									</td>
@@ -447,7 +456,7 @@
 									<td>
 										<div class="signup_td_div_po">
 											<input type="date" required class="signup_sign_in_input" id="userBday"
-												name="userBday">
+												name="brith">
 										</div>
 									</td>
 								</tr>
@@ -516,5 +525,6 @@
 
 	</div>
       </div>
+	</form>
     </body>
 </html>

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-<link rel="stylesheet" href="../css/terms_and_conditions.css">
 
 
 <body>
@@ -14,10 +13,12 @@
 	<title>울타리 이용약관</title>
 
   <body style="box-sizing: border-box">
-      <form>
+      <form action="sign_up.woo">
 
 	<div class="modal-wrapper_join2">
+	
         <div class="modal_step">
+	
 		<div class="modal-wrapper-box_join2">
 			<button id="modal-close-btn" class="modal-close-btn_join2">
 				<svg xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +81,9 @@ for(var i=0 ; i<chkbox.length ; i++) {
 } 
        if(chk) { 
            alert("모든 약관에 동의함.");
-           location.replace('sign_up.jsp');
+           location.replace('sign_up2.woo');
        } else { alert("필수 약관에 동의해 주세요.") 
+ 
                return false;
               } 
       }
@@ -188,14 +190,17 @@ for(var i=0 ; i<chkbox.length ; i++) {
 
 
             </form>
-             <button type="submit" class="terms_and_conditions_wrap_next-button" onclick="agree();"
-                    >OK</button>
+                <a type="submit" class="terms_and_conditions_wrap_next-button" onclick="agree();"
+                    >OK</a>
         </div>
         
     </div>
             </body>
         </div>
           </div>
+          
+       
+          
           </div>
     </form>
 </body>

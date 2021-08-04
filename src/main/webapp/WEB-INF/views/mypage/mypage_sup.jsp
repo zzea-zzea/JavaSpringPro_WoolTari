@@ -21,7 +21,7 @@
 						<div class="childcare_content my">
 							<h3 class="mon_history">2020년 01월</h3>
 							<div class="childcare_content_menu mypage">
-								<table class="table pa ">
+								<table class="table ">
 									<tbody>
 										<tr>
 											<td>날짜</td>
