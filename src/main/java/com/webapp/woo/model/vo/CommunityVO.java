@@ -5,22 +5,22 @@ import java.sql.Timestamp;
 
 public class CommunityVO {
 
-	private int board_index;
+	private int boardIndex;
 	private int cate;
 	private String title;
 	private String content;
 	private int views;
-	private Timestamp write_date;
-	private String img_path;
-	private int member_index;
+	private Timestamp writeDate;
+	private String imgPath;
+	private int memberIndex;
 	
 	
 	
-	public int getBoard_index() {
-		return board_index;
+	public int getboardIndex() {
+		return boardIndex;
 	}
-	public void setBoard_index(int board_index) {
-		this.board_index = board_index;
+	public void setboardIndex(int boardIndex) {
+		this.boardIndex = boardIndex;
 	}
 	public int getCate() {
 		return cate;
@@ -46,52 +46,52 @@ public class CommunityVO {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	public Timestamp getWrite_date() {
-		return write_date;
+	public Timestamp getwriteDate() {
+		return writeDate;
 	}
-	public void setWrite_date(Timestamp write_date) {
-		this.write_date = write_date;
+	public void setwriteDate(Timestamp writeDate) {
+		this.writeDate = writeDate;
 	}
-	public String getImg_path() {
-		return img_path;
+	public String getimgPath() {
+		return imgPath;
 	}
-	public void setImg_path(String img_path) {
-		this.img_path = img_path;
+	public void setimgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
-	public int getMember_index() {
-		return member_index;
+	public int getmemberIndex() {
+		return memberIndex;
 	}
-	public void setMember_index(int member_index) {
-		this.member_index = member_index;
+	public void setmemberIndex(int memberIndex) {
+		this.memberIndex = memberIndex;
 	}
 	
 
-	public CommunityVO(int cate, String title, int views, Timestamp write_date, int member_index) {
+	public CommunityVO(int cate, String title, int views, Timestamp writeDate, int memberIndex) {
 		super();
 		this.cate = cate;
 		this.title = title;
 		this.views = views;
-		this.write_date = write_date;
-		this.member_index = member_index;
+		this.writeDate = writeDate;
+		this.memberIndex = memberIndex;
 	}
-	public CommunityVO(int board_index, int cate, String title, String content, int views, Timestamp write_date,
-			String img_path, int member_index) {
+	public CommunityVO(int boardIndex, int cate, String title, String content, int views, Timestamp writeDate,
+			String imgPath, int memberIndex) {
 		super();
-		this.board_index = board_index;
+		this.boardIndex = boardIndex;
 		this.cate = cate;
 		this.title = title;
 		this.content = content;
 		this.views = views;
-		this.write_date = write_date;
-		this.img_path = img_path;
-		this.member_index = member_index;
+		this.writeDate = writeDate;
+		this.imgPath = imgPath;
+		this.memberIndex = memberIndex;
 	}
 	
 	@Override
 	public String toString() {
-		return "CommunityVO [board_index=" + board_index + ", cate=" + cate + ", title=" + title + ", content="
-				+ content + ", views=" + views + ", write_date=" + write_date + ", img_path=" + img_path
-				+ ", member_index=" + member_index + "]";
+		return "CommunityVO [boardIndex=" + boardIndex + ", cate=" + cate + ", title=" + title + ", content="
+				+ content + ", views=" + views + ", writeDate=" + writeDate + ", imgPath=" + imgPath
+				+ ", memberIndex=" + memberIndex + "]";
 	}
 	
 	

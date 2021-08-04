@@ -1,26 +1,30 @@
 package com.webapp.woo.model.dao.impl;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.stereotype.Repository;
 
 import com.webapp.woo.model.dao.inf.ICommunityDAO;
 import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.Comment_deVO;
 import com.webapp.woo.model.vo.CommunityVO;
 
-@Repository
-public abstract class CommunityDAOImpl implements ICommunityDAO {
+public class CommunityDAOImpl implements ICommunityDAO {
+
 
 	private JdbcTemplate jtem;
 
@@ -53,8 +57,8 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 			int r = this.jtem.update(
 					"insert into board(cate, title, content, views, write_date, img_path, member_index) "
 							+ " values(?,?,?,?,now(),?,?)",
-					new Object[] { CV.getCate(), CV.getTitle(), CV.getContent(), CV.getViews(), CV.getImg_path(),
-							CV.getMember_index() },
+					new Object[] { CV.getCate(), CV.getTitle(), CV.getContent(), CV.getViews(), CV.getimgPath(),
+							CV.getmemberIndex() },
 					new int[] { Types.INTEGER, Types.INTEGER, Types.VARCHAR, Types.VARCHAR, Types.INTEGER,
 							Types.VARCHAR, Types.INTEGER });
 			return r == 1;
@@ -65,10 +69,29 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 	}
 
 	@Override
-	public CommunityVO selectOneContent(int board_index, int member_index) {
+	public int WriteNewContentReturnKey(CommunityVO CV) {
+		Map<String, Object> paramMap = new HashMap();
+		paramMap.put("board_index", CV.getboardIndex());
+		paramMap.put("cate", CV.getContent());
+		paramMap.put("title", CV.getTitle());
+		paramMap.put("content", CV.getContent());
+		paramMap.put("views", 0);
+		paramMap.put("write_date", new Date());
+		paramMap.put("img_path", CV.getimgPath());
+		paramMap.put("member_index", CV.getmemberIndex()); // <<FK>>
+
+		Number pk = this.simIn.executeAndReturnKey(paramMap);
+		// SQL insert into values.. 수행하고 ai 키를 리턴함.
+		// Number 클래스: 수치형 데이터의 최상위 랩퍼 클래스
+		// (실수, 정수, 크기 관계없이.. )
+		return pk.intValue(); // articles.id <<PK>>
+	}
+	
+	@Override
+	public CommunityVO selectOneContent(int boardIndex, int memberIndex) {
 		try {
 			return jtem.queryForObject("select * from board where board_index = ?",
-					BeanPropertyRowMapper.newInstance(CommunityVO.class), board_index);
+					BeanPropertyRowMapper.newInstance(CommunityVO.class), boardIndex);
 		} catch (EmptyResultDataAccessException e) {
 			System.out.println("dao: ERROR 0개 게시글 조회에러!");
 			return null;
@@ -80,11 +103,11 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 	}
 
 	@Override
-	public boolean Writecomment(CommentVO CR, int member_index, int board_index) {
+	public boolean Writecomment(CommentVO CR, int memberIndex, int boardIndex) {
 		try {
 			int r = this.jtem.update(
 					"insert into comment(content, create_date, depth, member_index, board_index) "
-							+ " values(?, now(), ?," + member_index + "," + board_index + ")",
+							+ " values(?, now(), ?," + memberIndex + "," + boardIndex + ")",
 					new Object[] { CR.getContent(), CR.getDepth() }, new int[] { Types.VARCHAR, Types.INTEGER });
 			return r == 1;
 		} catch (DataAccessException dae) {
@@ -106,11 +129,11 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 	}
 
 	@Override
-	public boolean WriteReply(Comment_deVO CD, int member_index, int commentId) {
+	public boolean WriteReply(Comment_deVO CD, int memberIndex, int commentId) {
 		try {
 			int r = this.jtem.update(
 					"insert into comment(content, create_date, depth, member_index, comment_index) "
-							+ " values(?, now(), ?," + member_index + "," + commentId + ")",
+							+ " values(?, now(), ?," + memberIndex + "," + commentId + ")",
 					new Object[] { CD.getContent(), CD.getDepth() }, new int[] { Types.VARCHAR, Types.INTEGER });
 			return r == 1;
 		} catch (DataAccessException dae) {
@@ -135,7 +158,7 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 	public boolean updateOneContent(CommunityVO CV) {
 		try {
 			int r = jtem.update("update board set title=?, content=? write_date = now() where Board_index = ?",
-					CV.getTitle(), CV.getContent(), CV.getBoard_index());
+					CV.getTitle(), CV.getContent(), CV.getboardIndex());
 			return r == 1;
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -143,9 +166,9 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 		}
 	}
 
-	public boolean deleteBoard(int board_index) {
+	public boolean deleteBoard(int boardIndex) {
 		try {
-			int r = jtem.update("delete from board where board_index = " + board_index);
+			int r = jtem.update("delete from board where board_index = " + boardIndex);
 			return r == 1;
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -153,9 +176,9 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 		}
 	}
 
-	public boolean deleteComment(int comment_index) {
+	public boolean deleteComment(int commentIndex) {
 		try {
-			int r = jtem.update("delete from board where comment_index = " + comment_index);
+			int r = jtem.update("delete from board where comment_index = " + commentIndex);
 			return r == 1;
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -163,9 +186,9 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 		}
 	}
 
-	public boolean deleteComment_de(int comment_de_index) {
+	public boolean deleteComment_de(int commentDeIndex) {
 		try {
-			int r = jtem.update("delete from board where comment_de_index = " + comment_de_index);
+			int r = jtem.update("delete from board where comment_de_index = " + commentDeIndex);
 			return r == 1;
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -173,12 +196,12 @@ public abstract class CommunityDAOImpl implements ICommunityDAO {
 		}
 	}
 
-	public boolean increaseviews(int board_index) {
+	public boolean increaseviews(int boardIndex) {
 		try {
-			int r = jtem.update("update board set views = views + 1 where board_index = ?", board_index);
+			int r = jtem.update("update board set views = views + 1 where board_index = ?", boardIndex);
 			return r == 1;
 		} catch (DataAccessException e) {
-			System.out.println("dao: increaseviews() 조회수 증가 에러: " + board_index);
+			System.out.println("dao: increaseviews() 조회수 증가 에러: " + boardIndex);
 			return false;
 		}
 	}
