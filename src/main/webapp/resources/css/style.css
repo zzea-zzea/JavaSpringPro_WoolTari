@@ -132,6 +132,10 @@ main{font-family: 'Cafe24SsurroundAir';}
 	transition: 0.5s;
 	color: #fff;
 }
+.navbar .btn_def:active {
+	padding: 0px 22px;
+	font-size: 15px;
+}
 
 .navbar li {
 	position: relative;
@@ -831,12 +835,16 @@ width: 100%;
 .childcare_box .childcare_section .childcare_content .childcare_content_menu
 	{
 	background: #fff;
-	padding: 10px 25px;
+	padding: 25px;
 	width: 98%;
 	display: inline-table;
 	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
 	margin-bottom: 15px;
 	border-radius: 15px;
+}
+.childcare_box .childcare_section .childcare_content .childcare_content_menu.mypage
+	{
+	padding:10px 25px;
 }
 
 .childcare_box .childcare_section .childcare_content .childcare_content_menu.ho:hover
