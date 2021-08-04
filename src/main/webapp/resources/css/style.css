@@ -132,6 +132,10 @@ main{font-family: 'Cafe24SsurroundAir';}
 	transition: 0.5s;
 	color: #fff;
 }
+.navbar .btn_def:active {
+	padding: 0px 22px;
+	font-size: 15px;
+}
 
 .navbar li {
 	position: relative;
