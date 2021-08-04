@@ -20,16 +20,22 @@ public class CommunitySVCImpl implements ICommunitySVC {
 		// TODO Auto-generated method stub
 		return CommunityDao.WriteNewContent(CV);
 	}
+	
+	@Override
+	public int WriteNewContentReturnKey(CommunityVO CV) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 	@Override
-	public CommunityVO selectOneContent(int board_index, int member_index) {
-		String memberId = "" + member_index;
+	public CommunityVO selectOneContent(int boardIndex, int memberIndex) {
+		String memberId = "" + memberIndex;
 		
 		if (memberId == null || memberId.isEmpty()) {
-		CommunityVO CV = CommunityDao.selectOneContent(board_index, member_index); 
+		CommunityVO CV = CommunityDao.selectOneContent(boardIndex, memberIndex); 
 		
 		if( CV != null ) {
-			if( CommunityDao.increaseviews(board_index) ) {
+			if( CommunityDao.increaseviews(boardIndex) ) {
 				CV.setViews(CV.getViews()+1);
 				return CV;
 			} else {
@@ -46,9 +52,9 @@ public class CommunitySVCImpl implements ICommunitySVC {
 	}
 
 	@Override
-	public boolean Writecomment(CommentVO CR, int member_index, int board_index) {
+	public boolean Writecomment(CommentVO CR, int memberIndex, int boardIndex) {
 		// TODO Auto-generated method stub
-		return CommunityDao.Writecomment(CR, member_index, board_index);
+		return CommunityDao.Writecomment(CR, memberIndex, boardIndex);
 	}
 
 	@Override
@@ -58,9 +64,9 @@ public class CommunitySVCImpl implements ICommunitySVC {
 	}
 
 	@Override
-	public boolean WriteReply(Comment_deVO CD, int member_index, int commentId) {
+	public boolean WriteReply(Comment_deVO CD, int memberIndex, int commentId) {
 		// TODO Auto-generated method stub
-		return CommunityDao.WriteReply(CD, member_index, commentId);
+		return CommunityDao.WriteReply(CD, memberIndex, commentId);
 	}
 
 	@Override
@@ -83,15 +89,15 @@ public class CommunitySVCImpl implements ICommunitySVC {
 
 
 	@Override
-	public boolean deleteComment(int comment_index) {
+	public boolean deleteComment(int commentIndex) {
 		// TODO Auto-generated method stub
-		return CommunityDao.deleteComment(comment_index);
+		return CommunityDao.deleteComment(commentIndex);
 	}
 
 	@Override
-	public boolean deleteComment_de(int comment_de_index) {
+	public boolean deleteComment_de(int commentDeIndex) {
 		// TODO Auto-generated method stub
-		return CommunityDao.deleteComment_de(comment_de_index);
+		return CommunityDao.deleteComment_de(commentDeIndex);
 	}
 	
 	@Override
@@ -132,18 +138,16 @@ public class CommunitySVCImpl implements ICommunitySVC {
 		return CommunityDao.checkAllNumberOfBoard();
 	}
 	@Override
-	public boolean deleteBoard(int board_index) {
+	public boolean deleteBoard(int boardIndex) {
 		// TODO Auto-generated method stub
-		return CommunityDao.deleteBoard(board_index);
+		return CommunityDao.deleteBoard(boardIndex);
 	}
 
 	@Override
-	public boolean increaseviews(int board_index) {
+	public boolean increaseviews(int boardIndex) {
 		// TODO Auto-generated method stub
-		return CommunityDao.increaseviews(board_index);
+		return CommunityDao.increaseviews(boardIndex);
 	}
-
-
 
 
 }
