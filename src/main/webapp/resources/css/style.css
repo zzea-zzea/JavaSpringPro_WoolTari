@@ -823,7 +823,6 @@ section {
 .childcare_box .childcare_section .childcare_content {
 	display: table;
 	padding: 20px 0 0 40px;
-	margin-bottom: 50px;
 }
 .childcare_box .childcare_section .childcare_content.my {
 width: 100%;
@@ -832,7 +831,7 @@ width: 100%;
 .childcare_box .childcare_section .childcare_content .childcare_content_menu
 	{
 	background: #fff;
-	padding: 25px;
+	padding: 10px 25px;
 	width: 98%;
 	display: inline-table;
 	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
@@ -1345,7 +1344,9 @@ font-size: 20px;
 .childcare_content_menu.mypage table tr .phone_si input {
 	width: 30%;
 }
-
+.childcare_content_menu.mypage .table tbody tr td{
+	padding: 15px;
+}
 .childcare_content_menu.mypage .table tbody tr:first-child>td {
 	width: 66px;
 }
@@ -1503,7 +1504,9 @@ background: #b38c8c;
 	background: #ececec !important;
 	border-bottom: 2px solid #ececec;
 }
-
+.table>:not(:last-child)>:last-child>*{
+	border-bottom-color: whitesmoke;
+}
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
