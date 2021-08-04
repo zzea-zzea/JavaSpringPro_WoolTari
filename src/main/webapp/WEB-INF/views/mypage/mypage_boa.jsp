@@ -36,10 +36,10 @@
 									<tbody>
 										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 											<th scope="row">1</th>
-											<td>Laptop Technology AS2020</td>
-											<td>$200.00</td>
-											<td>2</td>
-											<td>2</td>
+											<td>글 제목 입니다.</td>
+											<td>육아정보</td>
+											<td>2021-05-28</td>
+											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
 										</tr>
 										<tr>
 											<td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
@@ -52,10 +52,10 @@
 										</tr>
 										<tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
 											<th scope="row">2</th>
-											<td>Laptop Technology AS2020</td>
-											<td>$200.00</td>
-											<td>2</td>
-											<td>2</td>
+											<td>글 제목 입니다.</td>
+											<td>무료나눔</td>
+											<td>2021-05-28</td>
+											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
 										</tr>
 										<tr>
 											<td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
@@ -66,13 +66,12 @@
 													inventore natus.</p>
 											</td>
 										</tr>
-		
 										<tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
 											<th scope="row">3</th>
-											<td>Laptop Technology AS2020</td>
-											<td>$200.00</td>
-											<td>2</td>
-											<td>2</td>
+											<td>글 제목 입니다.</td>
+											<td>정책정보</td>
+											<td>2021-05-28</td>
+											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
 										</tr>
 										<tr>
 											<td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
@@ -83,13 +82,12 @@
 													inventore natus.</p>
 											</td>
 										</tr>
-		
 										<tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
 											<th scope="row">4</th>
-											<td>Laptop Technology AS2020</td>
-											<td>$200.00</td>
-											<td>2</td>
-											<td>2</td>
+											<td>글 제목 입니다.</td>
+											<td>무료나눔</td>
+											<td>2021-05-28</td>
+											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
 										</tr>
 										<tr>
 											<td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
