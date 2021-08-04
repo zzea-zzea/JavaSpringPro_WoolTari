@@ -13,7 +13,7 @@
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/info_policy.woo">정책 정보</a></li>
 						<li><a href="${pageContext.request.contextPath}/info_childcare.woo">육아 정보</a></li>
-						<li><a href="${pageContext.request.contextPath}/info_center.woo">시설 및 병원</a></li>
+						<li><a href="${pageContext.request.contextPath}/info_center.woo">시설 정보</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="${pageContext.request.contextPath}/support_info.woo"><span>후원</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>

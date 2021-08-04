@@ -47,11 +47,11 @@
 						<div class="col-md-6 col-lg-3">
 							<div class="feature-block">
 								<img src="${path}/resources/img/main/MID4.png" alt="img">
-								<h4>시설과 병원의 위치를 알려줘요!</h4>
+								<h4>시설의 위치를 알려줘요!</h4>
 								<p>
 									모든 시설의 정보를<br>알고 싶을때 사용하세요!
 								</p>
-								<a href="${pageContext.request.contextPath}/info_center.woo">>>시설및 병원 바로 가기</a>
+								<a href="${pageContext.request.contextPath}/info_center.woo">>>시설 정보 바로 가기</a>
 							</div>
 						</div>
 
