@@ -27,26 +27,22 @@
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Product Name</th>
-											<th>Price</th>
-											<th>Quantity</th>
-											<th>Total</th>
-											<th>&nbsp;</th>
+											<th>글제목</th>
+											<th>카테고리</th>
+											<th>날짜</th>
+											<th>조회하기</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr data-toggle="collapse" data-target="#collapseOne"
-											aria-expanded="true" aria-controls="collapseOne">
+										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 											<th scope="row">1</th>
 											<td>Laptop Technology AS2020</td>
 											<td>$200.00</td>
 											<td>2</td>
-											<td>$400.00</td>
-											<td><i class="fa" aria-hidden="true"></i></td>
+											<td>2</td>
 										</tr>
 										<tr>
-											<td colspan="6" id="collapseOne" class="collapse show acc"
-												data-parent="#accordion">
+											<td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
 													doloremque magnam reiciendis tempore sapiente.
@@ -54,20 +50,15 @@
 													inventore natus.</p>
 											</td>
 										</tr>
-		
-										<tr data-toggle="collapse" data-target="#collapseTwo"
-											aria-expanded="false" aria-controls="collapseTwo"
-											class="collapsed">
+										<tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
 											<th scope="row">2</th>
 											<td>Laptop Technology AS2020</td>
 											<td>$200.00</td>
 											<td>2</td>
-											<td>$400.00</td>
-											<td><i class="fa" aria-hidden="false"></i></td>
+											<td>2</td>
 										</tr>
 										<tr>
-											<td colspan="6" id="collapseTwo" class="collapse acc"
-												data-parent="#accordion">
+											<td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
 													doloremque magnam reiciendis tempore sapiente.
@@ -76,19 +67,15 @@
 											</td>
 										</tr>
 		
-										<tr data-toggle="collapse" data-target="#collapseThree"
-											aria-expanded="false" aria-controls="collapseThree"
-											class="collapsed">
+										<tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
 											<th scope="row">3</th>
 											<td>Laptop Technology AS2020</td>
 											<td>$200.00</td>
 											<td>2</td>
-											<td>$400.00</td>
-											<td><i class="fa" aria-hidden="false"></i></td>
+											<td>2</td>
 										</tr>
 										<tr>
-											<td colspan="6" id="collapseThree" class="collapse acc"
-												data-parent="#accordion">
+											<td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
 													doloremque magnam reiciendis tempore sapiente.
@@ -97,19 +84,15 @@
 											</td>
 										</tr>
 		
-										<tr data-toggle="collapse" data-target="#collapseFour"
-											aria-expanded="false" aria-controls="collapseFour"
-											class="collapsed">
+										<tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
 											<th scope="row">4</th>
 											<td>Laptop Technology AS2020</td>
 											<td>$200.00</td>
 											<td>2</td>
-											<td>$400.00</td>
-											<td><i class="fa" aria-hidden="false"></i></td>
+											<td>2</td>
 										</tr>
 										<tr>
-											<td colspan="6" id="collapseFour" class="collapse acc"
-												data-parent="#accordion">
+											<td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
 													doloremque magnam reiciendis tempore sapiente.
