@@ -132,6 +132,18 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("mypage/mypage");
 		return mav;
 	}
+	
+	@RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
+	public ModelAndView MypageSupport(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("mypage/mypage_sup");
+		return mav;
+	}
+
+	@RequestMapping(value = "mypage_boa.woo", method = RequestMethod.GET)
+	public ModelAndView MypageBoard(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("mypage/mypage_boa");
+		return mav;
+	}
 
 //	@RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
 //	public ModelAndView DonateMain(HttpServletRequest request) {

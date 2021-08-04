@@ -7,18 +7,18 @@
 	<%@ include file="../common/_header.jsp"%>
 	<form action="mypage.woo">
 		<main class="childcare_main my">
-			<div class="childcare_box ma">
+			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
-						<li class="side_bar_content"><a>회원 정보 수정</a></li>
-						<li class="side_bar_content"><a>후원 내역조회</a></li>
-						<li class="side_bar_content"><a>내 게시글 조회</a></li>
+						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
 					</ul>
 				</div>
 				<div class="info_content">
 					<section class="childcare_section">
 						<div class="childcare_section_title">
-							<h2>내 정보 수정</h2>
+							<h2>회원 정보 수정</h2>
 							<span>변경 하실 회원정보는 여기서 변경 해주세요!</span>
 						</div>
 						<div class="childcare_content my">
@@ -60,7 +60,6 @@
 								<button class="edit_btn">수정</button>
 								<button class="edit_btn re">탈퇴</button>
 							</div>
-
 						</div>
 					</section>
 				</div>
