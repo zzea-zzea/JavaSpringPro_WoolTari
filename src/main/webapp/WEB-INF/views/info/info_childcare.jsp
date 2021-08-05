@@ -77,31 +77,25 @@
 		<div class="childcare_box ma">
 			<div class="side_bar">
 				<ul>
-					<li class="side_bar_content"><a>임신중이신가요?</a> <svg
-							xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-							viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-								d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+					<li class="side_bar_content"><a>임신중이신가요?</a> 
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 						<ul class="hide">
-							<li class="sideli on" id="content1"><a class="info_content1">임신조기증상</a></li>
-							<li class="sideli " id="content2"><a class="info_content2">임신
-									주수 변화</a></li>
-						</ul></li>
-					<li class="side_bar_content"><a>출산하셨나요?</a> <svg
-							xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-							viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-								d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+							<li class="sideli on" id="content1"><a class="info_content1">임신 조기 증상</a></li>
+							<li class="sideli " id="content2"><a class="info_content2">임신초기</a></li>
+							<li class="sideli "id="content5" ><a class="info_content5">임신중기</a></li>
+							<li class="sideli " id="content6"><a class="info_content6">임신후기</a></li>
+						</ul>
+					</li>
+					<li class="side_bar_content">
+						<a>출산하셨나요?</a>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 						<ul class="hide">
-							<li class="sideli" id="content3"><a class="info_content3">신생아(~
-									생후4주)</a></li>
-							<li class="sideli" id="content4"><a class="info_content4">영아(생후1개월
-									~ 24개월)</a></li>
-						</ul></li>
+							<li class="sideli" id="content3"><a class="info_content3">신생아(~ 생후4주)</a></li>
+							<li class="sideli" id="content4"><a class="info_content4">생후1개월 ~ 6개월</a></li>
+							<li class="sideli" id="content7"><a class="info_content7">생후7개월 ~ 12개월</a></li>
+							<li class="sideli" id="content8"><a class="info_content8">생후12개월 ~ 24개월</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div class="info_content">
@@ -114,12 +108,7 @@
 
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;생리예정일이 지났는데도 생리가 없어요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>예정일이 지났는데도 생리가 시작되지 않는다면 일단 임신을 의심해 보세요. 그러나 사람에
 										따라 생리주기가 불규칙하기도 하고, 임신이 되었더라도 수정란이 자궁내막에 착상되는 과정에서 소량의 출혈이 생길
@@ -129,12 +118,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;가슴이 커지고 아파요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>유선의 발달과 호르몬의 영향으로 생리 때처럼 가슴이 단단해지고 아프며, 멜라닌 색소가
 										증가하여 유두 부분의 색이 붉은색에서 갈색으로 짙게 변하게 됩니다. 하지만 일단 몸이 호르몬의 증가에 익숙해지면
@@ -144,12 +128,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;몸이 무겁고 이유 없이 피곤해요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>왠지 피곤하고, 아무것도 할 의욕이 없어지며, 졸리기만 한 경우가 있습니다. 정신적으로
 										불안하여 괜한 짜증이 많이 나기도 합니다.</span>
@@ -157,12 +136,7 @@
 							</div>
 							<div class="childcare_content_menu ho ">
 								<a>Q.&nbsp;분비물이 많아졌어요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>임신을 하면 호르몬의 영향으로 신진대사가 활발해지고, 자궁의 활동도 많아지므로 질 분비물이
 										늘어나게 됩니다. 질 분비물은 유백색으로 냄새가 나지 않습니다.</span>
@@ -170,12 +144,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;입덧을 시작해요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>가벼운 구토 증상과 함께 식욕이 없어지고, 소화가 안됩니다. 때로는 음식에 대한 기호가
 										바뀌는 등 입덧의 증상은 여러 가지가 있습니다. 이 때 소화불량 등으로 생각하고 내과검진을 받는 경우도
@@ -184,60 +153,35 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;냄새에 민감해집니다</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>예전엔 그냥 지나쳤던 냄새들이 갑자기 싫어지거나, 느끼지못했던 냄새들을 느끼게 됩니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;체온이 상승하는 느낌이에요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>몸이 이유없이 뜨거워지고 체온도 실제로 약간 상승하며, 2~3주 정도 지속됩니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;배가 당기고 아파요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>허리나 하복부 또는 사타구니 주위에 통증이 나타납니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;식성변화이 생겼어요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<a>Q.&nbsp;식성변화가 생겼어요</a>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>식욕이 갑자기 늘거나, 또는 예전에 좋아했거나, 싫어했던 식성이 반대로 변화합니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;임신테스트 결과가 양성으로 나왔어요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>마지막 관계 2주 후 소변테스트 결과가 양성으로 나왔다면 90% 이상 임신이 확실합니다.</span>
 								</div>
@@ -264,7 +208,7 @@
 										체중이 감소하고 식사를 하지 못하는 경우 입원하여 치료하기도 합니다. 속옷에 묻어나는 정도의 소량의 질 출혈이나
 										당기거나 찌르는 듯한 느낌의 하복부 불편감이 있을 수 있다. 입덧의 경우 16주 이후에는 거의 사라집니다.</span>
 									<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+										<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 										<span>임신 초기에 시행하는 검사로는 <b>초음파 검사</b>와 몇 가지 <b>혈청 검사</b>가
 											있습니다.<br>초음파 검사는 처음에 배아가 정상적으로 자궁 내에 착상이 되었는지를 확인하고, 이후
 											심박동이 관찰되는지와 태아의 크기가 생리 날짜로 계산한 임신 주수와 일치하는지 본다. 또한 임신 10~14주경
@@ -282,7 +226,7 @@
 										태동을 느끼기 시작합니다. 이 시기는 입덧도 사라지고, 다른 불편감도 많이 감소하여 임신 기간 중 산모에게 가장
 										편안한 시기이기도 합니다. 태동을 느끼기 시작하면서 주위에서도 알아볼 정도로 배가 나오기 시작합니다.</span>
 									<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+										<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 										<span>15주에서 18주 사이에 산모 혈액을 이용한 <b>기형아 검사</b>를 시행하여 태아의
 											개방 신경관 결손과 염색체의 이상에 대한 <b>선별 검사</b>를 시행하며, 다운 증후군과 같은 염색체 이상의
 											위험도가 높은 산모를 선별하여 <b>양수 검사</b>를 시행할 수 있도록 합니다. 임신 20주경에는 태아의
@@ -301,7 +245,7 @@
 										합니다. 또한 자궁이 커져 횡격막을 상방으로 이동시켜서 호흡 곤란을 호소하는 경우가 많습니다. 불규칙한 세기의
 										자궁 수축이 마지막 달까지 드물게 나타나다가 마지막 1~2주에 자주 나타나기도 합니다.</span>
 									<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+										<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 										<span>36주까지는 2주에 한 번, 그 이후에는 매주 정기적으로 병원을 방문하여 산모의 건강과
 											태아의 성장을 평가합니다. 임신 중 빈혈이 발생할 수 있고, 임신 기간 중 철분 요구량이 가장 많은 시기이므로
 											철분제를 복용하고 28주에서 32주에 <b>혈색소치를 검사</b>하여 빈혈 수치를 확인합니다.
@@ -309,7 +253,6 @@
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</section>
 					<section class="childcare_section">
@@ -320,12 +263,7 @@
 						<div class="childcare_content">
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;모유 수유의 장점</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>모유는 출생후 초기에 필요한 모든 영양분을 골고루 갖추고 있습니다.피부와 피부의 접촉,
 										그리고 엄마의 심장소리를 아기에게 직접 듣게 함으로써 아기의 엄마에 대한 친밀도를 강화시켜 줍니다. 유아 초기에
@@ -335,12 +273,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;신생아가 잘 먹지 않을때</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>모유수유를 거부할 때 생후 바로 엄마 젖부터 먹지 않고 한 두 번이고 분유를 먼저
 										먹다가 모유를 먹는 아기가 잘 먹지 않을 때는 꼭지의 혼동이 일어나서이므로 걱정할 것이 없습니다. 아기는 수
@@ -352,12 +285,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;모유 수유시 문제점 해결법</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span><b>1. 유방에 저항하는 아기 </b><br> 어머니가 아기를 젖에 가까이
 										조용히 안도록 한다.<br> 아기가 유방에 접촉하는데 몇 분 이상은 시도하지 않도록한다.<br>
@@ -378,12 +306,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;올바른 목욕법</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>많은 젊은 엄마들은 아기들을 씻기거나 목욕시킬 때 혹시 감기가 들지 않을까 염려합니다.
 										이런 염려를 피하기 위해서는 5분이상 아기가 추위를 느끼게 하지 않아야 합니다. <br> <br>
@@ -396,12 +319,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;기저귀 채우는 법</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>1.기저귀를 펴고 접착테이프를 떼어요. 남자아기는 기저귀를 뗀 순간 소변을 보는 수가 있으므로 방수요를 깔고 그 위에서 가는 게 좋아요.  <br>
 									 2. 한쪽 손으로 아기의 양 발목을 잡고 엉덩이를 들어 올려요. 다른 쪽 손으로 가제 수건이나 물티슈로 깨끗하게 닦은 후 더러워진 기저귀를 빼내고 새 기저귀를 엉덩이 밑으로 깔아 넣어요.<br>
@@ -415,12 +333,7 @@
 							</div>
 							<div class="childcare_content_menu ho ">
 								<a>Q.&nbsp;아기가 울때</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span><b>1. 아기가 더위를 느낄 때</b> <br> 증상 :
 										얼굴이 붉어지면 머리에 땀이 납니다.<br> <b>2. 아기가 추위를 느낄 때</b><br>
@@ -439,12 +352,7 @@
 							</div>
 							<div class="childcare_content_menu ho">
 								<a>Q.&nbsp;신생아 대변</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-									viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-							<g>
-							<path
-										d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
+								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>아기는 태어난 후 2-3일 동안 흑록색의 끈끈한 대변을 봅니다. 이것을 태변이라 합니다.
 										2-3일부터 대변의 색깔은 차차 누런 빛을 띄게 되고 생후 5일경에는 대변이 황색변이 됩니다.<br>
@@ -481,8 +389,8 @@
 							<br><br><b>터미타임이란?</b><br> 아이의 목 가누기를 도와주는 방법 중 하나인 터미타임. 아이가 스스로 목에 힘을 주거나 머리를 들어보려고
 							애를 쓴다며 목을 가눌 수 있도록 도와줘야 해요. 터미타임이란 배를 뜨스하는 터미와 시간을 뜻하는 타임의 합성얼 아기가 배를 엎드려 있는 시간을 뜻한답니다. 아기의 상체 힘을 길러주는 일종의 운동이라고
 							생각하시면 돼요. 보통 터미타임을 시작하는 시기는 정해진 것은 없으나 보통 생후 1개월부터 시작하는 편으로 스스로 머리를 들어보려고 애를 쓴다면 터미타임을 시작해도 좋아요.</span>
-														<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+							<div class="childcare_content_menu_sub_insp">
+								<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 								<span> <b>※ 주의사항</b> <br>
 								1. 아이가 깨어있는 시간에만 해주세요.(영아질식위험) <br>
 								2. 짧은 시간부터 시간부터 시작해 조금씩 시간과 횟수를 늘려주세요. <br>
@@ -500,8 +408,8 @@
 							<span>아이들마다 유치가 나고 빠지는 시기와 순서는 차이가 있을 수 있답니다. 가끔 태어날 때부터 치아가 있는 아기들도 있고 이유식 시작해야하는 데 치아가 나지 않아
 							걱정하는 경우도 있어요. 유치가 나기 전, 유치가 나는 중이라면 알아둬야할 것들을 확인해보도록 해요. 유치는 보통 생후 6개월 부터 나기 시작합니다.
 							아기들에 따라 개인차이가 있을 수 있으며 주로 여자아이가 남자아이보다 빠른 편이예요. 잇몸에서 치아처럼 볼록 단단히 만져지는 것이 있으면 곧 치아가 나올 예정이예요.</span>
-														<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+							<div class="childcare_content_menu_sub_insp">
+								<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 								<span> <b>유치 나는 시기, 치아관리</b><br>
 								1. 유치 올라오기 전 <br>
 								수유 후 가제수건으로 잇몸과 혀를 마사지 해줘 형랙순환을 도와 잇몸을 튼튼하게 해주세요. <br><br>
@@ -521,8 +429,8 @@
 						<div class="childcare_content_menu_sub ">
 							<span>생후 17개월이 되면 대부분의 아기들이 혼자서 걸을 수 있어요. 물론 잘 걷고 뛰고 하는 아기들이 있는 반면, 계속 기는 아기들도 있고 턱을 넘지 못한는 아기들도 있어요. 
 							이 시기에는 운동성이 향상되는 시기이니 아기의 움직임이 얼마나 안정적인지, 순발력은 있는지, 속도는 어느 저어도인지 등 보다 높은 운동성을 하는지 지켜봐 주세요.</span>
-														<div class="childcare_content_menu_sub_insp">
-							<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
+							<div class="childcare_content_menu_sub_insp">
+								<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 								<span> <b>이때 꼭 해야 할 예방 접종</b> <br>
 								DPT 4차 추가 접종 <br>
 								- 디프테리아, 백일해, 파상품을 예방 <br>
@@ -538,14 +446,12 @@
 								일본뇌염접종<br>
 								- 돌이 지나고 일본 뇌염 경보가 내리면 예방 접종을 해요
 								- 접종 첫 해에는 1-2주 간격으로 2회 접종<br><br>
-								
 								※병원에 갈때 마다 예방접종 수첩을 꼭 챙겨주세요.
 								<br> 수첩을 분실했다면, 병원에 접종기록을 문의하시거나 질병관리본부 예방접종 도우미 사이트를 이용하세요.
 								</span>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</section>
 				</div>

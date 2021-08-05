@@ -23,7 +23,7 @@
 						</div>
 						<div class="childcare_content my">
 							<div class="table-wrap">
-								<table class="table myaccordion table-hover" id="accordion">
+								<table class="tables myaccordion table-hover" id="accordion">
 									<thead>
 										<tr>
 											<th>#</th>
