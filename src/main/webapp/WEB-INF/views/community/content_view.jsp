@@ -17,22 +17,22 @@
 						<div class="community_imfo">
 							<dl>
 								<dt>카테고리</dt>
-								<dd>육아 정보</dd>
+								<dd>${ct.cate}</dd>
 							</dl>
 							<span>|</span>
 							<dl>
-								<dt>글쓴이</dt>
-								<dd>아무개</dd>
+								<dt>제목</dt>
+								<dd>${ct.title}</dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>작성일</dt>
-								<dd>2021.7.04</dd>
+								<dd>${ct.write_date}</dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>조회</dt>
-								<dd>33</dd>
+								<dd>${ct.views}</dd>
 							</dl>
 						</div>
 						<!-- community_imfo -->
@@ -41,14 +41,29 @@
 					<!-- community_content_view_title -->
 				</div>
 				<!-- community_content_view -->
-				<div class="community_content_view_imfo">동해 물과 백두산이 마르고 닳도록
-					하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. 남산 위에 저 소나무,
-					철갑을 두른 듯 바람 서리 불변함은 우리 기상일세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.</div>
+				<div class="community_content_view_imfo">
+					<p>${ct.content}</p>
+				</div>
 				<!-- community_content_view_imfo -->
 				<div class="image" id="image">
 					<div class="col-md-8">
 						<div class="row">
-							<%@ include file="image_modal.jsp"%>
+							<c:if test="${not empty param['totalMB']}">
+						<span class="unit_mb" style="color: blue">
+							<b> 총 <c:out value="${param.countFiles}" 
+								default="0"/>  개
+							 파일들용량: ${param.totalMB}MB</b>
+						</span>
+					</c:if>
+					
+					<c:if test="${fpCount gt 0}">
+						<c:forEach var="fp" items="${fps}" varStatus="vs">
+						 <%@ include file="_file.jsp" %>
+						</c:forEach>					
+					</c:if>
+					<c:if test="${fpCount eq 0}">
+						파일이 없어요!
+					</c:if>
 						</div>
 					</div>
 				</div>
