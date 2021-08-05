@@ -17,62 +17,50 @@
 				</div>
 				<div class="info_content">
 					<section class="childcare_section">
-						
-						<div class="childcare_content my">
-							<h3 class="mon_history">2020년 01월</h3>
-							<div class="childcare_content_menu mypage">
-								<table class="table ">
-									<tbody>
-										<tr>
-											<td>날짜</td>
-											<td>2020-01-25</td>
-										</tr>
-										<tr>
-											<td>후원처</td>
-											<td>미혼모시설</td>
-										</tr>
-										<tr>
-											<td>후원금액</td>
-											<td>50,000 원</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="childcare_content_menu mypage">
-								<table class="table ">
-									<tbody>
-										<tr>
-											<td>날짜</td>
-											<td>2020-01-25</td>
-										</tr>
-										<tr>
-											<td>후원처</td>
-											<td>미혼모시설</td>
-										</tr>
-										<tr>
-											<td>후원금액</td>
-											<td>50,000 원</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
+						<div class="childcare_section_title">
+							<h2>후원 내역조회</h2>
+							<span>후원 내역 조회는 이곳을 통해 확인해 주세요!</span>
 						</div>
 						<div class="childcare_content my">
-							<h3 class="mon_history">2020년 02월</h3>
-							<div class="childcare_content_menu mypage">
-								<table class="table ">
+							<div class="table-wrap">
+								<table class="tables myaccordion table-hover" id="accordion">
+									<thead>
+										<tr>
+											<th>NO.</th>
+											<th>후원처</th>
+											<th>결제 방법</th>
+											<th>후원금액</th>
+											<th>후원 날짜</th>
+										</tr>
+									</thead>
 									<tbody>
-										<tr>
-											<td>날짜</td>
-											<td>2020-02-05</td>
+										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+											<th scope="row">1</th>
+											<td>미혼모 시설</td>
+											<td>카드</td>
+											<td>50,000원</td>
+											<td>2021-05-28</td>
 										</tr>
-										<tr>
-											<td>후원처</td>
-											<td>한부모 가정</td>
+										<tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
+											<th scope="row">2</th>
+											<td>미혼모 시설</td>
+											<td>카드</td>
+											<td>50,000원</td>
+											<td>2021-05-28</td>
 										</tr>
-										<tr>
-											<td>후원금액</td>
-											<td>50,000 원</td>
+										<tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
+											<th scope="row">3</th>
+											<td>미혼모 시설</td>
+											<td>카드</td>
+											<td>50,000원</td>
+											<td>2021-05-28</td>
+										</tr>
+										<tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
+											<th scope="row">4</th>
+											<td>미혼모 시설</td>
+											<td>카드</td>
+											<td>50,000원</td>
+											<td>2021-05-28</td>
 										</tr>
 									</tbody>
 								</table>
