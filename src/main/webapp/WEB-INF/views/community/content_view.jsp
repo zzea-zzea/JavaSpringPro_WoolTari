@@ -3,7 +3,6 @@
 <%@ include file="../common/_link.jsp"%>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="content_view.woo">
 	<main class="content_view_main">
 		<div id="border">
 			<div class="community_first_view">
@@ -17,22 +16,22 @@
 						<div class="community_imfo">
 							<dl>
 								<dt>카테고리</dt>
-								<dd>${ct.cate}</dd>
+								<dd><c:out value="${community.cate}" default="1"/></dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>제목</dt>
-								<dd>${ct.title}</dd>
+								<dd><c:out value="${community.title}" default="제목없음"/></dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>작성일</dt>
-								<dd>${ct.write_date}</dd>
+								<dd><c:out value="${community.write_date}"/></dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>조회</dt>
-								<dd>${ct.views}</dd>
+								<dd><c:out value="${communitys.views}" default="0"/></dd>
 							</dl>
 						</div>
 						<!-- community_imfo -->
@@ -42,7 +41,7 @@
 				</div>
 				<!-- community_content_view -->
 				<div class="community_content_view_imfo">
-					<p>${ct.content}</p>
+					<p><c:out value="${community.content}" /></p>
 				</div>
 				<!-- community_content_view_imfo -->
 				<div class="image" id="image">
@@ -116,7 +115,6 @@
 		</div>
 		<!-- border -->
 		</main>
-	</form>
 </body>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">

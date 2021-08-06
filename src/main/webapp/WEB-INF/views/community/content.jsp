@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
+<script type="text/javascript">
+	function showOneArticle(boardIndex) {
+		//location.href = 'article_show.my?atId=' + atId; 
+		location.href = 
+			'${pageContext.request.contextPath}/content_view=boardIndex='
+					+ boardIndex;
+			// 동기방식 get 이동... 
+	}
+</script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
 <!-- 	<form action="content.woo"> -->
@@ -46,20 +55,20 @@
 								</thead>
 
 								<tbody>
-									<%
-										for (int i = 0; i < 15; i++) {
-									%>
-									<tr>
-										<td><%=15 - i%></td>
-										<td class="tit"><a href="${pageContext.request.contextPath}/content_view.woo">울타리 한가정부모
-												커뮤니티.</a></td>
-										<td>관리자</td>
-										<td>2021-07-04</td>
-										<td>111</td>
-									</tr>
-									<%
-										}
-									%>
+								<c:if test="${empty ctList}">
+						<h4> 게시글이 현재 하나도 없네요! </h4>
+				</c:if>	
+					<c:if test="${not empty ctList}">			
+					<c:forEach var="ct" items="${ctList}" varStatus="vs">
+						<tr onclick="showOneArticle('${ct.board_index}')">
+							<td><c:out value="${ct.board_index}" default="0"/> </td>
+							<td><c:out value="${ct.title}" default="제목없음"/></td> 
+							<td><c:out value="${mbLoginList[vs.index]}" default="이름없음"/></td>
+							<td><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
+							<td><c:out value="${ct.views}" default="0"/></td>
+						</tr>
+					</c:forEach>
+					</c:if>	
 								</tbody>
 							</table>
 						</div>
@@ -67,9 +76,30 @@
 				</div>
 				<div class="paging">
 					<!-- 			<a href="#" class="bt">첫 페이지</a> -->
-					<a href="#" class="bt">이전 페이지</a> <a href="#" class="num on">1</a>
-					<a href="#" class="num">2</a> <a href="#" class="num">3</a> <a
-						href="#" class="bt">다음 페이지</a>
+					<c:if test="${pn > 1}">
+					<a href="${pageContext.request
+						.contextPath}/content.woo?pg=${pn-1}" class="bt">이전 페이지</a>
+					</c:if>
+					
+<!-- 					1페이지부터 maxPg페이지까지 인덱스 순차 표시 -->
+			<c:forEach begin="1" end="${maxPg}" step="1" varStatus="vs">
+			
+				<c:if test="${vs.current eq pn}"><a><b 
+					style="color: blue; 
+					font-size: 1.2em;">${vs.current}</b></a></c:if>		
+				
+				<c:if test="${vs.current ne pn}">
+					<a href="${pageContext.request
+  						.contextPath}/content.woo?pg=${vs.current}"  
+						>${vs.current}</a>
+				</c:if>
+				
+			</c:forEach>
+			
+			<c:if test="${pn < maxPg}">
+					<a href="${pageContext.request
+						.contextPath}/content.woo?pg=${pn+1}" class="bt">다음 페이지</a>
+			</c:if>
 					<!-- 				 <a href="#" class="bt">마지막 페이지</a>  -->
 				</div>
 			</div>

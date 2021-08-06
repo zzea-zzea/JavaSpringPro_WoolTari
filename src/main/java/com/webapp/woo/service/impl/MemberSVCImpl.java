@@ -87,7 +87,7 @@ public class MemberSVCImpl implements IMemberSVC {
 	@Override
 	public MemberVO selectOneMember(int MemberIndex) {
 		// TODO Auto-generated method stub
-		return null;
+		return mbDao.selectOneMember(MemberIndex);
 	}
 
 	@Override

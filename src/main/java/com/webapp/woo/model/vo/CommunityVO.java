@@ -64,7 +64,9 @@ public class CommunityVO {
 	public void setMember_index(int member_index) {
 		this.member_index = member_index;
 	}
-	
+	public CommunityVO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public CommunityVO(int cate, String title, int views, Timestamp write_date, int member_index) {
 		super();

@@ -24,17 +24,17 @@ public class MemberDAOImpl implements IMemberDAO {
 		public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 			
 			return new MemberVO(
-					rs.getInt("memberindex"),
+					rs.getInt("member_index"),
 					rs.getString("id"),
 					rs.getString("pw"),
 					rs.getString("name"), 
 					rs.getString("phone"), 
 					rs.getString("brith"), 
-					rs.getString("nickname"), 
+					rs.getString("nick_name"), 
 					rs.getInt("gender"),
 					rs.getString("email"),
-					rs.getInt("ismember"),
-					rs.getString("nummember"),
+					rs.getInt("is_member"),
+					rs.getString("num_member"),
 					rs.getString("buisness"));
 		}
 		
@@ -51,7 +51,7 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	private static final String SQL_SELECT_ALL_MEMBERS = "select * from member order by joined_at desc";
 
-	private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where id = ?";
+	private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where member_index = ?";
 
 	private static final String SQL_SELECT_ONE_MEMBER_PW = "select * from member where pw = ?";
 	
@@ -174,10 +174,10 @@ public class MemberDAOImpl implements IMemberDAO {
 				@Override
 				public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 					// TODO Auto-generated method stub
-					return new MemberVO(rs.getInt("MemberIndex"), "WOOLTARI_" + rs.getString("Id"), rs.getString("Pw"),
-							rs.getString("Name"), rs.getString("Phone"), rs.getString("Brith"),
-							rs.getString("NickName"), rs.getInt("Gender"), rs.getString("Email"), rs.getInt("IsMember"),
-							rs.getString("NumMember"), rs.getString("Buisness"));
+					return new MemberVO(rs.getInt("member_index"), rs.getString("id"), rs.getString("pw"),
+							"WOOLTARI_" + rs.getString("name"), rs.getString("phone"), rs.getString("brith"),
+							rs.getString("nick_name"), rs.getInt("gender"), rs.getString("email"), rs.getInt("is_member"),
+							rs.getString("num_member"), rs.getString("buisness"));
 
 				}
 

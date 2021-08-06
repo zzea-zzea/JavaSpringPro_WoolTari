@@ -1,5 +1,6 @@
 package com.webapp.woo.Controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -67,11 +68,77 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "content.woo", method = RequestMethod.GET)
-	public ModelAndView Content(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("community/content");
+//	@RequestMapping(value = "content.woo", method = RequestMethod.GET)
+//	public ModelAndView Content(HttpServletRequest request) {
+//		ModelAndView mav = new ModelAndView("community/content");
+//		return mav;
+//	}
+//	
+	@RequestMapping(value = "content.woo",
+			method = RequestMethod.GET)
+	public ModelAndView contentListProc(
+		@RequestParam(value = "pg", required = false,
+				defaultValue = "1") int pageNumber) {
+		System.out.println("content() pg...: pg = " + pageNumber);
+
+		int maxPg = ctSvc.checkMaxPageNumber(); // 1~4
+		if( pageNumber <= 0 || pageNumber > maxPg ) {
+			System.out.println(">> 잘못된 페이지 번호 요청 pg: " + pageNumber);
+			ModelAndView erMav = 
+				new ModelAndView("redirect:content.woo?pg=1");
+			erMav.addObject(
+				"msg", ">> 잘못된 페이지 번호 요청 pg: " + pageNumber);
+			return erMav;
+		}
+		
+//		List<ArticleVO> atList = atSvc.selectAllArticles(pg);
+//		List<Map<String,Object>> atMapList = 
+//		 atSvc.selectAllArticlesForMap(pageNumber); 
+		//1. 서브쿼리 map방식
+//		List<ArticleRowVO> atMapList = 
+//		 atSvc.selectAllArticlesForVirtualRow(pageNumber); 
+		//2. 서브쿼리 virtual vo 방식
+				
+		List<CommunityVO> ctList = ctSvc.selectAllCommunitys(pageNumber);
+		// 3. 오리지널 방식 (서브쿼리없음, map 방식/virtualvo 방식 아님)		
+		// 오리지널 게시글 메인리스트
+		ModelAndView mav = 
+				new ModelAndView("community/content");//FW
+		if( ctList != null ) {
+			int ctSize = ctList.size(); // 1 ~ 10
+			// 각 게시글 별로 FK를 이용한 회원계정명들의 서브리스트
+			List<String> mbLoginList = new ArrayList<>();
+//			// 각 게시글 별로 FK를 이용한 댓글의 개수의 서브리스트
+//			List<Integer> ctCntList = new ArrayList<>();			
+			for (CommunityVO ct : ctList) { // 순서가 유지...
+				String mbName = mbSvc.selectOneMember( 
+						ct.getMember_index()).getNickName(); // 서브쿼리역할
+					// getMemberId() FK를 PK로 같는 멤버 vo를 찾음
+//				int ctCnt = ctSvc
+//						.checkAnswerCountForArticle(ct.getBoard_index());
+					// 서브쿼리역할
+					// at 자신의 pk인 id를 FK로 가지는 모든 종속
+					// 댓글들의 개수를 count()하여 가져옴.
+				mbLoginList.add(mbName);
+//				ctCntList.add(ctCnt); //autoboxing
+//				asCntList.add(new Integer(asCnt));
+			}
+			
+			mav.addObject("msg", 
+				"pg/오리지널-sublists 게시글 리스트 조회 성공!: " + ctSize +"개");
+			mav.addObject("ctList", ctList); // 메인 리스트
+			mav.addObject("mbLoginList", mbLoginList); // 서브 리스트1 - 계정명
+//			mav.addObject("asCntList", asCntList); // 서브 리스트2 - 댓글수
+			mav.addObject("atSize", ctSize);
+			mav.addObject("pn", pageNumber); 
+			mav.addObject("maxPg", maxPg);
+		} else {
+			mav.addObject("msg", 
+				"pg/오리지널-sublists 게시글 리스트 조회 실패! : " + pageNumber); //null
+		}		
 		return mav;
-	}
+	}	
+	
 	@RequestMapping(value = "new_content.woo", method = RequestMethod.GET)
 	public ModelAndView NewContent(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("community/new_content");
@@ -117,15 +184,15 @@ public class MainController {
 	        return mav;
 	    }
 	
-	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-	public ModelAndView ContentView(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("community/content_view");
-		return mav;
-	}
+//	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
+//	public ModelAndView ContentView(HttpServletRequest request) {
+//		ModelAndView mav = new ModelAndView("community/content_view");
+//		return mav;
+//	}
 
 	
 
-	@RequestMapping(value = "content_show.woo", method = RequestMethod.GET)
+	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
 	public String ContentViewProc(int atId, HttpSession ses, Model model) {
 		CommunityVO ct = ctSvc.selectOneCommunity(atId);
 		String ctFilePath = ct.getImg_path();

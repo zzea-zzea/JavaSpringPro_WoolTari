@@ -31,7 +31,7 @@ public interface ICommunityDAO {
 	List<CommunityVO> selectAllCommunitysForMember(int mbId); // <<FK>>
 	
 //	비/회원은 전체 게시글을 리스트 조회할 수 있다. (페이지네이션, 정렬, 태깅-해시태그)
-	List<CommunityVO> selectAllArticles(int offset, int blockSize); // pg가 기준점, 범위로 분리
+	List<CommunityVO> selectAllCommunitys(int offset, int blockSize); // pg가 기준점, 범위로 분리
 	
 	// 전체 게시글 레코드 수 
 		int checkAllNumberOfCommunitys();
@@ -45,6 +45,6 @@ public interface ICommunityDAO {
 			, String orderBy);
 	// 검색 일치 레코드 총수...
 	int checkAllNumberOfCommunitysForSearch(String k, String target);
-
+	
 		
 }

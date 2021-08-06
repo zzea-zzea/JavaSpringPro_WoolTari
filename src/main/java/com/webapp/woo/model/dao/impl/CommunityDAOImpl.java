@@ -33,8 +33,7 @@ public class CommunityDAOImpl implements ICommunityDAO {
 	= "update board set views = views + 1 "
 			+ "where board_index = ?"; // updated_at 고칠까?
 	public static final String SQL_COMMUNITY_SELECT_ALL_PG
-	= "select * from board order by "
-			+ "write_date desc limit ?, ?";
+	= "select * from board order by write_date desc limit ?, ?";
 	public static final String SQL_COMMUNITY_SEARCH_ALL_PG = 
 			"SELECT * FROM wooltari_db.board where"
 			+ "	   title like concat('%',?,'%') or"
@@ -47,6 +46,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
 			+ "	cate like concat('%',?,'%')";
 	public static final String SQL_COMMUNITY_DELETE = 
 		"DELETE FROM board WHERE board_index=?;";
+	public static final String SQL_COMMUNITY_CHECK_ALL_COUNT
+	= "select count(*) from board"; // 게시글 총레코드 수
 	
 	@Autowired
 	private JdbcTemplate jtem; // 자동주입 x
@@ -123,7 +124,7 @@ public class CommunityDAOImpl implements ICommunityDAO {
 	}
 
 	@Override
-	public List<CommunityVO> selectAllArticles(int offset, int blockSize) {
+	public List<CommunityVO> selectAllCommunitys(int offset, int blockSize) {
 		return jtem.query(SQL_COMMUNITY_SELECT_ALL_PG, 
 				BeanPropertyRowMapper.newInstance(CommunityVO.class)
 				, offset, blockSize);
@@ -131,8 +132,11 @@ public class CommunityDAOImpl implements ICommunityDAO {
 
 	@Override
 	public int checkAllNumberOfCommunitys() {
-		// TODO Auto-generated method stub
-		return 0;
+		int atCnt = jtem.queryForObject(
+				SQL_COMMUNITY_CHECK_ALL_COUNT, Integer.class);
+			// 값타입의 매핑 - 1행 1열짜리 select 결과는 값타입의 매핑..
+			// String.class, Integer.class, Double.class..
+		return atCnt;
 	}
 
 	@Override
@@ -158,6 +162,7 @@ public class CommunityDAOImpl implements ICommunityDAO {
 		
 		return false;
 	}
+
 
 	
 
