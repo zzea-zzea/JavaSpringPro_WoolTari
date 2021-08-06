@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IAnswerDAO">
+
+<!-- //- 회원이 특정 대상 게시글에 대하여 신규 댓글을 추가할 수 있다. -->
+<!-- //		answer_new_form.my?mbId=x&atId=y; get form session -->
+<!-- //		answer_add.my; post proc dao ses... return pk key.. -->
+<!-- 		boolean answerAdd(String reply, int articleId, int memberId); -->
+<!-- 	<insert id="SQL_INSERT_NEW_ANSWER"></insert> -->
+<!-- 		int answerAdd(AnswerVO as); 
+		// return PK key.. -->
+	<insert id="answerAddReturnKey" parameterType="answerVO" 
+		keyProperty="id" useGeneratedKeys="true">
+		insert into answers(reply,article_id,member_id) 
+		values(#{reply}, #{articleId}, #{memberId})
+	</insert>
+
+	<!-- parameterType 속성은 입력 파람 (인자) -->
+	<!-- no return PK key -->
+	<insert id="answerAdd" parameterType="answerVO">
+		insert into answers(reply,article_id,member_id) 
+		values(#{reply}, #{articleId}, #{memberId})
+	</insert>
+		
+<!-- 	//- 전체 댓글 리스트를 조회 (어드민?) -->
+<!-- //		answer_list_all.my; get dao proc -->
+<!-- 		List<AnswerVO> answerList(); -->
+	<!-- resultType 속성은 태그 sql 수행 결과 데이터  -->
+	<select id="answerList" resultType="answerVO">
+		select * from answers order by created_at desc
+	</select>	
+
+
+<!-- 	//- 특정 게시글에 종속된 전체 댓글 리스트를 조회  -->
+
+	<!-- 자동 스키마 맵핑 AnswerVO <==> answers TBL
+		mapUnderscoreToCamelCase 옵션이 false 일때... 
+		long vo.ABC <===> integer table.XYZ 연동?
+		
+		ResultMap 태그 (일종의 mapRow()구현체의 RowMapper 같은 역할) 
+	-->
+	 <!-- property는 vo 기준, column은 tbl 기준 -->
+	<resultMap type="answerVO" id="asResultMap">
+		<id property="id" column="id"/>
+		<result property="reply" column="reply"/>  
+<!-- 		<result property="reply" column="reply"  -->
+<!-- 			 jdbcType="VARCHAR"/> -->
+		<result property="compassion" column="compassion"/>
+		<result property="articleId" column="article_id"/>
+		<result property="memberId" column="member_id"/>
+		<result property="reportStatus" column="report_status"/>
+		<result property="createdAt" column="created_at"/>
+		<result property="updatedAt" column="updated_at"/>
+	</resultMap>
+<!-- //		answer_list.my?atId=z ; get dao proc -->
+<!-- 		List<AnswerVO> answerListForArticle(int atId); -->
+<!-- 	<select id="answerListForArticle"  -->
+<!-- 		parameterType="int" resultType="answerVO"> -->
+	<select id="answerListForArticle" 
+		parameterType="int" resultMap="asResultMap">
+		select * from answers where 
+			article_id = #{atId} order by created_at desc
+	</select>
+	
+<!-- 		// 특정 게시글에 대한 댓글 수... -->
+<!-- 		int checkAnswerCountForArticle(int atId);	 -->
+	<select id="checkAnswerCountForArticle" parameterType="int" 
+			resultType="int">
+		select count(*) from answers where article_id = #{atId}
+	</select>	
+
+		
+<!-- 	// 특정 회원이 작성한 모든 댓글을 리스트 조회.. -->
+<!-- 		List<AnswerVO> answerListForMember(int mbId); // mypage, dashboard -->
+<!-- 			resultType="com.webapp.mysns.model.vo.AnswerVO"> -->
+	<select id="answerListForMember" parameterType="int" 
+		resultType="answerVO">  <!-- 축약된 대응타입 type alias -->
+		<![CDATA[
+		 SELECT * FROM ANSWERS WHERE member_id = #{mbId}  
+			ORDER BY created_at DESC
+		]]>
+	</select>   <!-- CDATA로 SQL문을 보호한다. -->
+		
+<!-- //		answer_list.my?atId=z&pg=1; get dao proc pagination -->
+<!-- //		answer_list.my?atId=z&pg=1&order=compassion; get dao proc pagination -->
+<!-- //		(게시글 상세보기에 연동 표시) -->
+<!-- //		article_show.my에 at_show.jsp에 연동으로 댓글리스트 표시. -->
+<!-- 	//- 개별 댓글 상세보기 구현안함... -->
+<!-- 		AnswerVO answerShowOne(int asId); // as vo, edit form... -->
+<!-- resultMap="asResultMap"> -->
+	<select id="answerShowOne" parameterType="int"
+						resultType="answerVO">						
+		<![CDATA[
+		 SELECT * FROM ANSWERS WHERE id = #{asId}
+		]]>				
+	</select>
+			
+<!-- 	//- 특정 댓글을 회원이 자신거라면 편집/ 갱신 할 수 있다. -->
+<!-- //		answer_edit_form.my?mbId=x&atId=y&asId=z; get dao proc	 -->
+<!-- //		answer_update.my; post dao proc... -->
+<!-- 		boolean answerUpdate(AnswerVO as); -->
+	<update id="answerUpdate" parameterType="answerVO">
+		<![CDATA[
+		 UPDATE ANSWERS SET reply = #{reply}, updated_at = now() 
+		 WHERE id = #{id}  
+		]]>
+	</update>
+
+
+<!-- 	//- 특정 댓글을 삭제할 수 있다. -->
+<!-- //		answer_delete.my?mbId=x&atId=y&asId=z; get dao proc ses -->
+<!-- 		boolean answerRemove(int asId); -->
+	<delete id="answerRemove" parameterType="int">
+		<![CDATA[
+		 DELETE FROM ANSWERS WHERE id = #{asId}
+		]]>
+	</delete>
+
+
+<!-- 	//- 특정 댓글에 대해서 신고할 수 있다.. ; get dao (관리자, AI)				 -->
+<!-- //		answer_report_status.my?mbId=x&atId=y&asId=z; -->
+<!-- 		boolean reportAnswerIssue(int asId, int mbId); -->
+	<!-- 2번의 상태 : 신고접수 상태로만 간다 -->
+	<update id="reportAnswerIssue" parameterType="int">
+		<![CDATA[
+		 UPDATE ANSWERS SET report_status = 2, updated_at = now() 
+		 WHERE id = #{asId}
+		]]>  
+	</update>
+
+<!-- 	//- 특정 댓글에 대해서 회원이 공감을 +1 줄 수 있다. -->
+<!-- //		answer_compassion.my?mbId=x&atId=y&asId=z; (heart?) -->
+<!-- 		int increaseCompassion(int asId, int mbId); // 최근 공감수 리턴 -->
+	<update id="increaseCompassion" parameterType="int">
+		<![CDATA[
+		 UPDATE ANSWERS SET compassion = compassion + 1 
+		 WHERE id = #{asId} 	
+		]]>
+	</update>
+		
+<!-- 		// 댓글 개수 리턴 -->
+<!-- 		int checkTotalNumberOfAnswers(); // 총 댓글 레코드 수 -->
+	<select id="checkTotalNumberOfAnswers" resultType="int">
+		<![CDATA[
+		  SELECT count(*) AS asCnt FROM ANSWERS
+		]]>
+	</select>
+
+</mapper>
