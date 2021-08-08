@@ -18,10 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webapp.woo.mycode;
+import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.CommunityVO;
 import com.webapp.woo.model.vo.MemberVO;
+import com.webapp.woo.service.inf.ICommentSVC;
 import com.webapp.woo.service.inf.ICommunitySVC;
 import com.webapp.woo.service.inf.IFileManageSVC;
 import com.webapp.woo.service.inf.IMemberSVC;
@@ -35,6 +38,8 @@ public class MainController {
 	IMemberSVC mbSvc;
 	@Autowired
 	IFileManageSVC fileSvc;
+	@Autowired
+	ICommentSVC CommentSVC;
 
 	private static final Logger mbLogger = LoggerFactory.getLogger(MainController.class);
 
@@ -117,14 +122,121 @@ public class MainController {
 	        return mav;
 	    }
 	
-	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-	public ModelAndView ContentView(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("community/content_view");
-		return mav;
+//	   @RequestMapping(value = "/content_view.woo", method = RequestMethod.GET)
+//	   public String answerNewForm(HttpSession ses, Model model,
+//	           @RequestParam(value = "mbId")int member_index,
+//	           @RequestParam(value = "boardId")int board_index) {
+//	       int sesMbId = (int)ses.getAttribute("mbId");
+//	       if( member_index == sesMbId ) {
+//	           MemberVO mb = mbSvc.selectOneMember(member_index);
+//	           if( mb != null ) {
+//	               model.addAttribute("mbId", member_index);
+//	               model.addAttribute("boardId", board_index);
+//	               return "community/content_view"; //FW
+//	           } else {
+//	               System.out.println(">> 댓글 추가: 회원 DB 조회 에러: " + member_index);
+//	               model.addAttribute(">> 댓글 추가: 회원 DB 조회 에러: " + member_index);
+//	               return "redirect:community_view.woo?atId="+board_index;
+//	           }
+//	       } else {
+//	           System.out.println(">> 댓글 추가: 회원 id 불일치: " + member_index);
+//	           model.addAttribute("msg", ">> 댓글 추가: 회원 id 불일치: " + member_index);
+//	           return "redirect:community_view.woo?atId="+board_index;
+//	       }
+//
+//	   }
+	@RequestMapping(value = "/list.my",	method = RequestMethod.GET)
+	public String answerListAllProc(Model model, 
+			@RequestParam(value ="boardId", required = false, defaultValue = "0") int boardIndex) {
+		
+		List<CommentVO> asList = null; 
+		if( boardIndex == 0 ) //전체댓글 리스트
+			System.out.println("잘못된 접근");
+		else 
+			asList = CommentSVC.CommentListForBoard(boardIndex);
+					// 특정 게시글에 종속된 전체 댓글 리스트
+		if( asList != null ) {
+			int asSize = asList.size();
+			model.addAttribute("asSize", asSize);
+			model.addAttribute("asList", asList);
+			if( boardIndex != 0 )	model.addAttribute("atId", boardIndex);
+			// 댓글 리스트뷰를 포함한 게시글 상세보기로 이동
+			return "content_view.woo";
+		} else {
+			if( boardIndex != 0 )	{
+				model.addAttribute("msg", "댓글 리스트 조회 실패!");
+				return "redirect:content_view.woo?BoardId="+boardIndex; 
+			}	else {	
+				model.addAttribute("msg", "전체댓글 리스트 조회 실패!");
+				return "redirect:content_view.woo"; // ?
+			}
+		}
 	}
-
-	
-
+	   
+	   @RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
+		public String commentAddProc(HttpSession ses, Model model,
+				@RequestParam(value = "CV") CommentVO CV, 
+				@RequestParam(value = "memberId") int memberIndex,
+				@RequestParam(value = "boardId") int boardIndex ) {
+		   ModelAndView mav = new ModelAndView();
+			boolean asId = CommentSVC.Writecomment(CV, memberIndex, boardIndex);
+			if( asId ) {
+				return "redirect:/community_view.woo?atId="+CV.getboardIndex();
+				// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
+			} else {
+				System.out.println("댓글 등록 실패!");
+				model.addAttribute("msg", "댓글 등록 실패!");
+				model.addAttribute("member", 
+						mbSvc.selectOneMember(CV.getmemberIndex()));
+				return "redirect:/community_view.woo?atId="+CV.getboardIndex();
+			}
+		}
+	   
+	   
+	   @RequestMapping(value = "/retouch.woo", method = RequestMethod.POST)
+		public String retouch(HttpSession ses, Model model,
+				@RequestParam(value = "commentId") int commentIndex, 
+				@RequestParam(value = "memberId") int memberIndex,
+				@RequestParam(value = "boardId") int boardIndex, 
+				RedirectAttributes rdAttr) {
+		int sesMbId = (int)ses.getAttribute("mbPKId");
+		if( sesMbId == memberIndex ) { // 댓글 작성자 인증
+			CommentVO cv = CommentSVC.selectOneComment(commentIndex);
+			if( cv != null ) {
+				model.addAttribute("cv", cv);
+				MemberVO mb = mbSvc.selectOneMember(memberIndex);
+				model.addAttribute("member", mb);
+				return "community/content_view";
+			} else {
+				rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: db error~!");
+				return "community:/content_view.woo?boardId="+ boardIndex;
+			}
+		} else {
+			rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: 댓글 작성자 불일치");
+			return "community:/content_view.woo?boardId="+ boardIndex;
+		}		
+	   }
+	   
+	   @RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.POST)
+	   public String deleteCommentProc(HttpSession ses, Model model,
+			   @RequestParam(value = "commentId") int commentIndex, 
+			   @RequestParam(value = "memberId") int memberIndex,
+			   @RequestParam(value = "boardId") int boardIndex ) {
+		   ModelAndView mav = new ModelAndView();
+		   CommentVO myComment = CommentSVC.selectOneComment(commentIndex);
+		   boolean asId = CommentSVC.deleteComment(myComment.getcommentIndex());
+		   if( asId ) {
+			   return "redirect:/community_view.woo?atId="+myComment.getboardIndex();
+			   // atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
+		   } else {
+			   System.out.println("댓글 삭제 실패!");
+			   model.addAttribute("msg", "댓글 삭제 실패!");
+			   model.addAttribute("member", 
+					   mbSvc.selectOneMember(myComment.getmemberIndex()));
+			   return "redirect:/community_view.woo?atId="+myComment.getboardIndex();
+		   }
+	   }
+	   
 	@RequestMapping(value = "content_show.woo", method = RequestMethod.GET)
 	public String ContentViewProc(int atId, HttpSession ses, Model model) {
 		CommunityVO ct = ctSvc.selectOneCommunity(atId);
@@ -157,8 +269,6 @@ public class MainController {
 		}
 		
 	}
-
-	
 	
 	@RequestMapping(value = "retouch_content.woo", method = RequestMethod.GET)
 	public ModelAndView RetouchContent(HttpServletRequest request) {

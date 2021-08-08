@@ -5,17 +5,18 @@ import java.sql.Timestamp;
 
 public class CommentVO {
 
-	private int comment_index;
+	private int commentIndex;
 	private String content;
-	private Timestamp create_date;
+	private Timestamp createDate;
 	private int depth;
-	private int member_index;
-	private int board_index;
-	public int getComment_index() {
-		return comment_index;
+	private int memberIndex;
+	private int boardIndex;
+	
+	public int getcommentIndex() {
+		return commentIndex;
 	}
-	public void setComment_index(int comment_index) {
-		this.comment_index = comment_index;
+	public void setcommentIndex(int commentIndex) {
+		this.commentIndex = commentIndex;
 	}
 	public String getContent() {
 		return content;
@@ -23,11 +24,11 @@ public class CommentVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Timestamp getCreate_date() {
-		return create_date;
+	public Timestamp getcreateDate() {
+		return createDate;
 	}
-	public void setCreate_date(Timestamp create_date) {
-		this.create_date = create_date;
+	public void setcreateDate(Timestamp createDate) {
+		this.createDate = createDate;
 	}
 	public int getDepth() {
 		return depth;
@@ -35,34 +36,34 @@ public class CommentVO {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
-	public int getMember_index() {
-		return member_index;
+	public int getmemberIndex() {
+		return memberIndex;
 	}
-	public void setMember_index(int member_index) {
-		this.member_index = member_index;
+	public void setmemberIndex(int memberIndex) {
+		this.memberIndex = memberIndex;
 	}
-	public int getBoard_index() {
-		return board_index;
+	public int getboardIndex() {
+		return boardIndex;
 	}
-	public void setBoard_index(int board_index) {
-		this.board_index = board_index;
+	public void setboardIndex(int boardIndex) {
+		this.boardIndex = boardIndex;
 	}
 	
 	
-	public CommentVO(int comment_index, String content, Timestamp create_date, int depth, int member_index,
-			int board_index) {
+	public CommentVO(int commentIndex, String content, Timestamp createDate, int depth, int memberIndex,
+			int boardIndex) {
 		super();
-		this.comment_index = comment_index;
+		this.commentIndex = commentIndex;
 		this.content = content;
-		this.create_date = create_date;
+		this.createDate = createDate;
 		this.depth = depth;
-		this.member_index = member_index;
-		this.board_index = board_index;
+		this.memberIndex = memberIndex;
+		this.boardIndex = boardIndex;
 	}
 	@Override
 	public String toString() {
-		return "CommentVO [comment_index=" + comment_index + ", content=" + content + ", create_date=" + create_date
-				+ ", depth=" + depth + ", member_index=" + member_index + ", board_index=" + board_index + "]";
+		return "CommentVO [commentIndex=" + commentIndex + ", content=" + content + ", createDate=" + createDate
+				+ ", depth=" + depth + ", memberIndex=" + memberIndex + ", boardIndex=" + boardIndex + "]";
 	}
 	
 	
