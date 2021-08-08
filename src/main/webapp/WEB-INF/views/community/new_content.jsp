@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script>
+	$("select[name=cate]").val()
+</script>
 <%@ include file="../common/_link.jsp"%>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-					<form action="${pageContext.request
-			.contextPath}/new_content_add.woo" method="post" 
-			 enctype="multipart/form-data">
 		<main class="new_content_main">
 			<div class="write_first_box">
 				<div class="new_title">
@@ -13,6 +13,9 @@
 						<span>새</span> 글 쓰기
 					</h3>
 				</div>
+					<form action="${pageContext.request
+			.contextPath}/new_content_add.woo" method="post" 
+			 enctype="multipart/form-data">
 				<hr>
 			 	<input type="hidden" name="memberIndex" value="${mbPKId}">
 				<div class="new_write_title">
@@ -24,14 +27,14 @@
 						</div>
 						<div class="rigth_category">
 							<p class="category">카테고리:</p>
-							<select class="category_sel" name="cate">
-								<option value="0" selected="selected">= 선택 =</option>
-								<option value="1">일상</option>
-								<option value="2">지원 정보</option>
-								<option value="3">병원 정보</option>
-								<option value="4">시설 정보</option>
-								<option value="5">육아 정보</option>
-								<option value="6">무료 나눔</option>
+							<select class="category_sel" name="cate"> 
+								<option value="0" selected>= 선택 =</option>
+								<option value="1" <c:if test="${cate == 1}"> selected </c:if>>일상</option>
+								<option value="2" <c:if test="${cate == 2}"> selected </c:if>>지원 정보</option>
+								<option value="3" <c:if test="${cate == 3}"> selected </c:if>>병원 정보</option>
+								<option value="4" <c:if test="${cate == 4}"> selected </c:if>>시설 정보</option>
+								<option value="5" <c:if test="${cate == 5}"> selected </c:if>>육아 정보</option>
+								<option value="6" <c:if test="${cate == 6}"> selected </c:if>>무료 나눔</option>
 							</select>
 						</div>
 					</div>
@@ -40,24 +43,25 @@
 					<div class="new_write_content">
 						<textarea class="new_content" name='content'
 							placeholder="내용 입력" rows="20" cols="111" maxlength="1024"
-							style="resize: none;" ></textarea>
+							style="resize: none;"></textarea>
 						<div class="counter">(0 / 1024)</div>
 						<script>
 							
-						</script>
+						</script> 
 					</div>
 					<div id="preview"></div>
-					<input type="file" name="imgPath" id='upload' class="inp-img"
-						accept=".gif, .jpg, .png" multiple="multiple">
+					<input type="file" name="imgPath" class="inp-img" id='upload'  
+							size="64" placeholder="첨부 파일명"  
+							multiple="multiple">
 					<button type="button" class="btn-delete">삭제</button>
 					<div class="input_btn">
 						<button class="input_btn" type="submit" onclick="write_check()">작성하기</button>
 						<button class="cancle_btn" onclick="cancle_check()">목록으로</button>
 					</div>
 				</div>
+				</form>
 			</div>
 		</main>
-	</form>
 </body>
 <script
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

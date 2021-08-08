@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script type="text/javascript">
-	function showOneArticle(boardIndex) {
+	function showOneArticle(atId) {
 		//location.href = 'article_show.my?atId=' + atId; 
 		location.href = 
-			'${pageContext.request.contextPath}/content_view=boardIndex='
-					+ boardIndex;
+			'${pageContext.request.contextPath}/content_view.woo?atId='
+					+ atId;
 			// 동기방식 get 이동... 
 	}
 </script>

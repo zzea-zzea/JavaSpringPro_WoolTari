@@ -26,12 +26,12 @@
 							<span>|</span>
 							<dl>
 								<dt>작성일</dt>
-								<dd><c:out value="${community.write_date}"/></dd>
+								<dd><fmt:formatDate value="${community.write_date}" pattern="yyyy년 MM월 dd일" /></dd>
 							</dl>
 							<span>|</span>
 							<dl>
 								<dt>조회</dt>
-								<dd><c:out value="${communitys.views}" default="0"/></dd>
+								<dd><c:out value="${community.views}" default="0"/></dd>
 							</dl>
 						</div>
 						<!-- community_imfo -->
@@ -68,10 +68,16 @@
 				</div>
 				<div></div>
 				<div class="community_imfo_retouch_delet">
-					<input type="button" value="삭제" class="btn_content"
-						onclick="delete_check()"> <input type="button" value="수정"
-						class="btn_content"
-						onclick="retouch_check()">
+			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
+				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
+					<a href="${pageContext.request
+						.contextPath}/retouch_content.woo?atId=${community.board_index}">[수정]</a>
+				</c:if>
+			</c:if>
+<!-- 					<input type="button" value="삭제" class="btn_content" -->
+<!-- 						onclick="delete_check()"> <input type="button" value="수정" -->
+<!-- 						class="btn_content" -->
+<!-- 						onclick="retouch_check()"> -->
 				</div>
 				<div class="community_comment_box">
 					<div class="all_comment">댓글 1개</div>

@@ -42,6 +42,7 @@ public class CommunitySVCImpl implements ICommunitySVC {
 
 	@Override
 	public int updateCommunity(CommunityVO at) {
+		
 		boolean r = ctDao.updateCommunity(at);
 		
 		return r == true ? 1:3;

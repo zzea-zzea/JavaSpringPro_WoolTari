@@ -3,7 +3,6 @@
 <%@ include file="../common/_link.jsp"%>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="content.woo">
 		<main class="retouch_content_main">
 			<div class="write_first_box">
 				<div class="write_title">
@@ -12,27 +11,50 @@
 					</h3>
 				</div>
 				<hr>
+				<form method="post" action="${pageContext
+			.request.contextPath}/community_update.woo">
 				<div class="new_write_title">
+				<input type="hidden" name="board_index" value="${community.board_index}">
+				<input type="hidden" name="views" value="${community.views}">
+				<input type="hidden" name="member_index" value="${community.member_index}">
 					<p class="title">제목:
 					<p>
-						<input type="text" class="input_title" value="한부모 가정 울타리."
+						<input type="text" name="title" class="input_title" value="${community.title}"
 							size="60px">
 					<p class="category">카테고리:</p>
-					<p class="category_sel">선택한 카테고리</p>
+					<p class="category_sel">${community.cate}</p>
 					<p class="writer">작성자:</p>
-					<p class="write_user">회원1</p>
+					<p class="write_user">사용자1</p>
 					<p class="date">날자:</p>
-					<p class="write_date">2021/07/10</p>
+					<p class="write_date">${community.write_date}</p>
 				</div>
 				<div class="new_write_content_box">
 					<div class="new_write_content">
-						<textarea class="new_content" rows="20" cols="111"
-							maxlength="1200" style="resize: none;">동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. 남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세.</textarea>
+						<textarea name='content' class="new_content" rows="20" cols="111"
+							maxlength="1200" style="resize: none;">${
+							community.content}</textarea>
 						<div class="counter">(0 / 1024)</div>
 					</div>
 					<div id="preview"></div>
-					<input type="file" name="upload" id='upload' class="inp-img"
-						accept=".gif, .jpg, .png" multiple="multiple">
+					<c:if test="${not empty param['totalMB']}">
+						<span class="unit_mb" style="color: blue">
+							<b> 총 <c:out value="${param.countFiles}" 
+								default="0"/>  개
+							 파일들용량: ${param.totalMB}MB</b>
+						</span>
+					</c:if>
+					
+					<c:if test="${fpCount gt 0}">
+						<c:forEach var="fp" items="${fps}" varStatus="vs">
+						 <%@ include file="_file.jsp" %>
+						</c:forEach>					
+					</c:if>
+					<c:if test="${fpCount eq 0}">
+						파일이 없어요!
+					</c:if>
+					<input type="file" name="upfiles" class="inp-img" id='upload'
+							size="64" placeholder="첨부 파일명"  
+							multiple="multiple">
 					<button type="button" class="btn-delete">삭제</button>
 					<div id='preview'></div>
 					<div class="input_btn">
@@ -40,9 +62,9 @@
 						<button class="cancle_btn" onclick="cancle_check()">돌아가기</button>
 					</div>
 				</div>
+			</form>
 			</div>
 		</main>
-	</form>
 </body>
 <script
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

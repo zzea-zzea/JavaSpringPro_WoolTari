@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -216,7 +217,7 @@ public class MainController {
 		model.addAttribute("fpCount", fpCount);
 		
 		if(ct != null) {
-			model.addAttribute("community", ct ); // vo el 속성화..
+			model.addAttribute("community", ct); // vo el 속성화..
 			return "community/content_view"; //fw + _as_list.jsp 조각을 포함
 			
 		} else {
@@ -228,10 +229,73 @@ public class MainController {
 	
 	
 	@RequestMapping(value = "retouch_content.woo", method = RequestMethod.GET)
-	public ModelAndView RetouchContent(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("community/retouch_content");
-		return mav;
+	public String RetouchContent(Model model, HttpSession ses, 
+			@RequestParam(value = "atId", 
+			defaultValue = "0") int id) {
+		if(id == 0) {
+			return "redirect:content.woo";
+		}
+		CommunityVO ct = ctSvc.selectOneCommunity(id);
+		if(ct != null) {
+//		 	게시글 작성자 본인이 맞는지? 인증체크? 세션?
+			// 세션에 로그인mbPKId == 해당 게시글의 fk memberId 일치.. 
+			int writerId = ct.getMember_index(); // 글쓴사람 <<FK>>
+			int mbPKId = (Integer)ses.getAttribute("mbPKId");
+			// 세션인증사람 <<PK>>
+			if( writerId == mbPKId ) { // 글쓴이 본인이 로그인 중 맞음
+				model.addAttribute("community", ct);
+				model.addAttribute("msg","게시글 편집 폼 준비 성공 : "+id);
+				return "community/retouch_content"; //FW
+			} else {
+				System.out.println("게시글 편집 폼 준비 실패: 게시글 작성자가 아님! - " +id);
+				return "redirect:content_view.woo?atId="+id;
+			}
+		} else {
+			System.out.println("게시글 편집 폼 준비 실패: 게시글을 찾을 수 없음 - " +id);
+			return "redirect:content_view.woo?atId="+id;
+		}
 	}
+	
+	
+	@RequestMapping(value = "community_update.woo",
+			method = RequestMethod.POST)
+	public String articleUpdateProc( HttpSession ses, Model model,
+			@ModelAttribute(value = "community") CommunityVO ct
+			// + 파람도 받고, 모델에 속성공유도 동시에.. 그것도..
+			// article이란 속성명으로 해준다.
+//			ArticleVO at // articleVO 기본 속성명.. 
+				// vo같은 객체(Command객체)를 통해 
+				// 다수 개의 파람들을 하나로 묶어서
+				// 요청으로부터 입력 받을 수 있음 
+			) {
+			// 작성자가 또 맞는지?
+			int writerId = ct.getMember_index(); // 글쓴사람 <<FK>>
+			int mbPKId = (Integer)ses.getAttribute("mbPKId");
+									// 세션인증사람 <<PK>>
+			if( writerId != mbPKId ) { // 글쓴이 본인이 아님!!!
+				System.out.println("\"게시글 갱신 실패: 작성자 본인 아님!!" + ct.getMember_index());
+				return "redirect:content_view.woo?atId="+ ct.getMember_index();
+			}
+			
+			System.out.println("article_update vo3커맨드객체: " + ct);
+			
+			// svc/ dao
+//			boolean b = atSvc.updateArticle(at); 
+				// 커맨드요청입력객체를 그대로 서비스로 전달
+			int b = ctSvc.updateCommunity(ct);
+			// 분기..
+			//if( b ) {
+			model.addAttribute("b", b); // 리턴 코드값
+			if( b == 1 ) { // OK 1
+				model.addAttribute("msg","게시글 갱신 성공: " + ct.getBoard_index());
+				return "redirect:content_view.woo?atId=" + ct.getBoard_index();
+					
+			} else {
+				System.out.println("게시글 갱신 실패: " + ct.getBoard_index());
+				return "community/retouch_content"; // FW	
+			}
+	}	
+	
 
 	
 	@RequestMapping(value = "new_notice.woo", method = RequestMethod.GET)
@@ -292,7 +356,7 @@ public class MainController {
 
 			ses.setAttribute("mbLoginName", id); // 로그인명을 기억.. <<UQ>>
 			MemberVO mb = mbSvc.selectOneMember(id);
-			ses.setAttribute("mbPKId", mb.getId()); // <<PK>> id 기억...
+			ses.setAttribute("mbPKId", mb.getMemberIndex()); // <<PK>> id 기억...
 
 			// 임시로... member_list.my Redirect.
 			mav.setViewName("redirect:main.woo");

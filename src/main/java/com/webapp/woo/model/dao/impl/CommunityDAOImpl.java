@@ -23,8 +23,8 @@ import com.webapp.woo.model.vo.CommunityVO;
 @Repository  // DAO 빈 자동등록
 public class CommunityDAOImpl implements ICommunityDAO {
 	public static final String SQL_COMMUNITY_INSERT 
-	= "insert into board (cate,title,content,img_path,member_index) "
-			+ " values(?,?,?,?,?)"; 
+	= "insert into board(cate,title,content,img_path,member_index,write_date) "
+			+ " values(?,?,?,?,?,now())"; 
 	public static final String SQL_COMMUNITY_SELECT_ONE 
 	= "select * from board where board_index = ?";
 	public static final String SQL_COMMUNITY_UPDATE
@@ -33,7 +33,7 @@ public class CommunityDAOImpl implements ICommunityDAO {
 	= "update board set views = views + 1 "
 			+ "where board_index = ?"; // updated_at 고칠까?
 	public static final String SQL_COMMUNITY_SELECT_ALL_PG
-	= "select * from board order by write_date desc limit ?, ?";
+	= "select * from board order by board_index desc limit ?, ?";
 	public static final String SQL_COMMUNITY_SEARCH_ALL_PG = 
 			"SELECT * FROM wooltari_db.board where"
 			+ "	   title like concat('%',?,'%') or"
