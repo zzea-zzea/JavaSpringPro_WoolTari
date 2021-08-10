@@ -23,19 +23,19 @@
 		<property name="dataSource" ref="ds" />	
 	</bean>
 	
-	<!-- DAO: 마이바티스 기반: Sql Session Factory -->
-	<bean id="mybatisFactory" 
-		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="ds" />
-		<property name="configLocation"
-			value="classpath:mybatis_config.xml" />
-	</bean>
+<!-- 	 DAO: 마이바티스 기반: Sql Session Factory -->
+<!-- 	<bean id="mybatisFactory"  -->
+<!-- 		class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="ds" /> -->
+<!-- 		<property name="configLocation" -->
+<!-- 			value="classpath:mybatis_config.xml" /> -->
+<!-- 	</bean> -->
 	
-	<!-- DAO: 마이바티스 기반: Sql Session 템플릿 (마이바티스-스프링) -->
-	<bean id="sstem" 
-		class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="mybatisFactory" />
-	</bean>
+<!-- 	 DAO: 마이바티스 기반: Sql Session 템플릿 (마이바티스-스프링) --> 
+<!-- 	<bean id="sstem"  -->
+<!-- 		class="org.mybatis.spring.SqlSessionTemplate"> -->
+<!-- 		<constructor-arg ref="mybatisFactory" /> -->
+<!-- 	</bean> -->
 	
 <!-- 	<bean id="mbMysqlDao"  -->
 <!-- 		class="com.webapp.mysns.model.dao.impl.MemberMySqlDAOImpl"> -->
