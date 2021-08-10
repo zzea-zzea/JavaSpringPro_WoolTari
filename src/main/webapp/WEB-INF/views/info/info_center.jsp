@@ -75,13 +75,12 @@ function panTo() {
 				<div class="center_content_location" id="map"></div>
 				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e2858e3180808590dc8e575f6f6b84ef&libraries=services"></script>
 				<script>
-					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+					var mapContainer = document.getElementById('map'),  
 					mapOption = {
-						center : new kakao.maps.LatLng(37.531220, 126.987537), // 지도의 중심좌표
+						center : new kakao.maps.LatLng(37.531220, 126.987537), 
 						level : 8
-					// 지도의 확대 레벨
 					};
-					var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+					var map = new kakao.maps.Map(mapContainer, mapOption);
 					
 				</script>
 				<div class="childcare_content my">
@@ -99,14 +98,11 @@ function panTo() {
 							</thead>
 							<tbody>
 								<c:forEach var="lo" items="${lovo}" varStatus="lov">
-									<tr data-toggle="collapse" data-target="#collapseOne"
-										aria-expanded="true" aria-controls="collapseOne"
-										class="collapsed">
+									<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 										<td><c:out value="${lo.local_si}" /></td>
 										<td><c:out value="${lo.local_gu}" /></td>
 										<td><c:out value="${lo.facility_name}" /></td>
-										<td><c:out
-												value="${lo.facility_cate eq 1 ? '공동생활지원' : '기본생활시설'}" /></td>
+										<td><c:out value="${lo.facility_cate eq 1 ? '공동생활지원' : '기본생활시설'}" /></td>
 										<td><c:out value="${lo.phone_num}" /></td>
 										<td><c:out value="${lo.facility_add}" /></td>
 									</tr>
