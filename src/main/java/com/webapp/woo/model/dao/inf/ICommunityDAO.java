@@ -45,6 +45,9 @@ public interface ICommunityDAO {
 			, String orderBy);
 	// 검색 일치 레코드 총수...
 	int checkAllNumberOfCommunitysForSearch(String k, String target);
+
+
+	List<CommunityVO> searchCommunity(String k, int offset, int searchPageSize, String orderBy);
 	
 		
 }

@@ -1,6 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
+<script>
+	function del(atId) {
+		var chk = confirm("정말 삭제하시겠습니까?");
+		if (chk) {
+			location.href='delete.woo?atId='+${community.board_index};
+		}
+	}	
+	$(document).ready(function() {
+		var check = "${community.cate}";
+		var msg = "";
+		switch(check) {
+		case "1":
+			msg = "일상";
+			break;
+		case "2":
+			msg = "지원정보";
+			break;
+		case "3":
+			msg = "병원정보";
+			break;
+		case "4":
+			msg = "시설";
+			break;
+		case "5":
+			msg = "육아정보";
+			break;
+		case "6":
+			msg = "무료나눔";
+			break;
+		
+		}
+			$('#a').text(msg);
+	});
+</script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<main class="content_view_main">
@@ -16,7 +50,7 @@
 						<div class="community_imfo">
 							<dl>
 								<dt>카테고리</dt>
-								<dd><c:out value="${community.cate}" default="1"/></dd>
+								<dd id="a"></dd>
 							</dl>
 							<span>|</span>
 							<dl>
@@ -67,11 +101,12 @@
 					</div>
 				</div>
 				<div></div>
-				<div class="community_imfo_retouch_delet">
+				<div class="community_imfo_retouch_delet" style="text-align: center;">
 			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
 				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
-					<a href="${pageContext.request
+					<a class="btn_content" href="${pageContext.request
 						.contextPath}/retouch_content.woo?atId=${community.board_index}">[수정]</a>
+					<a class="btn_content" href="#" onclick="del(${community.board_index})">[삭제]</a>
 				</c:if>
 			</c:if>
 <!-- 					<input type="button" value="삭제" class="btn_content" -->
