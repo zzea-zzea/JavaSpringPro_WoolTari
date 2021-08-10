@@ -970,7 +970,7 @@ width: 100%;
 	margin-left: 30px;
 }
 
-.policy_box  button {
+.policy_box button {
 	padding: 13px 20px;
 	border-radius: 5px;
 	outline: none;
@@ -1720,6 +1720,7 @@ background: #b38c8c;
 .community_content_view .community_imfo_retouch_delet {
 	margin-left: 50px;
 	display: inline-block;
+
 }
 
 .community_first_view .community_imfo_retouch_delet .btn_content {
@@ -1732,6 +1733,7 @@ background: #b38c8c;
 	font-weight: bold;
 	padding: 0 15px;
 	margin-left: 10px;
+
 }
 
 .community_first_view .community_content_view_imfo {

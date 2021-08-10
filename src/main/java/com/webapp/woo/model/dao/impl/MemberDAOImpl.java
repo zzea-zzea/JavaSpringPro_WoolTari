@@ -51,11 +51,11 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	private static final String SQL_SELECT_ALL_MEMBERS = "select * from member order by joined_at desc";
 
-	private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where member_index = ?";
+	private static final String SQL_SELECT_ONE_MEMBER_MEMBER_INDEX = "select * from member where member_index = ?";
 
 	private static final String SQL_SELECT_ONE_MEMBER_PW = "select * from member where pw = ?";
 	
-	private static final String SQL_SELECT_ONE_MEMBER_LOGIN = "select * from member where id = ?";
+	private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where id = ?";
 
 	private static final String SQL_SELECT_ONE_MEMBER_EMAIL = "select * from member where email = ?";
 
@@ -68,7 +68,8 @@ public class MemberDAOImpl implements IMemberDAO {
 	private static final String SQL_UPDATE_MEMBER = "update member set name=?, age=?, email=?," // 암호화 pw
 			+ " pw=hex(aes_encrypt(?, ?)), updated_at = now() where id = ?";
 
-	private static final String SQL_DECRYPT_PW = "select member_index, email , id, "
+	private static final String SQL_DECRYPT_PW =
+			"select member_index, email , id, "
 			+ "cast(aes_decrypt(unhex(pw),?) as char(32) " 
 			+ "character set utf8) as pw "
 			+ "from member where id = ?";
@@ -169,7 +170,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	@Override
 	public MemberVO selectOneMember(int MemberIndex) {
 		try {
-			MemberVO mb = jtem.queryForObject(SQL_SELECT_ONE_MEMBER_ID, new RowMapper<MemberVO>() {
+			MemberVO mb = jtem.queryForObject(SQL_SELECT_ONE_MEMBER_MEMBER_INDEX, new RowMapper<MemberVO>() {
 
 				@Override
 				public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -194,7 +195,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	@Override
 	public MemberVO selectOneMember(String id) {
 		try {
-			return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_LOGIN, BeanPropertyRowMapper.newInstance(MemberVO.class),
+			return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_ID, BeanPropertyRowMapper.newInstance(MemberVO.class),
 					id);
 		} catch (EmptyResultDataAccessException dae) {
 			System.out.println("ERROR: DB에 login이 일치하는 레코드 없음! - " + id);

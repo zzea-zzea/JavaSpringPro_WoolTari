@@ -5,12 +5,12 @@
 
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="mypage.woo">
+<!-- 	<form action="mypage.woo"> -->
 		<main class="childcare_main my">
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
-						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
+<%-- 						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li> --%>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
 					</ul>
@@ -23,11 +23,20 @@
 						</div>
 						<div class="childcare_content my">
 							<div class="childcare_content_menu mypage">
+								<input type="hidden" name="MemberIndex" value="${member.MemberIndex}">
+								<input type="hidden" name="Id" value="${member.Id}">
+								<input type="hidden" name="NickName" value="${member.NickName}">
+								<input type="hidden" name="IsMember" value="${member.IsMember}">
+								<input type="hidden" name="NumMember" value="${member.NumMember}">
+								<input type="hidden" name="Buisness" value="${member.Buisness}">
+								<input type="hidden" name="Phone" value="${member.Phone}">
 								<table class="table ">
 									<tbody>
 										<tr>
 											<td>이름</td>
-											<td>이주현</td>
+											<td><input type='text' id='Name' name='name'
+											 size='20' placeholder="회원실명"
+											  required value="${member.Name}"></td>
 										</tr>
 										<tr>
 											<td>휴대폰 번호</td>
@@ -37,19 +46,19 @@
 										</tr>
 										<tr>
 											<td>성별</td>
-											<td>남자</td>
+											<td>${member.Gender}</td>
 										</tr>
 										<tr class="success">
 											<td>생년월일</td>
-											<td>1997 - 08 - 02</td>
+											<td>${member.Brith}</td>
 										</tr>
 										<tr class="danger">
 											<td>이메일주소</td>
-											<td>yoojoo300@github.com</td>
+											<td>${member.Email}</td>
 										</tr>
 										<tr class="danger">
 											<td>비밀번호</td>
-											<td><input type="text" maxlength="20"></td>
+											<td><input type="text" maxlength="20" name="Pw" value="${member.Pw}"></td>
 										</tr>
 										<tr class="danger">
 											<td>비밀번호 확인</td>
@@ -65,7 +74,7 @@
 				</div>
 			</div>
 		</main>
-	</form>
+<!-- 	</form> -->
 	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 </body>

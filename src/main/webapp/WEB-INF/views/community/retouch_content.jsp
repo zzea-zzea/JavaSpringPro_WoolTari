@@ -26,7 +26,7 @@
 					<p class="writer">작성자:</p>
 					<p class="write_user">사용자1</p>
 					<p class="date">날자:</p>
-					<p class="write_date">${community.write_date}</p>
+					<p class="write_date"><fmt:formatDate value="${community.write_date}" pattern="yyyy년 MM월 dd일" /></p>
 				</div>
 				<div class="new_write_content_box">
 					<div class="new_write_content">

@@ -1,7 +1,9 @@
 package com.webapp.woo.service.impl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,7 +59,7 @@ public class CommunitySVCImpl implements ICommunitySVC {
 	@Override
 	public boolean deleteCommunity(int atId) {
 		// TODO Auto-generated method stub
-		return false;
+		return ctDao.deleteCommunity(atId);
 	}
 
 	@Override
@@ -82,11 +84,8 @@ public class CommunitySVCImpl implements ICommunitySVC {
 		return 0;
 	}
 
-	@Override
-	public List<CommunityVO> searchCommunitys(String keyword, int offset, int limit, String orderBy) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 
 	@Override
 	public int checkAllNumberOfCommunitysForSearch(String k, String target) {
@@ -111,6 +110,24 @@ public class CommunitySVCImpl implements ICommunitySVC {
 		
 		return maxPg;
 	}
+
+	@Override
+	public List<CommunityVO> searchCommunitys(
+			String k, String target, int pg) {
+		// target은 아직은 all로 고정한 pg기반 검색만 우선 구현...
+		// 일단 limit를 PAGE_SIZE로 고정 구현후,
+		// 이후 param로 받아서 가변성 구현.
+
+		int offset = (pg - 1) * SEARCH_PAGE_SIZE;// 0, 5, 10, 15, 수열...
+
+		// 더미 정렬 order by를 조회수의 역순 read_count desc..으로 고정
+		String orderBy = " order by write_date desc ";
+
+		List<CommunityVO> ctList = // all 타겟 고정 sql...
+				ctDao.searchCommunity(k, offset, SEARCH_PAGE_SIZE, orderBy);
+
+		return ctList;
+			}
 
 
 }

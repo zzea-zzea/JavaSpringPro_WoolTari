@@ -34,20 +34,17 @@ public class CommunityDAOImpl implements ICommunityDAO {
 			+ "where board_index = ?"; // updated_at 고칠까?
 	public static final String SQL_COMMUNITY_SELECT_ALL_PG
 	= "select * from board order by board_index desc limit ?, ?";
-	public static final String SQL_COMMUNITY_SEARCH_ALL_PG = 
-			"SELECT * FROM wooltari_db.board where"
-			+ "	   title like concat('%',?,'%') or"
-			+ "	content like concat('%',?,'%') or"
-			+ "	cate like concat('%',?,'%')";
 	public static final String SQL_COMMUNITY_COUNT_SEARCH_ALL_PG = 
-			"SELECT count(*) FROM wooltari_db.board where"
-			+ "	   title like concat('%',?,'%') or"
-			+ "	content like concat('%',?,'%') or"
-			+ "	cate like concat('%',?,'%')";
-	public static final String SQL_COMMUNITY_DELETE = 
-		"DELETE FROM board WHERE board_index=?;";
+			"SELECT count(*) FROM wooltari_db.board where "
+			+ "cate like concat('%',?,'%')";
 	public static final String SQL_COMMUNITY_CHECK_ALL_COUNT
 	= "select count(*) from board"; // 게시글 총레코드 수
+	public static final String SQL_COMMUNITY_DELETE_ONE =
+			"delete from board where board_index = ?";
+	public static final String SQL_COMMUNITY_SEARCH_ALL_PG =
+			"SELECT * FROM wooltari_db.board where "
+			+ "cate like concat('%',?,'%')";
+				
 	
 	@Autowired
 	private JdbcTemplate jtem; // 자동주입 x
@@ -119,7 +116,7 @@ public class CommunityDAOImpl implements ICommunityDAO {
 
 	@Override
 	public List<CommunityVO> selectAllCommunitysForMember(int mbId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -159,10 +156,24 @@ public class CommunityDAOImpl implements ICommunityDAO {
 
 	@Override
 	public boolean deleteCommunity(int atId) {
-		
-		return false;
+		try {
+			int r = jtem.update(SQL_COMMUNITY_DELETE_ONE, atId);
+			return r == 1;
+		} catch (DataAccessException e) {
+			System.out.println(
+					"dao: deleteCommunity 삭제 실패: " + atId);
+			return false;
+		}	
 	}
 
+	@Override
+	public List<CommunityVO> searchCommunity(String k, int offset, int searchPageSize, String orderBy) {
+		String sql = SQL_COMMUNITY_SEARCH_ALL_PG 
+				+ orderBy + " limit ?, ?";
+		return jtem.query(sql, 
+				BeanPropertyRowMapper.newInstance(CommunityVO.class),
+				k, offset, searchPageSize);
+	}
 
 	
 

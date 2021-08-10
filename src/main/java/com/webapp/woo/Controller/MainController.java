@@ -3,6 +3,7 @@ package com.webapp.woo.Controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,6 +55,7 @@ public class MainController {
 	@RequestMapping(value = "main.woo", method = RequestMethod.GET)
 	public ModelAndView MainIndexForm(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("index");
+		
 		return mav;
 	}
 
@@ -80,6 +83,41 @@ public class MainController {
 //		return mav;
 //	}
 //	
+	//article_search.my; post dao pn order.. pagination
+		@RequestMapping(value = "content_search.woo",
+				method = {RequestMethod.POST, RequestMethod.GET})
+		public ModelAndView articleSearchProc(
+				@RequestParam(value = "target", required = false, 
+						defaultValue = "all") String target,
+				@RequestParam(value = "keyword",   // required=true..
+					defaultValue = "test") String k, 
+				@RequestParam(value = "pg", required = false, 
+					defaultValue = "1") int pg
+				//@RequestParam(value = "pg") Integer pg
+				) {
+			
+			System.out.println(">> 검색 키워드: " + k + ", pg: " + pg);
+
+			
+			List<CommunityVO> ctList = ctSvc.searchCommunitys(k, target, pg);		
+			  ModelAndView mav = new ModelAndView();
+			
+			if( ctList != null ) {
+				int ctSize = ctList.size();
+				mav.addObject("ctSize", ctSize);
+				mav.addObject("ctList", ctList);
+				// paginate...
+//				int maxPg = atSvc.checkMaxPageNumberForSearch(k, target);  
+					// 검색 일치 총 레코드 수
+				mav.addObject("pn", pg); // 요청된 검색 페이지 번호			
+				
+			} else {
+				mav.addObject("msg", "게시글 검색 실패: " + k);
+			}		
+			return mav;
+		}	
+	
+	
 	@RequestMapping(value = "content.woo",
 			method = RequestMethod.GET)
 	public ModelAndView contentListProc(
@@ -135,7 +173,7 @@ public class MainController {
 			mav.addObject("ctList", ctList); // 메인 리스트
 			mav.addObject("mbLoginList", mbLoginList); // 서브 리스트1 - 계정명
 //			mav.addObject("asCntList", asCntList); // 서브 리스트2 - 댓글수
-			mav.addObject("atSize", ctSize);
+			mav.addObject("ctSize", ctSize);
 			mav.addObject("pn", pageNumber); 
 			mav.addObject("maxPg", maxPg);
 		} else {
@@ -317,7 +355,6 @@ public class MainController {
 	   }
 	   
 	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-//>>>>>>> branch 'master' of https://github.com/zzea-zzea/JavaSpringPro_wooltari.git
 	public String ContentViewProc(int atId, HttpSession ses, Model model) {
 		CommunityVO ct = ctSvc.selectOneCommunity(atId);
 		String ctFilePath = ct.getImg_path();
@@ -377,6 +414,21 @@ public class MainController {
 			return "redirect:content_view.woo?atId="+id;
 		}
 	}
+	
+	 
+
+	
+	@RequestMapping(value = "delete.woo", method = RequestMethod.GET)
+	public String delete(@RequestParam(value = "atId", 
+			defaultValue = "0") int id) {
+		ctSvc.deleteCommunity(id);
+		return "redirect:content.woo";
+	}
+		
+		
+	
+			
+	
 	
 	
 	@RequestMapping(value = "community_update.woo",
@@ -653,10 +705,35 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
-	public ModelAndView Mypage(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("mypage/mypage");
+	public ModelAndView Mypage(HttpServletRequest request, int mbId) {
+			
+		String strMbId = request.getParameter("mbId");
+		MemberVO mb = null;
+		ModelAndView mav = new ModelAndView();
+		//
+//		if( strMbId == null ) { // mbId 파람 자체가 없을 때..
+//			String id = request.getParameter("id"); // <<UQ>>
+//			if( id == null ) {
+//				
+//				mav.setViewName("redirect:main.woo");
+//				return mav;
+//			}
+//			mb = this.mbSvc.selectOneMember(id);	 //<<UQ>>		
+//		} else {
+		 	mbId = Integer.parseInt(strMbId); // <<PK>>
+			mb = this.mbSvc.selectOneMember(mbId);
+//		}		
+		
+		if( mb != null ) {
+			mav.addObject("member", mb); // vo객체가 속성화 (EL 객체화)
+			mav.setViewName("member/mypage"); // FW
+		} else { // DAO - Error : EmptyResultDAE/DAE 발생...
+			mav.setViewName("redirect:main.woo");
+		}
+		
 		return mav;
 	}
+	
 	
 	@RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
 	public ModelAndView MypageSupport(HttpServletRequest request) {

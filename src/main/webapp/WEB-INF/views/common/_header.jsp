@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<script>
+function showMyPage(mbId) {
+	//location.href = 'article_show.my?atId=' + atId; 
+	location.href = 
+		'${pageContext.request.contextPath}/mypage.woo?mbId='
+				+ mbId;
+		// 동기방식 get 이동... 			
+}
+</script>
 <header id="header" class="header fixed-top d-flex align-items-center">
 	<div class="container d-flex align-items-center justify-content-between">
 		<div id="logo">
@@ -23,7 +31,7 @@
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
 
 				<li><a class="btn_def" href="${pageContext.request.contextPath}/login.woo">Login</a></li>
-				<li><a class="btn_def" href="${pageContext.request.contextPath}/mypage.woo">Mypage</a></li>
+				<li><a class="btn_def" onclick="showMyPage('${member.MemberIndex}')">Mypage</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>

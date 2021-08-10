@@ -2,6 +2,7 @@ package com.webapp.woo.service.inf;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -47,10 +48,14 @@ public interface ICommunitySVC {
 	//- 비/회원은 특정 키워드나 조건으로 게시글을 다수개 검색할 수 있다.
 //		article_search_form.my; 키워드.. 검색 폼 준비 get form..
 //		article_search.my; post dao pn order..
-	List<CommunityVO> searchCommunitys(String keyword, int offset, int limit
-			, String orderBy);
 	// 검색 일치 레코드 총수...
 	int checkAllNumberOfCommunitysForSearch(String k, String target);
+
+
+	List<CommunityVO> searchCommunitys(String k, String target, int pg);
+
+
+	
 
 	
 	
