@@ -40,34 +40,16 @@
 		ResultMap 태그 (일종의 mapRow()구현체의 RowMapper 같은 역할) 
 	-->
 	 <!-- property는 vo 기준, column은 tbl 기준 -->
-<!-- 	<resultMap type="answerVO" id="asResultMap"> -->
-<!-- 		<id property="id" column="id"/> -->
-<!-- 		<result property="reply" column="reply"/>   -->
-<!-- 		<result property="reply" column="reply"  -->
-<!-- 			 jdbcType="VARCHAR"/> -->
-<!-- 		<result property="compassion" column="compassion"/> -->
-<!-- 		<result property="articleId" column="article_id"/> -->
-<!-- 		<result property="memberId" column="member_id"/> -->
-<!-- 		<result property="reportStatus" column="report_status"/> -->
-<!-- 		<result property="createdAt" column="created_at"/> -->
-<!-- 		<result property="updatedAt" column="updated_at"/> -->
-<!-- 	</resultMap> -->
 <!-- //		answer_list.my?atId=z ; get dao proc -->
 <!-- 		List<AnswerVO> answerListForArticle(int atId); -->
 <!-- 	<select id="answerListForArticle"  -->
 <!-- 		parameterType="int" resultType="answerVO"> -->
-<!-- 	<select id="answerListForArticle"  -->
-<!-- 		parameterType="int" resultMap="asResultMap"> -->
-<!-- 		select * from answers where  -->
-<!-- 			article_id = #{atId} order by created_at desc -->
-<!-- 	</select> -->
-	
 <!-- 		// 특정 게시글에 대한 댓글 수... -->
 <!-- 		int checkAnswerCountForArticle(int atId);	 -->
-<!-- 	<select id="checkAnswerCountForArticle" parameterType="int"  -->
-<!-- 			resultType="int"> -->
-<!-- 		select count(*) from answers where article_id = #{atId} -->
-<!-- 	</select>	 -->
+	<select id="checkAnswerCountForArticle" parameterType="int" 
+			resultType="int">
+		select count(*) from answers where article_id = #{atId}
+	</select>	
 
 		
 <!-- 	// 특정 회원이 작성한 모든 댓글을 리스트 조회.. -->
