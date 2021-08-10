@@ -27,10 +27,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webapp.woo.mycode;
 import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.CommunityVO;
+import com.webapp.woo.model.vo.LocationVO;
 import com.webapp.woo.model.vo.MemberVO;
 import com.webapp.woo.service.inf.ICommentSVC;
 import com.webapp.woo.service.inf.ICommunitySVC;
 import com.webapp.woo.service.inf.IFileManageSVC;
+import com.webapp.woo.service.inf.ILocationSVC;
 import com.webapp.woo.service.inf.IMemberSVC;
 
 @Controller
@@ -44,6 +46,8 @@ public class MainController {
 	IFileManageSVC fileSvc;
 	@Autowired
 	ICommentSVC CommentSVC;
+	@Autowired
+	ILocationSVC LocationSVC;
 
 	private static final Logger mbLogger = LoggerFactory.getLogger(MainController.class);
 
@@ -71,11 +75,7 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "info_center.woo", method = RequestMethod.GET)
-	public ModelAndView InfoCenter(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("info/info_center");
-		return mav;
-	}
+
 
 //	@RequestMapping(value = "content.woo", method = RequestMethod.GET)
 //	public ModelAndView Content(HttpServletRequest request) {
@@ -117,68 +117,53 @@ public class MainController {
 			return mav;
 		}	
 	
+		
+		@RequestMapping(value = "info_center.woo", method = RequestMethod.GET)
+		public ModelAndView InfoCenter(
+				@RequestParam(value = "si", required = false, defaultValue = "서울") String local_si){
+			
+			List<LocationVO> lovo = LocationSVC.selectAllLocationList(local_si);
+			ModelAndView mav = new ModelAndView("info/info_center");
+			if(lovo !=null) {
+				int lovSize = lovo.size();
+				mav.addObject("lovo", lovo); 
+				mav.addObject("lovSize", lovSize); 
+			}else {
+				mav.addObject("msg",  "없어 꺼져"); 
+			}
+			return mav;
+		}
 	
-	@RequestMapping(value = "content.woo",
-			method = RequestMethod.GET)
+	@RequestMapping(value = "content.woo", method = RequestMethod.GET)
 	public ModelAndView contentListProc(
-		@RequestParam(value = "pg", required = false,
-				defaultValue = "1") int pageNumber) {
+		@RequestParam(value = "pg", required = false, defaultValue = "1") int pageNumber) {
 		System.out.println("content() pg...: pg = " + pageNumber);
 
 		int maxPg = ctSvc.checkMaxPageNumber(); // 1~4
 		if( pageNumber <= 0 || pageNumber > maxPg ) {
 			System.out.println(">> 잘못된 페이지 번호 요청 pg: " + pageNumber);
-			ModelAndView erMav = 
-				new ModelAndView("redirect:content.woo?pg=1");
-			erMav.addObject(
-				"msg", ">> 잘못된 페이지 번호 요청 pg: " + pageNumber);
+			ModelAndView erMav =  new ModelAndView("redirect:content.woo?pg=1");
+			erMav.addObject( "msg", ">> 잘못된 페이지 번호 요청 pg: " + pageNumber);
 			return erMav;
 		}
-		
-//		List<ArticleVO> atList = atSvc.selectAllArticles(pg);
-//		List<Map<String,Object>> atMapList = 
-//		 atSvc.selectAllArticlesForMap(pageNumber); 
-		//1. 서브쿼리 map방식
-//		List<ArticleRowVO> atMapList = 
-//		 atSvc.selectAllArticlesForVirtualRow(pageNumber); 
-		//2. 서브쿼리 virtual vo 방식
-				
 		List<CommunityVO> ctList = ctSvc.selectAllCommunitys(pageNumber);
-		// 3. 오리지널 방식 (서브쿼리없음, map 방식/virtualvo 방식 아님)		
-		// 오리지널 게시글 메인리스트
-		ModelAndView mav = 
-				new ModelAndView("community/content");//FW
+		ModelAndView mav =  new ModelAndView("community/content");//FW
 		if( ctList != null ) {
 			int ctSize = ctList.size(); // 1 ~ 10
-			// 각 게시글 별로 FK를 이용한 회원계정명들의 서브리스트
 			List<String> mbLoginList = new ArrayList<>();
-//			// 각 게시글 별로 FK를 이용한 댓글의 개수의 서브리스트
-//			List<Integer> ctCntList = new ArrayList<>();			
 			for (CommunityVO ct : ctList) { // 순서가 유지...
-				String mbName = mbSvc.selectOneMember( 
-						ct.getMember_index()).getNickName(); // 서브쿼리역할
-					// getMemberId() FK를 PK로 같는 멤버 vo를 찾음
-//				int ctCnt = ctSvc
-//						.checkAnswerCountForArticle(ct.getBoard_index());
-					// 서브쿼리역할
-					// at 자신의 pk인 id를 FK로 가지는 모든 종속
-					// 댓글들의 개수를 count()하여 가져옴.
+				String mbName = mbSvc.selectOneMember(  ct.getMember_index()).getNickName(); // 서브쿼리역할
 				mbLoginList.add(mbName);
-//				ctCntList.add(ctCnt); //autoboxing
-//				asCntList.add(new Integer(asCnt));
 			}
 			
-			mav.addObject("msg", 
-				"pg/오리지널-sublists 게시글 리스트 조회 성공!: " + ctSize +"개");
+			mav.addObject("msg",  "pg/오리지널-sublists 게시글 리스트 조회 성공!: " + ctSize +"개");
 			mav.addObject("ctList", ctList); // 메인 리스트
 			mav.addObject("mbLoginList", mbLoginList); // 서브 리스트1 - 계정명
-//			mav.addObject("asCntList", asCntList); // 서브 리스트2 - 댓글수
 			mav.addObject("ctSize", ctSize);
 			mav.addObject("pn", pageNumber); 
 			mav.addObject("maxPg", maxPg);
 		} else {
-			mav.addObject("msg", 
-				"pg/오리지널-sublists 게시글 리스트 조회 실패! : " + pageNumber); //null
+			mav.addObject("msg",  "pg/오리지널-sublists 게시글 리스트 조회 실패! : " + pageNumber);
 		}		
 		return mav;
 	}	
@@ -227,41 +212,7 @@ public class MainController {
 	        }
 	        return mav;
 	    }
-	
-//<<<<<<< HEAD
-////	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-////	public ModelAndView ContentView(HttpServletRequest request) {
-////		ModelAndView mav = new ModelAndView("community/content_view");
-////		return mav;
-////	}
-//
-//	
-//
-//	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-//=======
-//	   @RequestMapping(value = "/content_view.woo", method = RequestMethod.GET)
-//	   public String answerNewForm(HttpSession ses, Model model,
-//	           @RequestParam(value = "mbId")int member_index,
-//	           @RequestParam(value = "boardId")int board_index) {
-//	       int sesMbId = (int)ses.getAttribute("mbId");
-//	       if( member_index == sesMbId ) {
-//	           MemberVO mb = mbSvc.selectOneMember(member_index);
-//	           if( mb != null ) {
-//	               model.addAttribute("mbId", member_index);
-//	               model.addAttribute("boardId", board_index);
-//	               return "community/content_view"; //FW
-//	           } else {
-//	               System.out.println(">> 댓글 추가: 회원 DB 조회 에러: " + member_index);
-//	               model.addAttribute(">> 댓글 추가: 회원 DB 조회 에러: " + member_index);
-//	               return "redirect:community_view.woo?atId="+board_index;
-//	           }
-//	       } else {
-//	           System.out.println(">> 댓글 추가: 회원 id 불일치: " + member_index);
-//	           model.addAttribute("msg", ">> 댓글 추가: 회원 id 불일치: " + member_index);
-//	           return "redirect:community_view.woo?atId="+board_index;
-//	       }
-//
-//	   }
+
 	@RequestMapping(value = "/list.my",	method = RequestMethod.GET)
 	public String answerListAllProc(Model model, 
 			@RequestParam(value ="boardId", required = false, defaultValue = "0") int boardIndex) {

@@ -1,11 +1,11 @@
-package com.webapp.woo.model.dao.inf;
+package com.webapp.woo.service.inf;
 
 import java.util.List;
 
 import com.webapp.woo.model.vo.LocationVO;
 
-public interface ILocationDAO {
+public interface ILocationSVC {
 
 	List<LocationVO> selectAllLocationList(String local_si);
-
+	
 }
