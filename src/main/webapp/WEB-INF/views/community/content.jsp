@@ -40,8 +40,7 @@
 					<hr>
 					<div class="search">
 						<div class="search_main">
-						<form action="${pageContext.request
-  							.contextPath}/content_search.woo" method="post">
+						<form action="${pageContext.request.contextPath}/content_search.woo" method="post">
 							<select class="s_sel" id="keyword" name="keyword" >
 								<option value="1" ${param['target'] eq 'cate' ? ' selected':''}>일상</option>
 								<option value="2" ${param['target'] eq 'cate' ? ' selected':''}>지원 정보</option>

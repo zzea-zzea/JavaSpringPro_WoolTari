@@ -354,6 +354,11 @@ public class MainController {
          // 세션인증사람 <<PK>>
          if( writerId == mbPKId ) { // 글쓴이 본인이 로그인 중 맞음
             model.addAttribute("community", ct);
+            List<String> mbLoginList = new ArrayList<>();
+            
+            String mbName = mbSvc.selectOneMember( ct.getMember_index()).getNickName(); // 서브쿼리역할
+            mbLoginList.add(mbName);
+            model.addAttribute("mbLoginList", mbLoginList);
             model.addAttribute("msg","게시글 편집 폼 준비 성공 : "+id);
             return "community/retouch_content"; //FW
          } else {

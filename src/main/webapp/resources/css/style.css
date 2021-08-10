@@ -49,7 +49,21 @@ main{font-family: 'Cafe24SsurroundAir';}
 .ma{padding-top: 120px;}
 .btn_def{ border-radius: 50px; border: 2px solid #f2b09b;background: #fff; line-height: 36px; font-size: 15px; color: #b96c6c; font-weight: bold;padding: 0px 22px; margin-left: 10px;}
 .btn_def:hover {background: #f2b09b;transition: 0.5s;color: #fff;}
+.search_btn {
+	padding: 13px 20px;
+    border-radius: 5px;
+    outline: none;
+    background: #7777d4;
+    color: #fff;
+    box-shadow: 0 0 20px rgb(0 0 0 / 13%);
+    border: 0;
+    width: fit-content;
+    display: inline-block;
+}
 
+ .search_btn:hover {
+	background: #5f5faa;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1049,19 +1063,7 @@ width: 100%;
 	margin-left: 30px;
 }
 
-.center_box  button {
-	padding: 13px 20px;
-	border-radius: 5px;
-	outline: none;
-	background: #7777d4;
-	color: #fff;
-	box-shadow: 0 0 20px rgb(0 0 0/ 13%);
-	border: 0;
-}
 
-.center_box button:hover {
-	background: #5f5faa;
-}
 
 .center_box  .center_content_location {
 	height:500px;
@@ -1557,6 +1559,7 @@ background: #b38c8c;
 #border .community_first_box .search .search_main {
 	position: absolute;
 	right: 30px;
+	display: inline-flex;
 }
 
 #border .community_first_box .search .search_main .search_btn {
@@ -1906,15 +1909,15 @@ background: #b38c8c;
 }
 
 .write_first_box .new_write_title .title {
-	position: absolute;
+/* 	position: absolute; */
 	top: 10px;
-	left: 10px;
+/* 	left: 10px; */
 	font-weight: 900;
 }
 
 .write_first_box .new_write_title .input_title {
-	position: absolute;
-	left: 60px;
+/* 	position: absolute; */
+/* 	left: 60px; */
 	top: 10px;
 	border: none;
 	outline: none;
@@ -1936,33 +1939,33 @@ background: #b38c8c;
 }
 
 .write_first_box .new_write_title .phone {
-	position: absolute;
+/* 	position: absolute; */
 	top: 110px;
 }
 
 .write_first_box .new_write_title .writer {
 	position: absolute;
-	left: 200px;
+    left: 150px;
 	top: 60px;
 	font-weight: 900;
 }
 
 .write_first_box .new_write_title .write_user {
-	position: absolute;
-	left: 255px;
+/* 	position: absolute; */
+/* 	left: 255px; */
 	top: 60px;
 }
 
 .write_first_box .new_write_title .date {
-	position: absolute;
-	left: 320px;
+/* 	position: absolute; */
+/* 	left: 320px; */
 	top: 60px;
 	font-weight: 900;
 }
 
 .write_first_box .new_write_title .write_date {
-	position: absolute;
-	left: 360px;
+/* 	position: absolute; */
+/* 	left: 360px; */
 	top: 60px;
 }
 

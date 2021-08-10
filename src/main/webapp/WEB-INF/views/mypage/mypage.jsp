@@ -10,7 +10,7 @@
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
-<%-- 						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li> --%>
+						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
 					</ul>
@@ -34,9 +34,8 @@
 									<tbody>
 										<tr>
 											<td>이름</td>
-											<td><input type='text' id='Name' name='name'
-											 size='20' placeholder="회원실명"
-											  required value="${member.Name}"></td>
+											<td><input type="text" id='Name' name='name' 
+											size='20' placeholder="회원실명" required value="${member.Name}"></td>
 										</tr>
 										<tr>
 											<td>휴대폰 번호</td>
@@ -58,7 +57,11 @@
 										</tr>
 										<tr class="danger">
 											<td>비밀번호</td>
+
 											<td><input type="text" maxlength="20" name="Pw" value="${member.Pw}"></td>
+
+											<td><input type="text" maxlength="20" name="Pw" value="${member.Pw}"><span>&nbsp;&nbsp;* 비밀번호가 일치 하지 않습니다</span></td>
+
 										</tr>
 										<tr class="danger">
 											<td>비밀번호 확인</td>
