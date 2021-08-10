@@ -19,7 +19,7 @@ function panTo() {
 	} else if (selOp == 5) {
 		var moveLatLon = new kakao.maps.LatLng(36.343772, 127.386738); // 대전
 	} else if (selOp == 6) {
-		var moveLatLon = kakao.maps.LatLng(35.544153, 129.250905); // 울산
+		var moveLatLon = new kakao.maps.LatLng(35.547505, 129.244038); // 울산
 	} else if (selOp == 7) {
 		var moveLatLon = new kakao.maps.LatLng(37.610051, 127.227627); // 경기
 	} else if (selOp == 8) {
