@@ -102,4 +102,10 @@ public class MemberSVCImpl implements IMemberSVC {
 		return null;
 	}
 
+	@Override
+	public boolean updateOneMember(MemberVO mb) {
+		// TODO Auto-generated method stub
+		return mbDao.updateOneMember(mb);	
+	}
+
 }

@@ -65,15 +65,15 @@ public class MemberDAOImpl implements IMemberDAO {
 	
 	private static final String SQL_UPDATE_PW ="update member set pw=hex(aes_encrypt(?, ?)) where id = ? AND email = ?";
 	
-	private static final String SQL_UPDATE_MEMBER = "update member set name=?, age=?, email=?," // 암호화 pw
-			+ " pw=hex(aes_encrypt(?, ?)), updated_at = now() where id = ?";
 
 	private static final String SQL_DECRYPT_PW =
 			"select member_index, email , id, "
 			+ "cast(aes_decrypt(unhex(pw),?) as char(32) " 
 			+ "character set utf8) as pw "
 			+ "from member where id = ?";
-	
+	private static final String SQL_UPDATE_MEMBER 
+	= "update members set name=?, phone=?, nick_name=?," // 암호화 pw
+	+ " pw=hex(aes_encrypt(?, ?)) where member_index = ?";	
 
 
 	@Autowired
@@ -244,6 +244,20 @@ public class MemberDAOImpl implements IMemberDAO {
 	public String decryptPassword(int mbId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean updateOneMember(MemberVO mb) {
+		try {
+			int r = jtem.update(SQL_UPDATE_MEMBER,
+					mb.getName(), mb.getPhone(), mb.getNickName(),
+					mb.getPw(), mb.getId(), mb.getMemberIndex());
+					//mb.getEmail(), mb.getPw(), mb.getId());
+			return r == 1;
+		} catch (DataAccessException dae) {
+			System.out.println("DAO: 회원 정보 갱신 실패! - DAE; " + mb);
+			return false;
+		}
 	}
 
 }

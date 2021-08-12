@@ -10,7 +10,8 @@
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
-						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage.woo?mbId=${mbPKId}">회원 정보</a></li>
+<%-- 						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/retouch_mypage.woo?mbId=${mbPKId}">회원 정보 수정</a></li> --%>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
 						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
 					</ul>

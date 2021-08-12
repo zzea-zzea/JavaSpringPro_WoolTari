@@ -33,4 +33,6 @@ public interface IMemberDAO {
 		MemberVO selectOneMember(int MemberIndex);
 		MemberVO selectOneMember(String ld);
 		MemberVO selectOneMemberEmail(String email);
+
+		boolean updateOneMember(MemberVO mb);
 }

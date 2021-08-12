@@ -359,7 +359,6 @@ public class MainController {
             String mbName = mbSvc.selectOneMember( ct.getMember_index()).getNickName(); // 서브쿼리역할
             mbLoginList.add(mbName);
             model.addAttribute("mbLoginList", mbLoginList);
-            model.addAttribute("msg","게시글 편집 폼 준비 성공 : "+id);
             return "community/retouch_content"; //FW
          } else {
             System.out.println("게시글 편집 폼 준비 실패: 게시글 작성자가 아님! - " +id);
@@ -661,28 +660,35 @@ public class MainController {
    }
 
    @RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
-   public ModelAndView Mypage(HttpServletRequest request, int mbId) {
+   public ModelAndView Mypage(HttpServletRequest request) {
          
       String strMbId = request.getParameter("mbId");
-      MemberVO mb = null;
+      System.out.println(strMbId);
+     
+
+      int mbId = Integer.parseInt(strMbId); // <<PK>>
+      System.out.println(mbId);
+      MemberVO mb = this.mbSvc.selectOneMember(mbId);
       ModelAndView mav = new ModelAndView();
-      //
-//      if( strMbId == null ) { // mbId 파람 자체가 없을 때..
-//         String id = request.getParameter("id"); // <<UQ>>
-//         if( id == null ) {
-//            
-//            mav.setViewName("redirect:main.woo");
-//            return mav;
-//         }
-//         mb = this.mbSvc.selectOneMember(id);    //<<UQ>>      
-//      } else {
-          mbId = Integer.parseInt(strMbId); // <<PK>>
-         mb = this.mbSvc.selectOneMember(mbId);
-//      }      
-      
+      System.out.println(mb);
+      String userName = mb.getName().substring(9);
+      StringBuffer phoneNumber = new StringBuffer();
+      phoneNumber.append(mb.getPhone());
+      phoneNumber.insert(3, "-");
+      phoneNumber.insert(8, "-");
+      StringBuffer brithDay = new StringBuffer();
+      brithDay.append(mb.getBrith());
+      brithDay.insert(4, "년-");
+      brithDay.insert(8, "월-");
+      brithDay.append("일");
       if( mb != null ) {
          mav.addObject("member", mb); // vo객체가 속성화 (EL 객체화)
-         mav.setViewName("member/mypage"); // FW
+         mav.addObject("userName", userName);
+         mav.addObject("phoneNumber", phoneNumber);
+         mav.addObject("brithDay", brithDay);
+         //mav.setViewName("mypage"); // FW
+         mav.setViewName("mypage/mypage");
+
       } else { // DAO - Error : EmptyResultDAE/DAE 발생...
          mav.setViewName("redirect:main.woo");
       }
@@ -690,6 +696,55 @@ public class MainController {
       return mav;
    }
    
+   
+   @RequestMapping(value = "retouch_mypage.woo", method = RequestMethod.GET)
+   public ModelAndView MypageEdutForm(HttpServletRequest request) {
+	   
+	   String strMbId = request.getParameter("mbId");
+	   System.out.println(strMbId);
+	   int mbId = Integer.parseInt(strMbId); // <<PK>>
+	   MemberVO mb = mbSvc.selectOneMember(mbId);
+	   ModelAndView mav = new ModelAndView();
+	 if(mb != null) {
+		 String decrpytedPw = mbSvc.decryptPassword(mb.getId());
+		 mb.setPw(decrpytedPw); // 암호화 풀림
+		 mav.addObject("member", mb);
+		 mav.setViewName("mypage/retouch_mypage");
+	 } else {
+		 System.out.println("ERROR 회원 편집 준비 실패" + mbId);
+		 mav.setViewName("redirect:mypage.woo?mbId=" + mbId);
+	 }
+	   
+      return mav;
+   }
+   
+   @RequestMapping(value = "member_update.woo", 
+			method = RequestMethod.POST)
+	public ModelAndView memberUpdateProc(HttpServletRequest request) {
+		// http post 동기 submit 요청...
+		
+		// 원래...는... login 등을 사용하여 세션 인증 처리 (권한) 필요..
+		int memberIndex = Integer.parseInt(request.getParameter("memberIndex")); //hidden
+		//
+		String name = request.getParameter("name");
+		String nickName = request.getParameter("nickName");
+		String login = request.getParameter("id");
+		String phone = request.getParameter("phone");
+		String pw = request.getParameter("pw");
+		
+		MemberVO mb = new MemberVO(memberIndex, login, pw, name, phone, nickName);
+		boolean b = this.mbSvc.updateOneMember(mb);
+		ModelAndView mav = new ModelAndView();
+		// 
+		if( b ) {
+			mav.addObject("msg", "회원정보 갱신 성공! - " + login);
+			mav.setViewName("redirect:retuch_mypage?mbId="+memberIndex);
+		} else {
+			mav.addObject("msg", "ERROR: 회원 정보 갱신 실패!! " + memberIndex);
+			mav.setViewName("mypage/retouch_mypage"); //FW
+		}		
+		return mav;
+	}
    
    @RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
    public ModelAndView MypageSupport(HttpServletRequest request) {
