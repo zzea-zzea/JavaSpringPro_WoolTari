@@ -41,9 +41,9 @@ public class MemberDAOImpl implements IMemberDAO {
 	}
 
 	// SQL 상수 정의부
-
+	
 	public static final String SQL_INSERT_MEMBER_CRYPTO // 암호화 aes,hex
-			= "insert into member values(null,?,pw=hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ";
+    = "insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ";
 	
 	public static final String SQL_MEMBER_DUPCHECK = "select count(id) from member where id = ?"; // 1 or 0
 	
@@ -84,9 +84,9 @@ public class MemberDAOImpl implements IMemberDAO {
 	@Override
 	public boolean insertNewMember(MemberVO mb) {
 		try {
-			int r = jtem.update(SQL_INSERT_MEMBER_CRYPTO,mb.getId(),mb.getPw(),mb.getId(), 
+			int r = jtem.update( "insert into member values(null,?,pw=hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ",mb.getId(),mb.getPw(),mb.getId(), 
 					mb.getName(), mb.getPhone(), mb.getBrith(),
-					mb.getNickName(), mb.getGender(), mb.getEmail(), mb.getIsMember(), mb.getNumMember(), mb.getBuisness());
+					mb.getNickName(), mb.getGender(), mb.getEmail(), mb.getIsMember(),mb.getNumMember(), mb.getBuisness());
 			return r == 1; 
 			} catch (DataAccessException dae) {
 				//dae.printStackTrace();

@@ -577,77 +577,84 @@ public class MainController {
 
 	}
 
+	
+	@RequestMapping(value = "conditions.woo", method = RequestMethod.GET)
+	public ModelAndView conditions(HttpServletRequest request) {
+
+		ModelAndView mav = new ModelAndView("signup/terms_and_conditions");
+		return mav;
+
+	}
 	@RequestMapping(value = "member_join.woo", method = RequestMethod.POST)
 
 	public ModelAndView memberJoinProc(HttpServletRequest request) {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
+//		String phone = request.getParameter("phone");
+		String phone = "01023654127";
 		String brith = request.getParameter("brith");
 		String nickName = request.getParameter("nickname");
 		String genderStr = request.getParameter("gender");
+//		int gender = 1;
+//		if (genderStr != null && !genderStr.isEmpty())
+//			gender = Integer.parseInt(genderStr);
 		int gender = 1;
-		if (genderStr != null && !genderStr.isEmpty())
-			gender = Integer.parseInt(genderStr);
 		String email = request.getParameter("email");
 		String isMemberStr = request.getParameter("ismember");
 		int isMember = 1;
-		if (isMemberStr != null && !isMemberStr.isEmpty())
-			isMember = Integer.parseInt(isMemberStr);
-		String numMember = request.getParameter("nummember");
-		String buisness = request.getParameter("buisness");
+//		if (isMemberStr != null && !isMemberStr.isEmpty())
+//			isMember = Integer.parseInt(isMemberStr);
+//		String buisness = request.getParameter("buisness");
+		String buisness = null;
 
 		HttpSession ses = request.getSession();
 
 		ModelAndView mav = new ModelAndView();
 
 		// 로그인중복
-		if (id != null && !id.isEmpty()) {
-			boolean dup = this.mbSvc.idchackMember(id);
-			if (dup) {
-				// 이미 사용중인 login...
-				System.out.println("회원 가입 실패: login 중복!!! + " + id);
-				mav.setViewName("signup/sign_up"); // FW
-				return mav;
-			}
-		} else {
-			System.out.println("회원 가입 실패: login 파람 에러!");
-			mav.setViewName("signup/sign_up"); // FW
-			return mav;
-		}
+//		if (id != null && !id.isEmpty()) {
+//			boolean dup = this.mbSvc.idchackMember(id);
+//			if (dup) {
+//				// 이미 사용중인 login...
+//				System.out.println("회원 가입 실패: login 중복!!! + " + id);
+//				mav.setViewName("signup/sign_up"); // FW
+//				return mav;
+//			}
+//		} else {
+//			System.out.println("회원 가입 실패: login 파람 에러!");
+//			mav.setViewName("signup/sign_up"); // FW
+//			return mav;
+//		}
 
 		// 별명중복
-		if (nickName != null && !nickName.isEmpty()) {
-			boolean dup = this.mbSvc.nickchackMember(nickName);
-			if (dup) {
-				System.out.println("회원 가입 실패: login 중복!!! + " + nickName);
-				mav.setViewName("signup/sign_up"); // FW
-				return mav;
-			}
-		} else {
-			mav.addObject("msg", "회원 가입 실패: login 파람 에러!");
-			System.out.println("회원 가입 실패: login 파람 에러!");
-			mav.setViewName("signup/sign_up"); // FW
-			return mav;
-		}
-		MemberVO mb = new MemberVO(id, pw, name, phone, brith, nickName, gender, email, isMember, numMember, buisness);
+//		if (nickName != null && !nickName.isEmpty()) {
+//			boolean dup = this.mbSvc.nickchackMember(nickName);
+//			if (dup) {
+//				System.out.println("회원 가입 실패: login 중복!!! + " + nickName);
+//				mav.setViewName("signup/sign_up"); // FW
+//				return mav;
+//			}
+//		} else {
+//			mav.addObject("msg", "회원 가입 실패: login 파람 에러!");
+//			System.out.println("회원 가입 실패: login 파람 에러!");
+//			mav.setViewName("signup/sign_up"); // FW
+//			return mav;
+//		}
+		MemberVO mb = new MemberVO(id, pw, name, phone, brith, nickName, gender, email, isMember, buisness);
 		boolean b = mbSvc.insertNewMember(mb);
-
+		System.out.println(mb);
 		if (b) {
 			if (fileSvc.makeMemberDirectory(id, ses)) {
-				// DB에 회원가입 로그인 첫페이지로 리다이렉트
 				System.out.println("회원 DB 가입 성공!! 축하~~~^^");
-				mav.setViewName("redirect:login.woo"); // RE
+				mav.setViewName("redirect:login.woo"); 
 			} else {
-				// 롤백? 할지.... 아니면 에러 안내후.. 수동으로
-				// 혹은 후처리로... 고유폴더를 admin..나중에 생성할지..결정
+			
 				System.out.println("회원 DB 가입 성공!! 축하지만.. 폴더생성 실패!");
-				mav.setViewName("redirect:login.woo"); // RE
-				// mav.setViewName("redirect:admin_faq.my"); //RE
+				mav.setViewName("redirect:login.woo"); 
 			}
 		} else {
-			// DB에 회원가입이 최종 실패 시... mb_join_form.jsp 포워딩..
+	
 			System.out.println("회원 가입 실패: DB 에러!");
 			mav.setViewName("signup/sign_up"); // FW
 		}
