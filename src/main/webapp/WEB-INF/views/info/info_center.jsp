@@ -95,7 +95,7 @@ function panTo() {
 				<script>
 					var mapContainer = document.getElementById('map'),  
 					mapOption = {
-						center : panTo(), 
+						center : new kakao.maps.LatLng(37.564325, 126.985864), 
 						level : 8
 					};
 					var map = new kakao.maps.Map(mapContainer, mapOption);
