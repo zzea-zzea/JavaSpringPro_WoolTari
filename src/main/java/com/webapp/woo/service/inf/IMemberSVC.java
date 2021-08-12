@@ -8,7 +8,7 @@ public interface IMemberSVC {
 	// 회원 스키마 중개...
 
 	// - 가입 할 수 있다. (패스워드 암호화/저장)
-	boolean insertNewMember(MemberVO mb); // 비암호화 버젼
+	boolean insertNewMember(MemberVO mb);
 
 	// - 로그인명 중복체크 할 수 있다.
 	boolean idchackMember(String id);
