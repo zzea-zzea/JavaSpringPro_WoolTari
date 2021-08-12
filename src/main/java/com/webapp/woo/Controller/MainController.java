@@ -268,11 +268,11 @@ public class MainController {
 	   
 	 @RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
 		public String retouch(HttpSession ses, Model model,
-				@RequestParam(value = "commentId") int commentIndex, 
-				@RequestParam(value = "memberId") int memberIndex,
-				@RequestParam(value = "boardId") int boardIndex, 
-				RedirectAttributes rdAttr) {
+				   HttpServletRequest request, RedirectAttributes rdAttr) {
 		int sesMbId = (int)ses.getAttribute("mbPKId");
+		int memberIndex = Integer.parseInt(request.getParameter("memberIndex"));
+		int boardIndex = Integer.parseInt(request.getParameter("boardIndex"));
+		int commentIndex = Integer.parseInt(request.getParameter("commentId"));
 		if( sesMbId == memberIndex ) { // 댓글 작성자 인증
 			CommentVO cv = CommentSVC.selectOneComment(commentIndex);
 			List<MemberVO> mbLoginList = mbSvc.takeAllMember();

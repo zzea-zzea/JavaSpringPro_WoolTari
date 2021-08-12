@@ -135,12 +135,9 @@
 												</div>
 												<div class="reply_show">${as.content}</div>
 												<form action="${pageContext.request.contextPath}/retouch_comment.woo">
-												<input type="hidden" name="articleId" value=
-														"${!empty cv ? cv.boardId: param.boardId}">
-													<input type="hidden" name="memberId" value=			
-														"${!empty cv ? cv.memberId: param.memberId}">
-													<input type="hidden" name="id" value=
-														"${!empty cv ? cv.commentId: param.commentId}">	
+												<input type="hidden" name="boardIndex" value="${atId}">							
+												<input type="hidden" name="memberIndex" value="${mbPKId}">		
+												<input type="hidden" name="commentId" value="${commentId}">
 												<div class="retouch_reply" style="display: none"><input type="text"
 								value="${as.content}" class="comment" name="content" size='70'> <input type="submit" value="수정"
 								class="retouch_submit"></div>
@@ -184,7 +181,7 @@ $(document).ready(function(){
 // 			$('#a').toggle();
 // 		})
 		$('.retouch_button').click(function() {
-			$('.reply_show').hide();
+			$('.retouch_reply').hide();
 			$('.retouch_reply').show();	
 		});
 		
