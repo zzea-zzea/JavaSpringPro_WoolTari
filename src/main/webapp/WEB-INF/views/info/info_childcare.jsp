@@ -4,8 +4,7 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 <script>
-	$(document).ready(
-			function() {
+	$(document).ready(function() {
 				$(".side_bar_content>a").click(
 						function() {
 							if ($(this).parent(".side_bar_content").children("ul").is(':hidden')) {
@@ -14,13 +13,11 @@
 							} else {
 								$(this).parent(".side_bar_content").children("ul").slideUp();
 							}
-							// 				 $(this).parent(".side_bar_content").children("ul").slideToggle(100);
-							// 			 not(this).parent(".side_bar_content").children("ul").slideUp(100);
 						});
 				$(".childcare_content_menu>a").click(
 						function() {
 							if ($(this).parent(".childcare_content_menu.ho").children("div").is(':hidden')) {
-								$('.childcare_content_menu>a').parent(".childcare_content_menu").children("div").slideUp();
+								$('.a').parent(".childcare_content_menu").children("div").slideUp();
 								$(this).parent(".childcare_content_menu.ho").children("div").slideDown();
 							} else {
 								$(this).parent(".childcare_content_menu.ho").children("div").slideUp();
@@ -33,7 +30,11 @@
 					$('#content2').attr('class', 'sideli');
 					$('#content3').attr('class', 'sideli');
 					$('#content4').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu.ho").children("div").slideUp();
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
 					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
 				});
 				$(".info_content2").click(function() {
@@ -43,6 +44,10 @@
 					$('#content2').attr('class', 'sideli on');
 					$('#content3').attr('class', 'sideli');
 					$('#content4').attr('class', 'sideli');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
 					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content3").click(function() {
@@ -52,8 +57,11 @@
 					$('#content2').attr('class', 'sideli');
 					$('#content3').attr('class', 'sideli on');
 					$('#content4').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu.ho").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content4").click(function() {
 					$('.childcare_section').hide();
@@ -62,6 +70,63 @@
 					$('#content2').attr('class', 'sideli');
 					$('#content3').attr('class', 'sideli');
 					$('#content4').attr('class', 'sideli on');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').css('pointer-events' , 'none');
+				});
+				$(".info_content5").click(function() {
+					$('.childcare_section').hide();
+					$('.childcare_section:eq(4)').show();
+					$('#content1').attr('class', 'sideli');
+					$('#content2').attr('class', 'sideli');
+					$('#content3').attr('class', 'sideli');
+					$('#content4').attr('class', 'sideli');
+					$('#content5').attr('class', 'sideli on');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').css('pointer-events' , 'none');
+				});
+				$(".info_content6").click(function() {
+					$('.childcare_section').hide();
+					$('.childcare_section:eq(5)').show();
+					$('#content1').attr('class', 'sideli');
+					$('#content2').attr('class', 'sideli');
+					$('#content3').attr('class', 'sideli');
+					$('#content4').attr('class', 'sideli');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli on');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
+					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
+				});
+				$(".info_content7").click(function() {
+					$('.childcare_section').hide();
+					$('.childcare_section:eq(6)').show();
+					$('#content1').attr('class', 'sideli');
+					$('#content2').attr('class', 'sideli on');
+					$('#content3').attr('class', 'sideli');
+					$('#content4').attr('class', 'sideli');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli on');
+					$('#content8').attr('class', 'sideli');
+					$('.childcare_content_menu>a').css('pointer-events' , 'none');
+				});
+				$(".info_content8").click(function() {
+					$('.childcare_section').hide();
+					$('.childcare_section:eq(7)').show();
+					$('#content1').attr('class', 'sideli');
+					$('#content2').attr('class', 'sideli');
+					$('#content3').attr('class', 'sideli');
+					$('#content4').attr('class', 'sideli');
+					$('#content5').attr('class', 'sideli');
+					$('#content6').attr('class', 'sideli');
+					$('#content7').attr('class', 'sideli');
+					$('#content8').attr('class', 'sideli on');
 					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".side_bar_content>a").eq(0).trigger("click");
@@ -82,16 +147,16 @@
 						<ul class="hide">
 							<li class="sideli on" id="content1"><a class="info_content1">임신 조기 증상</a></li>
 							<li class="sideli " id="content2"><a class="info_content2">임신초기</a></li>
-							<li class="sideli "id="content5" ><a class="info_content5">임신중기</a></li>
-							<li class="sideli " id="content6"><a class="info_content6">임신후기</a></li>
+							<li class="sideli "id="content3" ><a class="info_content3">임신중기</a></li>
+							<li class="sideli " id="content4"><a class="info_content4">임신후기</a></li>
 						</ul>
 					</li>
 					<li class="side_bar_content">
 						<a>출산하셨나요?</a>
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 						<ul class="hide">
-							<li class="sideli" id="content3"><a class="info_content3">신생아(~ 생후4주)</a></li>
-							<li class="sideli" id="content4"><a class="info_content4">생후1개월 ~ 6개월</a></li>
+							<li class="sideli" id="content5"><a class="info_content5">신생아(~ 생후4주)</a></li>
+							<li class="sideli" id="content6"><a class="info_content6">생후1개월 ~ 6개월</a></li>
 							<li class="sideli" id="content7"><a class="info_content7">생후7개월 ~ 12개월</a></li>
 							<li class="sideli" id="content8"><a class="info_content8">생후12개월 ~ 24개월</a></li>
 						</ul>
@@ -107,7 +172,7 @@
 						<div class="childcare_content">
 
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;생리예정일이 지났는데도 생리가 없어요</a>
+								<a class="a">Q.&nbsp;생리예정일이 지났는데도 생리가 없어요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>예정일이 지났는데도 생리가 시작되지 않는다면 일단 임신을 의심해 보세요. 그러나 사람에
@@ -117,7 +182,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;가슴이 커지고 아파요</a>
+								<a class="a">Q.&nbsp;가슴이 커지고 아파요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>유선의 발달과 호르몬의 영향으로 생리 때처럼 가슴이 단단해지고 아프며, 멜라닌 색소가
@@ -127,7 +192,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;몸이 무겁고 이유 없이 피곤해요</a>
+								<a class="a">Q.&nbsp;몸이 무겁고 이유 없이 피곤해요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>왠지 피곤하고, 아무것도 할 의욕이 없어지며, 졸리기만 한 경우가 있습니다. 정신적으로
@@ -135,7 +200,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho ">
-								<a>Q.&nbsp;분비물이 많아졌어요</a>
+								<a class="a">Q.&nbsp;분비물이 많아졌어요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>임신을 하면 호르몬의 영향으로 신진대사가 활발해지고, 자궁의 활동도 많아지므로 질 분비물이
@@ -143,7 +208,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;입덧을 시작해요</a>
+								<a class="a">Q.&nbsp;입덧을 시작해요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>가벼운 구토 증상과 함께 식욕이 없어지고, 소화가 안됩니다. 때로는 음식에 대한 기호가
@@ -152,35 +217,35 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;냄새에 민감해집니다</a>
+								<a class="a">Q.&nbsp;냄새에 민감해집니다</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>예전엔 그냥 지나쳤던 냄새들이 갑자기 싫어지거나, 느끼지못했던 냄새들을 느끼게 됩니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;체온이 상승하는 느낌이에요</a>
+								<a class="a">Q.&nbsp;체온이 상승하는 느낌이에요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>몸이 이유없이 뜨거워지고 체온도 실제로 약간 상승하며, 2~3주 정도 지속됩니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;배가 당기고 아파요</a>
+								<a class="a">Q.&nbsp;배가 당기고 아파요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>허리나 하복부 또는 사타구니 주위에 통증이 나타납니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;식성변화가 생겼어요</a>
+								<a class="a">Q.&nbsp;식성변화가 생겼어요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>식욕이 갑자기 늘거나, 또는 예전에 좋아했거나, 싫어했던 식성이 반대로 변화합니다.</span>
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;임신테스트 결과가 양성으로 나왔어요</a>
+								<a class="a">Q.&nbsp;임신테스트 결과가 양성으로 나왔어요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>마지막 관계 2주 후 소변테스트 결과가 양성으로 나왔다면 90% 이상 임신이 확실합니다.</span>
@@ -218,6 +283,16 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</section>
+					<section class="childcare_section">
+						<div class="childcare_section_title">
+							<h2>임신 중기(임신15 ~28주)</h2>
+							<span>임신 중기가 되면 임신 초기와 다르게 점점 	증상이 안화되고 몸이 가벼워지는 시기를 말한다.
+							또한 임신 초기와는 달리 태반이 완성되면서 유산의 위험이 많이 줄어 '안정기'라고도 한다.
+							</span>
+						</div>
+						<div class="childcare_content">		
 							<div class="childcare_content_menu none ">
 								<svg class="secsvg"xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="109.00304mm" height="95.90564mm" viewBox="0 0 109.00304 95.905648" version="1.1" id="svg3505" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="baby_21.svg">  <defs id="defs3499"/>  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="533.59185" inkscape:cy="-206.71864" inkscape:document-units="mm" inkscape:current-layer="g5302" showgrid="false" fit-margin-top="-0.4" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1853" inkscape:window-height="1025" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1"/>  <metadata id="metadata3502">    <rdf:RDF>      <cc:Work rdf:about="">        <dc:format>image/svg+xml</dc:format>        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>        <dc:title/>      </cc:Work>    </rdf:RDF>  </metadata>  <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(35.346176,62.242804)">    <g transform="matrix(0.35277777,0,0,-0.35277777,-499.64434,1710.8768)" id="g5302">      <g transform="translate(-122.02499,1696.451)" id="g6455">        <g transform="translate(1731.0088,3133.1494)" id="g1518">          <path inkscape:connector-curvature="0" id="path1520" style="fill:#fce364;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0"/>        </g>        <g transform="translate(1459.9448,3237.5205)" id="g1522">          <path inkscape:connector-curvature="0" id="path1524" style="fill:#e7660b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -4.629,2.543 -8.4,6.066 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.97,5.076 2.753,6.915 1.993,2.07 4.759,2.669 6.727,2.802 3.033,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 L 24.213,-7.357 C 21.217,-6.968 18.441,-6.488 15.959,-5.93 10.045,-4.57 4.674,-2.572 0,0"/>        </g>        <g transform="translate(1731.0088,3133.1494)" id="g1526">          <path inkscape:connector-curvature="0" id="path1528" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0 m -271.064,104.371 c -4.629,2.543 -8.4,6.067 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.971,5.077 2.753,6.915 1.993,2.07 4.76,2.669 6.727,2.802 3.034,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 l -10.506,0.565 c -2.996,0.389 -5.772,0.869 -8.253,1.427 -5.915,1.36 -11.286,3.358 -15.96,5.93 M 7.391,82.946 c -5.597,13.269 -13.6,25.15 -23.967,35.505 -5.381,5.389 -14.797,5.397 -20.203,0 -2.789,-2.782 -4.314,-6.513 -4.179,-10.275 l 0.082,-1.113 c 0.159,-4.501 -1.099,-9.207 -3.541,-13.661 l -2.926,-4.345 c -3.068,-3.835 -7.677,-7.445 -13.346,-10.451 -6.108,-3.239 -13.108,-5.725 -20.769,-7.426 -8.291,-1.81 -16.991,-2.741 -25.855,-2.741 -8.22,0 -16.264,0.963 -24.459,2.895 -0.105,0.032 -9.799,2.827 -9.799,10.564 0,1.659 0.621,3.211 1.745,4.383 5.78,6.018 10.308,13.004 13.467,20.751 3.283,8.007 4.952,16.554 4.952,25.384 0,8.813 -1.661,17.361 -4.945,25.382 -3.158,7.764 -7.702,14.749 -13.474,20.743 -5.789,6.02 -12.541,10.738 -20.042,14.031 -15.579,6.839 -33.67,6.834 -49.194,0 -7.526,-3.3 -14.274,-8.028 -20.05,-14.031 -5.777,-5.988 -10.301,-12.973 -13.481,-20.743 -0.927,-2.282 -1.748,-4.793 -2.496,-7.665 l -4.696,-4.407 c -4.586,-2.46 -9.808,-4.376 -15.535,-5.701 -2.995,-0.675 -7.838,-1.525 -10.441,-1.699 -4.88,-0.328 -9.057,-2.143 -12.057,-5.269 -3.251,-3.352 -5.045,-7.821 -5.045,-12.59 0,-4.774 2.823,-9.949 5.24,-12.93 2.395,-2.961 6.967,-7.223 12.621,-10.334 5.34,-2.941 11.424,-5.197 18.089,-6.728 2.779,-0.627 5.723,-1.139 9.322,-1.594 l 14.094,-0.766 c 1.929,-0.082 3.747,-0.793 5.279,-2.047 l 0.349,-0.281 c 0.175,-0.136 0.35,-0.261 0.512,-0.43 1.762,-1.826 2.733,-4.282 2.733,-6.903 0,-2.434 -0.98,-4.834 -2.93,-7.14 l -1.95,-2.972 c -3.993,-4.608 -11.178,-14.537 -14.135,-19.902 -2.95,-5.333 -5.206,-10.976 -6.719,-16.772 -1.528,-5.851 -2.298,-11.922 -2.298,-18.025 v -0.51 c 0,-12.242 3.03,-23.934 9.017,-34.794 5.893,-10.693 14.432,-20.163 25.353,-28.145 11.082,-8.076 24.244,-14.366 39.106,-18.693 15.507,-4.505 32.541,-6.794 50.604,-6.794 18.84,0 37.138,2.544 54.365,7.553 16.695,4.836 31.707,11.795 44.641,20.658 13.036,8.955 23.287,19.41 30.623,31.351 l 6.338,12.282 c 5.788,13.733 8.731,28.278 8.731,43.233 0.006,14.982 -2.936,29.498 -8.731,43.162"/>        </g>        <g transform="translate(1515.7363,3287.8154)" id="g1530">          <path inkscape:connector-curvature="0" id="path1532" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 4.512,0 8.165,-3.655 8.165,-8.167 0,-4.503 -3.653,-8.164 -8.165,-8.164 -4.504,0 -8.163,3.661 -8.163,8.164 C -8.163,-3.655 -4.504,0 0,0"/>        </g>        <g transform="translate(1678.4385,3162.29)" id="g1534">          <path inkscape:connector-curvature="0" id="path1536" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 h -0.01 c -2.249,0.501 -4.53,0.971 -6.906,1.371 -17.49,2.935 -37.511,2.941 -53.822,-0.009 -2.218,-0.406 -3.684,-2.518 -3.293,-4.753 0.406,-2.203 2.496,-3.673 4.752,-3.282 15.363,2.791 34.435,2.774 51.01,-0.009 2.224,-0.371 4.355,-0.814 6.45,-1.275 0.007,0 0.007,-0.01 0.007,-0.01 2.743,-0.611 5.397,-1.322 7.95,-2.129 -0.591,-5.347 -1.897,-10.449 -3.796,-14.966 l -3.339,-6.459 c -0.991,-1.637 -2.153,-3.208 -3.422,-4.755 -0.415,0.057 -0.845,0.103 -1.268,0.017 -15.587,-2.864 -32.759,-2.614 -46.919,0.741 -2.214,0.497 -4.392,-0.839 -4.918,-3.038 -0.519,-2.191 0.844,-4.393 3.036,-4.911 8.244,-1.962 17.215,-2.95 26.622,-2.95 4.463,0 8.898,0.256 13.265,0.694 -0.541,-0.408 -1.034,-0.814 -1.594,-1.205 -6.711,-4.599 -14.494,-8.203 -23.136,-10.715 -8.937,-2.605 -18.544,-3.931 -28.573,-3.931 -9.855,0 -18.953,1.203 -27.053,3.57 -7.736,2.266 -14.579,5.535 -20.335,9.729 -5.444,3.94 -9.686,8.611 -12.6,13.911 -2.882,5.249 -4.337,10.892 -4.337,16.784 v 0.287 c 0,2.258 -1.827,3.939 -4.081,3.939 -2.249,0 -4.084,-1.968 -4.084,-4.226 0,-7.279 1.796,-14.246 5.355,-20.723 3.504,-6.359 8.541,-11.953 14.96,-16.572 6.505,-4.752 14.2,-8.436 22.85,-10.966 8.834,-2.583 18.704,-3.895 29.339,-3.895 10.802,0 21.177,1.439 30.857,4.258 9.469,2.759 18.041,6.72 25.464,11.821 7.55,5.159 13.449,11.172 17.69,18.139 l 3.621,6.997 c 2.621,6.203 4.216,12.911 4.749,20.013 l 0.217,4.141 -2.878,1.001 C 8.091,-2.059 4.106,-0.924 0,0"/>        </g>      </g>    </g>  </g></svg>
 								<a>임신 중기(임신15 ~28주)</a>
@@ -236,6 +311,15 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</section>
+					<section class="childcare_section">
+						<div class="childcare_section_title">
+							<h2>임신 후기(임신 29주 ~ 출산)</h2>
+							<span>임신 후기는 자궁과 태아가 급속도로 커지는 시기로 자궁이 장을 압박해 소화가 어렵기도 하고 변비도 많이 생기게 되는 시기입니다.
+							</span>
+						</div>
+						<div class="childcare_content">	
 							<div class="childcare_content_menu none">
 								<svg class="secsvg"xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="109.00304mm" height="95.90564mm" viewBox="0 0 109.00304 95.905648" version="1.1" id="svg3505" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="baby_21.svg">  <defs id="defs3499"/>  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="533.59185" inkscape:cy="-206.71864" inkscape:document-units="mm" inkscape:current-layer="g5302" showgrid="false" fit-margin-top="-0.4" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1853" inkscape:window-height="1025" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1"/>  <metadata id="metadata3502">    <rdf:RDF>      <cc:Work rdf:about="">        <dc:format>image/svg+xml</dc:format>        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>        <dc:title/>      </cc:Work>    </rdf:RDF>  </metadata>  <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(35.346176,62.242804)">    <g transform="matrix(0.35277777,0,0,-0.35277777,-499.64434,1710.8768)" id="g5302">      <g transform="translate(-122.02499,1696.451)" id="g6455">        <g transform="translate(1731.0088,3133.1494)" id="g1518">          <path inkscape:connector-curvature="0" id="path1520" style="fill:#fce364;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0"/>        </g>        <g transform="translate(1459.9448,3237.5205)" id="g1522">          <path inkscape:connector-curvature="0" id="path1524" style="fill:#e7660b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -4.629,2.543 -8.4,6.066 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.97,5.076 2.753,6.915 1.993,2.07 4.759,2.669 6.727,2.802 3.033,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 L 24.213,-7.357 C 21.217,-6.968 18.441,-6.488 15.959,-5.93 10.045,-4.57 4.674,-2.572 0,0"/>        </g>        <g transform="translate(1731.0088,3133.1494)" id="g1526">          <path inkscape:connector-curvature="0" id="path1528" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0 m -271.064,104.371 c -4.629,2.543 -8.4,6.067 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.971,5.077 2.753,6.915 1.993,2.07 4.76,2.669 6.727,2.802 3.034,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 l -10.506,0.565 c -2.996,0.389 -5.772,0.869 -8.253,1.427 -5.915,1.36 -11.286,3.358 -15.96,5.93 M 7.391,82.946 c -5.597,13.269 -13.6,25.15 -23.967,35.505 -5.381,5.389 -14.797,5.397 -20.203,0 -2.789,-2.782 -4.314,-6.513 -4.179,-10.275 l 0.082,-1.113 c 0.159,-4.501 -1.099,-9.207 -3.541,-13.661 l -2.926,-4.345 c -3.068,-3.835 -7.677,-7.445 -13.346,-10.451 -6.108,-3.239 -13.108,-5.725 -20.769,-7.426 -8.291,-1.81 -16.991,-2.741 -25.855,-2.741 -8.22,0 -16.264,0.963 -24.459,2.895 -0.105,0.032 -9.799,2.827 -9.799,10.564 0,1.659 0.621,3.211 1.745,4.383 5.78,6.018 10.308,13.004 13.467,20.751 3.283,8.007 4.952,16.554 4.952,25.384 0,8.813 -1.661,17.361 -4.945,25.382 -3.158,7.764 -7.702,14.749 -13.474,20.743 -5.789,6.02 -12.541,10.738 -20.042,14.031 -15.579,6.839 -33.67,6.834 -49.194,0 -7.526,-3.3 -14.274,-8.028 -20.05,-14.031 -5.777,-5.988 -10.301,-12.973 -13.481,-20.743 -0.927,-2.282 -1.748,-4.793 -2.496,-7.665 l -4.696,-4.407 c -4.586,-2.46 -9.808,-4.376 -15.535,-5.701 -2.995,-0.675 -7.838,-1.525 -10.441,-1.699 -4.88,-0.328 -9.057,-2.143 -12.057,-5.269 -3.251,-3.352 -5.045,-7.821 -5.045,-12.59 0,-4.774 2.823,-9.949 5.24,-12.93 2.395,-2.961 6.967,-7.223 12.621,-10.334 5.34,-2.941 11.424,-5.197 18.089,-6.728 2.779,-0.627 5.723,-1.139 9.322,-1.594 l 14.094,-0.766 c 1.929,-0.082 3.747,-0.793 5.279,-2.047 l 0.349,-0.281 c 0.175,-0.136 0.35,-0.261 0.512,-0.43 1.762,-1.826 2.733,-4.282 2.733,-6.903 0,-2.434 -0.98,-4.834 -2.93,-7.14 l -1.95,-2.972 c -3.993,-4.608 -11.178,-14.537 -14.135,-19.902 -2.95,-5.333 -5.206,-10.976 -6.719,-16.772 -1.528,-5.851 -2.298,-11.922 -2.298,-18.025 v -0.51 c 0,-12.242 3.03,-23.934 9.017,-34.794 5.893,-10.693 14.432,-20.163 25.353,-28.145 11.082,-8.076 24.244,-14.366 39.106,-18.693 15.507,-4.505 32.541,-6.794 50.604,-6.794 18.84,0 37.138,2.544 54.365,7.553 16.695,4.836 31.707,11.795 44.641,20.658 13.036,8.955 23.287,19.41 30.623,31.351 l 6.338,12.282 c 5.788,13.733 8.731,28.278 8.731,43.233 0.006,14.982 -2.936,29.498 -8.731,43.162"/>        </g>        <g transform="translate(1515.7363,3287.8154)" id="g1530">          <path inkscape:connector-curvature="0" id="path1532" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 4.512,0 8.165,-3.655 8.165,-8.167 0,-4.503 -3.653,-8.164 -8.165,-8.164 -4.504,0 -8.163,3.661 -8.163,8.164 C -8.163,-3.655 -4.504,0 0,0"/>        </g>        <g transform="translate(1678.4385,3162.29)" id="g1534">          <path inkscape:connector-curvature="0" id="path1536" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 h -0.01 c -2.249,0.501 -4.53,0.971 -6.906,1.371 -17.49,2.935 -37.511,2.941 -53.822,-0.009 -2.218,-0.406 -3.684,-2.518 -3.293,-4.753 0.406,-2.203 2.496,-3.673 4.752,-3.282 15.363,2.791 34.435,2.774 51.01,-0.009 2.224,-0.371 4.355,-0.814 6.45,-1.275 0.007,0 0.007,-0.01 0.007,-0.01 2.743,-0.611 5.397,-1.322 7.95,-2.129 -0.591,-5.347 -1.897,-10.449 -3.796,-14.966 l -3.339,-6.459 c -0.991,-1.637 -2.153,-3.208 -3.422,-4.755 -0.415,0.057 -0.845,0.103 -1.268,0.017 -15.587,-2.864 -32.759,-2.614 -46.919,0.741 -2.214,0.497 -4.392,-0.839 -4.918,-3.038 -0.519,-2.191 0.844,-4.393 3.036,-4.911 8.244,-1.962 17.215,-2.95 26.622,-2.95 4.463,0 8.898,0.256 13.265,0.694 -0.541,-0.408 -1.034,-0.814 -1.594,-1.205 -6.711,-4.599 -14.494,-8.203 -23.136,-10.715 -8.937,-2.605 -18.544,-3.931 -28.573,-3.931 -9.855,0 -18.953,1.203 -27.053,3.57 -7.736,2.266 -14.579,5.535 -20.335,9.729 -5.444,3.94 -9.686,8.611 -12.6,13.911 -2.882,5.249 -4.337,10.892 -4.337,16.784 v 0.287 c 0,2.258 -1.827,3.939 -4.081,3.939 -2.249,0 -4.084,-1.968 -4.084,-4.226 0,-7.279 1.796,-14.246 5.355,-20.723 3.504,-6.359 8.541,-11.953 14.96,-16.572 6.505,-4.752 14.2,-8.436 22.85,-10.966 8.834,-2.583 18.704,-3.895 29.339,-3.895 10.802,0 21.177,1.439 30.857,4.258 9.469,2.759 18.041,6.72 25.464,11.821 7.55,5.159 13.449,11.172 17.69,18.139 l 3.621,6.997 c 2.621,6.203 4.216,12.911 4.749,20.013 l 0.217,4.141 -2.878,1.001 C 8.091,-2.059 4.106,-0.924 0,0"/>        </g>      </g>    </g>  </g></svg>
 								<a>임신 후기(임신 29주 ~ 출산)</a>
@@ -262,7 +346,7 @@
 						</div>
 						<div class="childcare_content">
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;모유 수유의 장점</a>
+								<a class="a">Q.&nbsp;모유 수유의 장점</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>모유는 출생후 초기에 필요한 모든 영양분을 골고루 갖추고 있습니다.피부와 피부의 접촉,
@@ -272,7 +356,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;신생아가 잘 먹지 않을때</a>
+								<a class="a">Q.&nbsp;신생아가 잘 먹지 않을때</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>모유수유를 거부할 때 생후 바로 엄마 젖부터 먹지 않고 한 두 번이고 분유를 먼저
@@ -284,7 +368,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;모유 수유시 문제점 해결법</a>
+								<a class="a">Q.&nbsp;모유 수유시 문제점 해결법</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span><b>1. 유방에 저항하는 아기 </b><br> 어머니가 아기를 젖에 가까이
@@ -305,7 +389,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;올바른 목욕법</a>
+								<a class="a">Q.&nbsp;올바른 목욕법</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>많은 젊은 엄마들은 아기들을 씻기거나 목욕시킬 때 혹시 감기가 들지 않을까 염려합니다.
@@ -318,7 +402,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;기저귀 채우는 법</a>
+								<a class="a">Q.&nbsp;기저귀 채우는 법</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>1.기저귀를 펴고 접착테이프를 떼어요. 남자아기는 기저귀를 뗀 순간 소변을 보는 수가 있으므로 방수요를 깔고 그 위에서 가는 게 좋아요.  <br>
@@ -332,7 +416,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho ">
-								<a>Q.&nbsp;아기가 울때</a>
+								<a class="a">Q.&nbsp;아기가 울때</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span><b>1. 아기가 더위를 느낄 때</b> <br> 증상 :
@@ -351,7 +435,7 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a>Q.&nbsp;신생아 대변</a>
+								<a class="a">Q.&nbsp;신생아 대변</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>아기는 태어난 후 2-3일 동안 흑록색의 끈끈한 대변을 봅니다. 이것을 태변이라 합니다.
@@ -371,7 +455,7 @@
 					</section>
 				<section class="childcare_section">
 				<div class="childcare_section_title">
-					<h2>영아 (생후 1 개월 ~ 24 개월)</h2>
+					<h2>생후 1개월 ~ 6개월</h2>
 					<span>아이를 키우는 방법과 주의사항
 					</span>
 				</div>
@@ -401,6 +485,15 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				</section>
+					<section class="childcare_section">
+				<div class="childcare_section_title">
+					<h2>생후 7개월 ~ 12개월</h2>
+					<span>아이를 키우는 방법과 주의사항
+					</span>
+				</div>
+				<div class="childcare_content">
 					<div class="childcare_content_menu">
 						<svg class="secsvg"xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="109.00304mm" height="95.90564mm" viewBox="0 0 109.00304 95.905648" version="1.1" id="svg3505" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="baby_21.svg">  <defs id="defs3499"/>  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="533.59185" inkscape:cy="-206.71864" inkscape:document-units="mm" inkscape:current-layer="g5302" showgrid="false" fit-margin-top="-0.4" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1853" inkscape:window-height="1025" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1"/>  <metadata id="metadata3502">    <rdf:RDF>      <cc:Work rdf:about="">        <dc:format>image/svg+xml</dc:format>        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>        <dc:title/>      </cc:Work>    </rdf:RDF>  </metadata>  <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(35.346176,62.242804)">    <g transform="matrix(0.35277777,0,0,-0.35277777,-499.64434,1710.8768)" id="g5302">      <g transform="translate(-122.02499,1696.451)" id="g6455">        <g transform="translate(1731.0088,3133.1494)" id="g1518">          <path inkscape:connector-curvature="0" id="path1520" style="fill:#fce364;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0"/>        </g>        <g transform="translate(1459.9448,3237.5205)" id="g1522">          <path inkscape:connector-curvature="0" id="path1524" style="fill:#e7660b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -4.629,2.543 -8.4,6.066 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.97,5.076 2.753,6.915 1.993,2.07 4.759,2.669 6.727,2.802 3.033,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 L 24.213,-7.357 C 21.217,-6.968 18.441,-6.488 15.959,-5.93 10.045,-4.57 4.674,-2.572 0,0"/>        </g>        <g transform="translate(1731.0088,3133.1494)" id="g1526">          <path inkscape:connector-curvature="0" id="path1528" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0 m -271.064,104.371 c -4.629,2.543 -8.4,6.067 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.971,5.077 2.753,6.915 1.993,2.07 4.76,2.669 6.727,2.802 3.034,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 l -10.506,0.565 c -2.996,0.389 -5.772,0.869 -8.253,1.427 -5.915,1.36 -11.286,3.358 -15.96,5.93 M 7.391,82.946 c -5.597,13.269 -13.6,25.15 -23.967,35.505 -5.381,5.389 -14.797,5.397 -20.203,0 -2.789,-2.782 -4.314,-6.513 -4.179,-10.275 l 0.082,-1.113 c 0.159,-4.501 -1.099,-9.207 -3.541,-13.661 l -2.926,-4.345 c -3.068,-3.835 -7.677,-7.445 -13.346,-10.451 -6.108,-3.239 -13.108,-5.725 -20.769,-7.426 -8.291,-1.81 -16.991,-2.741 -25.855,-2.741 -8.22,0 -16.264,0.963 -24.459,2.895 -0.105,0.032 -9.799,2.827 -9.799,10.564 0,1.659 0.621,3.211 1.745,4.383 5.78,6.018 10.308,13.004 13.467,20.751 3.283,8.007 4.952,16.554 4.952,25.384 0,8.813 -1.661,17.361 -4.945,25.382 -3.158,7.764 -7.702,14.749 -13.474,20.743 -5.789,6.02 -12.541,10.738 -20.042,14.031 -15.579,6.839 -33.67,6.834 -49.194,0 -7.526,-3.3 -14.274,-8.028 -20.05,-14.031 -5.777,-5.988 -10.301,-12.973 -13.481,-20.743 -0.927,-2.282 -1.748,-4.793 -2.496,-7.665 l -4.696,-4.407 c -4.586,-2.46 -9.808,-4.376 -15.535,-5.701 -2.995,-0.675 -7.838,-1.525 -10.441,-1.699 -4.88,-0.328 -9.057,-2.143 -12.057,-5.269 -3.251,-3.352 -5.045,-7.821 -5.045,-12.59 0,-4.774 2.823,-9.949 5.24,-12.93 2.395,-2.961 6.967,-7.223 12.621,-10.334 5.34,-2.941 11.424,-5.197 18.089,-6.728 2.779,-0.627 5.723,-1.139 9.322,-1.594 l 14.094,-0.766 c 1.929,-0.082 3.747,-0.793 5.279,-2.047 l 0.349,-0.281 c 0.175,-0.136 0.35,-0.261 0.512,-0.43 1.762,-1.826 2.733,-4.282 2.733,-6.903 0,-2.434 -0.98,-4.834 -2.93,-7.14 l -1.95,-2.972 c -3.993,-4.608 -11.178,-14.537 -14.135,-19.902 -2.95,-5.333 -5.206,-10.976 -6.719,-16.772 -1.528,-5.851 -2.298,-11.922 -2.298,-18.025 v -0.51 c 0,-12.242 3.03,-23.934 9.017,-34.794 5.893,-10.693 14.432,-20.163 25.353,-28.145 11.082,-8.076 24.244,-14.366 39.106,-18.693 15.507,-4.505 32.541,-6.794 50.604,-6.794 18.84,0 37.138,2.544 54.365,7.553 16.695,4.836 31.707,11.795 44.641,20.658 13.036,8.955 23.287,19.41 30.623,31.351 l 6.338,12.282 c 5.788,13.733 8.731,28.278 8.731,43.233 0.006,14.982 -2.936,29.498 -8.731,43.162"/>        </g>        <g transform="translate(1515.7363,3287.8154)" id="g1530">          <path inkscape:connector-curvature="0" id="path1532" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 4.512,0 8.165,-3.655 8.165,-8.167 0,-4.503 -3.653,-8.164 -8.165,-8.164 -4.504,0 -8.163,3.661 -8.163,8.164 C -8.163,-3.655 -4.504,0 0,0"/>        </g>        <g transform="translate(1678.4385,3162.29)" id="g1534">          <path inkscape:connector-curvature="0" id="path1536" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 h -0.01 c -2.249,0.501 -4.53,0.971 -6.906,1.371 -17.49,2.935 -37.511,2.941 -53.822,-0.009 -2.218,-0.406 -3.684,-2.518 -3.293,-4.753 0.406,-2.203 2.496,-3.673 4.752,-3.282 15.363,2.791 34.435,2.774 51.01,-0.009 2.224,-0.371 4.355,-0.814 6.45,-1.275 0.007,0 0.007,-0.01 0.007,-0.01 2.743,-0.611 5.397,-1.322 7.95,-2.129 -0.591,-5.347 -1.897,-10.449 -3.796,-14.966 l -3.339,-6.459 c -0.991,-1.637 -2.153,-3.208 -3.422,-4.755 -0.415,0.057 -0.845,0.103 -1.268,0.017 -15.587,-2.864 -32.759,-2.614 -46.919,0.741 -2.214,0.497 -4.392,-0.839 -4.918,-3.038 -0.519,-2.191 0.844,-4.393 3.036,-4.911 8.244,-1.962 17.215,-2.95 26.622,-2.95 4.463,0 8.898,0.256 13.265,0.694 -0.541,-0.408 -1.034,-0.814 -1.594,-1.205 -6.711,-4.599 -14.494,-8.203 -23.136,-10.715 -8.937,-2.605 -18.544,-3.931 -28.573,-3.931 -9.855,0 -18.953,1.203 -27.053,3.57 -7.736,2.266 -14.579,5.535 -20.335,9.729 -5.444,3.94 -9.686,8.611 -12.6,13.911 -2.882,5.249 -4.337,10.892 -4.337,16.784 v 0.287 c 0,2.258 -1.827,3.939 -4.081,3.939 -2.249,0 -4.084,-1.968 -4.084,-4.226 0,-7.279 1.796,-14.246 5.355,-20.723 3.504,-6.359 8.541,-11.953 14.96,-16.572 6.505,-4.752 14.2,-8.436 22.85,-10.966 8.834,-2.583 18.704,-3.895 29.339,-3.895 10.802,0 21.177,1.439 30.857,4.258 9.469,2.759 18.041,6.72 25.464,11.821 7.55,5.159 13.449,11.172 17.69,18.139 l 3.621,6.997 c 2.621,6.203 4.216,12.911 4.749,20.013 l 0.217,4.141 -2.878,1.001 C 8.091,-2.059 4.106,-0.924 0,0"/>        </g>      </g>    </g>  </g></svg>
 						<a>생후 7개월 ~ 12개월</a>
@@ -423,6 +516,15 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				</section>
+				<section class="childcare_section">
+					<div class="childcare_section_title">
+						<h2>생후 12개월 ~ 24개월</h2>
+						<span>아이를 키우는 방법과 주의사항
+						</span>
+					</div>
+				<div class="childcare_content">
 					<div class="childcare_content_menu">
 						<svg class="secsvg"xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="109.00304mm" height="95.90564mm" viewBox="0 0 109.00304 95.905648" version="1.1" id="svg3505" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="baby_21.svg">  <defs id="defs3499"/>  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="533.59185" inkscape:cy="-206.71864" inkscape:document-units="mm" inkscape:current-layer="g5302" showgrid="false" fit-margin-top="-0.4" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:window-width="1853" inkscape:window-height="1025" inkscape:window-x="67" inkscape:window-y="27" inkscape:window-maximized="1"/>  <metadata id="metadata3502">    <rdf:RDF>      <cc:Work rdf:about="">        <dc:format>image/svg+xml</dc:format>        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>        <dc:title/>      </cc:Work>    </rdf:RDF>  </metadata>  <g inkscape:label="Capa 1" inkscape:groupmode="layer" id="layer1" transform="translate(35.346176,62.242804)">    <g transform="matrix(0.35277777,0,0,-0.35277777,-499.64434,1710.8768)" id="g5302">      <g transform="translate(-122.02499,1696.451)" id="g6455">        <g transform="translate(1731.0088,3133.1494)" id="g1518">          <path inkscape:connector-curvature="0" id="path1520" style="fill:#fce364;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0"/>        </g>        <g transform="translate(1459.9448,3237.5205)" id="g1522">          <path inkscape:connector-curvature="0" id="path1524" style="fill:#e7660b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -4.629,2.543 -8.4,6.066 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.97,5.076 2.753,6.915 1.993,2.07 4.759,2.669 6.727,2.802 3.033,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 L 24.213,-7.357 C 21.217,-6.968 18.441,-6.488 15.959,-5.93 10.045,-4.57 4.674,-2.572 0,0"/>        </g>        <g transform="translate(1731.0088,3133.1494)" id="g1526">          <path inkscape:connector-curvature="0" id="path1528" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 -6.042,-11.727 c -6.579,-10.684 -16.059,-20.322 -28.15,-28.624 -12.201,-8.393 -26.441,-14.962 -42.282,-19.565 -16.504,-4.789 -34.026,-7.221 -52.102,-7.221 -17.292,0 -33.553,2.174 -48.32,6.465 -13.958,4.056 -26.263,9.932 -36.575,17.443 -9.956,7.272 -17.703,15.853 -23.025,25.491 -5.309,9.629 -8.003,20.009 -8.003,30.862 v 0.507 c 0,5.414 0.686,10.79 2.041,15.963 1.345,5.143 3.343,10.149 5.972,14.895 2.734,4.958 9.734,14.579 13.332,18.694 l 2.023,3.079 c 3.057,3.706 4.671,7.91 4.671,12.177 0,4.756 -1.784,9.229 -5.035,12.583 -0.402,0.416 -0.834,0.769 -1.534,1.334 -1.571,1.29 -3.317,2.258 -5.158,2.92 1.419,5.497 2.162,11.103 2.162,16.717 0,8.811 -1.66,17.351 -4.941,25.382 -1.55,3.813 -3.639,7.568 -6.048,11.228 0.608,2.264 1.262,4.32 1.979,6.108 2.772,6.809 6.745,12.916 11.799,18.16 5.03,5.234 10.906,9.346 17.449,12.214 13.446,5.926 29.126,5.935 42.618,0 6.534,-2.859 12.405,-6.965 17.451,-12.214 5.047,-5.244 9.017,-11.351 11.792,-18.16 2.879,-7.049 4.338,-14.55 4.338,-22.301 0,-7.758 -1.459,-15.259 -4.346,-22.291 -2.767,-6.801 -6.733,-12.922 -11.784,-18.178 -2.597,-2.695 -4.026,-6.268 -4.026,-10.054 0,-13.866 15.117,-18.242 15.922,-18.455 8.976,-2.129 17.653,-3.159 26.509,-3.159 9.441,0 18.727,0.991 27.609,2.936 8.389,1.855 16.065,4.605 22.826,8.187 6.745,3.571 12.095,7.797 16.096,12.837 l 3.311,4.917 c 3.366,6.085 4.959,12.223 4.742,18.194 l -0.086,1.158 c -0.073,2.016 1.1,3.482 1.786,4.184 2.328,2.313 6.177,2.503 8.865,-0.206 9.433,-9.408 16.84,-20.416 22.029,-32.713 C 5.222,67.114 7.94,53.665 7.94,39.775 7.964,25.9 5.245,12.437 0,0 m -271.064,104.371 c -4.629,2.543 -8.4,6.067 -10.215,8.322 -1.658,2.043 -3.422,5.471 -3.422,7.791 0,2.631 0.971,5.077 2.753,6.915 1.993,2.07 4.76,2.669 6.727,2.802 3.034,0.209 8.334,1.111 11.706,1.88 6.654,1.534 12.734,3.796 17.936,6.658 l 3.272,2.958 c 1.448,-2.431 2.768,-4.902 3.786,-7.39 2.88,-7.065 4.335,-14.556 4.335,-22.299 0,-5.221 -0.754,-10.444 -2.159,-15.559 l -10.506,0.565 c -2.996,0.389 -5.772,0.869 -8.253,1.427 -5.915,1.36 -11.286,3.358 -15.96,5.93 M 7.391,82.946 c -5.597,13.269 -13.6,25.15 -23.967,35.505 -5.381,5.389 -14.797,5.397 -20.203,0 -2.789,-2.782 -4.314,-6.513 -4.179,-10.275 l 0.082,-1.113 c 0.159,-4.501 -1.099,-9.207 -3.541,-13.661 l -2.926,-4.345 c -3.068,-3.835 -7.677,-7.445 -13.346,-10.451 -6.108,-3.239 -13.108,-5.725 -20.769,-7.426 -8.291,-1.81 -16.991,-2.741 -25.855,-2.741 -8.22,0 -16.264,0.963 -24.459,2.895 -0.105,0.032 -9.799,2.827 -9.799,10.564 0,1.659 0.621,3.211 1.745,4.383 5.78,6.018 10.308,13.004 13.467,20.751 3.283,8.007 4.952,16.554 4.952,25.384 0,8.813 -1.661,17.361 -4.945,25.382 -3.158,7.764 -7.702,14.749 -13.474,20.743 -5.789,6.02 -12.541,10.738 -20.042,14.031 -15.579,6.839 -33.67,6.834 -49.194,0 -7.526,-3.3 -14.274,-8.028 -20.05,-14.031 -5.777,-5.988 -10.301,-12.973 -13.481,-20.743 -0.927,-2.282 -1.748,-4.793 -2.496,-7.665 l -4.696,-4.407 c -4.586,-2.46 -9.808,-4.376 -15.535,-5.701 -2.995,-0.675 -7.838,-1.525 -10.441,-1.699 -4.88,-0.328 -9.057,-2.143 -12.057,-5.269 -3.251,-3.352 -5.045,-7.821 -5.045,-12.59 0,-4.774 2.823,-9.949 5.24,-12.93 2.395,-2.961 6.967,-7.223 12.621,-10.334 5.34,-2.941 11.424,-5.197 18.089,-6.728 2.779,-0.627 5.723,-1.139 9.322,-1.594 l 14.094,-0.766 c 1.929,-0.082 3.747,-0.793 5.279,-2.047 l 0.349,-0.281 c 0.175,-0.136 0.35,-0.261 0.512,-0.43 1.762,-1.826 2.733,-4.282 2.733,-6.903 0,-2.434 -0.98,-4.834 -2.93,-7.14 l -1.95,-2.972 c -3.993,-4.608 -11.178,-14.537 -14.135,-19.902 -2.95,-5.333 -5.206,-10.976 -6.719,-16.772 -1.528,-5.851 -2.298,-11.922 -2.298,-18.025 v -0.51 c 0,-12.242 3.03,-23.934 9.017,-34.794 5.893,-10.693 14.432,-20.163 25.353,-28.145 11.082,-8.076 24.244,-14.366 39.106,-18.693 15.507,-4.505 32.541,-6.794 50.604,-6.794 18.84,0 37.138,2.544 54.365,7.553 16.695,4.836 31.707,11.795 44.641,20.658 13.036,8.955 23.287,19.41 30.623,31.351 l 6.338,12.282 c 5.788,13.733 8.731,28.278 8.731,43.233 0.006,14.982 -2.936,29.498 -8.731,43.162"/>        </g>        <g transform="translate(1515.7363,3287.8154)" id="g1530">          <path inkscape:connector-curvature="0" id="path1532" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c 4.512,0 8.165,-3.655 8.165,-8.167 0,-4.503 -3.653,-8.164 -8.165,-8.164 -4.504,0 -8.163,3.661 -8.163,8.164 C -8.163,-3.655 -4.504,0 0,0"/>        </g>        <g transform="translate(1678.4385,3162.29)" id="g1534">          <path inkscape:connector-curvature="0" id="path1536" style="fill:#00354b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 h -0.01 c -2.249,0.501 -4.53,0.971 -6.906,1.371 -17.49,2.935 -37.511,2.941 -53.822,-0.009 -2.218,-0.406 -3.684,-2.518 -3.293,-4.753 0.406,-2.203 2.496,-3.673 4.752,-3.282 15.363,2.791 34.435,2.774 51.01,-0.009 2.224,-0.371 4.355,-0.814 6.45,-1.275 0.007,0 0.007,-0.01 0.007,-0.01 2.743,-0.611 5.397,-1.322 7.95,-2.129 -0.591,-5.347 -1.897,-10.449 -3.796,-14.966 l -3.339,-6.459 c -0.991,-1.637 -2.153,-3.208 -3.422,-4.755 -0.415,0.057 -0.845,0.103 -1.268,0.017 -15.587,-2.864 -32.759,-2.614 -46.919,0.741 -2.214,0.497 -4.392,-0.839 -4.918,-3.038 -0.519,-2.191 0.844,-4.393 3.036,-4.911 8.244,-1.962 17.215,-2.95 26.622,-2.95 4.463,0 8.898,0.256 13.265,0.694 -0.541,-0.408 -1.034,-0.814 -1.594,-1.205 -6.711,-4.599 -14.494,-8.203 -23.136,-10.715 -8.937,-2.605 -18.544,-3.931 -28.573,-3.931 -9.855,0 -18.953,1.203 -27.053,3.57 -7.736,2.266 -14.579,5.535 -20.335,9.729 -5.444,3.94 -9.686,8.611 -12.6,13.911 -2.882,5.249 -4.337,10.892 -4.337,16.784 v 0.287 c 0,2.258 -1.827,3.939 -4.081,3.939 -2.249,0 -4.084,-1.968 -4.084,-4.226 0,-7.279 1.796,-14.246 5.355,-20.723 3.504,-6.359 8.541,-11.953 14.96,-16.572 6.505,-4.752 14.2,-8.436 22.85,-10.966 8.834,-2.583 18.704,-3.895 29.339,-3.895 10.802,0 21.177,1.439 30.857,4.258 9.469,2.759 18.041,6.72 25.464,11.821 7.55,5.159 13.449,11.172 17.69,18.139 l 3.621,6.997 c 2.621,6.203 4.216,12.911 4.749,20.013 l 0.217,4.141 -2.878,1.001 C 8.091,-2.059 4.106,-0.924 0,0"/>        </g>      </g>    </g>  </g></svg>
 						<a>생후 12개월 ~ 24개월</a>

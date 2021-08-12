@@ -33,4 +33,7 @@ public interface IMemberSVC {
 			MemberVO selectOneMember(int MemberIndex);
 			MemberVO selectOneMember(String ld);
 			MemberVO selectOneMemberEmail(String email);
+			
+	// 전체 멤버 리스트를 가져올 수 있다.
+	List<MemberVO> takeAllMember();
 }

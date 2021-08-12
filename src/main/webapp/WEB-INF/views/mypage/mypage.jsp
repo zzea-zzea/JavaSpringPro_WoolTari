@@ -4,14 +4,14 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-<!-- 	<form action="mypage.woo"> -->
+	<form action="mypage.woo">
 		<main class="childcare_main my">
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
 						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원 내역조회</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내 게시글 조회</a></li>
 					</ul>
 				</div>
 				<div class="info_content">
@@ -22,13 +22,13 @@
 						</div>
 						<div class="childcare_content my">
 							<div class="childcare_content_menu mypage">
-								<input type="hidden" name="MemberIndex" value="${member.MemberIndex}">
-								<input type="hidden" name="Id" value="${member.Id}">
-								<input type="hidden" name="NickName" value="${member.NickName}">
-								<input type="hidden" name="IsMember" value="${member.IsMember}">
-								<input type="hidden" name="NumMember" value="${member.NumMember}">
-								<input type="hidden" name="Buisness" value="${member.Buisness}">
-								<input type="hidden" name="Phone" value="${member.Phone}">
+								<input type="hidden" name="MemberIndex" value="0">
+								<input type="hidden" name="Id" value="0">
+								<input type="hidden" name="NickName" value="0">
+								<input type="hidden" name="IsMember" value="0">
+								<input type="hidden" name="NumMember" value="0">
+								<input type="hidden" name="Buisness" value="0">
+								<input type="hidden" name="Phone" value="0">
 								<table class="table ">
 									<tbody>
 										<!-- 사업자 일때의 경우 스크립트로 td내용이 바뀌어야 함 주석 처리 한 내용들 스크립트 처리 해야함 -->
@@ -41,7 +41,7 @@
 											<td>이름</td>
 											<td><input type="text" id='Name' name='name'
 											 size='20' placeholder="회원실명"
-											  required value="${member.Name}"></td>
+											  required value="0"></td>
 										</tr>
 										<!-- <tr> -->
 										<!-- 	<td>대표자명</td> -->
@@ -65,7 +65,7 @@
 										<!-- 	</tr> -->
 										<tr>
 											<td>성별</td>
-											<td>${member.Gender}</td>
+											<td>0</td>
 										</tr>
 										<tr>
 											<td>별명</td>
@@ -73,15 +73,15 @@
 										</tr>
 										<tr class="success">
 											<td>생년월일</td>
-											<td>${member.Brith}</td>
+											<td>0</td>
 										</tr>
 										<tr class="danger">
 											<td>이메일주소</td>
-											<td>${member.Email}</td>
+											<td>0</td>
 										</tr>
 										<tr class="danger">
 											<td>비밀번호</td>
-											<td><input type="text" maxlength="20" name="Pw" value="${member.Pw}"><span>&nbsp;&nbsp;* 비밀번호가 일치 하지 않습니다</span></td>
+											<td><input type="text" maxlength="20" name="Pw" value="0"><span>&nbsp;&nbsp;* 비밀번호가 일치 하지 않습니다</span></td>
 										</tr>
 										<tr class="danger">
 											<td>비밀번호 확인</td>
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 		</main>
-<!-- 	</form> -->
+	</form>
 	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 </body>

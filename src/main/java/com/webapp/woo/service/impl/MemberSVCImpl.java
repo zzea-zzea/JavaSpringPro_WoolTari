@@ -1,5 +1,7 @@
 package com.webapp.woo.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -99,7 +101,13 @@ public class MemberSVCImpl implements IMemberSVC {
 	@Override
 	public MemberVO selectOneMemberEmail(String email) {
 		// TODO Auto-generated method stub
-		return null;
+		return mbDao.selectOneMemberEmail(email);
+	}
+
+	@Override
+	public List<MemberVO> takeAllMember() {
+		// TODO Auto-generated method stub
+		return mbDao.takeAllMember();
 	}
 
 }

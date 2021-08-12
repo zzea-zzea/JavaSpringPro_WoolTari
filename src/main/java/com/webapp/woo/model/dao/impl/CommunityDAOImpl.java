@@ -117,7 +117,9 @@ public class CommunityDAOImpl implements ICommunityDAO {
 	@Override
 	public List<CommunityVO> selectAllCommunitysForMember(int mbId) {
 		
-		return null;
+		return jtem.query("select * from board where member_index = ?", 
+				BeanPropertyRowMapper.newInstance(CommunityVO.class)
+				, mbId);
 	}
 
 	@Override

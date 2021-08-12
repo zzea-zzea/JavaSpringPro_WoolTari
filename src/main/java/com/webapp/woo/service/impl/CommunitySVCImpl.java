@@ -65,7 +65,7 @@ public class CommunitySVCImpl implements ICommunitySVC {
 	@Override
 	public List<CommunityVO> selectAllCommunitysForMember(int mbId) {
 		// TODO Auto-generated method stub
-		return null;
+		return ctDao.selectAllCommunitysForMember(mbId);
 	}
 
 	@Override

@@ -21,6 +21,13 @@ public class CommentSVCImpl implements ICommentSVC {
 		// TODO Auto-generated method stub
 		return CommetDAO.Writecomment(CR, memberIndex, boardIndex);
 	}
+	
+
+	@Override
+	public int Writecomment(CommentVO CR) {
+		// TODO Auto-generated method stub
+		return CommetDAO.Writecomment(CR);
+	}
 
 	@Override
 	public boolean updateOneComment(CommentVO CR) {

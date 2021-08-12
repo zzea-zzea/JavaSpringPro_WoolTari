@@ -1,18 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="mypage_boa.woo">
 		<main class="childcare_main my">
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
 					<ul>
 						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/mypage.woo">회원 정보 수정</a></li>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
-						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원 내역조회</a></li>
+						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내 게시글 조회</a></li>
 					</ul>
 				</div>
 				<div class="info_content">
@@ -34,70 +31,29 @@
 										</tr>
 									</thead>
 									<tbody>
+									<c:if test="${not empty userCtList}">			
+									<c:forEach var="ct" items="${userCtList}" varStatus="vs">
 										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 											<th scope="row">1</th>
-											<td>글 제목 입니다.</td>
-											<td>육아정보</td>
-											<td>2021-05-28</td>
-											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
+											<td><c:out value="${ct.title}"/></td>
+											<td><c:if test="${ct.cate eq 1}">일상</c:if>
+											<c:if test="${ct.cate eq 2}">지원정보</c:if>
+											<c:if test="${ct.cate eq 3}">병원정보</c:if>
+											<c:if test="${ct.cate eq 4}">시설</c:if>
+											<c:if test="${ct.cate eq 5}">육아정보</c:if>
+											<c:if test="${ct.cate eq 6}">무료나눔</c:if>
+											<td><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
+											<c:if test="${not empty mbLoginName}">
+											<td><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">조회 하러 가기</a></td>
+												</c:if>
 										</tr>
 										<tr>
 											<td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
-													doloremque magnam reiciendis tempore sapiente.
-													Necessitatibus recusandae harum nam sit perferendis quia
-													inventore natus.</p>
+												<p><c:out value="${ct.content}" /></p>
 											</td>
 										</tr>
-										<tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
-											<th scope="row">2</th>
-											<td>글 제목 입니다.</td>
-											<td>무료나눔</td>
-											<td>2021-05-28</td>
-											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
-										</tr>
-										<tr>
-											<td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
-													doloremque magnam reiciendis tempore sapiente.
-													Necessitatibus recusandae harum nam sit perferendis quia
-													inventore natus.</p>
-											</td>
-										</tr>
-										<tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
-											<th scope="row">3</th>
-											<td>글 제목 입니다.</td>
-											<td>정책정보</td>
-											<td>2021-05-28</td>
-											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
-										</tr>
-										<tr>
-											<td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
-													doloremque magnam reiciendis tempore sapiente.
-													Necessitatibus recusandae harum nam sit perferendis quia
-													inventore natus.</p>
-											</td>
-										</tr>
-										<tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
-											<th scope="row">4</th>
-											<td>글 제목 입니다.</td>
-											<td>무료나눔</td>
-											<td>2021-05-28</td>
-											<td><button class="btn_selected_gosite">조회 하러 가기</button></td>
-										</tr>
-										<tr>
-											<td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Porro iste, facere sunt sequi nostrum ipsa, amet
-													doloremque magnam reiciendis tempore sapiente.
-													Necessitatibus recusandae harum nam sit perferendis quia
-													inventore natus.</p>
-											</td>
-										</tr>
+										</c:forEach>
+										</c:if>
 									</tbody>
 								</table>
 							</div>
@@ -106,7 +62,6 @@
 				</div>
 			</div>
 		</main>
-	</form>
 	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 </body>

@@ -60,7 +60,7 @@
 							<span>|</span>
 							<dl>
 								<dt>작성일</dt>
-								<dd><fmt:formatDate value="${community.write_date}" pattern="yyyy년 MM월 dd일" /></dd>
+								<dd><fmt:formatDate value="${community.write_date}" pattern="yyyy년 MM월 dd일"/></dd>
 							</dl>
 							<span>|</span>
 							<dl>
@@ -109,36 +109,56 @@
 					<a class="btn_content" href="#" onclick="del(${community.board_index})">[삭제]</a>
 				</c:if>
 			</c:if>
-<!-- 					<input type="button" value="삭제" class="btn_content" -->
-<!-- 						onclick="delete_check()"> <input type="button" value="수정" -->
-<!-- 						class="btn_content" -->
-<!-- 						onclick="retouch_check()"> -->
 				</div>
-				<div class="community_comment_box">
-					<div class="all_comment">댓글 1개</div>
+					<c:out value="${asSize}" default="0" />개
 					<br>
-					<div class="community_comment">
-						<input type="image" src="${path}/resources/img/reply/man.png"
-							class="comment_image"> <input type="text"
-							placeholder="댓글을 입력해주세요" class="comment" size="70px"> <input
-							type="button" value="등록" class="comment_sumit"
-							onclick="input_check()">
-					</div>
+					<form action="${pageContext.request.contextPath}/Writecomment.woo" method="post">
+						<div class="community_comment">
+							<input type="hidden" name="boardIndex" value="${!empty CV ? CV.boardId: param.atId}">
+							<input type="hidden" name="memberIndex" value="${mbPKId}">
+								<input type="text"
+								placeholder="댓글을 입력해주세요" class="comment" name="content" size='70'> <input type="submit" value="등록"
+								class="comment_sumit">
+						</div>
+					</form>
 					<!-- community_comment -->
 					<div class="reply">
-						<div class="reply_image">
-							<input type="image" src="${path}/resources/img/reply/man.png">
-						</div>
-						<div class="reply_name">
-							아무개
-							<div class="reply_date">2020-07-21-21-12-33</div>
-						</div>
-						<div class="reply_show">댓글입니다 아무개가 썻어요</div>
-						<div class="reply_del_ret">
-							<button class="input_new_reply">답글쓰기</button>
-							&nbsp;<a role="button" class="layer_button" onclick="reply_delete_check()">삭제</a> <a
-								role="button" class="layer_button">수정</a>
-						</div>
+						<c:choose>
+							<c:when test="${!empty asSize}">
+								<ul>
+									<c:forEach var="as" items="${asList}">
+												<div class="reply_name">
+												<c:if test="${mbLoginList.memberIndex eq as.memberIndex}">
+													${mbLoginList.nickname}
+												</c:if>
+													<div class="reply_date"><fmt:formatDate value="${as.createDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>
+												</div>
+												<div class="reply_show">${as.content}</div>
+												<form action="${pageContext.request.contextPath}/retouch_comment.woo">
+												<input type="hidden" name="articleId" value=
+														"${!empty cv ? cv.boardId: param.boardId}">
+													<input type="hidden" name="memberId" value=			
+														"${!empty cv ? cv.memberId: param.memberId}">
+													<input type="hidden" name="id" value=
+														"${!empty cv ? cv.commentId: param.commentId}">	
+												<div class="retouch_reply" style="display: none"><input type="text"
+								value="${as.content}" class="comment" name="content" size='70'> <input type="submit" value="수정"
+								class="retouch_submit"></div>
+								</form>
+												<div class="reply_del_ret">
+													<button class="input_new_reply">댓글 쓰기</button>
+													<c:if test="${as.memberIndex eq mbPKId}">
+													&nbsp;<a role="button" class="layer_button" onclick="comment_delete_check()">삭제</a> <a
+														 class="retouch_button">수정</a>
+														</c:if>
+												</div>
+								</c:forEach>
+								</ul>
+							</c:when>
+							<c:when test="${empty asSize}">
+								<i>아직 댓글이 하나도 없습니다! :)</i>
+							</c:when>
+						</c:choose>
 						<div class="community_reply" id="a">
 							<input type="image" src="${path}/resources/img/reply/woman.png"
 								class="comment_image_re"> <input type="text"
@@ -159,11 +179,16 @@
 </body>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-$(document).ready(
-		$('input_new_reply').click(function(){
-			$('#a').toggle();
-		})
-		);
+$(document).ready(function(){
+// 		$('input_new_reply').click(function(){
+// 			$('#a').toggle();
+// 		})
+		$('.retouch_button').click(function() {
+			$('.reply_show').hide();
+			$('.retouch_reply').show();	
+		});
+		
+});
 </script>
 <script>
 	function delete_check() {

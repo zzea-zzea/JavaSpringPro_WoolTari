@@ -1,6 +1,5 @@
 package com.webapp.woo.model.vo;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Comment_deVO {
@@ -47,6 +46,8 @@ public class Comment_deVO {
 	public void setComment_index(int comment_index) {
 		this.comment_index = comment_index;
 	}
+	
+	public Comment_deVO() {}
 	
 	public Comment_deVO(int comment_de_index, String content, Timestamp creat_date, int depth, int member_index,
 			int comment_index) {

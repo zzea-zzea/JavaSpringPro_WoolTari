@@ -9,6 +9,7 @@ public interface ICommentDAO {
 
 	// 회원이 게시글에 댓글을 달 수 있다.
 		boolean Writecomment(CommentVO CR, int memberIdex, int boardIndex);
+		int Writecomment(CommentVO CR);
 
 		// 회원이 게시글에 단 댓글을 수정 할 수 있다.
 		boolean updateOneComment(CommentVO CR);

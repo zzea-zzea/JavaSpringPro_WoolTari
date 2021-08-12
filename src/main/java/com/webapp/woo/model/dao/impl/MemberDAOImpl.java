@@ -3,6 +3,7 @@ package com.webapp.woo.model.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -244,6 +245,12 @@ public class MemberDAOImpl implements IMemberDAO {
 	public String decryptPassword(int mbId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<MemberVO> takeAllMember() {
+		// TODO Auto-generated method stub
+		return jtem.query("select * from member",new MemberRowMapper());
 	}
 
 }

@@ -1,5 +1,8 @@
 package com.webapp.woo.model.dao.inf;
 
+import java.util.List;
+
+import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.MemberVO;
 
 public interface IMemberDAO {
@@ -33,4 +36,7 @@ public interface IMemberDAO {
 		MemberVO selectOneMember(int MemberIndex);
 		MemberVO selectOneMember(String ld);
 		MemberVO selectOneMemberEmail(String email);
+		
+		// 전체 멤버 리스트를 가져올 수 있다.
+		List<MemberVO> takeAllMember();
 }

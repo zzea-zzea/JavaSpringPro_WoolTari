@@ -83,13 +83,13 @@
 						</c:if>
 						<c:if test="${empty mbLoginName}">
 						<tr onclick="showLoginPage()">
+						</tr>
 						</c:if>
 							<td><c:out value="${ctSize}" default="0"/></td>
 							<td><c:out value="${ct.title}" default="제목없음"/></td> 
 							<td><c:out value="${mbLoginList[vs.index]}" default="이름없음"/></td>
 							<td><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
 							<td><c:out value="${ct.views}" default="0"/></td>
-						</tr>
 					</c:forEach>
 					</c:if>	
 								</tbody>

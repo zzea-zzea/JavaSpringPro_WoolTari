@@ -1,5 +1,8 @@
 package com.webapp.woo.model.dao.impl;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
 
@@ -8,6 +11,9 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.webapp.woo.model.dao.inf.ICommentDAO;
@@ -34,6 +40,29 @@ public class CommentDAOImpl implements ICommentDAO {
 		}
 	}
 
+
+	@Override
+	public int Writecomment(CommentVO CR) {
+		KeyHolder kh = new GeneratedKeyHolder();
+		PreparedStatementCreator psc = new PreparedStatementCreator() {			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement pstmt = 
+						con.prepareStatement("insert into comment(content, create_date, member_index, board_index) values(?,now(),?,?)", 
+						new String[] {"comment_index"});
+				pstmt.setString(1, CR.getContent());
+				pstmt.setInt(2, CR.getmemberIndex());
+				pstmt.setInt(3, CR.getboardIndex());
+				return pstmt;
+			}
+		};		
+		System.out.println("jtme = " + jtem);
+		int r = jtem.update(psc, kh);
+		return r == 1 ? kh.getKey().intValue(): 0;
+		// 방금 막 생성된 댓글 레코드의 pk가 리턴됨..
+	}
+
+	
 	@Override
 	public boolean updateOneComment(CommentVO CR) {
 		try {

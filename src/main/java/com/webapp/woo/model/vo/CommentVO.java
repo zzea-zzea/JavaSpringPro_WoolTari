@@ -1,6 +1,5 @@
 package com.webapp.woo.model.vo;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class CommentVO {
@@ -49,6 +48,7 @@ public class CommentVO {
 		this.boardIndex = boardIndex;
 	}
 	
+	public  CommentVO() {}
 	
 	public CommentVO(int commentIndex, String content, Timestamp createDate, int depth, int memberIndex,
 			int boardIndex) {

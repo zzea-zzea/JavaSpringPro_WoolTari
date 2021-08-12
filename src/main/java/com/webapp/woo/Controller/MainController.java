@@ -29,11 +29,13 @@ import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.CommunityVO;
 import com.webapp.woo.model.vo.LocationVO;
 import com.webapp.woo.model.vo.MemberVO;
+import com.webapp.woo.model.vo.SupportVO;
 import com.webapp.woo.service.inf.ICommentSVC;
 import com.webapp.woo.service.inf.ICommunitySVC;
 import com.webapp.woo.service.inf.IFileManageSVC;
 import com.webapp.woo.service.inf.ILocationSVC;
 import com.webapp.woo.service.inf.IMemberSVC;
+import com.webapp.woo.service.inf.ISupportSVC;
 
 @Controller
 public class MainController {
@@ -48,6 +50,8 @@ public class MainController {
 	ICommentSVC CommentSVC;
 	@Autowired
 	ILocationSVC LocationSVC;
+	@Autowired
+	ISupportSVC SupportSVC;
 
 	private static final Logger mbLogger = LoggerFactory.getLogger(MainController.class);
 
@@ -241,27 +245,28 @@ public class MainController {
 		}
 	}
 	   
-	   @RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
+	 @RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
 		public String commentAddProc(HttpSession ses, Model model,
-				@RequestParam(value = "CV") CommentVO CV, 
-				@RequestParam(value = "memberId") int memberIndex,
-				@RequestParam(value = "boardId") int boardIndex ) {
-		   ModelAndView mav = new ModelAndView();
-			boolean asId = CommentSVC.Writecomment(CV, memberIndex, boardIndex);
-			if( asId ) {
-				return "redirect:/community_view.woo?atId="+CV.getboardIndex();
+				RedirectAttributes rdAttr,
+				CommentVO CVO) {
+				System.out.println("CV = " + CVO);
+		
+		   int asId = CommentSVC.Writecomment(CVO);
+			if( asId > 0  ) {
+				rdAttr.addFlashAttribute("msgrd", "방금 추가된 댓글 PK: " + asId);
+				return "redirect:/content_view.woo?atId="+CVO.getboardIndex();
 				// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
 			} else {
 				System.out.println("댓글 등록 실패!");
 				model.addAttribute("msg", "댓글 등록 실패!");
 				model.addAttribute("member", 
-						mbSvc.selectOneMember(CV.getmemberIndex()));
-				return "redirect:/community_view.woo?atId="+CV.getboardIndex();
+						mbSvc.selectOneMember(CVO.getmemberIndex()));
+				return "answer/as_new_form";
 			}
-		}
+		}	  
 	   
 	   
-	   @RequestMapping(value = "/retouch.woo", method = RequestMethod.POST)
+	 @RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
 		public String retouch(HttpSession ses, Model model,
 				@RequestParam(value = "commentId") int commentIndex, 
 				@RequestParam(value = "memberId") int memberIndex,
@@ -270,6 +275,7 @@ public class MainController {
 		int sesMbId = (int)ses.getAttribute("mbPKId");
 		if( sesMbId == memberIndex ) { // 댓글 작성자 인증
 			CommentVO cv = CommentSVC.selectOneComment(commentIndex);
+			List<MemberVO> mbLoginList = mbSvc.takeAllMember();
 			if( cv != null ) {
 				model.addAttribute("cv", cv);
 				MemberVO mb = mbSvc.selectOneMember(memberIndex);
@@ -283,7 +289,7 @@ public class MainController {
 			rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: 댓글 작성자 불일치");
 			return "community:/content_view.woo?boardId="+ boardIndex;
 		}		
-	   }
+	}
 	   
 	   @RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.POST)
 	   public String deleteCommentProc(HttpSession ses, Model model,
@@ -305,38 +311,49 @@ public class MainController {
 		   }
 	   }
 	   
-	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-	public String ContentViewProc(int atId, HttpSession ses, Model model) {
-		CommunityVO ct = ctSvc.selectOneCommunity(atId);
-		String ctFilePath = ct.getImg_path();
-		
-		String fps[] = null;
-		int fpCount = -1;
-		if(ctFilePath != null && !ctFilePath.isEmpty()) {
-			if( ctFilePath.indexOf(IFileManageSVC.MULTI_FILE_SEP) != -1 ) {
-				fps = ctFilePath.split("\\|"); // 더블 이스케이프!!
-						// |는 정규식 기호 임.. 
-						// \|로 보내야 정규식에서 그냥 문자로써의 |
-				fpCount = fps.length; // 2개이상의 파일경로들
-			} else {
-				fpCount = 1; // 단 1개가 구분자없이 파일경로 하나.
-				fps = new String[] { ctFilePath };
-			}
-			model.addAttribute("fps", fps);
-		} else {
-			fpCount = 0;
-		}
-		model.addAttribute("fpCount", fpCount);
-		
-		if(ct != null) {
-			model.addAttribute("community", ct); // vo el 속성화..
-			return "community/content_view"; //fw + _as_list.jsp 조각을 포함
-			
-		} else {
-			return "redirect:content.woo"; //re
-		}
-		
-	}
+	   @RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
+	 	//>>>>>>> branch 'master' of https://github.com/zzea-zzea/JavaSpringPro_wooltari.git
+	 		public String ContentViewProc(int atId, HttpSession ses, Model model) {
+	 			CommunityVO ct = ctSvc.selectOneCommunity(atId);
+	 			String ctFilePath = ct.getImg_path();
+	 			
+	 			String fps[] = null;
+	 			int fpCount = -1;
+	 			if(ctFilePath != null && !ctFilePath.isEmpty()) {
+	 				if( ctFilePath.indexOf(IFileManageSVC.MULTI_FILE_SEP) != -1 ) {
+	 					fps = ctFilePath.split("\\|"); // 더블 이스케이프!!
+	 							// |는 정규식 기호 임.. 
+	 							// \|로 보내야 정규식에서 그냥 문자로써의 |
+	 					fpCount = fps.length; // 2개이상의 파일경로들
+	 				} else {
+	 					fpCount = 1; // 단 1개가 구분자없이 파일경로 하나.
+	 					fps = new String[] { ctFilePath };
+	 				}
+	 				model.addAttribute("fps", fps);
+	 			} else {
+	 				fpCount = 0;
+	 			}
+	 			model.addAttribute("fpCount", fpCount);
+	 			
+	 			if(ct != null) {
+	 				model.addAttribute("community", ct); // vo el 속성화..
+	 				
+	 				List<CommentVO>	coList = CommentSVC.CommentListForBoard(atId);
+	 				// 특정 게시글에 종속된 전체 댓글 리스트
+	 				if( coList != null ) {
+	 					int asSize = coList.size();
+	 					model.addAttribute("asSize", asSize);
+	 					model.addAttribute("asList", coList);
+	 					model.addAttribute("atId", atId);
+	 				} else {
+	 					model.addAttribute("msg", "게시글 종속 댓글 조회실패");
+	 				}
+	 				return "community/content_view"; //fw + _as_list.jsp 조각을 포함
+	 				
+	 			} else {
+	 				return "redirect:content.woo"; //re
+	 			}
+	 		}
 	
 	@RequestMapping(value = "retouch_content.woo", method = RequestMethod.GET)
 	public String RetouchContent(Model model, HttpSession ses, 
@@ -657,44 +674,39 @@ public class MainController {
 
 	@RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
 	public ModelAndView Mypage(HttpServletRequest request, int mbId) {
-			
-		String strMbId = request.getParameter("mbId");
-		MemberVO mb = null;
-		ModelAndView mav = new ModelAndView();
-		//
-//		if( strMbId == null ) { // mbId 파람 자체가 없을 때..
-//			String id = request.getParameter("id"); // <<UQ>>
-//			if( id == null ) {
-//				
-//				mav.setViewName("redirect:main.woo");
-//				return mav;
-//			}
-//			mb = this.mbSvc.selectOneMember(id);	 //<<UQ>>		
-//		} else {
-		 	mbId = Integer.parseInt(strMbId); // <<PK>>
-			mb = this.mbSvc.selectOneMember(mbId);
-//		}		
-		
-		if( mb != null ) {
-			mav.addObject("member", mb); // vo객체가 속성화 (EL 객체화)
-			mav.setViewName("member/mypage"); // FW
-		} else { // DAO - Error : EmptyResultDAE/DAE 발생...
-			mav.setViewName("redirect:main.woo");
-		}
+		ModelAndView mav = new ModelAndView("mypage/mypage");
+
 		
 		return mav;
 	}
 	
 	
 	@RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
-	public ModelAndView MypageSupport(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("mypage/mypage_sup");
+	public ModelAndView MypageSupport(HttpSession ses, Model model,
+			   HttpServletRequest request) {
+		int memberIndex = Integer.parseInt(request.getParameter("mbId"));
+		ModelAndView mav = new ModelAndView();
+		System.out.println("mbId = " + memberIndex);
+		List<SupportVO> userSpList = SupportSVC.oneUserSupport(memberIndex);
+		mav.addObject("userSpList", userSpList);
+		for (int i = 0; i < userSpList.size(); i++) {
+			System.out.println(userSpList.get(i));
+		}
+		mav.setViewName("mypage/mypage_sup");
 		return mav;
 	}
 
 	@RequestMapping(value = "mypage_boa.woo", method = RequestMethod.GET)
-	public ModelAndView MypageBoard(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("mypage/mypage_boa");
+	public ModelAndView MypageBoard(HttpSession ses, Model model,
+			   HttpServletRequest request) {
+		
+		int memberIndex = Integer.parseInt(request.getParameter("mbId"));
+		ModelAndView mav = new ModelAndView();
+		System.out.println("mbId = " + memberIndex);
+		List<CommunityVO> userCtList = ctSvc.selectAllCommunitysForMember(memberIndex);
+		model.addAttribute("ct", userCtList); 
+		mav.addObject("userCtList", userCtList);
+		mav.setViewName("mypage/mypage_boa");
 		return mav;
 	}
 
