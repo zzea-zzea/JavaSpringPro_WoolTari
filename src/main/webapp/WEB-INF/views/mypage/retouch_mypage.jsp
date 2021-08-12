@@ -26,12 +26,7 @@
 							<div class="childcare_content_menu mypage">
 							<form method="post" action="member_update.woo">
 								<input type="hidden" name="memberIndex" value="${member.memberIndex}">
-								<input type="hidden" name="id" value="${member.id}">
-								<input type="hidden" name="nickName" value="${member.nickName}">
-								<input type="hidden" name="isMember" value="${member.isMember}">
-								<input type="hidden" name="numMember" value="${member.numMember}">
-								<input type="hidden" name="buisness" value="${member.buisness}">
-								<input type="hidden" name="phone" value="${member.phone}">
+								
 								<table class="table">
 									<tbody>
 										<tr>
@@ -41,11 +36,16 @@
 										</tr>
 										<tr>
 											<td>휴대폰 번호</td>
-											<td class="phone_si"><input type="text" maxlength="3">&nbsp;-&nbsp;<input
-												type="password" maxlength="4">&nbsp;-&nbsp;<input
-												type="password" maxlength="4"></td>
+											<td class="phone_si">
+												<input type="text" maxlength="3">&nbsp;-&nbsp;
+												<input type="text" maxlength="4">&nbsp;-&nbsp;
+												<input type="text" maxlength="4">
+											</td>
 										</tr>
-										
+										<tr>
+											<td>별명</td>
+											<td><input type="text" id="nickName" name="nickName"></td>
+										</tr>
 										<tr class="danger">
 											<td>새 비밀번호</td>
 

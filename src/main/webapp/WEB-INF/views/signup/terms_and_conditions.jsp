@@ -6,6 +6,7 @@
 <body>
    
    <%@ include file="../index.jsp" %>
+    <form action="conditions.woo">
    	<main class="terms_and_conditions_main"> 
    
  
@@ -13,7 +14,7 @@
 	<title>울타리 이용약관</title>
 
   <body style="box-sizing: border-box">
-      <form action="sign_up.woo">
+     
 
 	<div class="modal-wrapper_join2">
 	
@@ -81,7 +82,7 @@ for(var i=0 ; i<chkbox.length ; i++) {
 } 
        if(chk) { 
            alert("모든 약관에 동의함.");
-           location.replace('sign_up2.woo');
+           location.replace('sign_up.woo');
        } else { alert("필수 약관에 동의해 주세요.") 
  
                return false;

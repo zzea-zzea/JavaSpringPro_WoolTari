@@ -4,80 +4,98 @@
 <script type="text/javascript">
 function panTo() {
 	var selBox = document.getElementById("localsel");
+	var selBoxlen = document.getElementById("localsel").length;
 	var selOp = document.getElementById("localsel").options.selectedIndex;
 
 	if (selOp == 0) {
 		var moveLatLon = new kakao.maps.LatLng(37.564325, 126.985864); // 서울
+		location.href="info_center.woo?si=서울";
 	} else if (selOp == 1) {
 		var moveLatLon = new kakao.maps.LatLng(35.160360, 129.046564); // 부산
+		location.href="info_center.woo?si=부산";
 	} else if (selOp == 2) {
 		var moveLatLon = new kakao.maps.LatLng(35.852325, 128.565325); // 대구
+		location.href="info_center.woo?si=대구";
 	} else if (selOp == 3) {
 		var moveLatLon = new kakao.maps.LatLng(37.509479, 126.705247); // 인천
+		location.href="info_center.woo?si=인천";
 	} else if (selOp == 4) {
 		var moveLatLon = new kakao.maps.LatLng(35.152789, 126.822940); // 광주
+		location.href="info_center.woo?si=광주";
 	} else if (selOp == 5) {
 		var moveLatLon = new kakao.maps.LatLng(36.343772, 127.386738); // 대전
+		location.href="info_center.woo?si=대전";
 	} else if (selOp == 6) {
 		var moveLatLon = new kakao.maps.LatLng(35.547505, 129.244038); // 울산
+		location.href="info_center.woo?si=울산";
 	} else if (selOp == 7) {
 		var moveLatLon = new kakao.maps.LatLng(37.610051, 127.227627); // 경기
+		location.href="info_center.woo?si=경기";
 	} else if (selOp == 8) {
 		var moveLatLon = new kakao.maps.LatLng(37.836998, 128.398704); // 강원
+		location.href="info_center.woo?si=강원";
 	} else if (selOp == 9) {
 		var moveLatLon = new kakao.maps.LatLng(36.840788, 127.749801); // 충북
+		location.href="info_center.woo?si=충북";
 	} else if (selOp == 10) {
 		var moveLatLon = new kakao.maps.LatLng(36.606622, 126.876108); // 충남
+		location.href="info_center.woo?si=충남";
 	} else if (selOp == 11) {
 		var moveLatLon = new kakao.maps.LatLng(35.784236, 127.138640); // 전북
+		location.href="info_center.woo?si=전북";
 	} else if (selOp == 12) {
 		var moveLatLon = new kakao.maps.LatLng(34.942881, 126.879671); // 전남
+		location.href="info_center.woo?si=전남";
 	} else if (selOp == 13) {
 		var moveLatLon = new kakao.maps.LatLng(36.339425, 128.888933); // 경북
+		location.href="info_center.woo?si=경북";
 	} else if (selOp == 14) {
 		var moveLatLon = new kakao.maps.LatLng(35.406681, 128.173946); // 경남
+		location.href="info_center.woo?si=경남";
 	} else if (selOp == 15) {
 		var moveLatLon = new kakao.maps.LatLng(33.379081, 126.567569); // 제주
+		location.href="info_center.woo?si=제주";
 	}
 	map.setCenter(moveLatLon);
 }
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="info_center.woo" method="get">
 		<main class="center_main">
 			<div class="center_box ma">
 				<div class="center_content_title">
 					<h2>시설 정보</h2>
 					<span>해당 지역 선택시 하단의 리스트를 통해 시설정보를 알아보세요!</span>
 				</div>
-				<div class="center_content_search">
-					<select class="selectpicker le" data-size="5" id="localsel">
-						<option value="서울">서울</option>
-						<option value="부산">부산</option>
-						<option value="대구">대구</option>
-						<option value="인천">인천</option>
-						<option value="광주">광주</option>
-						<option value="대전">대전</option>
-						<option value="울산">울산</option>
-						<option value="경기">경기</option>
-						<option value="강원">강원</option>
-						<option value="충북">충북</option>
-						<option value="충남">충남</option>
-						<option value="전북">전북</option>
-						<option value="전남">전남</option>
-						<option value="경북">경북</option>
-						<option value="경남">경남</option>
-						<option value="제주">제주</option>
-					</select>
-					<div class="search_btn"><a id="locabtn" onclick="panTo()">검색</a></div>
-				</div>
+				<form action="info_center.woo" method="get">
+					<div class="center_content_search">
+						<select class="selectpicker le" data-size="5" id="localsel" name="local_si">
+							<option value="서울" selected>서울</option>
+							<option value="부산">부산</option>
+							<option value="대구">대구</option>
+							<option value="인천">인천</option>
+							<option value="광주">광주</option>
+							<option value="대전">대전</option>
+							<option value="울산">울산</option>
+							<option value="경기">경기</option>
+							<option value="강원">강원</option>
+							<option value="충북">충북</option>
+							<option value="충남">충남</option>
+							<option value="전북">전북</option>
+							<option value="전남">전남</option>
+							<option value="경북">경북</option>
+							<option value="경남">경남</option>
+							<option value="제주">제주</option>
+						</select>
+						<div class="search_btn"><a id="locabtn" onclick="panTo()">검색</a></div>
+					</div>
+				</form>
 				<div class="center_content_location" id="map"></div>
 				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e2858e3180808590dc8e575f6f6b84ef&libraries=services"></script>
 				<script>
 					var mapContainer = document.getElementById('map'),  
 					mapOption = {
-						center : new kakao.maps.LatLng(37.531220, 126.987537), 
+						center : panTo(), 
 						level : 8
 					};
 					var map = new kakao.maps.Map(mapContainer, mapOption);
@@ -113,7 +131,7 @@ function panTo() {
 				</div>
 			</div>
 		</main>
-	</form>
+	
 	<%@ include file="../common/_script.jsp"%>
 </body>
 </html>
