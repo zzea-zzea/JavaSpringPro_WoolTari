@@ -1,3 +1,4 @@
+
 package com.webapp.woo.service.inf;
 
 import java.util.List;
@@ -9,3 +10,4 @@ public interface ILocationSVC {
 	List<LocationVO> selectAllLocationList(String local_si);
 	
 }
+

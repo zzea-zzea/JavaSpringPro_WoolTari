@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script>
 function showMyPage(mbId) {
-	//location.href = 'article_show.my?atId=' + atId; 
+	
 	location.href = 
 		'${pageContext.request.contextPath}/mypage.woo?mbId='
 				+ mbId;
@@ -31,7 +31,7 @@ function showMyPage(mbId) {
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
 
 				<li><a class="btn_def" href="${pageContext.request.contextPath}/login.woo">Login</a></li>
-				<li><a class="btn_def" href="${pageContext.request.contextPath}/mypage.woo">mypage</a></li>
+				<li><a class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>

@@ -23,84 +23,68 @@ public class MemberDAOImpl implements IMemberDAO {
 
 		@Override
 		public MemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-			
-			return new MemberVO(
-					rs.getInt("member_index"),
-					rs.getString("id"),
-					rs.getString("pw"),
-					rs.getString("name"), 
-					rs.getString("phone"), 
-					rs.getString("brith"), 
-					rs.getString("nick_name"), 
-					rs.getInt("gender"),
-					rs.getString("email"),
-					rs.getInt("is_member"),
-					rs.getString("num_member"),
+
+			return new MemberVO(rs.getInt("member_index"), rs.getString("id"), rs.getString("pw"), rs.getString("name"),
+					rs.getString("phone"), rs.getString("brith"), rs.getString("nick_name"), rs.getInt("gender"),
+					rs.getString("email"), rs.getInt("is_member"), rs.getString("num_member"),
 					rs.getString("buisness"));
 		}
-		
+
 	}
 
 	// SQL 상수 정의부
-	
+
 	public static final String SQL_INSERT_MEMBER_CRYPTO // 암호화 aes,hex
-    = "insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ";
-	
+			= "insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ";
+
 	public static final String SQL_MEMBER_DUPCHECK = "select count(id) from member where id = ?"; // 1 or 0
-	
-	public static final String SQL_MEMBER_NICKCHECK = "select count(nick_name) from member where nick_name = ?"; // 1 or 0
+
+	public static final String SQL_MEMBER_NICKCHECK = "select count(nick_name) from member where nick_name = ?"; // 1 or
+																													// 0
 
 	private static final String SQL_SELECT_ALL_MEMBERS = "select * from member order by joined_at desc";
 
 	private static final String SQL_SELECT_ONE_MEMBER_MEMBER_INDEX = "select * from member where member_index = ?";
 
 	private static final String SQL_SELECT_ONE_MEMBER_PW = "select * from member where pw = ?";
-	
+
 	private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where id = ?";
 
 	private static final String SQL_SELECT_ONE_MEMBER_EMAIL = "select * from member where email = ?";
 
 	private static final String SQL_SELECT_IDFIND = "select id from member where name = ? AND email = ?";
-	
+
 	private static final String SQL_SELECT_PWFIND = "select pw from member where id = ? AND email = ?";
-	
-	private static final String SQL_UPDATE_PW ="update member set pw=hex(aes_encrypt(?, ?)) where id = ? AND email = ?";
-	
-	private static final String SQL_UPDATE_MEMBER = "update member set name=?, age=?, email=?," // 암호화 pw
-			+ " pw=hex(aes_encrypt(?, ?)), updated_at = now() where id = ?";
 
-	private static final String SQL_DECRYPT_PW =
-			"select member_index, email , id, "
-			+ "cast(aes_decrypt(unhex(pw),?) as char(32) " 
-			+ "character set utf8) as pw "
-			+ "from member where id = ?";
-	
+	private static final String SQL_UPDATE_PW = "update member set pw=hex(aes_encrypt(?, ?)) where id = ? AND email = ?";
 
+	private static final String SQL_DECRYPT_PW = "select member_index, email , id, "
+			+ "cast(aes_decrypt(unhex(pw),?) as char(32) " + "character set utf8) as pw " + "from member where id = ?";
+	private static final String SQL_UPDATE_MEMBER = "update members set name=?, phone=?, nick_name=?," // 암호화 pw
+			+ " pw=hex(aes_encrypt(?, ?)) where member_index = ?";
 
 	@Autowired
 	private JdbcTemplate jtem;
 
-	
 	// 가입할수있다
 	@Override
 	public boolean insertNewMember(MemberVO mb) {
 		try {
-			int r = jtem.update( "insert into member values(null,?,pw=hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ",mb.getId(),mb.getPw(),mb.getId(), 
-					mb.getName(), mb.getPhone(), mb.getBrith(),
-					mb.getNickName(), mb.getGender(), mb.getEmail(), mb.getIsMember(),mb.getNumMember(), mb.getBuisness());
-			return r == 1; 
-			} catch (DataAccessException dae) {
-				//dae.printStackTrace();
-				System.out.println("ERROR: 회원 암호화 가입 실패: " + mb);
-				return false;
-			}
+			int r = jtem.update("insert into member values(null,?,pw=hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ",
+					mb.getId(), mb.getPw(), mb.getId(), mb.getName(), mb.getPhone(), mb.getBrith(), mb.getNickName(),
+					mb.getGender(), mb.getEmail(), mb.getIsMember(), mb.getNumMember(), mb.getBuisness());
+			return r == 1;
+		} catch (DataAccessException dae) {
+			// dae.printStackTrace();
+			System.out.println("ERROR: 회원 암호화 가입 실패: " + mb);
+			return false;
+		}
 	}
 
 	// 로그인명 중복체크
 	@Override
 	public boolean idchackMember(String id) {
-		int r = jtem.queryForObject(SQL_MEMBER_DUPCHECK, 
-				Integer.class, id);
+		int r = jtem.queryForObject(SQL_MEMBER_DUPCHECK, Integer.class, id);
 
 		System.out.println(">> DAO : isDuplicatedMember() r : " + r);
 		return r >= 1;
@@ -109,63 +93,56 @@ public class MemberDAOImpl implements IMemberDAO {
 	// 별명 중복체크
 	@Override
 	public boolean nickchackMember(String nickName) {
-		int r = jtem.queryForObject(SQL_MEMBER_NICKCHECK, 
-				Integer.class, nickName);
+		int r = jtem.queryForObject(SQL_MEMBER_NICKCHECK, Integer.class, nickName);
 
 		System.out.println(">> DAO : isDuplicatedMember() r : " + r);
 		return r >= 1;
 	}
 
-
 	// 아이디찾기
 	@Override
 	public MemberVO findidMember(String name, String email) {
 		try {
-			return jtem.queryForObject(SQL_SELECT_IDFIND,
-					BeanPropertyRowMapper.newInstance(MemberVO.class), name, email);
+			return jtem.queryForObject(SQL_SELECT_IDFIND, BeanPropertyRowMapper.newInstance(MemberVO.class), name,
+					email);
 		} catch (EmptyResultDataAccessException dae) {
-				System.out.println(
-					"ERROR: DB에 id이 일치하는 레코드 없음! - " + name + email);
-				return null;
-			} catch (DataAccessException dae) {
-				// DataAccessException spring DAO에서는 최상위 예외 객체..
-				//dae.printStackTrace();
-				System.out.println(
-						"ERROR: DB DAO 에러 - " + name + email);
-				return null;
-			}
+			System.out.println("ERROR: DB에 id이 일치하는 레코드 없음! - " + name + email);
+			return null;
+		} catch (DataAccessException dae) {
+			// DataAccessException spring DAO에서는 최상위 예외 객체..
+			// dae.printStackTrace();
+			System.out.println("ERROR: DB DAO 에러 - " + name + email);
+			return null;
 		}
+	}
 
 	// 비밀번호찾기
 	@Override
 	public MemberVO findpwMember(String id, String email) {
 		try {
-			return jtem.queryForObject(SQL_SELECT_PWFIND,
-					BeanPropertyRowMapper.newInstance(MemberVO.class), id, email);
+			return jtem.queryForObject(SQL_SELECT_PWFIND, BeanPropertyRowMapper.newInstance(MemberVO.class), id, email);
 		} catch (EmptyResultDataAccessException dae) {
-				System.out.println(
-					"ERROR: DB에 pw이 일치하는 레코드 없음! - " + id + email);
-				return null;
-			} catch (DataAccessException dae) {
-				// DataAccessException spring DAO에서는 최상위 예외 객체..
-				//dae.printStackTrace();
-				System.out.println(
-						"ERROR: DB DAO 에러 - " + id + email);
-				return null;
-			}
+			System.out.println("ERROR: DB에 pw이 일치하는 레코드 없음! - " + id + email);
+			return null;
+		} catch (DataAccessException dae) {
+			// DataAccessException spring DAO에서는 최상위 예외 객체..
+			// dae.printStackTrace();
+			System.out.println("ERROR: DB DAO 에러 - " + id + email);
+			return null;
+		}
 	}
 
 	// 비밀번호 변경
 	@Override
 	public boolean updateMemberPw(MemberVO mb) {
 		try {
-			int r = jtem.update(SQL_UPDATE_PW,mb.getPw(),mb.getId(), mb.getName(),mb.getEmail());
-			return r == 1; 
-			} catch (DataAccessException dae) {
-			
-				System.out.println("ERROR: 회원 비밀번호 변경 실패: " + mb);
-				return false;
-			}
+			int r = jtem.update(SQL_UPDATE_PW, mb.getPw(), mb.getId(), mb.getName(), mb.getEmail());
+			return r == 1;
+		} catch (DataAccessException dae) {
+
+			System.out.println("ERROR: 회원 비밀번호 변경 실패: " + mb);
+			return false;
+		}
 	}
 
 	@Override
@@ -178,8 +155,8 @@ public class MemberDAOImpl implements IMemberDAO {
 					// TODO Auto-generated method stub
 					return new MemberVO(rs.getInt("member_index"), rs.getString("id"), rs.getString("pw"),
 							"WOOLTARI_" + rs.getString("name"), rs.getString("phone"), rs.getString("brith"),
-							rs.getString("nick_name"), rs.getInt("gender"), rs.getString("email"), rs.getInt("is_member"),
-							rs.getString("num_member"), rs.getString("buisness"));
+							rs.getString("nick_name"), rs.getInt("gender"), rs.getString("email"),
+							rs.getInt("is_member"), rs.getString("num_member"), rs.getString("buisness"));
 
 				}
 
@@ -196,8 +173,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	@Override
 	public MemberVO selectOneMember(String id) {
 		try {
-			return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_ID, BeanPropertyRowMapper.newInstance(MemberVO.class),
-					id);
+			return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_ID, BeanPropertyRowMapper.newInstance(MemberVO.class), id);
 		} catch (EmptyResultDataAccessException dae) {
 			System.out.println("ERROR: DB에 login이 일치하는 레코드 없음! - " + id);
 			return null;
@@ -226,8 +202,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	// 암호화 함수
 	@Override
 	public String decryptPassword(String id) {
-		Map<String, Object> rMap = jtem.queryForMap(SQL_DECRYPT_PW, 
-				new Object[] { id, id }, // args 배열..
+		Map<String, Object> rMap = jtem.queryForMap(SQL_DECRYPT_PW, new Object[] { id, id }, // args 배열..
 				new int[] { Types.VARCHAR, Types.VARCHAR }); // SQL 파람 타입 명시..
 
 		int MemberIndex = (int) rMap.get("member_Index");
@@ -246,11 +221,18 @@ public class MemberDAOImpl implements IMemberDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
-	public List<MemberVO> takeAllMember() {
-		// TODO Auto-generated method stub
-		return jtem.query("select * from member",new MemberRowMapper());
+	public boolean updateOneMember(MemberVO mb) {
+		try {
+			int r = jtem.update(SQL_UPDATE_MEMBER, mb.getName(), mb.getPhone(), mb.getNickName(), mb.getPw(),
+					mb.getId(), mb.getMemberIndex());
+			// mb.getEmail(), mb.getPw(), mb.getId());
+			return r == 1;
+		} catch (DataAccessException dae) {
+			System.out.println("DAO: 회원 정보 갱신 실패! - DAE; " + mb);
+			return false;
+		}
 	}
 
 }

@@ -74,6 +74,18 @@ public class MemberVO {
 		Buisness = buisness;
 	}
 
+	
+	
+	public MemberVO(int memberIndex, String id, String pw, String name, String phone, String nickName) {
+		super();
+		MemberIndex = memberIndex;
+		Id = id;
+		Pw = pw;
+		Name = name;
+		Phone = phone;
+		NickName = nickName;
+	}
+
 	public MemberVO(int memberIndex, String id, String pw, String name, String phone, String brith, String nickName,
 			int gender, String email, int isMember, String numMember, String buisness) {
 		super();

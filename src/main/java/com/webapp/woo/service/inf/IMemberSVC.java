@@ -18,6 +18,7 @@ public interface IMemberSVC {
 
 	// - 로그인 할 수 있다. (세션, 암호화 인증)
 	int loginProcess(String id, String pw);// 패스워드를 암호화 풀어서 리턴
+
 	String decryptPassword(String id);// 패스워드를 암호화 풀어서 리턴
 
 	// 아이디를 찾을 수 있다.
@@ -28,12 +29,13 @@ public interface IMemberSVC {
 
 	// 비밀번호를 변경할 수 있다.
 	boolean updateMemberPw(MemberVO mb); // 암호화
-	
+
 	// 멤버 조회
-			MemberVO selectOneMember(int MemberIndex);
-			MemberVO selectOneMember(String ld);
-			MemberVO selectOneMemberEmail(String email);
-			
-	// 전체 멤버 리스트를 가져올 수 있다.
-	List<MemberVO> takeAllMember();
+	MemberVO selectOneMember(int MemberIndex);
+
+	MemberVO selectOneMember(String ld);
+
+	MemberVO selectOneMemberEmail(String email);
+
+	boolean updateOneMember(MemberVO mb);
 }

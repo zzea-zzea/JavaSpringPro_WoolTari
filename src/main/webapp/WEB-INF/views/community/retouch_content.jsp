@@ -24,7 +24,7 @@
 					<p class="category">카테고리:</p>
 					<p class="category_sel">${community.cate}</p>
 					<p class="writer">작성자:</p>
-					<p class="write_user">사용자1</p>
+					<p class="write_user">${mbLoginList}</p>
 					<p class="date">날자:</p>
 					<p class="write_date"><fmt:formatDate value="${community.write_date}" pattern="yyyy년 MM월 dd일" /></p>
 				</div>
