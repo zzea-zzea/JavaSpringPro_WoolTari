@@ -54,7 +54,7 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	private static final String SQL_SELECT_IDFIND = "select id from member where name = ? AND email = ?";
 
-	private static final String SQL_SELECT_PWFIND = "select pw from member where id = ? AND email = ?";
+	private static final String SQL_SELECT_PWFIND = "select * from member where id = ? AND email = ?";
 
 	private static final String SQL_UPDATE_PW = "update member set pw=hex(aes_encrypt(?, ?)) where id = ? AND email = ?";
 
@@ -136,7 +136,7 @@ public class MemberDAOImpl implements IMemberDAO {
 	@Override
 	public boolean updateMemberPw(MemberVO mb) {
 		try {
-			int r = jtem.update(SQL_UPDATE_PW, mb.getPw(), mb.getId(), mb.getName(), mb.getEmail());
+			int r = jtem.update(SQL_UPDATE_PW, mb.getPw(), mb.getId(), mb.getId(), mb.getEmail());
 			return r == 1;
 		} catch (DataAccessException dae) {
 
@@ -218,7 +218,7 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	@Override
 	public String decryptPassword(int mbId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -235,4 +235,9 @@ public class MemberDAOImpl implements IMemberDAO {
 		}
 	}
 
+	@Override
+	public boolean selectOneMembdr(String id) {
+		// TODO Auto-generated method stub
+		return selectOneMembdr(id);
+	}
 }

@@ -3534,7 +3534,6 @@ html,
 }
 /*------------ 후원하기 메인 end ------------*/
 
-/*
 ------------담당자 : 이주현------------
 사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인
 페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp
@@ -3571,7 +3570,7 @@ html,
 }
 
 .modal_body .modal-wrapper .modal-box.find {
-	height: 560px;
+	height: 460px;
 	position: relative;
 }
 
@@ -3874,10 +3873,10 @@ html,
      padding: 10px;
     border: 1px solid #c5c5c5;
     outline: 0;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     font-family: 'Cafe24SsurroundAir';
     border-radius: 13px;
-    width: 180px;
+    width: 220px;
 }
 
 .box_find .find_id_btn,
@@ -4308,7 +4307,3 @@ background: rgba( 185, 108, 108, 0.5);
 
 
 /*------------ 내가쓴글/댓글 end ------------*/
-
-
-
-
