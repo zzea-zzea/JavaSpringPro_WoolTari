@@ -1115,7 +1115,7 @@ width: 100%;
 	outline: 0;
 	border: 0;
 	background: #ee9700;
-	width: 200px;
+	width:350px;
 	line-height: 50px;
 	margin: 0 auto;
 	letter-spacing: 5px;
@@ -1123,6 +1123,10 @@ width: 100%;
 	font-weight: bold;
 	color: #fff;
 	border-radius: 8px;
+}
+.support_box .nextbtn a{
+	text-decoration:none;
+	color: #fff;
 }
 
 
@@ -1141,6 +1145,10 @@ width: 100%;
 
 .support_box  .support_content_title span {
 	font-size: 15px;
+}
+.support_box  .support_content_title .end_sup {
+	width: -webkit-fill-available;
+    height: 568px;
 }
 
 .support_box  .support_content_benefits {
