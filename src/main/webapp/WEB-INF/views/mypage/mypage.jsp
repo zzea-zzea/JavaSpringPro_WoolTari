@@ -19,7 +19,8 @@
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="mypage.woo">
+	<form action="mypage_sumit.woo" method="post">	
+	<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="childcare_main my">
 			<div class="childcare_box myboa ma">
 				<div class="side_bar my">
@@ -62,7 +63,7 @@
 										</tr>
 										<tr class="danger">
 											<td>비밀번호</td>
-											<td><input type="text" maxlength="20" name="Pw" value="0" required><span>&nbsp;&nbsp;* 비밀번호가 일치 하지 않습니다</span></td>
+											<td><input type="password" maxlength="20" name="pw" required></td>
 										</tr>
 										<tr class="danger">
 											<td>비밀번호 확인</td>
@@ -70,7 +71,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<a href="${pageContext.request.contextPath}/retouch_mypage.woo?mbId=${mbPKId}"><button class="edit_btn">수정</button></a>
+								<button class="edit_btn" type="submit" onclick="alert('${msg}')">수정</button>
 							</div>
 						</div>
 					</section>
