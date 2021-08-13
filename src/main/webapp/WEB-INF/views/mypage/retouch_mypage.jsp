@@ -26,7 +26,7 @@
 							<div class="childcare_content_menu mypage">
 							<form method="post" action="member_update.woo">
 								<input type="hidden" name="memberIndex" value="${member.memberIndex}">
-								
+								<input type="hidden" name="id" value="${member.id}"> 
 								<table class="table">
 									<tbody>
 										<tr>
@@ -37,9 +37,9 @@
 										<tr>
 											<td>휴대폰 번호</td>
 											<td class="phone_si">
-												<input type="text" maxlength="3">&nbsp;-&nbsp;
-												<input type="text" maxlength="4">&nbsp;-&nbsp;
-												<input type="text" maxlength="4">
+												<input name="phone1" type="text" maxlength="3">&nbsp;-&nbsp;
+												<input name="phone2" type="text" maxlength="4">&nbsp;-&nbsp;
+												<input name="phone3" type="text" maxlength="4">
 											</td>
 										</tr>
 										<tr>
@@ -48,7 +48,6 @@
 										</tr>
 										<tr class="danger">
 											<td>새 비밀번호</td>
-
 											<td><input type="password" maxlength="20" name="pw" required="required"></td>
 
 										</tr>

@@ -60,8 +60,8 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	private static final String SQL_DECRYPT_PW = "select member_index, email , id, "
 			+ "cast(aes_decrypt(unhex(pw),?) as char(32) " + "character set utf8) as pw " + "from member where id = ?";
-	private static final String SQL_UPDATE_MEMBER = "update members set name=?, phone=?, nick_name=?," // 암호화 pw
-			+ " pw=hex(aes_encrypt(?, ?)) where member_index = ?";
+	private static final String SQL_UPDATE_MEMBER = "update member set name=?, phone=?, nick_name=?," // 암호화 pw
+			+ "pw=hex(aes_encrypt(?, ?)) where member_index = ?";
 
 	@Autowired
 	private JdbcTemplate jtem;

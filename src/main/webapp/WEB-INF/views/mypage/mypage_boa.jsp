@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>
+	$(".table-wrap>tr").click(
+			function() {
+				if ($(this).parent(".cummunity").children("tr").is(':hidden')) {
+					$('.a').parent(".cummunity").children("tr").slideUp();
+					$(this).parent(".cummunity").children("tr").slideDown();
+				} else {
+					$(this).parent(".cummunity").children("tr").slideUp();
+				}
+			});
+</script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
 		<main class="childcare_main my">
@@ -8,9 +20,8 @@
 				<div class="side_bar my">
 					<ul>
 						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage.woo?mbId=${mbPKId}">회원 정보</a></li>
-<%-- 						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/retouch_mypage.woo?mbId=${mbPKId}">회원 정보 수정</a></li> --%>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo">후원 내역조회</a></li>
-						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage_boa.woo">내 게시글 조회</a></li>
+						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원 내역조회</a></li>
+						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내 게시글 조회</a></li>
 					</ul>
 				</div>
 				<div class="info_content">
@@ -34,7 +45,7 @@
 									<tbody>
 									<c:if test="${not empty userCtList}">			
 									<c:forEach var="ct" items="${userCtList}" varStatus="vs">
-										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
 											<th scope="row">1</th>
 											<td><c:out value="${ct.title}"/></td>
 											<td><c:if test="${ct.cate eq 1}">일상</c:if>

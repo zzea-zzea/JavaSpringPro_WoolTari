@@ -151,26 +151,26 @@ public class MainController {
 			return erMav;
 		}
 		List<CommunityVO> ctList = ctSvc.selectAllCommunitys(pageNumber);
-		ModelAndView mav =  new ModelAndView("community/content");//FW
-		if( ctList != null ) {
+		ModelAndView mav = new ModelAndView("community/content");// FW
+		if (ctList != null) {
 			int ctSize = ctList.size(); // 1 ~ 10
 			List<String> mbLoginList = new ArrayList<>();
 			for (CommunityVO ct : ctList) { // 순서가 유지...
-				String mbName = mbSvc.selectOneMember(  ct.getMember_index()).getNickName(); // 서브쿼리역할
+				String mbName = mbSvc.selectOneMember(ct.getMember_index()).getNickName(); // 서브쿼리역할
 				mbLoginList.add(mbName);
 			}
-			
-			mav.addObject("msg",  "pg/오리지널-sublists 게시글 리스트 조회 성공!: " + ctSize +"개");
+
+			mav.addObject("msg", "pg/오리지널-sublists 게시글 리스트 조회 성공!: " + ctSize + "개");
 			mav.addObject("ctList", ctList); // 메인 리스트
 			mav.addObject("mbLoginList", mbLoginList); // 서브 리스트1 - 계정명
 			mav.addObject("ctSize", ctSize);
-			mav.addObject("pn", pageNumber); 
+			mav.addObject("pn", pageNumber);
 			mav.addObject("maxPg", maxPg);
 		} else {
-			mav.addObject("msg",  "pg/오리지널-sublists 게시글 리스트 조회 실패! : " + pageNumber);
-		}		
+			mav.addObject("msg", "pg/오리지널-sublists 게시글 리스트 조회 실패! : " + pageNumber);
+		}
 		return mav;
-	}	
+	}
 
 	@RequestMapping(value = "new_content.woo", method = RequestMethod.GET)
 	public ModelAndView NewContent(HttpServletRequest request) {
@@ -214,112 +214,104 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
-	public String commentAddProc(HttpSession ses, Model model,
-			RedirectAttributes rdAttr,
-			CommentVO CVO) {
-			System.out.println("CV = " + CVO);
-	
-	   int asId = CommentSVC.Writecomment(CVO);
-		if( asId > 0  ) {
+	public String commentAddProc(HttpSession ses, Model model, RedirectAttributes rdAttr, CommentVO CVO) {
+		System.out.println("CV = " + CVO);
+
+		int asId = CommentSVC.Writecomment(CVO);
+		if (asId > 0) {
 			rdAttr.addFlashAttribute("msgrd", "방금 추가된 댓글 PK: " + asId);
-			return "redirect:/content_view.woo?atId="+CVO.getboardIndex();
+			return "redirect:/content_view.woo?atId=" + CVO.getboardIndex();
 			// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
 		} else {
 			System.out.println("댓글 등록 실패!");
 			model.addAttribute("msg", "댓글 등록 실패!");
-			model.addAttribute("member", 
-					mbSvc.selectOneMember(CVO.getmemberIndex()));
+			model.addAttribute("member", mbSvc.selectOneMember(CVO.getmemberIndex()));
 			return "answer/as_new_form";
 		}
-	}	  
-   
-   
- @RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
-	public String retouch(HttpSession ses, Model model,
-			@RequestParam(value = "commentId") int commentIndex, 
-			@RequestParam(value = "memberId") int memberIndex,
-			@RequestParam(value = "boardId") int boardIndex, 
-			RedirectAttributes rdAttr) {
-	int sesMbId = (int)ses.getAttribute("mbPKId");
-	if( sesMbId == memberIndex ) { // 댓글 작성자 인증
-		CommentVO cv = CommentSVC.selectOneComment(commentIndex);
-		if( cv != null ) {
-			model.addAttribute("cv", cv);
-			MemberVO mb = mbSvc.selectOneMember(memberIndex);
-			model.addAttribute("member", mb);
-			return "community/content_view";
-		} else {
-			rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: db error~!");
-			return "community:/content_view.woo?boardId="+ boardIndex;
-		}
-	} else {
-		rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: 댓글 작성자 불일치");
-		return "community:/content_view.woo?boardId="+ boardIndex;
-	}		
-}
-   
-   @RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.POST)
-   public String deleteCommentProc(HttpSession ses, Model model,
-		   @RequestParam(value = "commentId") int commentIndex, 
-		   @RequestParam(value = "memberId") int memberIndex,
-		   @RequestParam(value = "boardId") int boardIndex ) {
-	   CommentVO myComment = CommentSVC.selectOneComment(commentIndex);
-	   boolean asId = CommentSVC.deleteComment(myComment.getcommentIndex());
-	   if( asId ) {
-		   return "redirect:/community_view.woo?atId="+myComment.getboardIndex();
-		   // atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
-	   } else {
-		   System.out.println("댓글 삭제 실패!");
-		   model.addAttribute("msg", "댓글 삭제 실패!");
-		   model.addAttribute("member", 
-				   mbSvc.selectOneMember(myComment.getmemberIndex()));
-		   return "redirect:/community_view.woo?atId="+myComment.getboardIndex();
-	   }
-   }
+	}
 
-   @RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
-	//>>>>>>> branch 'master' of https://github.com/zzea-zzea/JavaSpringPro_wooltari.git
-		public String ContentViewProc(int atId, HttpSession ses, Model model) {
-			CommunityVO ct = ctSvc.selectOneCommunity(atId);
-			String ctFilePath = ct.getImg_path();
-			
-			String fps[] = null;
-			int fpCount = -1;
-			if(ctFilePath != null && !ctFilePath.isEmpty()) {
-				if( ctFilePath.indexOf(IFileManageSVC.MULTI_FILE_SEP) != -1 ) {
-					fps = ctFilePath.split("\\|"); // 더블 이스케이프!!
-							// |는 정규식 기호 임.. 
-							// \|로 보내야 정규식에서 그냥 문자로써의 |
-					fpCount = fps.length; // 2개이상의 파일경로들
-				} else {
-					fpCount = 1; // 단 1개가 구분자없이 파일경로 하나.
-					fps = new String[] { ctFilePath };
-				}
-				model.addAttribute("fps", fps);
+	@RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
+	public String retouch(HttpSession ses, Model model, @RequestParam(value = "commentId") int commentIndex,
+			@RequestParam(value = "memberId") int memberIndex, @RequestParam(value = "boardId") int boardIndex,
+			RedirectAttributes rdAttr) {
+		int sesMbId = (int) ses.getAttribute("mbPKId");
+		if (sesMbId == memberIndex) { // 댓글 작성자 인증
+			CommentVO cv = CommentSVC.selectOneComment(commentIndex);
+			if (cv != null) {
+				model.addAttribute("cv", cv);
+				MemberVO mb = mbSvc.selectOneMember(memberIndex);
+				model.addAttribute("member", mb);
+				return "community/content_view";
 			} else {
-				fpCount = 0;
+				rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: db error~!");
+				return "community:/content_view.woo?boardId=" + boardIndex;
 			}
-			model.addAttribute("fpCount", fpCount);
-			
-			if(ct != null) {
-				model.addAttribute("community", ct); // vo el 속성화..
-				
-				List<CommentVO>	coList = CommentSVC.CommentListForBoard(atId);
-				// 특정 게시글에 종속된 전체 댓글 리스트
-				if( coList != null ) {
-					int asSize = coList.size();
-					model.addAttribute("asSize", asSize);
-					model.addAttribute("asList", coList);
-					model.addAttribute("atId", atId);
-				} else {
-					model.addAttribute("msg", "게시글 종속 댓글 조회실패");
-				}
-				return "community/content_view"; //fw + _as_list.jsp 조각을 포함
-				
-			} else {
-				return "redirect:content.woo"; //re
-			}
+		} else {
+			rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: 댓글 작성자 불일치");
+			return "community:/content_view.woo?boardId=" + boardIndex;
 		}
+	}
+
+	@RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.POST)
+	public String deleteCommentProc(HttpSession ses, Model model, @RequestParam(value = "commentId") int commentIndex,
+			@RequestParam(value = "memberId") int memberIndex, @RequestParam(value = "boardId") int boardIndex) {
+		CommentVO myComment = CommentSVC.selectOneComment(commentIndex);
+		boolean asId = CommentSVC.deleteComment(myComment.getcommentIndex());
+		if (asId) {
+			return "redirect:/community_view.woo?atId=" + myComment.getboardIndex();
+			// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
+		} else {
+			System.out.println("댓글 삭제 실패!");
+			model.addAttribute("msg", "댓글 삭제 실패!");
+			model.addAttribute("member", mbSvc.selectOneMember(myComment.getmemberIndex()));
+			return "redirect:/community_view.woo?atId=" + myComment.getboardIndex();
+		}
+	}
+
+	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
+	// >>>>>>> branch 'master' of
+	// https://github.com/zzea-zzea/JavaSpringPro_wooltari.git
+	public String ContentViewProc(int atId, HttpSession ses, Model model) {
+		CommunityVO ct = ctSvc.selectOneCommunity(atId);
+		String ctFilePath = ct.getImg_path();
+
+		String fps[] = null;
+		int fpCount = -1;
+		if (ctFilePath != null && !ctFilePath.isEmpty()) {
+			if (ctFilePath.indexOf(IFileManageSVC.MULTI_FILE_SEP) != -1) {
+				fps = ctFilePath.split("\\|"); // 더블 이스케이프!!
+				// |는 정규식 기호 임..
+				// \|로 보내야 정규식에서 그냥 문자로써의 |
+				fpCount = fps.length; // 2개이상의 파일경로들
+			} else {
+				fpCount = 1; // 단 1개가 구분자없이 파일경로 하나.
+				fps = new String[] { ctFilePath };
+			}
+			model.addAttribute("fps", fps);
+		} else {
+			fpCount = 0;
+		}
+		model.addAttribute("fpCount", fpCount);
+
+		if (ct != null) {
+			model.addAttribute("community", ct); // vo el 속성화..
+
+			List<CommentVO> coList = CommentSVC.CommentListForBoard(atId);
+			// 특정 게시글에 종속된 전체 댓글 리스트
+			if (coList != null) {
+				int asSize = coList.size();
+				model.addAttribute("asSize", asSize);
+				model.addAttribute("asList", coList);
+				model.addAttribute("atId", atId);
+			} else {
+				model.addAttribute("msg", "게시글 종속 댓글 조회실패");
+			}
+			return "community/content_view"; // fw + _as_list.jsp 조각을 포함
+
+		} else {
+			return "redirect:content.woo"; // re
+		}
+	}
 
 	@RequestMapping(value = "retouch_content.woo", method = RequestMethod.GET)
 	public String RetouchContent(Model model, HttpSession ses,
@@ -437,31 +429,34 @@ public class MainController {
 
 		return mav;
 	}
+
 	@RequestMapping(value = "findid.woo", method = RequestMethod.GET)
 	public ModelAndView findid(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login/findid");
 
 		return mav;
 	}
+
 	@RequestMapping(value = "findpw.woo", method = RequestMethod.GET)
 	public ModelAndView findpw(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login/findpw");
 
 		return mav;
 	}
+
 	@RequestMapping(value = "pw_num.woo", method = RequestMethod.GET)
 	public ModelAndView pwnum(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login/pw_num");
 
 		return mav;
 	}
+
 	@RequestMapping(value = "newpw.woo", method = RequestMethod.GET)
 	public ModelAndView newpw(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login/newpw");
 
 		return mav;
 	}
-
 
 	@RequestMapping(value = "member_login.woo", method = RequestMethod.POST)
 	public ModelAndView memberLoginProc(HttpSession ses, String id, String pw) {
@@ -492,8 +487,8 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "member_findid.woo", method = RequestMethod.POST)
-	public ModelAndView memberFindIdProc(HttpServletResponse response,HttpServletRequest request) throws Exception  {
-		
+	public ModelAndView memberFindIdProc(HttpServletResponse response, HttpServletRequest request) throws Exception {
+
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		HttpSession ses = request.getSession();
@@ -502,108 +497,106 @@ public class MainController {
 
 		ModelAndView mav = new ModelAndView();
 		MemberVO vo = mbSvc.findidMember(name, email);
-		
+
 		if (vo.getId() != null) {
 			String id = vo.getId();
- 
+
 			mav.setViewName("redirect:login.woo");
 		} else {
-		
+
 			mav.setViewName("redirect:findid.woo");
 		}
 		return mav;
 	}
 
 	@RequestMapping(value = "member_findpw.woo")
-	public ModelAndView pwauth(HttpSession session,HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public ModelAndView pwauth(HttpSession session, HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
 
 		String id = request.getParameter("id");
 		String email = request.getParameter("email");
-		
+
 		MemberVO vo = mbSvc.findpwMember(id, email);
 		System.out.println(vo);
-		
-		if (vo != null) {
-		Random r = new Random();
-		int num = r.nextInt(99999999);
-		
-		if(vo.getId().equals(id)) {
-			session.setAttribute("email", vo.getEmail());
-			
-			String setfrom = "jh970221@gmail.com";
-			String tomail = request.getParameter("email");
-			String title = "안녕하세요 울타리 인증메일입니다."; 
-			String content = "인증번호는 " +num + " 입니다."; 
-			
-			try {
-				MimeMessage message = mailSender.createMimeMessage();
-				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-				messageHelper.setFrom(setfrom); // 보내는사람 생략하면 정상작동을 안함
-				messageHelper.setTo(tomail); // 받는사람 이메일
-				messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
-				messageHelper.setText(content); // 메일 내용
-				
-				mailSender.send(message);
-			} catch (Exception e) {
-				System.out.println(e);
+		if (vo != null) {
+			Random r = new Random();
+			int num = r.nextInt(99999999);
+
+			if (vo.getId().equals(id)) {
+				session.setAttribute("email", vo.getEmail());
+
+				String setfrom = "jh970221@gmail.com";
+				String tomail = request.getParameter("email");
+				String title = "안녕하세요 울타리 인증메일입니다.";
+				String content = "인증번호는 " + num + " 입니다.";
+
+				try {
+					MimeMessage message = mailSender.createMimeMessage();
+					MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+
+					messageHelper.setFrom(setfrom); // 보내는사람 생략하면 정상작동을 안함
+					messageHelper.setTo(tomail); // 받는사람 이메일
+					messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
+					messageHelper.setText(content); // 메일 내용
+
+					mailSender.send(message);
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("login/pw_num");
+				mv.addObject("num", num);
+				return mv;
+			} else {
+				ModelAndView mv = new ModelAndView();
+				mv.setViewName("login/findpw");
+				return mv;
 			}
-			ModelAndView mv = new ModelAndView();
-			mv.setViewName("login/pw_num");
-			mv.addObject("num",num);
-			return mv;
-		}else {
+		} else {
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("login/findpw");
 			return mv;
 		}
-		}else {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login/findpw");
-		return mv;
-		}
 	}
-	
-	
+
 	@RequestMapping(value = "/pw_set.woo", method = RequestMethod.POST)
-	public String pw_set(@RequestParam(value="email_injeung") String email_injeung,
-				@RequestParam(value = "num") String num) throws IOException{
-			
-			if(email_injeung.equals(num)) {
-				
-				return "login/newpw";
-			}
-			else {
-			
-				return "login/findpw";
-			}
+	public String pw_set(@RequestParam(value = "email_injeung") String email_injeung,
+			@RequestParam(value = "num") String num) throws IOException {
+
+		if (email_injeung.equals(num)) {
+
+			return "login/newpw";
+		} else {
+
+			return "login/findpw";
+		}
 	}
 
 	@RequestMapping(value = "/pw_new.woo", method = RequestMethod.POST)
-	public String memberupdatePwProc(HttpServletRequest request, HttpSession session) throws IOException{
-		
+	public String memberupdatePwProc(HttpServletRequest request, HttpSession session) throws IOException {
+
 		String email = request.getParameter("email");
 		MemberVO vo = mbSvc.selectOneMemberEmail(email);
 		String pw = request.getParameter("pw");
 		vo.setPw(pw);
-		System.out.println(email);		
+		System.out.println(email);
 //		vo.setEmail(email);
-		
+
 		boolean result = mbSvc.updateMemberPw(vo);
-		
+
 		System.out.println(pw);
-		System.out.println(vo);	
-		System.out.println(result);	
-		
-		if(result == true) {
+		System.out.println(vo);
+		System.out.println(result);
+
+		if (result == true) {
 			System.out.println("성공");
 			return "login/login";
-		}else {		
-			System.out.println("실패");	
+		} else {
+			System.out.println("실패");
 			return "login/newpw";
-		}	
+		}
 	}
-
 
 	@RequestMapping(value = "sign_up.woo", method = RequestMethod.GET)
 	public ModelAndView singup(HttpServletRequest request) {
@@ -692,8 +685,8 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
-	public ModelAndView Mypage(HttpServletRequest request) {
-		
+	public ModelAndView Mypage(HttpServletRequest request, Model model) {
+
 		String strMbId = request.getParameter("mbId");
 		System.out.println(strMbId);
 
@@ -726,6 +719,7 @@ public class MainController {
 
 		return mav;
 	}
+
 	@RequestMapping(value = "mypage_sumit.woo", method = RequestMethod.POST)
 	public ModelAndView MypageSumit(HttpServletRequest request) {
 		String pw = request.getParameter("pw");
@@ -737,27 +731,30 @@ public class MainController {
 		MemberVO mb = this.mbSvc.selectOneMember(mbId);
 		ModelAndView mav = new ModelAndView();
 		if (mb != null) {
+
 			String decrpytedPw = mbSvc.decryptPassword(mb.getId());
 			mb.setPw(decrpytedPw); // 암호화 풀림
 			System.out.println(mb.getPw() + pw);
-			if(mb.getPw().equals(pw)) {
+			if (mb.getPw().equals(pw)) {
 				mav.addObject("member", mb);
 				mav.setViewName("mypage/retouch_mypage");
-				
+//				mav.addObject("msg", "비밀번호 일치");
+
 			} else {
-				mav.addObject("msg", "비밀번호 오류");
-				mav.setViewName("redirect:mypage.woo?mbId="+mbId);
+				mav.addObject("msg", "비밀번호 불일치");
+				mav.setViewName("redirect:mypage.woo?mbId=" + mbId);
 			}
 		} else {
-			mav.setViewName("redirect:mypage.woo?mbId="+mbId);
+			mav.setViewName("redirect:mypage.woo?mbId=" + mbId);
 		}
-		
+
 		return mav;
-		
+
 	}
+
 	@RequestMapping(value = "retouch_mypage.woo", method = RequestMethod.GET)
 	public ModelAndView MypageEdutForm(HttpServletRequest request) {
-
+		
 		String strMbId = request.getParameter("mbId");
 		System.out.println(strMbId);
 		int mbId = Integer.parseInt(strMbId); // <<PK>>
@@ -767,7 +764,7 @@ public class MainController {
 //			String decrpytedPw = mbSvc.decryptPassword(mb.getId());
 //			mb.setPw(decrpytedPw); // 암호화 풀림
 			mav.addObject("member", mb);
-			mav.setViewName("mypage/retouch_mypage?mbId="+mbId);
+			mav.setViewName("mypage/retouch_mypage?mbId=" + mbId);
 		} else {
 			System.out.println("ERROR 회원 편집 준비 실패" + mbId);
 			mav.setViewName("redirect:mypage.woo?mbId=" + mbId);
@@ -785,17 +782,20 @@ public class MainController {
 		//
 		String name = request.getParameter("name");
 		String nickName = request.getParameter("nickName");
-		String login = request.getParameter("id");
-		String phone = request.getParameter("phone");
+		String id = request.getParameter("id");
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
+		String phone = phone1 + phone2 + phone3;
 		String pw = request.getParameter("pw");
 
-		MemberVO mb = new MemberVO(memberIndex, login, pw, name, phone, nickName);
+		MemberVO mb = new MemberVO(memberIndex, id, pw, name, phone, nickName);
 		boolean b = this.mbSvc.updateOneMember(mb);
 		ModelAndView mav = new ModelAndView();
 		//
 		if (b) {
-			mav.addObject("msg", "회원정보 갱신 성공! - " + login);
-			mav.setViewName("redirect:retuch_mypage?mbId=" + memberIndex);
+			mav.addObject("msg", "회원정보 갱신 성공! - " + id);
+			mav.setViewName("redirect:mypage.woo?mbId=" + memberIndex);
 		} else {
 			mav.addObject("msg", "ERROR: 회원 정보 갱신 실패!! " + memberIndex);
 			mav.setViewName("mypage/retouch_mypage"); // FW
@@ -804,12 +804,14 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
-	public ModelAndView MypageSupport(HttpSession ses, Model model,
-			   HttpServletRequest request) {
-		int memberIndex = Integer.parseInt(request.getParameter("mbId"));
+	public ModelAndView MypageSupport(HttpServletRequest request) {
+		
+		String strMbId = request.getParameter("mbId");
+		System.out.println(strMbId);
+		int mbId = Integer.parseInt(strMbId); // <<PK>>
 		ModelAndView mav = new ModelAndView();
-		System.out.println("mbId = " + memberIndex);
-		List<SupportVO> userSpList = SupportSVC.oneUserSupport(memberIndex);
+		System.out.println("mbId = " + mbId);
+		List<SupportVO> userSpList = SupportSVC.oneUserSupport(mbId);
 		mav.addObject("userSpList", userSpList);
 		for (int i = 0; i < userSpList.size(); i++) {
 			System.out.println(userSpList.get(i));
@@ -819,14 +821,15 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "mypage_boa.woo", method = RequestMethod.GET)
-	public ModelAndView MypageBoard(HttpSession ses, Model model,
-			   HttpServletRequest request) {
-		
-		int memberIndex = Integer.parseInt(request.getParameter("mbId"));
+	public ModelAndView MypageBoard(HttpSession ses, Model model, HttpServletRequest request) {
+
+		String strMbId = request.getParameter("mbId");
+		System.out.println(strMbId);
+		int mbId = Integer.parseInt(strMbId); // <<PK>>
 		ModelAndView mav = new ModelAndView();
-		System.out.println("mbId = " + memberIndex);
-		List<CommunityVO> userCtList = ctSvc.selectAllCommunitysForMember(memberIndex);
-		model.addAttribute("ct", userCtList); 
+		System.out.println("mbId = " + mbId);
+		List<CommunityVO> userCtList = ctSvc.selectAllCommunitysForMember(mbId);
+		model.addAttribute("ct", userCtList);
 		mav.addObject("userCtList", userCtList);
 		mav.setViewName("mypage/mypage_boa");
 		return mav;
