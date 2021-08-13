@@ -23,17 +23,6 @@ $(document).ready(function() {
 	      }
 	   });
 	});
-$(document).ready(function () {
-	$(".form-check-input").click(function() {
-	
-		var cardorcash = $('input[name="payinlineRadioOptions"]:checked').val();
-		if(cardorcash == 'option2')	{
-			$('.bankbook_no_name_span').text("후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 울타리 팀장 김지혜)");
-		} else if(cardorcash == 'option1') {
-			$('.bankbook_no_name_span').text("");
-		}
-	});
-});
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
@@ -109,8 +98,7 @@ $(document).ready(function () {
 							</tr>
 							<tr>
 								<td>주민등록번호</td>
-								<td><input type="text" maxlength="6">&nbsp;-&nbsp;<input
-									type="password" maxlength="7"></td>
+								<td><input type="text" maxlength="6">&nbsp;-&nbsp;<input type="password" maxlength="7"></td>
 							</tr>
 							<tr>
 								<td>성명</td>
@@ -137,23 +125,19 @@ $(document).ready(function () {
 					</div>
 					<div class="payment_content_benefits">
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="payinlineRadioOptions" id="inlineRadio1" value="option1">
-							<label class="form-check-label" for="inlineRadio1">신용카드</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="payinlineRadioOptions" id="inlineRadio2" value="option2">
+							<input class="form-check-input" type="radio" name="payinlineRadioOptions" id="inlineRadio2" value="option2" checked>
 							<label class="form-check-label" for="inlineRadio2">무통장입금</label>
 						</div>
 					</div>
 					<div class="bankbook_no_name">
-						<span class="bankbook_no_name_span"></span>
+						<span class="bankbook_no_name_span">후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 김지혜)</span>
 					</div>
 					<div class="bankbook_no_name">
 						<span>입금자 명 </span>
 						<input type="text">
 					</div>
 				</div>
-				<button class="nextbtn">후원하기</button>
+				<div class="nextbtn"><a  href="${pageContext.request.contextPath}/support_end.woo">후원하기</a></div>
 			</div>
 		</main>
 	</form>
