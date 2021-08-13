@@ -1539,6 +1539,142 @@ background: #b38c8c;
 .btn_selected_gosite:hover{
     background: #8c96a1;
 }
+
+/*--------------------------------------------------------------
+# 회원가입
+.--------------------------------------------------------------*/
+.signUp_main {
+	background: aliceblue;
+}
+.signUp_main.no {
+	background: #fff;
+}
+
+.signUp_box {
+	width: 870px;
+	padding: 120px 40px 60px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.signUp_box .nextbtn {
+	outline: 0;
+	border: 0;
+	background: #c1d9ee;
+	width: 350px;
+	line-height: 50px;
+	margin: 0 auto;
+	letter-spacing: 5px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.signUp_box .nextbtn a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.signUp_box .nextbtn:hover {
+	background: #a1bad1;
+}
+.signUp_box .nextbtn.ba {
+	outline: 0;
+	border: 0;
+	background: #638114;
+	width: 350px;
+	line-height: 50px;
+	margin: 0 auto;
+	letter-spacing: 5px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 8px;
+}
+
+
+.signUp_box .nextbtn.ba:hover {
+	background: #4b620f;
+}
+
+.signUp_box  .signUp_content_title {
+	padding: 10px;
+}
+
+.signUp_box  .signUp_content_title h2 {
+	margin-bottom: 10px;
+}
+
+.signUp_box  .signUp_content_title span {
+	font-size: 15px;
+}
+.signUp_box  .signUp_content_title img {
+	width: 670px;
+}
+
+.signUp_box  .signUp_content_benefits {
+	text-align: left;
+	background: #fff;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 20px;
+}
+
+.signUp_box  .signUp_content_benefits button {
+	border: 0;
+	background: #c1d9ee;
+	border-radius: 15px;
+	color: #fff;
+	letter-spacing: 2px;
+	padding: 0px 25px;
+	font-weight: bold;
+	border-radius: 10px;
+	float: right;
+}
+
+.signUp_box  .signUp_content_benefits button:hover {
+	background: #a1bad1;
+}
+
+.signUp_box  .signUp_content_benefits .table tbody tr {
+	line-height: 40px;
+}
+
+.signUp_box  .signUp_content_benefits .table tbody tr:first-child>td {
+	width: 60px;
+}
+
+.signUp_box  .signUp_content_benefits .table tbody tr td input {
+	outline: 0;
+    border: 0;
+    background: #edf0f5;
+    border-radius: 8px;
+    padding: 0 20px;
+}
+.signUp_box  .signUp_content_benefits .table tbody tr td span {
+    color: #989898;
+}
+
+.signUp_box  .signUp_content_benefits .table tbody tr td input[type=text],.signUp_box  .signUp_content_benefits .table tbody tr td input[type=date] {
+    width:275px;
+}
+.signUp_box  .signUp_content_benefits .table tbody tr .phoneN input[type=text]{
+    width:170px;
+}
+
+
+.signUp_box  .signUp_content_benefits .signUp_content_benefits_ti {
+	border-bottom: 10px solid #9ac8f8;
+	width: 180px;
+	margin-bottom: 20px;
+}
+
+.signUp_box  .signUp_content_benefits .signUp_content_benefits_ti h3 {
+	font-size: 25px;
+	margin-left: 10px;
+}
+
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp

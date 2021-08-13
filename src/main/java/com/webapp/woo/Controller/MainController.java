@@ -543,6 +543,20 @@ public class MainController {
 		return mav;
 
 	}
+	@RequestMapping(value = "signUp.woo", method = RequestMethod.GET)
+	public ModelAndView singupN(HttpServletRequest request) {
+		
+		ModelAndView mav = new ModelAndView("member/signUp");
+		return mav;
+		
+	}
+	@RequestMapping(value = "signUp_ok.woo", method = RequestMethod.GET)
+	public ModelAndView singupOk(HttpServletRequest request) {
+		
+		ModelAndView mav = new ModelAndView("member/signUp_ok");
+		return mav;
+		
+	}
 
 	@RequestMapping(value = "member_join.woo", method = RequestMethod.POST)
 
