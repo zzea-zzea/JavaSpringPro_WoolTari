@@ -38,4 +38,6 @@ public interface IMemberSVC {
 	MemberVO selectOneMemberEmail(String email);
 
 	boolean updateOneMember(MemberVO mb);
+	
+	boolean selectOneMembdr(String id);
 }

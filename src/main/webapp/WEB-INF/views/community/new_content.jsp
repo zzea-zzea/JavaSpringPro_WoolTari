@@ -27,8 +27,7 @@
 						</div>
 						<div class="rigth_category">
 							<p class="category">카테고리:</p>
-							<select class="category_sel" name="cate"> 
-								<option value="0" selected>= 선택 =</option>
+							<select class="category_sel" name="cate">
 								<option value="1" <c:if test="${cate == 1}"> selected </c:if>>일상</option>
 								<option value="2" <c:if test="${cate == 2}"> selected </c:if>>지원 정보</option>
 								<option value="3" <c:if test="${cate == 3}"> selected </c:if>>병원 정보</option>

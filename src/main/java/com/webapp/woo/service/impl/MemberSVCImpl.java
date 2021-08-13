@@ -107,5 +107,11 @@ public class MemberSVCImpl implements IMemberSVC {
 		// TODO Auto-generated method stub
 		return mbDao.updateOneMember(mb);
 	}
+	
+	@Override
+	public boolean selectOneMembdr(String id) {
+		// TODO Auto-generated method stub
+		return mbDao.selectOneMembdr(id);
+	}
 
 }
