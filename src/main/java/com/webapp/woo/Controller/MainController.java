@@ -405,9 +405,9 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "endsupport.woo", method = RequestMethod.GET)
+	@RequestMapping(value = "support_end.woo", method = RequestMethod.GET)
 	public ModelAndView EndSupport(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("support/endsupport");
+		ModelAndView mav = new ModelAndView("support/support_end");
 		return mav;
 	}
 
