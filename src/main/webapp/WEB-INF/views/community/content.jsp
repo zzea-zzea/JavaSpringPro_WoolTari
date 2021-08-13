@@ -78,8 +78,8 @@
 								</thead>
 
 								<tbody>
-								<c:if test="${empty ctList}">
-						<h4> 게시글이 현재 하나도 없네요! </h4>
+				<c:if test="${empty ctList}">
+					<h4> 게시글이 현재 하나도 없네요! </h4>
 				</c:if>	
 					<c:if test="${not empty ctList}">			
 					<c:forEach var="ct" items="${ctList}" varStatus="vs">
@@ -88,7 +88,6 @@
 						</c:if>
 						<c:if test="${empty mbLoginName}">
 						<tr onclick="showLoginPage()">
-						</tr>
 						</c:if>
 							<td><c:out value="${ctSize}" default="0"/></td>
 							<td><c:out value="${ct.title}" default="제목없음"/></td> 

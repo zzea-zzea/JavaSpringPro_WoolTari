@@ -624,7 +624,7 @@ public class MainController {
 
 	@RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
 	public ModelAndView Mypage(HttpServletRequest request) {
-
+		
 		String strMbId = request.getParameter("mbId");
 		System.out.println(strMbId);
 
@@ -657,7 +657,35 @@ public class MainController {
 
 		return mav;
 	}
+	@RequestMapping(value = "mypage_sumit.woo", method = RequestMethod.POST)
+	public ModelAndView MypageSumit(HttpServletRequest request) {
+		String pw = request.getParameter("pw");
+		String strMbId = request.getParameter("mbId");
+		System.out.println(strMbId);
 
+		int mbId = Integer.parseInt(strMbId); // <<PK>>
+		System.out.println(mbId);
+		MemberVO mb = this.mbSvc.selectOneMember(mbId);
+		ModelAndView mav = new ModelAndView();
+		if (mb != null) {
+			String decrpytedPw = mbSvc.decryptPassword(mb.getId());
+			mb.setPw(decrpytedPw); // 암호화 풀림
+			System.out.println(mb.getPw() + pw);
+			if(mb.getPw().equals(pw)) {
+				mav.addObject("member", mb);
+				mav.setViewName("mypage/retouch_mypage");
+				
+			} else {
+				mav.addObject("msg", "비밀번호 오류");
+				mav.setViewName("redirect:mypage.woo?mbId="+mbId);
+			}
+		} else {
+			mav.setViewName("redirect:mypage.woo?mbId="+mbId);
+		}
+		
+		return mav;
+		
+	}
 	@RequestMapping(value = "retouch_mypage.woo", method = RequestMethod.GET)
 	public ModelAndView MypageEdutForm(HttpServletRequest request) {
 
@@ -667,10 +695,10 @@ public class MainController {
 		MemberVO mb = mbSvc.selectOneMember(mbId);
 		ModelAndView mav = new ModelAndView();
 		if (mb != null) {
-			String decrpytedPw = mbSvc.decryptPassword(mb.getId());
-			mb.setPw(decrpytedPw); // 암호화 풀림
+//			String decrpytedPw = mbSvc.decryptPassword(mb.getId());
+//			mb.setPw(decrpytedPw); // 암호화 풀림
 			mav.addObject("member", mb);
-			mav.setViewName("mypage/retouch_mypage");
+			mav.setViewName("mypage/retouch_mypage?mbId="+mbId);
 		} else {
 			System.out.println("ERROR 회원 편집 준비 실패" + mbId);
 			mav.setViewName("redirect:mypage.woo?mbId=" + mbId);
