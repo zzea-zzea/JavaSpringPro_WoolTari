@@ -9,6 +9,8 @@ public class LocationVO {
 	private int facility_cate;
 	private String phone_num;
 	private String facility_add;
+	private double latitude;
+	private double hardness;
 
 	public int getC_index() {
 		return c_index;
@@ -66,6 +68,26 @@ public class LocationVO {
 		this.facility_add = facility_add;
 	}
 
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getHardness() {
+		return hardness;
+	}
+
+	public void setHardness(double hardness) {
+		this.hardness = hardness;
+	}
+
+	public LocationVO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public LocationVO(int c_index, String local_si, String local_gu, String facility_name, int facility_cate,
 			String phone_num, String facility_add) {
 		super();
@@ -78,22 +100,25 @@ public class LocationVO {
 		this.facility_add = facility_add;
 	}
 
-	public LocationVO(int c_index, String local_si, String local_gu, String facility_name) {
+	public LocationVO(int c_index, String local_si, String local_gu, String facility_name, int facility_cate,
+			String phone_num, String facility_add, double latitude, double hardness) {
 		super();
 		this.c_index = c_index;
 		this.local_si = local_si;
 		this.local_gu = local_gu;
 		this.facility_name = facility_name;
-	}
-
-	public LocationVO() {
+		this.facility_cate = facility_cate;
+		this.phone_num = phone_num;
+		this.facility_add = facility_add;
+		this.latitude = latitude;
+		this.hardness = hardness;
 	}
 
 	@Override
 	public String toString() {
 		return "LocationVO [c_index=" + c_index + ", local_si=" + local_si + ", local_gu=" + local_gu
 				+ ", facility_name=" + facility_name + ", facility_cate=" + facility_cate + ", phone_num=" + phone_num
-				+ ", facility_add=" + facility_add + "]";
+				+ ", facility_add=" + facility_add + ", latitude=" + latitude + ", hardness=" + hardness + "]";
 	}
 
 }
