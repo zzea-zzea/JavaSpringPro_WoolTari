@@ -213,60 +213,74 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
-	public String commentAddProc(HttpSession ses, Model model, RedirectAttributes rdAttr, CommentVO CVO) {
-		System.out.println("CV = " + CVO);
 
-		int asId = CommentSVC.Writecomment(CVO);
-		if (asId > 0) {
+	@RequestMapping(value = "/Writecomment.woo", method = RequestMethod.POST)
+	public String commentAddProc(HttpSession ses, Model model,
+			RedirectAttributes rdAttr,CommentVO CVO) {
+			System.out.println("CV = " + CVO);
+	   int asId = CommentSVC.Writecomment(CVO);
+		if( asId > 0  ) {
 			rdAttr.addFlashAttribute("msgrd", "방금 추가된 댓글 PK: " + asId);
-			return "redirect:/content_view.woo?atId=" + CVO.getboardIndex();
+			return "redirect:/content_view.woo?atId="+CVO.getboardIndex();
 			// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
 		} else {
 			System.out.println("댓글 등록 실패!");
 			model.addAttribute("msg", "댓글 등록 실패!");
-			model.addAttribute("member", mbSvc.selectOneMember(CVO.getmemberIndex()));
+			model.addAttribute("member", 
+					mbSvc.selectOneMember(CVO.getmemberIndex()));
 			return "answer/as_new_form";
 		}
-	}
+	}	  
+   
 
-	@RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
-	public String retouch(HttpSession ses, Model model, @RequestParam(value = "commentId") int commentIndex,
-			@RequestParam(value = "memberId") int memberIndex, @RequestParam(value = "boardId") int boardIndex,
-			RedirectAttributes rdAttr) {
-		int sesMbId = (int) ses.getAttribute("mbPKId");
-		if (sesMbId == memberIndex) { // 댓글 작성자 인증
+	 @RequestMapping(value = "/retouch_comment.woo", method = RequestMethod.GET)
+		public String retouch(HttpSession ses, Model model,
+				@RequestParam(value = "commentId") int commentIndex, 
+				@RequestParam(value = "memberIndex") int memberIndex,
+				@RequestParam(value = "boardIndex") int boardIndex, 
+				RedirectAttributes rdAttr, HttpServletRequest request) {
+		int sesMbId = (int)ses.getAttribute("mbPKId");
+		String comment = request.getParameter("comment");
+		if( sesMbId == memberIndex ) { // 댓글 작성자 인증
 			CommentVO cv = CommentSVC.selectOneComment(commentIndex);
-			if (cv != null) {
+			if( cv != null ) {
 				model.addAttribute("cv", cv);
 				MemberVO mb = mbSvc.selectOneMember(memberIndex);
 				model.addAttribute("member", mb);
-				return "community/content_view";
+				CommentVO editC = new CommentVO();
+				editC.setcommentIndex(commentIndex);
+				editC.setContent(comment);
+				System.out.println(editC);
+				boolean r = CommentSVC.updateOneComment(editC);
+				if (r) {
+				return "redirect:content_view.woo?atId=" + boardIndex;
+				}else {
+					System.out.println("업데이트 실패");
+					return "redirect:content_view.woo?atId=" + boardIndex;
+				}
+				
 			} else {
 				rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: db error~!");
-				return "community:/content_view.woo?boardId=" + boardIndex;
+				return "community:/content_view.woo?atId="+ boardIndex;
 			}
 		} else {
 			rdAttr.addFlashAttribute("msgrd", "as 편집폼 준비 실패: 댓글 작성자 불일치");
-			return "community:/content_view.woo?boardId=" + boardIndex;
-		}
+			return "community:/content_view.woo?atId="+ boardIndex;
+		}		
 	}
 
-	@RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.POST)
-	public String deleteCommentProc(HttpSession ses, Model model, @RequestParam(value = "commentId") int commentIndex,
-			@RequestParam(value = "memberId") int memberIndex, @RequestParam(value = "boardId") int boardIndex) {
-		CommentVO myComment = CommentSVC.selectOneComment(commentIndex);
-		boolean asId = CommentSVC.deleteComment(myComment.getcommentIndex());
-		if (asId) {
-			return "redirect:/community_view.woo?atId=" + myComment.getboardIndex();
-			// atId번 게시글의 상세페이지에서 함께 댓글리스트를 표시
-		} else {
-			System.out.println("댓글 삭제 실패!");
-			model.addAttribute("msg", "댓글 삭제 실패!");
-			model.addAttribute("member", mbSvc.selectOneMember(myComment.getmemberIndex()));
-			return "redirect:/community_view.woo?atId=" + myComment.getboardIndex();
-		}
-	}
+	   @RequestMapping(value = "/Deletecomment.woo", method = RequestMethod.GET)
+	   public String deleteCommentProc(HttpSession ses, Model model,
+			   @RequestParam(value = "commentId") int commentIndex,
+			   @RequestParam(value = "boardIndex") int boardIndex) { 
+			   boolean r = CommentSVC.deleteComment(commentIndex);
+			   if (r) {
+			   return "redirect:/content_view.woo?atId="+boardIndex;
+			   } else {
+				   System.out.println("댓글 삭제 실패");
+				   return "redirect:/content_view.woo?atId="+boardIndex;
+			   }
+	   }
 
 	@RequestMapping(value = "content_view.woo", method = RequestMethod.GET)
 	// >>>>>>> branch 'master' of
@@ -295,10 +309,15 @@ public class MainController {
 
 		if (ct != null) {
 			model.addAttribute("community", ct); // vo el 속성화..
-
+			
 			List<CommentVO> coList = CommentSVC.CommentListForBoard(atId);
 			// 특정 게시글에 종속된 전체 댓글 리스트
 			if (coList != null) {
+				List<MemberVO> Allmember = mbSvc.allMember();
+				for (int i = 0; i < Allmember.size(); i++) {
+					System.out.println(Allmember.get(i));
+				}
+				model.addAttribute("member",Allmember);
 				int asSize = coList.size();
 				model.addAttribute("asSize", asSize);
 				model.addAttribute("asList", coList);
@@ -346,6 +365,11 @@ public class MainController {
 
 	@RequestMapping(value = "delete.woo", method = RequestMethod.GET)
 	public String delete(@RequestParam(value = "atId", defaultValue = "0") int id) {
+		   List<CommentVO> deletecomment = CommentSVC.CommentListForBoard(id);
+		   for (int i = 0; i < deletecomment.size(); i++) {
+			boolean r = CommentSVC.deleteComment(deletecomment.get(i).getcommentIndex());
+			System.out.println("댓글r =" + r);
+		}
 		ctSvc.deleteCommunity(id);
 		return "redirect:content.woo";
 	}

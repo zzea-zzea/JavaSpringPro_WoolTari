@@ -240,4 +240,10 @@ public class MemberDAOImpl implements IMemberDAO {
 		// TODO Auto-generated method stub
 		return selectOneMembdr(id);
 	}
+	
+	@Override
+	public List<MemberVO> allMember() {
+		// TODO Auto-generated method stub
+				return jtem.query("select * from wooltari_db.member", BeanPropertyRowMapper.newInstance(MemberVO.class));
+	}
 }

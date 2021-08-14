@@ -66,7 +66,7 @@ public class CommentDAOImpl implements ICommentDAO {
 	@Override
 	public boolean updateOneComment(CommentVO CR) {
 		try {
-			int r = jtem.update("update comment set content=? write_date = now() where Comment_index = ?",
+			int r = jtem.update("update comment set content=? where comment_index=?",
 					CR.getContent(), CR.getcommentIndex());
 			return r == 1;
 		} catch (DataAccessException e) {
@@ -104,7 +104,7 @@ public class CommentDAOImpl implements ICommentDAO {
 	@Override
 	public boolean deleteComment(int commentIndex) {
 		try {
-			int r = jtem.update("delete from board where comment_index = " + commentIndex);
+			int r = jtem.update("delete from wooltari_db.comment where comment_index = " + commentIndex);
 			return r == 1;
 		} catch (DataAccessException e) {
 			e.printStackTrace();

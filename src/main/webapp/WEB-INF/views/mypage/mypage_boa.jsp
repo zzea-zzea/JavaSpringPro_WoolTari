@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<body>
+<c:forEach var="ct" items="${userCtList}" varStatus="vs">
 <script>
-	$(".table-wrap>tr").click(
+$(document).ready(function() {
+	$(".${ct.board_index}").click(
 			function() {
-				if ($(this).parent(".cummunity").children("tr").is(':hidden')) {
-					$('.a').parent(".cummunity").children("tr").slideUp();
-					$(this).parent(".cummunity").children("tr").slideDown();
-				} else {
-					$(this).parent(".cummunity").children("tr").slideUp();
+				$("#${ct.board_index}").toggle();
 				}
+			)
 			});
 </script>
-<body>
+</c:forEach>
 	<%@ include file="../common/_header.jsp"%>
 		<main class="childcare_main my">
 			<div class="childcare_box myboa ma">
@@ -45,18 +44,18 @@
 									<tbody>
 									<c:if test="${not empty userCtList}">			
 									<c:forEach var="ct" items="${userCtList}" varStatus="vs">
-										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
+										<tr id="${ct.board_index} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
 											<th scope="row">1</th>
-											<td><c:out value="${ct.title}"/></td>
-											<td><c:if test="${ct.cate eq 1}">일상</c:if>
+											<td class="${ct.board_index}"><c:out value="${ct.title}"/></td>
+											<td class="${ct.board_index}"><c:if test="${ct.cate eq 1}">일상</c:if>
 											<c:if test="${ct.cate eq 2}">지원정보</c:if>
 											<c:if test="${ct.cate eq 3}">병원정보</c:if>
 											<c:if test="${ct.cate eq 4}">시설</c:if>
 											<c:if test="${ct.cate eq 5}">육아정보</c:if>
 											<c:if test="${ct.cate eq 6}">무료나눔</c:if>
-											<td><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
+											<td class="${ct.board_index}"><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
 											<c:if test="${not empty mbLoginName}">
-											<td><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">조회 하러 가기</a></td>
+											<td class="${ct.board_index}"><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">조회 하러 가기</a></td>
 												</c:if>
 										</tr>
 										<tr>

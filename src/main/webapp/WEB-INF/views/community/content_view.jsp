@@ -8,6 +8,20 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 			location.href='delete.woo?atId='+${community.board_index};
 		}
 	}	
+	function deletecomment(commentId) {
+		var chk = confirm("정말 삭제하시겠습니까?");
+		var a  = $("#rm_"+commentId).val();
+		if (chk) {
+			location.href='Deletecomment.woo?commentId='+ commentId+"&boardIndex="+a;
+			
+		}
+	}
+	function retouchcomment(commentId) {
+		var reply = document.getElementById("reply_show_"+commentId);
+		var retouch = document.getElementById("retouch_reply_"+commentId);
+		reply.style.display ='none';
+		retouch.style.display ='block';
+	}
 	$(document).ready(function() {
 		var check = "${community.cate}";
 		var msg = "";
@@ -128,25 +142,28 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 								<ul>
 									<c:forEach var="as" items="${asList}">
 												<div class="reply_name">
-												<c:if test="${mbLoginList.memberIndex eq as.memberIndex}">
-													${mbLoginList.nickname}
+												<c:forEach var="mem" items="${member}">
+												<c:if test="${mem.memberIndex eq as.memberIndex}">
+													${mem.nickName}
 												</c:if>
+												</c:forEach>
 													<div class="reply_date"><fmt:formatDate value="${as.createDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>
 												</div>
-												<div class="reply_show">${as.content}</div>
-												<form action="${pageContext.request.contextPath}/retouch_comment.woo">
+												<div class="reply_show" id="reply_show_${as.commentIndex}">${as.content}</div>
+										<form action="${pageContext.request.contextPath}/retouch_comment.woo">
 												<input type="hidden" name="boardIndex" value="${atId}">							
 												<input type="hidden" name="memberIndex" value="${mbPKId}">		
-												<input type="hidden" name="commentId" value="${commentId}">
-												<div class="retouch_reply" style="display: none"><input type="text"
-								value="${as.content}" class="comment" name="content" size='70'> <input type="submit" value="수정"
-								class="retouch_submit"></div>
-								</form>
+												<input type="hidden" name="commentId" value="${as.commentIndex}">
+												<div class="retouch_reply" style="display: none" id="retouch_reply_${as.commentIndex}"><input type="text"
+												value="${as.content}" class="comment" name="comment" size='70'> <input type="submit" value="수정"
+												class="retouch_submit"></div>
+										</form>
 												<div class="reply_del_ret">
 													<button class="input_new_reply">댓글 쓰기</button>
-													<c:if test="${as.memberIndex eq mbPKId}">
-													&nbsp;<a role="button" class="layer_button" onclick="comment_delete_check()">삭제</a> <a
-														 class="retouch_button">수정</a>
+													<input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">
+													&nbsp;<a href="#" class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
+													<c:if test="${as.memberIndex eq mbPKId}">	
+													<a class="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
 														</c:if>
 												</div>
 								</c:forEach>
@@ -176,16 +193,16 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 </body>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+// $(document).ready(function(){
 // 		$('input_new_reply').click(function(){
 // 			$('#a').toggle();
 // 		})
-		$('.retouch_button').click(function() {
-			$('.retouch_reply').hide();
-			$('.retouch_reply').show();	
-		});
+// 		$('.retouch_button').click(function() {
+// 			$('.retouch_reply').hide();
+// 			$('.retouch_reply').show();	
+// 		});
 		
-});
+// });
 </script>
 <script>
 	function delete_check() {

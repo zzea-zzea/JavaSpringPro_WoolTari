@@ -114,4 +114,10 @@ public class MemberSVCImpl implements IMemberSVC {
 		return mbDao.selectOneMembdr(id);
 	}
 
+	@Override
+	public List<MemberVO> allMember() {
+		// TODO Auto-generated method stub
+		return mbDao.allMember();
+	}
+
 }

@@ -41,4 +41,7 @@ public interface IMemberDAO {
 	boolean updateOneMember(MemberVO mb);
 	
 	boolean selectOneMembdr(String id);
+	
+	// 모든 멤버 가져오기
+		List<MemberVO> allMember();
 }
