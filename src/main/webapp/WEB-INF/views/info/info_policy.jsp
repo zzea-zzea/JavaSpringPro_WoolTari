@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 window.onload = function(){
-	let mainCity = document.querySelector(".main-city");
+	let mainCity = document.querySelector("#main-city");
 	
 	mainCity.onchange = function(){
-		var subCity = document.querySelector('.sub-city');
+		var subCity = document.querySelector("#sub-city");
 		var mainOption = mainCity.options[mainCity.selectedIndex].innerText;
 		
 		var subOptions={
@@ -71,27 +70,27 @@ window.onload = function(){
 		<main class="policy_main">
 			<div class="policy_box ma">
 				<div class="policy_content_title">
-					<h2 id="policy_content_title_name"></h2>
+					<h2 id="policy_content_title_name">정책 정보</h2>
 					<span>동/구별 정책정보가 상이 할수 있습니다.자세한 문의는 각 동/구 청으로 확인 바랍니다.</span>
 				</div>
 				<div class="policy_content_search">
-					<select class="main-city le" data-size="5" >
+					<select class="selectpicker le" id="main-city" data-size="5" >
 						<option>시를 선택 하세요</option>
-						<option value="서울">서울시</option>
-						<option value="경기">경기도</option>
-						<option value="인천">인천시</option>
-						<option value="부산">부산시</option>
-						<option value="대구">대구시</option>
-						<option value="광주">광주시</option>
-						<option value="대전">대전시</option>
-						<option value="울산">울산시</option>
-						<option value="강원">강원도</option>
-						<option value="충청">충청도</option>
-						<option value="전라">전라도</option>
-						<option value="경상">경상도</option>
-						<option value="제주">제주도</option>
+						<option>서울시</option>
+						<option>경기도</option>
+						<option>인천시</option>
+						<option>부산시</option>
+						<option>대구시</option>
+						<option>광주시</option>
+						<option>대전시</option>
+						<option>울산시</option>
+						<option>강원도</option>
+						<option>충청도</option>
+						<option>전라도</option>
+						<option>경상도</option>
+						<option>제주도</option>
 					</select>
-					<select class="sub-city" data-size="5">
+					<select class="selectpicker" id="sub-city" data-size="5">
 						<option>구를 선택 하세요</option>
 					</select>
 					<a id="showbtn"><button>검색</button></a>
