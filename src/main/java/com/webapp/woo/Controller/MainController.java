@@ -132,9 +132,95 @@ public class MainController {
 			int lovSize = lovo.size();
 			mav.addObject("lovo", lovo);
 			mav.addObject("lovSize", lovSize);
+			mav.addObject("local_si", local_si);
 		} else {
 			mav.addObject("msg", "없어 꺼져");
 		}
+		
+		switch(local_si) {
+			case"서울" :
+				mav.addObject("centerLat", 37.564325);
+				mav.addObject("centerLng", 126.985864 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"부산" :
+				mav.addObject("centerLat", 35.160360);
+				mav.addObject("centerLng", 129.046564 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"대구" :
+				mav.addObject("centerLat", 35.852325);
+				mav.addObject("centerLng", 128.565325 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"인천" :
+				mav.addObject("centerLat", 37.509479);
+				mav.addObject("centerLng", 126.705247 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"광주" :
+				mav.addObject("centerLat", 35.152789);
+				mav.addObject("centerLng", 126.822940 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"대전" :
+				mav.addObject("centerLat", 36.343772);
+				mav.addObject("centerLng", 127.386738);
+				mav.addObject("local_si", local_si);
+				break;
+			case"울산" :
+				mav.addObject("centerLat", 35.547505);
+				mav.addObject("centerLng", 129.244038);
+				mav.addObject("local_si", local_si);
+				break;
+			case"경기" :
+				mav.addObject("centerLat",37.610051);
+				mav.addObject("centerLng", 127.227627 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"강원" :
+				mav.addObject("centerLat", 37.836998);
+				mav.addObject("centerLng", 128.398704 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"충북" :
+				mav.addObject("centerLat", 36.840788);
+				mav.addObject("centerLng", 127.749801);
+				mav.addObject("local_si", local_si);
+				break;
+			case"충남" :
+				mav.addObject("centerLat", 36.606622);
+				mav.addObject("centerLng", 126.876108);
+				mav.addObject("local_si", local_si);
+				break;
+			case"전북" :
+				mav.addObject("centerLat", 35.784236);
+				mav.addObject("centerLng", 127.138640 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"전남" :
+				mav.addObject("centerLat", 34.942881);
+				mav.addObject("centerLng",126.879671 );
+				mav.addObject("local_si", local_si);
+				break;
+			case"경북" :
+				mav.addObject("centerLat", 36.339425);
+				mav.addObject("centerLng", 128.888933);
+				mav.addObject("local_si", local_si);
+				break;
+			case"경남" :
+				mav.addObject("centerLat", 35.406681);
+				mav.addObject("centerLng", 128.173946);
+				mav.addObject("local_si", local_si);
+				break;
+			case"제주" :
+				mav.addObject("centerLat", 33.379081);
+				mav.addObject("centerLng", 126.567569 );
+				mav.addObject("local_si", local_si);
+				break;
+		
+		}
+		
 		return mav;
 	}
 
