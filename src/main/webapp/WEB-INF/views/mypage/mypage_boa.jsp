@@ -42,7 +42,7 @@ $(document).ready(function() {
 										</tr>
 									</thead>
 									<tbody>
-									<c:if test="${not empty userCtList}">			
+									<c:if test="${not empty userCtList}">수정			
 									<c:forEach var="ct" items="${userCtList}" varStatus="vs">
 										<tr id="${ct.board_index} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
 											<th scope="row">1</th>
