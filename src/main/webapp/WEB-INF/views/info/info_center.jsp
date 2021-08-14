@@ -10,11 +10,8 @@ $(document).ready(function(){
 	$(".hide").hide();
 	
 	var centerLat = '<c:out value="${centerLat}"/>';
-	console.log(centerLat);
 	var centerLng= '<c:out value="${centerLng}"/>';
-	console.log(centerLng);
 	var local_si= '<c:out value="${local_si}"/>';
-	console.log(local_si);
 
 	var latArr = document.getElementsByClassName("lat");
 	var lngArr = document.getElementsByClassName("lng");
@@ -65,13 +62,7 @@ $(document).ready(function(){
 			infowindow.close();
 		};
 	}
-	
 	function createMarkerFunc(lat, lng,center_name) {
-		console.log("center_name : ", center_name);
-		console.log("lat : ", lat);
-		console.log("lng : ", lng);
-		
-		// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 		 var positions = {
 					content : '<div style="width:150px;text-align:center;padding:6px 0;">'+center_name+'</div>',
 					latlng : new kakao.maps.LatLng(lat,lng)
@@ -170,7 +161,7 @@ function panTo() {
 						<tbody>
 							<c:forEach var="lo" items="${lovo}" varStatus="lov">
 								<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-									<td class="type_si"><c:out value="${lo.local_si}" /></td>
+									<td><c:out value="${lo.local_si}" /></td>
 									<td><c:out value="${lo.local_gu}" /></td>
 									<td class="center_name"><c:out value="${lo.facility_name}" /></td>
 									<td><c:out value="${lo.facility_cate eq 1 ? '공동생활지원' : '기본생활시설'}" /></td>
