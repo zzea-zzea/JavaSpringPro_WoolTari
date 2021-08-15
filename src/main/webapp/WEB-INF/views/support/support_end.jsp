@@ -17,7 +17,7 @@
 				<div class="support_content_title">
 					<h2>후원 완료</h2>
 					<h3>
-						<b>이주현</b> 님의 후원이 완료 되었습니다.
+						<b><c:out value="${name}"/></b> 님의 후원이 완료 되었습니다.
 					</h3>
 					<br> <img class="end_sup"
 						src="${path}/resources/img/end_sup.png" alt="img">

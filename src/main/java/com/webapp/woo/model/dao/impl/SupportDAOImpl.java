@@ -1,9 +1,11 @@
 package com.webapp.woo.model.dao.impl;
 
+import java.sql.Types;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -22,6 +24,19 @@ public class SupportDAOImpl implements ISupportDAO {
 		// TODO Auto-generated method stub
 		return jtem.query("select * from wooltari_db.support where member_index = ?", 
 				BeanPropertyRowMapper.newInstance(SupportVO.class), memberIndex);
+	}
+
+	@Override
+	public boolean insertSupport(SupportVO SV) {
+		try {
+			int r = this.jtem.update(
+					"insert into support(support_index, support_date, price, price_type, depositor_name, support_center_type, member_index) values(null, now(), ?, 1, ?, ?, ?)",
+					new Object[] { SV.getPrice(), SV.getDepositorName(), SV.getSupportCenterType(), SV.getMemberIndex()}, new int[] { Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.INTEGER});
+			return r == 1;
+		} catch (DataAccessException dae) {
+			System.out.println("후원 추가내역 실패 ");
+			return false;
+		}
 	}
 
 }

@@ -21,4 +21,10 @@ public class SupportSCVImpl implements ISupportSVC {
 		return isDAO.oneUserSupport(memberIndex);
 	}
 
+	@Override
+	public boolean insertSupport(SupportVO SV) {
+		// TODO Auto-generated method stub
+		return isDAO.insertSupport(SV);
+	}
+
 }

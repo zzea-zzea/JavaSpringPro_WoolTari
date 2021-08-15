@@ -3677,79 +3677,79 @@ html,
 	text-align: center;
 }
 /*------------ 후원하기 메인 end ------------*/
-
+/*
 ------------담당자 : 이주현------------
 사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인
 페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp
 */
 
 .modal_body{
-	box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 .modal_body .modal-overlay {
-	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+   background: rgba(255, 255, 255, 0.25);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .modal_body .modal-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgb(0 0 0/ 34%);
-	display: none;
-	justify-content: center;
-	align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgb(0 0 0/ 34%);
+   display: none;
+   justify-content: center;
+   align-items: center;
 }
 
 .modal_body .modal-wrapper .modal-box {
-	background: white;
-	border-radius: 10px;
-	width: 450px;
-	height: 630px;
-	padding: 30px;
-	box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+   background: white;
+   border-radius: 10px;
+   width: 450px;
+   height: 460px;
+   padding: 30px;
+   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
 }
 
 .modal_body .modal-wrapper .modal-box.find {
-	height: 460px;
-	position: relative;
+   height: 460px;
+   position: relative;
 }
 
 .modal_body .modal-wrapper .modal-box.ch {
-	height: 400px;
-	position: relative;
+   height: 400px;
+   position: relative;
 }
 
 .modal-close-box {
-	text-align: right;
+   text-align: right;
 }
 .modal_body .modal-wrapper .modal-box .modal-close-btn,
 .modal_body .modal-wrapper .modal-box.find .modal-close-btn,
 .modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
-	background-color: white;
-	border: white;
-	float: right;
+   background-color: white;
+   border: white;
+   float: right;
 }
 
 .modal_body .modal-wrapper .modal-box .modal-close-btn svg,
 .modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
 .modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
 {
-	width: 20px;
-	opacity: 0.7;
+   width: 20px;
+   opacity: 0.7;
 }
 
 .modal_body .modal-open-btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
+   border-radius: 50px;
+   border: 2px solid #f2b09b;
+   background: #fff;
+   line-height: 32px;
+   font-size: 13px;
+   color: #b96c6c;
+   font-weight: bold;
 }
 
 
@@ -3763,83 +3763,83 @@ html,
 */
 
 .login_box .login_box_menu {
-	width: 390px;
-	letter-spacing: 0.3;
+   width: 390px;
+   letter-spacing: 0.3;
 }
 
 .login_box .login_box_menu fieldset {
-	border: 0px;
+   border: 0px;
 }
 
 .login_box .login_box_menu .login_box_input label {
-	position: absolute;
-	width: 0;
-	height: 0;
-	overflow: hidden;
+   position: absolute;
+   width: 0;
+   height: 0;
+   overflow: hidden;
 }
 
 .login_box .login_box_menu .login_btn{ 
- 	font-size: 13px; 
- 	line-height: 1.5; 
+    font-size: 13px; 
+    line-height: 1.5; 
  } 
 
 
 .login_box .login_box_menu, .login_box .login_box_menu .login_box_input {
-	margin: 20px 0 0;
+   margin: 20px 0 0;
 }
 
 .login_box .login_box_menu .login_logo_wrap {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 .login_box .login_box_menu{
-	margin-bottom: 10px;
-	padding: 15px;
-	box-sizing: border-box;
+   margin-bottom: 10px;
+   padding: 15px;
+   box-sizing: border-box;
 }
 
 
 .login_box .login_box_menu .login_box_input .input_id_box, .login_box .login_box_menu .login_box_input .input_pw_box {
-	border: 1px solid #bcbcbc;
-	margin-bottom: 10px;
-	padding: 15px;
-	box-sizing: border-box;
-	border-radius: 8px;
+   border: 1px solid #bcbcbc;
+   margin-bottom: 10px;
+   padding: 15px;
+   box-sizing: border-box;
+   border-radius: 8px;
 }
 
 .login_box .login_box_menu .login_box_input .input_id_box input,
 .login_box .login_box_menu .login_box_input  .input_pw_box input{
-	display: block;
-	width: 100%;
-	height: 100%;
-	font-size: 15px;
-	color: #000;
-	border: none;
-	outline: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   font-size: 15px;
+   color: #000;
+   border: none;
+   outline: 0;
 }
 
 .login_box .login_box_menu .login_btn {
-	margin: 0;
-	width: 100%;
-	padding: 9px;
-	 height: 54px; 
-	font-size: 20px;
-	border-radius: 10px;
-	border: 2px solid;
-	background: #b4bcc3;
-	color: #fff;
-	font-weight: bold;
+   margin: 0;
+   width: 100%;
+   padding: 9px;
+    height: 54px; 
+   font-size: 20px;
+   border-radius: 10px;
+   border: 2px solid;
+   background: #b4bcc3;
+   color: #fff;
+   font-weight: bold;
 }
 
 .login_box .login_box_menu .login_box_small_menu {
-	overflow: hidden;
-	padding: 10px 0 0;
-	font-family: 'Cafe24SsurroundAir';
+   overflow: hidden;
+   padding: 10px 0 0;
+   font-family: 'Cafe24SsurroundAir';
 }
 
 .login_box .login_box_menu .login_box_small_menu {
-	position: relative;
+   position: relative;
 }
 
 
@@ -3850,24 +3850,24 @@ html,
 
 
 .login_box .login_box_menu .another_login {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .login_box .login_box_menu .another_login, .login_box .login_box_menu .another_login .another_login_line {
-/*	margin-top: 20px;*/
-/*	margin-bottom: 20px;*/
-	color: #bcbcbc;
+/*   margin-top: 20px;*/
+/*   margin-bottom: 20px;*/
+   color: #bcbcbc;
 }
 
 .login_box .login_box_menu .another_login,  .login_box .login_box_menu .another_login .another_login_line a{
-	color: #797979;
+   color: #797979;
 }
 
 .login_box .login_box_menu .another_login, .login_box .login_box_menu .another_login .another_login_list {
-	list-style: none;
-	flex-direction: column;
+   list-style: none;
+   flex-direction: column;
 }
 
 .login_box .login_box_menu .another_login .another_login_list{
@@ -3875,59 +3875,59 @@ html,
 }
 
 /* .login_box .login_box_menu .another_login, .login_box .login_box_menu .another_login .another_login_list button{ */
-/*     	height: 48px; */
+/*        height: 48px; */
 /* } */
 
 .login_box .login_box_menu .another_login .another_login_list button img{
-	width: 300px;
-	height: 48px;
-/*	border-radius: 10px;*/
+   width: 300px;
+   height: 48px;
+/*   border-radius: 10px;*/
     border: 1px solid;
 }
 
 .login_box .login_box_menu .another_login .another_login_list button {
-	border: 0;
-	outline: 0;
-	margin: 5px;
-	background-color: white;
+   border: 0;
+   outline: 0;
+   margin: 5px;
+   background-color: white;
 }
 
 .login_box .login_box_menu .another_login .another_login_line{
-	font-size: 16px;
-	margin-top:15px;
+   font-size: 16px;
+   margin-top:15px;
 }
 
 .login_box .login_box_menu .login_logo_wrap h1 {
-	color: #505050;
-	font-size: 30px;
-	font-weight: 600px;
-	letter-spacing: 1px;
-	margin: 0;
+   color: #505050;
+   font-size: 30px;
+   font-weight: 600px;
+   letter-spacing: 1px;
+   margin: 0;
 }
 
 .login_box .login_box_menu .login_logo_wrap h1{
-	font-size: 50px;
+   font-size: 50px;
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt:hover {
-	color: #db7777;
+   color: #db7777;
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt {
-	color: #555;
-	transition: 0.5s;
-	display: inline-block;
-	text-decoration: none;
-	font-weight: bold;
+   color: #555;
+   transition: 0.5s;
+   display: inline-block;
+   text-decoration: none;
+   font-weight: bold;
 }
 
 .login_box .login_box_menu .login_logo_wrap .header_txt .txt_dig {
-	color: #b96c6c;
+   color: #b96c6c;
 }
 
 .login_box .login_box_menu .login_box_small_menu .menu_join .join_link, .login_box .login_box_menu .login_box_small_menu .menu_find .find_link {
-	color: black;
-	text-decoration: none;
+   color: black;
+   text-decoration: none;
 }
 
 /*------------ 로그인 end ------------*/
@@ -3990,7 +3990,7 @@ html,
 }
 
 .menu_id_box .menu_id_box_content .user_email_txt .email_re_btn:hover{
-	opacity: 1; 
+   opacity: 1; 
 }
 
 
@@ -3998,8 +3998,8 @@ html,
 .menu_id_box .menu_id_box_content .menu_id_hide_box .email_re_btn,
 .menu_pw_box .menu_pw_box_content .email_btn,
 .menu_pw_box .menu_pw_box_content .menu_pw_hide_box .email_re_btn{
-	
-  	 width: 80px;
+   
+      width: 80px;
     line-height: 35px;
     border-radius: 8px;
     border: 0;
@@ -4062,8 +4062,9 @@ font-weight: bold;
 font-family: 'Cafe24SsurroundAir';
 
 }
-.menu_new_pw_box .menu_new_pw_box_content .menu_new_span_box .menu_new_pw_box_pw {
-   	font-size: 11px;
+.menu_new_pw_box .menu_new_pw_box_content .menu_new_span_box .menu_new_pw_box_pw,
+ .menu_new_pw_box_pw1, .menu_new_pw_box_num_pw {
+      font-size: 11px;
     font-weight: bold;
     font-family: 'Cafe24SsurroundAir';
     color: red;
@@ -4075,7 +4076,7 @@ font-family: 'Cafe24SsurroundAir';
 .menu_id_box .menu_id_box_content .email_btn
 .menu_id_box .menu_id_box_content .menu_id_hide_box .email_btn
 {
-	margin-left: 13px;
+   margin-left: 13px;
     padding: 10px;
     border: 1px solid #c5c5c5;
     outline: 0;
@@ -4086,15 +4087,15 @@ font-family: 'Cafe24SsurroundAir';
 }
 
 .menu_id_box .menu_id_box_content .menu_id_hide_box .txt_hide{
-	position: relative;
-	margin-bottom: 20px;
+   position: relative;
+   margin-bottom: 20px;
 }
 
 .menu_id_box .menu_id_box_content .menu_id_hide_box .txt_hide .hide_small{
-	position: absolute;
-	top: -6px;
-	left: 10px;
-	font-size: 11px;
+   position: absolute;
+   top: -6px;
+   left: 10px;
+   font-size: 11px;
 font-weight: bold;
 font-family: 'Cafe24SsurroundAir';
 }
@@ -4151,8 +4152,8 @@ border-radius: 10px;
 }
 
 .mypage_box_main .box_main_my .box_main_my_info, .mypage_box_main .box_main_my .box_main_my_contact {
-	border: 3px solid #bcbcbc;
-	border-radius: 15px;
+   border: 3px solid #bcbcbc;
+   border-radius: 15px;
     font-family: 'Cafe24SsurroundAir';
     
 }
@@ -4391,14 +4392,14 @@ background: rgba( 185, 108, 108, 0.5);
 }
 
 .mypage_box_main .comment_box_menu .bulletin_table tr{
-	 text-align: center;
+    text-align: center;
     border-bottom: 1px solid black;
     font-size: 18px;
     font-family: Cafe24SsurroundAir;
 }
 
 .mypage_box_main .comment_box_menu .bulletin_table th{
-	text-align: center;
+   text-align: center;
     border-bottom: 1px solid black;
     background-color: rgb(234,234,234, 0.5);
 }
@@ -4451,3 +4452,4 @@ background: rgba( 185, 108, 108, 0.5);
 
 
 /*------------ 내가쓴글/댓글 end ------------*/
+

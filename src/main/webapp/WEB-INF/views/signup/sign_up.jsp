@@ -6,18 +6,8 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 <script>
-$(document).ready(
-function() {
-/*  modal_step:eq(0)약관동의
-modal_step:eq(1) 회원가입 */
 
-$(".join_link").click(function() {
-$('.modal_step').show();
-};
-$.(.terms_and_conditions_wrap_next-button).click(function)(){
-$('.modal_step').hide();
-$('.modal_step':eq(1)').show();
-};
+   var mode = null;
 
 </script>
 
@@ -80,8 +70,114 @@ $('.modal_step':eq(1)').show();
                         </g>
                     </svg>
 						</button>
+						
+						
 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
 
+<script type="text/javascript">
+	var CTX = '${pageContext.request.contextPath}';
+	$(document).ready(function() {
+		$('#dupchk').on("click", function() {
+			var login = $('input[name=id]').val();
+ 			console.log(login);			
+ 			var tUrl = CTX + '/member_dupcheck.woo';
+ 			$.ajax({
+ 				type: 'get',
+ 				url: tUrl,
+ 				data: "id=" + login,
+ 				// 이 ajax 비동기 요청에 의해서 서버가 성공적으로 응답을
+ 				// 전송해주었을 때 그 응답을 처리하는 콜백 이벤트함수
+ 				success: function(res) { // "yes", "no", "error"
+ 					//res: member_dupcheck.my 요청에 대한 비동기 응답
+ 					// res 조각페이지 ===> responsebody적용후 문자열.
+ 					console.log("ajax: " + res);
+					//$('#dupmsg').html(res);
+					var msg = "";
+					
+					$('#dupmsg').removeClass('yes');
+					$('#dupmsg').removeClass('no');
+					$('#dupmsg').removeClass('error');// hasClass(), toggleClass()..
+					$('#dupmsg').fadeIn(500); // 0.5초 나타남
+					switch(res) {
+						case "yes":
+							msg = login + ' 이미 사용중인 아이디! TT';
+							$('input[type=submit]').attr('disabled', true);
+							break;
+						case "no":
+							msg = login + ' 사용 가능한 아이디! ^^';
+							$('input[type=submit]').attr('disabled',  true);
+								// false 가입 서브밋 버튼 활성화
+							break;
+						case "error":
+							msg = "요청파라미터 에러! or DB관련 에러!";
+							$('input[type=submit]').attr('disabled', true);
+							break;
+						default:
+							msg = "예외 발생!!!!!";	
+							$('input[type=submit]').attr('disabled', true);
+					}
+					$('#dupmsg').addClass(res); 
+					$('#dupmsg').html('<i>'+msg+'</i>'); // innerHTML
+					
+					
+				}
+ 			}); // 이 형태는 load()함수와 같은 결과.
+		});
+
+		
+
+			$('#dupchk2').on("click", function() {
+				var nick = $('input[name=nickname]').val();
+	 			console.log(nick);			
+	 			var tUrl = CTX + '/member_nick_dupcheck.woo';
+	 			$.ajax({
+	 				type: 'get',
+	 				url: tUrl,
+	 				data: "nickname=" + nick,
+	 				// 이 ajax 비동기 요청에 의해서 서버가 성공적으로 응답을
+	 				// 전송해주었을 때 그 응답을 처리하는 콜백 이벤트함수
+	 				success: function(res) { // "yes", "no", "error"
+	 					//res: member_dupcheck.my 요청에 대한 비동기 응답
+	 					// res 조각페이지 ===> responsebody적용후 문자열.
+	 					console.log("ajax: " + res);
+						//$('#dupmsg').html(res);
+						var msg = "";
+						
+						$('#dupmsg2').removeClass('yes');
+						$('#dupmsg2').removeClass('no');
+						$('#dupmsg2').removeClass('error');// hasClass(), toggleClass()..
+						$('#dupmsg2').fadeIn(500); // 0.5초 나타남
+						switch(res) {
+							case "yes":
+								msg = nick + ' 이미 사용중인 닉네임! TT';
+								$('input[type=submit]').attr('disabled', true);
+								break;
+							case "no":
+								msg = nick + ' 사용 가능한 닉네임! ^^';
+								$('input[type=submit]').attr('disabled', true);
+									// false 가입 서브밋 버튼 활성화
+								break;
+							case "error":
+								msg = "요청파라미터 에러! or DB관련 에러!";
+								$('input[type=submit]').attr('disabled', true);
+								break;
+							default:
+								msg = "예외 발생!!!!!";	
+								$('input[type=submit]').attr('disabled', true);
+						}
+						$('#dupmsg2').addClass(res); 
+						$('#dupmsg2').html('<i>'+msg+'</i>'); // innerHTML
+						
+						
+					}
+	 			}); // 이 형태는 load()함수와 같은 결과.
+			});
+
+	});
+</script>
+			
 						<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 						<script>
                     function chkPW() {
@@ -132,91 +228,7 @@ $('.modal_step':eq(1)').show();
 
 						<script type="text/javascript">
 						
-                    function formCheck() {
-                   
-                    var getId = document.getElementById("sign_Id");
-                    var getPw = document.getElementById("user_pw");
-                    var getName = document.getElementById("userName");
-                    var getEmail1 = document.getElementById("str_email01");
-                    var getEmail2 = document.getElementById("str_email02");
-                    var getPhone1 =  document.getElementById("userPhoneNum1");
-                    var getPhone2 =  document.getElementById("userPhoneNum2");
-                    var getPhone3 =  document.getElementById("userPhoneNum3");
-                    
-                    var arrEmail1 = new Array();
-                    var arrEmail2 = new Array();
-                    var arrEmail3 = new Array();
-                    var arrPhone1 = new Array();
-                    var arrPhone2 = new Array();
-                    var arrPhone3 = new Array();
-                    
-                    var tempEmail= null;
-                    var tempPhone= 0;
-//                     이메일
-                    for(var i = 0; i<getEmail1.value.length; i++){
-                    	arrEmail1[i] = getEmail1.value.charAt(i);
-                    }
-                    for(var i = 0; i<getEmail2.value.length; i++){
-                    	arrEmail2[i] = getEmail2.value.charAt(i);
-                    }
-                    for(var i = 0; i<getEmail1.value.length; i++){
-                    	tempEmail += getEmail1[i];
-                    }
-                    for(var i = 0; i<getEmail2.value.length; i++){
-                    	tempEmail += getEmail2[i];
-                    }
-//                     핸드폰
-                    for(var i = 0; i<getPhone1.value.length; i++){
-                    	arrPhone1[i] = getPhone1.value.charAt(i);
-                    }
-                    for(var i = 0; i<getPhone2.value.length; i++){
-                    	arrPhone2[i] = getPhone2.value.charAt(i);
-                    }
-                    for(var i = 0; i<getPhone3.value.length; i++){
-                    	arrPhone3[i] = getPhone3.value.charAt(i);
-                    }
-                    var Phonenum = getPhone1 +"-"+ getPhone2 +"-"+ getPhone3;
-                    var regExp = /(01[0|1|6|9|7])[-](\d{3}|\d{4})[-](\d{4}$)/g;
-                    
-                        if ((getId.value) == "") {
-                            alert('아이디를 기입하세요');
-                            getId.focus();
-                            return false;
-                           
-                        }
-                        if ((getPw.value) == "") {
-                            alert('암호를 기입하세요');
-                            getPw.focus();
-                            return false;
-                        }
-                        if ((getName.value) == "") {
-                            alert('이름을 기입하세요');
-                            getName.focus();
-                            return false;
-                           
-                     
-                        }
-                        if ((getEmail1.value) == "") {
-                            alert('이메일을 기입하세요');
-                            getEmail1.focus();
-                            return false;
-                        }        
-                   
-                        if ((tempPhone.length) <= 11 ) {
-                            alert('핸드폰 번호를 기입하세요');
-                            getPhone1.value == "";
-                            getPhone2.value == "";
-                            getPhone3.value == "";
-                            getPhone1.focus();
-                           
-                            return false;
-                        }
-                          location.replace('login.woo');
-                          alert((getId.value) + '(' +
-                            (getName.value) + ") 님의 \n 회원가입이 완료되었습니다."
-                        );
 
-                    }
 
                     function keycheck1(x) {
                         if (x.value.length == 3) {
@@ -237,12 +249,12 @@ $('.modal_step':eq(1)').show();
                         var passwordCheck = document.getElementById("pwck").value;
 
                         if (password == '') {
-                            document.getElementById("passwordCheckText").innerHTML = "비밀번호 비어있음";
+                            document.getElementById("passwordCheckText").innerHTML = "<font color=red>비밀번호 비어있음</font>";
                         } else {
                             if (password != passwordCheck) {
-                                document.getElementById("passwordCheckText").innerHTML = "일치하지 않습니다.";
+                                document.getElementById("passwordCheckText").innerHTML = "<font color=red>일치하지 않습니다.</font>";
                             } else {
-                                document.getElementById("passwordCheckText").innerHTML = "일치합니다. ";
+                                document.getElementById("passwordCheckText").innerHTML = "<font color=blue>일치합니다. </font>";
                             }
                         }
                     }
@@ -287,7 +299,147 @@ $('.modal_step':eq(1)').show();
                             comNum3.focus()
                         }
                     }
+                    
+                    
+                    function formCheck() {
+                        
+                        var getId = document.getElementById("sign_Id");
+                        var getPw = document.getElementById("user_pw");
+                        var getName = document.getElementById("userName");
+                        var getCompName = document.getElementById("compName")
+                        var getEmail1 = document.getElementById("str_email01");
+                        var getEmail2 = document.getElementById("str_email02");
+                        var getPhone1 =  document.getElementById("userPhoneNum1");
+                        var getPhone2 =  document.getElementById("userPhoneNum2");
+                        var getPhone3 =  document.getElementById("userPhoneNum3");
+                        var getCompNum1 = document.getElementById("comNum1");
+                        var getCompNum2 = document.getElementById("comNum2");
+                        var getCompNum3 = document.getElementById("comNum3");
+                        var btn = document.getElemebtById("nxt_button");
+                        
+                        var arrEmail1 = new Array();
+                        var arrEmail2 = new Array();
+                        var arrEmail3 = new Array();
+                        
+                        var arrPhone1 = new Array();
+                        var arrPhone2 = new Array();
+                        var arrPhone3 = new Array();
+                        
+                        var arrCompanyNum1 = new Array();
+                        var arrCompanyNum2 = new Array();
+                        var arrCompanyNum3 = new Array();
+                        
+                        var tempEmail= null;
+                        var tempPhone= 0;
+                        var tempComp= 0;
+                        
+                        
+//                         이메일
+                        for(var i = 0; i<getEmail1.value.length; i++){
+                        	arrEmail1[i] = getEmail1.value.charAt(i);
+                        }
+                        for(var i = 0; i<getEmail2.value.length; i++){
+                        	arrEmail2[i] = getEmail2.value.charAt(i);
+                        }
+                        for(var i = 0; i<getEmail1.value.length; i++){
+                        	tempEmail += getEmail1[i];
+                        }
+                        for(var i = 0; i<getEmail2.value.length; i++){
+                        	tempEmail += getEmail2[i];
+                        }
+//                         핸드폰
+                        for(var i = 0; i<getPhone1.value.length; i++){
+                        	arrPhone1[i] = getPhone1.value.charAt(i);
+                        }
+                        for(var i = 0; i<getPhone2.value.length; i++){
+                        	arrPhone2[i] = getPhone2.value.charAt(i);
+                        }
+                        for(var i = 0; i<getPhone3.value.length; i++){
+                        	arrPhone3[i] = getPhone3.value.charAt(i);
+                        }
+                        var Phonenum = getPhone1 +"-"+ getPhone2 +"-"+ getPhone3;
+                        var regExp = /(01[0|1|6|9|7])[-](\d{3}|\d{4})[-](\d{4}$)/g;
+                        
+
+//                      사업자번호
+                     for(var i = 0; i<getCompNum1.value.length; i++){
+                     	arrCompanyNum1[i] = getCompNum1.value.charAt(i);
+                     }
+                     for(var i = 0; i<getCompNum2.value.length; i++){
+                    	 arrCompanyNum2[i] = getCompNum2.value.charAt(i);
+                     }
+                     for(var i = 0; i<getCompNum3.value.length; i++){
+                    	 arrCompanyNum3[i] = getCompNum3.value.charAt(i);
+                     }
+                     var CompanyNumber = getCompNum1 +"-"+ getCompNum2 +"-"+ getCompNum3;
+                     var regExp2 = /(\d{3}])[-](\d{2})[-](\d{5}$)/g;
+                        
+                            if ((getId.value).isEmpty() || (getId.value) == null) {
+                                alert('아이디를 기입하세요');
+                                getId.focus();
+                                return false;
+                               
+                            }
+                            else if ((getPw.value) == null || (getPw.value).isEmpty() ) {
+                                alert('암호를 기입하세요');
+                                getPw.focus();
+                                return false;
+                            }
+                            
+                            else if (mode == 'option1' && (getName.value) == null || (getName.value).isEmpty() ) {
+                                alert('이름을 기입하세요');
+                                getName.focus();
+                                return false;
+                            }
+                            
+                            else if (mode == 'option2' && (getCompName.value) == null || (getCompName.value).isEmpty() ) {
+                                alert('대표자 이름을 기입하세요');
+                                getCompName.focus();
+                                return false;
+                               
+                         
+                            }
+                            else if ((getEmail1.value) == null || (getEmail1.value).isEmpty() ) {
+                                alert('이메일을 기입하세요');
+                                getEmail1.focus();
+                                return false;
+                            }        
+                            else if (mode =='option2' && (tempComp.length) <= 11 (tempComp.value).isEmpty() || (tempComp.value) == null) {
+                                alert('사업자 번호를 기입하세요');
+                                getCompNum1.value == "";
+                                getCompNum2.value == "";
+                                getCompNum3.value == "";
+                                getCompNum1.focus();
+                               
+                                return false;
+                            }
+                       
+                            else if (mode =='option1' &&(tempPhone.length) <= 11 && (tempPhone.value).isEmpty() || (tempPhone.value) == null) {
+                                alert('핸드폰 번호를 기입하세요');
+                                getPhone1.value == "";
+                                getPhone2.value == "";
+                                getPhone3.value == "";
+                                getPhone1.focus();
+                               
+                                return false;
+                            }
+                            
+                            else{
+                            	
+                         
+                             alert((getId.value) + '(' +
+                             (getName.value) + ") 님의 \n 회원가입이 완료되었습니다."
+                            );
+                            }
+
+
+                        }
+                    
+                    
+         
+                    
                 </script>
+                    
 
 						<!--                -->
 						<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -295,6 +447,7 @@ $('.modal_step':eq(1)').show();
                     $(document).ready(function(){
                         $('#selectBox').change(function(){
                             var result = $('#selectBox option:selected').val();
+                            mode = result;
                             if( result == 'option2'){
                                 $('.signup_companyName_and_Number').show();
                                 $('.signup_hide_company').hide();
@@ -307,27 +460,6 @@ $('.modal_step':eq(1)').show();
                                      
                 </script>
                 
-                <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-					<script>
-					$(function(){	
-						$(document).on("change", "select[name=list]", function(){
-							var value = $(this).find("option:selected").val();
-							var inputText1 = $(this).closest('.selectBox').find('.signup_companyName_and_Number');
-							var inputText2 = $(this).closest('.selectBox').find('.signup_hide_company');
-
-							var flag = false;
-							if (value == option2) {
-								flag = true;
-								$(inputText1).val('');
-							}
-							
-							$(inputText1).attr("disabled", flag);
-							$(inputText2).attr("disabled", flag);
-						});
-					
-					})
-					</script>
-
 
 
 						<div id="signup_form" class="signup_signup_form">
@@ -359,12 +491,16 @@ $('.modal_step':eq(1)').show();
 											<th>아이디</th>
 											<td>
 												<div class="signup_td_div_po">
+												
 													<input name="id" type="text" class="signup_sign_in_input"
-														id="sign_Id" onkeyup="chkID();" > <input
-														type="button" value="click" onclick="alert('사용가능합니다')">
-													<span class="signup_small_text"><br>*4~12자리
+														id="sign_Id" value="${empty param.id ? '': param.id}"> 
+													
+														<a id="dupchk" href="#" class ="signup_dupcheck">중복확인</a>
+														<br> 
+														<span id="dupmsg"></span>
+													 <span class="signup_small_text"><br>*4~12자리
 														영대소문자와 숫자로만 입력가능합니다</span><br> <span class="signup_pw_text"
-														id="id_msg" onkeyup="chkID();"></span>
+														id="id_msg" onkeyup="chkID();"></span> 
 												</div>
 											</td>
 										</tr>
@@ -373,10 +509,13 @@ $('.modal_step':eq(1)').show();
 											<th>별명</th>
 											<td>
 												<div class="signup_td_div_po">
+														
 													<input name="nickname" id="nick_name" type="text"
 														class="signup_sign_in_input" maxlength="15" 
-														onkeyup="chkNick();"> <input type="button"
-														value="click" onclick="alert('사용가능합니다')"> <span
+														value="${empty param.nickname ? '': param.nickname}">          										
+														<a id="dupchk2" href="#" class ="signup_dupcheck">중복확인</a> 
+														<br>
+														<span id="dupmsg2"></span> <span
 														class="signup_small_text"><br>*영대소문자,한글,숫자만
 														가능합니다</span> <br> <span class="signup_pw_text" id="nick_msg"
 														onkeyup="chkNick();"></span>
@@ -421,7 +560,7 @@ $('.modal_step':eq(1)').show();
 											<td>
 												<div class="signup_td_div_po">
 													<input type="text" name="name" class="signup_sign_in_input"
-														id="userName" maxlength="10" pattern="/^[가-힣]{1,}+$/">
+														id="userName" maxlength="10">
 
 
 												</div>
@@ -429,11 +568,12 @@ $('.modal_step':eq(1)').show();
 										</tr>
 
 
-										 <tr id="company1" class="signup_companyName_and_Number" style="display: none;">										 <th>대표자 이름</th> 
+										 <tr id="company1" class="signup_companyName_and_Number" style="display: none;">
+											 <th>대표자 이름</th> 
 										 <td> 
 										<div class="signup_td_div_po"> 
 										<input type="text" name="name"
-										class="signup_sign_in_input" id="compName" pattern="/^[가-힣]+$/"> -->
+										class="signup_sign_in_input" id="compName"> 
 										</div>
 										 </td> 
 										 </tr> 
@@ -477,7 +617,7 @@ $('.modal_step':eq(1)').show();
 													<input type="text" class="signup_sign_in_email_input"
 														name="email" id="str_email01"> @ <input
 														type="text" class="signup_sign_in_email_input"
-														name="str_email02" id="str_email02" disabled
+														name="email" id="str_email02" disabled
 														value="naver.com"> <select name="selectEmail"
 														class="signup_sign_in_email_input" id="selectEmail">
 														<option value="1">직접입력</option>
@@ -485,34 +625,13 @@ $('.modal_step':eq(1)').show();
 														<option value="hanmail.net">hanmail.net</option>
 														<option value="hotmail.com">hotmail.com</option>
 														<option value="nate.com">nate.com</option>
-													</select> <input type="button" class="signup_verify_button"
-														value="send" a href="#"
-														onclick="alert('인증메일을 보냈습니다');div_show();">
+													</select> 
 												</div>
 											</td>
 										</tr>
 
 
-										<!-- onclick 하면 나와야할 부분 -->
-
-										<tr class="signup_user_email_check_tr">
-											<th>이메일인증</th>
-											<td id="signup_user_email_check_td_invisible">
-												<div class="signup_td_div_po2">
-
-													<input type="text" class="signup_email_veri_text"
-														name="email_verify_text" id="email_verify">
-
-													<input type="button" class="signup_sign_in_email_button1"
-														id="email_verify_button1" name="email_button"
-														value="confirm" a href="#" onclick="alert('인증되었습니다')">
-													<input type="button" id="email_verify_button2"
-														class="signup_sign_in_email_button2" name="email_button"
-														value="resend" a href="#"
-														onclick="alert('인증메일을 재발급되었습니다')">
-												</div>
-											</td>
-										</tr>
+					
 
 										<tr id="comp_none3" class="signup_hide_company">
 											<th>휴대폰 번호</th>
@@ -540,7 +659,7 @@ $('.modal_step':eq(1)').show();
 											<th>생년월일</th>
 											<td>
 												<div class="signup_td_div_po">
-													<input type="date" required class="signup_sign_in_input"
+													<input type="date" class="signup_sign_in_input"
 														id="userBday" name="brith">
 												</div>
 											</td>
@@ -553,9 +672,9 @@ $('.modal_step':eq(1)').show();
 
 
 							<div class="signup_button_div">
-								<input type="button" class="signup_previous_button"
-									id="prev_button" value="Prev" onclick="alert('이전화면으로 돌아갑니다'); ">
-								<input type="submit" class="signup_next_button" id="nxt_button"
+								<a type="button" class="signup_previous_button"
+									id="prev_button" href="${pageContext.request.contextPath}/conditions.woo" onclick="alert('이전화면으로 돌아갑니다'); " > Pre </a>
+								<input type="submit" class="signup_next_button"  id="nxt_button"
 									value="JOIN" onclick="formCheck();">
 							</div>
 

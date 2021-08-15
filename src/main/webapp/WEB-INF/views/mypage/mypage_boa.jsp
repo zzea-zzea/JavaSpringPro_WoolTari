@@ -10,6 +10,7 @@ $(document).ready(function() {
 				$("#${ct.board_index}").toggle();
 				}
 			)
+			$(".${ct.board_index}").trigger("click");
 			});
 </script>
 </c:forEach>
@@ -29,6 +30,7 @@ $(document).ready(function() {
 							<h2>내 게시글 조회</h2>
 							<span>게시글 조회는 이곳을 통해 확인해 주세요!</span>
 						</div>
+						<c:if test="${not empty userCtList}">
 						<div class="childcare_content my">
 							<div class="table-wrap">
 								<table class="tables myaccordion table-hover" id="accordion">
@@ -42,10 +44,10 @@ $(document).ready(function() {
 										</tr>
 									</thead>
 									<tbody>
-									<c:if test="${not empty userCtList}">수정			
+									<% int i = 1; %>	
 									<c:forEach var="ct" items="${userCtList}" varStatus="vs">
-										<tr id="${ct.board_index} data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
-											<th scope="row">1</th>
+										<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="cummunity">
+											<th scope="row"><%= i++ %></th>
 											<td class="${ct.board_index}"><c:out value="${ct.title}"/></td>
 											<td class="${ct.board_index}"><c:if test="${ct.cate eq 1}">일상</c:if>
 											<c:if test="${ct.cate eq 2}">지원정보</c:if>
@@ -59,16 +61,19 @@ $(document).ready(function() {
 												</c:if>
 										</tr>
 										<tr>
-											<td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
+											<td colspan="6" id="${ct.board_index}" class="collapse show acc" data-parent="#accordion">
 												<p><c:out value="${ct.content}" /></p>
 											</td>
 										</tr>
 										</c:forEach>
-										</c:if>
 									</tbody>
 								</table>
 							</div>
 						</div>
+						</c:if>
+						<c:if test="${empty userCtList}">
+						<h3>게시글이 하나도 없습니다.</h3>
+						</c:if>
 					</section>
 				</div>
 			</div>

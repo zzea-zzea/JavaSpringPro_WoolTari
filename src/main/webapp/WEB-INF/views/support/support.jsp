@@ -5,17 +5,17 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	   $("#selectpicker_le").change(function() {
-	      if($('#selectpicker_le option:selected').val() == '미혼모 시설') {
+	      if($('#selectpicker_le option:selected').val() == '1') {
 	         $('.support_title_option').text("미혼모 시설");
 	         $('.support_content_option').html(
 	               "경제적으로 취약한 미혼모,부가 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
 	         $(".imgClass").attr("src", "${path}/resources/img/main/main2.png");
-	      } else if($('#selectpicker_le option:selected').val() == '한부모 가정') {
+	      } else if($('#selectpicker_le option:selected').val() == '2') {
 	         $('.support_title_option').text("한부모 가정");
 	         $('.support_content_option').html(
 	               "경제적으로 취약한 한부모가정이 <br>아이와 함께 행복한 가정을 만들어 갈수 있도록 <br>생활비,치료비를 위해 기부금을 전달합니다.");
 	         $(".imgClass").attr("src", "${path}/resources/img/main/main1.png");
-	      } else if($('#selectpicker_le option:selected').val() == '법인 재단') {
+	      } else if($('#selectpicker_le option:selected').val() == '3') {
 	         $('.support_title_option').text("법인 재단");
 	         $('.support_content_option').html(
 	               "경제적으로 취약한 가정을  <br>위해 저희가 심사해서 찾은 재단에 <br>기부금을 전달합니다");
@@ -26,7 +26,8 @@ $(document).ready(function() {
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="support.woo">
+	<form action="support_input.woo" method="post">
+	<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="support_main">
 			<div class="support_box s ma">
 				<div class="support_content_title">
@@ -39,14 +40,14 @@ $(document).ready(function() {
 					</div>
 					<div class="support_content_benefits_txt sm">
 						<div class="support_content_benefits_con img">
-							<img class="imgClass" src="${path}/resources/img/main/main1.png" alt="img">
+							<img class="imgClass" src="${path}/resources/img/main/main2.png" alt="img">
 						</div>
 						<div class="support_content_benefits_con">
 							<div class="support_content_benefits_select_con">
-								<select class="selectpicker le" data-size="5" id="selectpicker_le">
-									<option value="한부모 가정">한부모 가정</option>
-									<option value="미혼모 시설">미혼모 시설</option>
-									<option value="법인 재단">법인 재단</option>
+								<select class="selectpicker le" data-size="5" id="selectpicker_le" name="support_center_type">
+									<option value="1" <c:if test="${support_center_type == 1}"> selected </c:if>>한부모 가정</option>
+									<option value="2" <c:if test="${support_center_type == 2}"> selected </c:if>>미혼모 시설</option>
+									<option value="3" <c:if test="${support_center_type == 3}"> selected </c:if>>법인 재단</option>
 								</select>
 							</div>
 							<div class="support_content_benefits_select_con txt">
@@ -65,23 +66,24 @@ $(document).ready(function() {
 					</div>
 					<div class="payment_content_benefits">
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
+							<input class="form-check-input" type="radio" name="price" id="inlineRadio1" value="20000" <c:if test="${price == 20000}"> selected </c:if>>	
 							<label class="form-check-label" for="inlineRadio1">20,000원</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+							<input class="form-check-input" type="radio" name="price" id="inlineRadio2" value="50000" <c:if test="${price == 50000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio2">50,000원</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+							<input class="form-check-input" type="radio" name="price" id="inlineRadio3" value="100000" <c:if test="${price == 100000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio3">100,000원</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+							<input class="form-check-input" type="radio" name="price" id="inlineRadio5" value="200000" <c:if test="${price == 200000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio5">200,000원</label>
 						</div>
+<!-- 						inlineRadioOptions -->
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+							<input class="form-check-input" type="radio" name="price" id="inlineRadio5" value="300000" <c:if test="${price == 300000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio5">300,000원</label>
 						</div>
 					</div>
@@ -94,27 +96,30 @@ $(document).ready(function() {
 						<tbody>
 							<tr>
 								<td>후원인구분</td>
-								<td>법인</td>
+								<td><c:if test="${ismember eq 1}">일반 회원</c:if>
+								<c:if test="${ismember eq 2}">법인 제단</c:if></td>
 							</tr>
 							<tr>
-								<td>주민등록번호</td>
-								<td><input type="text" maxlength="6">&nbsp;-&nbsp;<input type="password" maxlength="7"></td>
+								<td><c:if test="${ismember eq 1}">주민번호</c:if>
+								<c:if test="${ismember eq 2}">사업자 번호</c:if></td>
+								<td><c:if test="${ismember eq 1}"><input type="text" name="first_num" maxlength="6">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="7"></c:if>
+								<c:if test="${ismember eq 2}"><input type="text" name="first_num" maxlength="3">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="2">&nbsp;-&nbsp;<input name="third_num" type="password" maxlength="5"></c:if></td>
 							</tr>
 							<tr>
 								<td>성명</td>
-								<td>이주현</td>
+								<td><c:out value="${userName}"/></td>
 							</tr>
 							<tr class="success">
 								<td>생년월일</td>
-								<td>1997 - 08 - 02</td>
+								<td><c:out value="${brithDay}"/></td>
 							</tr>
 							<tr class="danger">
 								<td>휴대폰 번호</td>
-								<td>010-2110-6711</td>
+								<td><c:out value="${phoneNumber}" /></td>
 							</tr>
 							<tr class="danger">
 								<td>이메일주소</td>
-								<td>yoojoo300@github.com</td>
+								<td><c:out value="${member.email}"/></td>
 							</tr>
 						</tbody>
 					</table>
@@ -134,10 +139,10 @@ $(document).ready(function() {
 					</div>
 					<div class="bankbook_no_name">
 						<span>입금자 명 </span>
-						<input type="text">
+						<input type="text" name="depositor_name">
 					</div>
 				</div>
-				<div class="nextbtn"><a  href="${pageContext.request.contextPath}/support_end.woo">후원하기</a></div>
+				<div class="nextbtn"><button type="submit">후원하기</button></div>
 			</div>
 		</main>
 	</form>

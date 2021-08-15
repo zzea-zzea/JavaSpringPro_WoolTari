@@ -43,4 +43,7 @@ public interface IMemberSVC {
 	
 	// 모든 멤버 가져오기
 	List<MemberVO> allMember();
+	
+	// 한 멤버에 주민번호 등록
+	boolean inputnumMember(int memberId, String numMember);
 }

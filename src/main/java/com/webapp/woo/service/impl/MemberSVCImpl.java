@@ -120,4 +120,10 @@ public class MemberSVCImpl implements IMemberSVC {
 		return mbDao.allMember();
 	}
 
+	@Override
+	public boolean inputnumMember(int memberId, String numMember) {
+		// TODO Auto-generated method stub
+		return mbDao.inputnumMember(memberId, numMember);
+	}
+
 }

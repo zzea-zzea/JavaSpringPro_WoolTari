@@ -30,9 +30,6 @@
 				<a href="${pageContext.request.contextPath}/support.woo"><button class="end_btn">확인</button></a>
 			</div>
 			</div>
-<!-- 			<div class="endsupport_receipt"> -->
-				
-<!-- 			</div> -->
 		</div>
 	</div>
 	</form>

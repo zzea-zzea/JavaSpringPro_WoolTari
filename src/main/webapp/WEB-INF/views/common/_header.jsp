@@ -33,11 +33,23 @@ function showMyPage(mbId) {
 				<li class="dropdown"><a href="${pageContext.request.contextPath}/support_info.woo"><span>후원</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/support_info.woo">후원 안내</a></li>
-						<li><a href="${pageContext.request.contextPath}/support.woo">후원 하기</a></li>
+						<c:if test="${not empty mbLoginName}">
+						<li><a href="${pageContext.request.contextPath}/support.woo?mbId=${mbPKId}">후원 하기</a></li>
+						</c:if>
+						<c:if test="${empty mbLoginName}">
+						<li><a onclick="noLogin()">후원 하기</a></li>
+						</c:if>
 					</ul></li>
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
 
-				<li><a class="btn_def" href="${pageContext.request.contextPath}/login.woo">Login</a></li>
+				<c:if test="${empty mbLoginName}">
+               <li><a class="btn_def"
+                  href="${pageContext.request.contextPath}/login.woo"> Login</a></li>
+            </c:if>
+            <c:if test="${not empty mbLoginName}">
+               <li><a class="btn_def"
+                  href="${pageContext.request.contextPath}/logout.woo">Logout</a></li>
+            </c:if>
 				<c:if test="${not empty mbLoginName}">
 					<li><a class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</a></li>
 				</c:if>
