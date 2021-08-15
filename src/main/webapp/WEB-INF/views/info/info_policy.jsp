@@ -46,24 +46,28 @@ window.onload = function(){
 			subCity.append(option);
 		}
 	};
-	
 }
+</script>
+<script>
+$(document).ready(function() { 
+	$("#showbtn").click(function() {
+		if($('#main-city option:selected').val() == '서울시'){
+			if($('#sub-city option:selected').val() == '송파구') {
+				$('.policy_content_maintxt_span').text("서울시 송파구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#sub-city option:selected').val() == '종로구') {
+				$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#sub-city option:selected').val() == '중구') {
+				$('.policy_content_maintxt_span').text("서울시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} else if ($('#sub-city option:selected').val() == '용산구') {
+				$('.policy_content_maintxt_span').text("서울시 용산구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
+			} 
+		}
+	});
+});
+</script>
 	
-// 	$("#showbtn").click(function() {
-// 		if($('#parent option:selected').val() == '서울시'){
-// 			if($('#child option:selected').val() == '송파구') {
-// 				$('.policy_content_maintxt_span').text("서울시 송파구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-// 			} else if ($('#child option:selected').val() == '종로구') {
-// 				$('.policy_content_maintxt_span').text("서울시 종로구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-// 			} else if ($('#child option:selected').val() == '중구') {
-// 				$('.policy_content_maintxt_span').text("서울시 중구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-// 			} else if ($('#child option:selected').val() == '용산구') {
-// 				$('.policy_content_maintxt_span').text("서울시 용산구 입니당 ㅎㅎ 드디어 해냈다 지금 시간 새벽 6시 42분 드디어 잘 수가 있다 ㅠㅠ 잘자~~~");
-// 			} 
-// 		}
 	
 		
-</script>
 <body>
 
 	<%@ include file="../common/_header.jsp"%>
