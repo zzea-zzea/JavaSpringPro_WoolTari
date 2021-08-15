@@ -11,6 +11,7 @@ $(document).ready(function() {
 				}
 			)
 			$(".${ct.board_index}").trigger("click");
+	
 			});
 </script>
 </c:forEach>
