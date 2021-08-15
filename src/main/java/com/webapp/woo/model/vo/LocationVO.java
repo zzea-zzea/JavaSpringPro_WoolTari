@@ -11,6 +11,10 @@ public class LocationVO {
 	private String facility_add;
 	private double latitude;
 	private double hardness;
+	private double centerLat;
+	private double centerLng;
+	
+
 
 	public int getC_index() {
 		return c_index;
@@ -82,6 +86,22 @@ public class LocationVO {
 
 	public void setHardness(double hardness) {
 		this.hardness = hardness;
+	}
+
+	public double getCenterLat() {
+		return centerLat;
+	}
+
+	public void setCenterLat(double centerLat) {
+		this.centerLat = centerLat;
+	}
+
+	public double getCenterLng() {
+		return centerLng;
+	}
+
+	public void setCenterLng(double centerLng) {
+		this.centerLng = centerLng;
 	}
 
 	public LocationVO() {
