@@ -8,10 +8,10 @@
       var msg = "";
       switch (check) {
       case "1":
-         msg = "남자";
+         msg = "여자";
          break;
       case "2":
-         msg = "여자";
+         msg = "남자";
          break;
       }
       $('#a').text(msg);

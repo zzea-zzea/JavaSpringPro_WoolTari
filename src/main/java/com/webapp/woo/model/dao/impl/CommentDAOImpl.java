@@ -31,8 +31,8 @@ public class CommentDAOImpl implements ICommentDAO {
       try {
          int r = this.jtem.update(
                "insert into comment(content, create_date, depth, member_index, board_index) "
-                     + " values(?, now(), ?," + memberIndex + "," + boardIndex + ")",
-               new Object[] { CR.getContent(), CR.getDepth() }, new int[] { Types.VARCHAR, Types.INTEGER });
+                     + " values(?, now(), 1," + memberIndex + "," + boardIndex + ")",
+               new Object[] { CR.getContent()}, new int[] { Types.VARCHAR});
          return r == 1;
       } catch (DataAccessException dae) {
          System.out.println("dao: Writecomment(vo) 실패.. ");
