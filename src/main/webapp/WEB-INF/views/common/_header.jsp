@@ -53,10 +53,10 @@ function logout(){
                   href="${pageContext.request.contextPath}/login.woo"> Login</a></li>
             </c:if>
             <c:if test="${not empty mbLoginName}">
-                <li><a class="btn_def" onclick="logout()">Logout</a></li>
+                <li><button class="btn_def" onclick="logout()">Logout</button></li>
             </c:if>
 				<c:if test="${not empty mbLoginName}">
-					<li><a class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</a></li>
+					<li><button class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</button></li>
 				</c:if>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
