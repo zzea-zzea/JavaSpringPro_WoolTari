@@ -1900,22 +1900,18 @@ border-radius: 10px;
 
 .community_comment .comment {
 	border: 0;
-    width: 688px;
+    width: 650px;
     border-bottom: 1px solid;
     outline: none;;
 }
 
-.community_comment_box .community_comment .comment_sumit {
-	margin-left: 14px;
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
+.community_first_view .community_comment .comment_sumit {
+	background: #9acffd;
+    border: 0;
+    border-radius: 8px;
+    padding: 4px 27px;
+    color: #fff;
+    font-weight: bold;
 }
 
 .border .community_first_view .community_first_view_text h3 {
@@ -1953,8 +1949,10 @@ border-radius: 10px;
 }
 
 .reply .reply_show {
-	font-size: 16px;
-	margin: 10px;
+font-size: 16px;
+    margin: 10px;
+    width: 695px;
+    display: inline-block;
 }
 
 .reply .reply_date {
@@ -1977,14 +1975,25 @@ border-radius: 10px;
 	font-weight: bold;
 }
 
-.reply_del_ret button {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
+.reply_del_ret {
+	display: inline-block;
+    float: right;
+}
+.reply_del_ret .layer_button{
+   color: #fff;
+    font-size: 13px;
+    background: #da0000;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.reply_del_ret .retouch_button{
+   color: #fff;
+    font-size: 13px;
+    background: #16aa16;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .community_comment .comment_image {

@@ -90,8 +90,8 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
 				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
 					<a class="btn_content" href="${pageContext.request
-						.contextPath}/retouch_content.woo?atId=${community.board_index}">[수정]</a>
-					<a class="btn_content" href="#" onclick="del(${community.board_index})">[삭제]</a>
+						.contextPath}/retouch_content.woo?atId=${community.board_index}">수정하기</a>
+					<a class="btn_content" href="#" onclick="del(${community.board_index})">삭제하기</a>
 				</c:if>
 			</c:if>
 				</div>
@@ -101,8 +101,7 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 						<div class="community_comment">
 							<input type="hidden" name="boardIndex" value="${!empty CV ? CV.boardId: param.atId}">
 							<input type="hidden" name="memberIndex" value="${mbPKId}">
-								<input type="text"
-								placeholder="댓글을 입력해주세요" class="comment" name="content" size='70'> <input type="submit" value="등록"
+								<input type="text" placeholder="댓글을 입력해주세요" class="comment" name="content" size='70'> <input type="submit" value="등록"
 								class="comment_sumit">
 						</div>
 					</form>
@@ -120,22 +119,24 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 												</c:forEach>
 													<div class="reply_date"><fmt:formatDate value="${as.createDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>
 												</div>
-												<div class="reply_show" id="reply_show_${as.commentIndex}">${as.content}</div>
-										<form action="${pageContext.request.contextPath}/retouch_comment.woo">
+												<div class="reply_show" id="reply_show_${as.commentIndex}">${as.content}
+													<div class="reply_del_ret">
+														<input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">&nbsp;
+														<a href="#" class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
+														<c:if test="${as.memberIndex eq mbPKId}">	
+														<a class="retouch_button" style="color: #fff;"  id="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
+														</c:if>
+													</div>
+												</div>
+											<form action="${pageContext.request.contextPath}/retouch_comment.woo">
 												<input type="hidden" name="boardIndex" value="${atId}">							
 												<input type="hidden" name="memberIndex" value="${mbPKId}">		
 												<input type="hidden" name="commentId" value="${as.commentIndex}">
-												<div class="retouch_reply" style="display: none" id="retouch_reply_${as.commentIndex}"><input type="text"
-												value="${as.content}" class="comment" name="comment" size='70'> <input type="submit" value="수정"
-												class="retouch_submit"></div>
-										</form>
-												<div class="reply_del_ret">
-													<input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">
-													&nbsp;<a href="#" class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
-													<c:if test="${as.memberIndex eq mbPKId}">	
-													<a class="retouch_button" id="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
-													</c:if>
+												<div class="retouch_reply" style="display: none" id="retouch_reply_${as.commentIndex}">
+													<input type="text"value="${as.content}" class="comment" name="comment" size='70'> 
+													<input type="submit" value="수정"class="retouch_submit">
 												</div>
+											</form>
 								</c:forEach>
 								</ul>
 							</c:when>
