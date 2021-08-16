@@ -40,7 +40,7 @@
 								<p>
 									맞이하는 모든 상황에 대한 대처를<br>한눈에 정리해봤어요!
 								</p>
-								<a href="${pageContext.request.contextPath}/info_childcare.woo">>>육아정보 바로 가기</a>
+<%-- 								<a href="${pageContext.request.contextPath}/info_childcare.woo">>>육아정보 바로 가기</a> --%>
 							</div>
 						</div>
 
@@ -51,7 +51,7 @@
 								<p>
 									모든 시설의 정보를<br>알고 싶을때 사용하세요!
 								</p>
-								<a href="${pageContext.request.contextPath}/info_center.woo">>>시설 정보 바로 가기</a>
+<%-- 								<a href="${pageContext.request.contextPath}/info_center.woo">>>시설 정보 바로 가기</a> --%>
 							</div>
 						</div>
 
@@ -62,7 +62,7 @@
 								<p>
 									작은 마음 하나 둘 모여<br>세상에게 온기를 불어 넣어 주세요!
 								</p>
-								<a href="${pageContext.request.contextPath}/support.woo">>>후원 하러 바로 가기</a>
+<%-- 								<a href="${pageContext.request.contextPath}/support.woo">>>후원 하러 바로 가기</a> --%>
 							</div>
 						</div>
 
@@ -73,7 +73,7 @@
 								<p>
 									당신의 깨알 정보를 함께 하세요!<br>육아부터 나눔까지!
 								</p>
-								<a href="${pageContext.request.contextPath}/content.woo">>>커뮤니티 바로 가기</a>
+<%-- 								<a href="${pageContext.request.contextPath}/content.woo">>>커뮤니티 바로 가기</a> --%>
 							</div>
 						</div>
 					</div>
