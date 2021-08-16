@@ -52,6 +52,9 @@
          }
       });
    });
+   
+   
+   
 </script>
 <body>
    <%@ include file="../common/_header.jsp"%>
@@ -68,9 +71,8 @@
                   <li class="side_bar_content mypage"><a
                      href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원
                         내역조회</a></li>
-                  <li class="side_bar_content mypage"><a
-                     href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내
-                        게시글 조회</a></li>
+                  <li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내게시글 조회</a></li>
+                  
                </ul>
             </div>
             <div class="info_content">
@@ -135,7 +137,6 @@
                         <c:if test="${member.isMember eq 1}">
                            <button id="retuch_btn" class="edit_btn" type="submit">수정</button>
                         </c:if>
-    
                      </div>
                   </div>
                </section>

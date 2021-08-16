@@ -13,117 +13,123 @@ import com.webapp.woo.service.inf.IMemberSVC;
 @Service
 public class MemberSVCImpl implements IMemberSVC {
 
-	mycode mc;
+   mycode mc;
 
-	@Autowired
-	IMemberDAO mbDao;
+   @Autowired
+   IMemberDAO mbDao;
 
-	@Override
-	public boolean insertNewMember(MemberVO mb) {
-		// TODO Auto-generated method stub
-		return mbDao.insertNewMember(mb);
-	}
+   @Override
+   public boolean insertNewMember(MemberVO mb) {
+      // TODO Auto-generated method stub
+      return mbDao.insertNewMember(mb);
+   }
 
-	@Override
-	public boolean idchackMember(String id) {
+   @Override
+   public boolean idchackMember(String id) {
 
-		return mbDao.idchackMember(id);
-	}
+      return mbDao.idchackMember(id);
+   }
 
-	@Override
-	public boolean nickchackMember(String nickName) {
+   @Override
+   public boolean nickchackMember(String nickName) {
 
-		return mbDao.nickchackMember(nickName);
-	}
+      return mbDao.nickchackMember(nickName);
+   }
 
-	@Override
-	public int loginProcess(String id, String pw) {
-		System.out.println("SVC: 로그인시도중");
+   @Override
+   public int loginProcess(String id, String pw) {
+      System.out.println("SVC: 로그인시도중");
 
-		if (id == null || id.isEmpty())
-			return mycode.MB_LOGIN_NULL_EMPTY;
-		if (pw == null || pw.isEmpty())
-			return mycode.MB_PW_NULL_EMPTY;
+      if (id == null || id.isEmpty())
+         return mycode.MB_LOGIN_NULL_EMPTY;
+      if (pw == null || pw.isEmpty())
+         return mycode.MB_PW_NULL_EMPTY;
 
-		MemberVO mb = mbDao.selectOneMember(id);
-		if (mb == null) {
-			System.out.println("SVC: " + id + " 회원이 없음!");
+      MemberVO mb = mbDao.selectOneMember(id);
+      if (mb == null) {
+         System.out.println("SVC: " + id + " 회원이 없음!");
 
-			return mycode.MB_LOGIN_NOT_FOUND;
-		}
-		String dbPW = mbDao.decryptPassword(id);
-		if (dbPW.equals(pw)) {
-			// 인증성공 상태...
-			return mycode.MB_LOGIN_OK;
-		} else
-			return mycode.MB_PW_MISMATCH;
+         return mycode.MB_LOGIN_NOT_FOUND;
+      }
+      String dbPW = mbDao.decryptPassword(id);
+      if (dbPW.equals(pw)) {
+         // 인증성공 상태...
+         return mycode.MB_LOGIN_OK;
+      } else
+         return mycode.MB_PW_MISMATCH;
 
-	}
+   }
 
-	@Override
-	public MemberVO findidMember(String name, String email) {
+   @Override
+   public MemberVO findidMember(String name, String email) {
 
-		return mbDao.findidMember(name, email);
-	}
+      return mbDao.findidMember(name, email);
+   }
 
-	@Override
-	public MemberVO findpwMember(String id, String email) {
+   @Override
+   public MemberVO findpwMember(String id, String email) {
 
-		return mbDao.findpwMember(id, email);
-	}
+      return mbDao.findpwMember(id, email);
+   }
 
-	@Override
-	public boolean updateMemberPw(MemberVO mb) {
-		// TODO Auto-generated method stub
-		return mbDao.updateMemberPw(mb);
-	}
+   @Override
+   public boolean updateMemberPw(MemberVO mb) {
+      // TODO Auto-generated method stub
+      return mbDao.updateMemberPw(mb);
+   }
 
-	@Override
-	public String decryptPassword(String id) {
-		// TODO Auto-generated method stub
-		return mbDao.decryptPassword(id);
-	}
+   @Override
+   public String decryptPassword(String id) {
+      // TODO Auto-generated method stub
+      return mbDao.decryptPassword(id);
+   }
 
-	@Override
-	public MemberVO selectOneMember(int MemberIndex) {
-		// TODO Auto-generated method stub
-		return mbDao.selectOneMember(MemberIndex);
-	}
+   @Override
+   public MemberVO selectOneMember(int MemberIndex) {
+      // TODO Auto-generated method stub
+      return mbDao.selectOneMember(MemberIndex);
+   }
 
-	@Override
-	public MemberVO selectOneMember(String ld) {
-		// TODO Auto-generated method stub
-		return mbDao.selectOneMember(ld);
-	}
+   @Override
+   public MemberVO selectOneMember(String ld) {
+      // TODO Auto-generated method stub
+      return mbDao.selectOneMember(ld);
+   }
 
-	@Override
-	public MemberVO selectOneMemberEmail(String email) {
-		// TODO Auto-generated method stub
-		return mbDao.selectOneMemberEmail(email);
-	}
+   @Override
+   public MemberVO selectOneMemberEmail(String email) {
+      // TODO Auto-generated method stub
+      return mbDao.selectOneMemberEmail(email);
+   }
 
-	@Override
-	public boolean updateOneMember(MemberVO mb) {
-		// TODO Auto-generated method stub
-		return mbDao.updateOneMember(mb);
-	}
-	
-	@Override
-	public boolean selectOneMembdr(String id) {
-		// TODO Auto-generated method stub
-		return mbDao.selectOneMembdr(id);
-	}
+   @Override
+   public boolean updateOneMember(MemberVO mb) {
+      // TODO Auto-generated method stub
+      return mbDao.updateOneMember(mb);
+   }
+   
+   @Override
+   public boolean selectOneMembdr(String id) {
+      // TODO Auto-generated method stub
+      return mbDao.selectOneMembdr(id);
+   }
 
-	@Override
-	public List<MemberVO> allMember() {
-		// TODO Auto-generated method stub
-		return mbDao.allMember();
-	}
+   @Override
+   public List<MemberVO> allMember() {
+      // TODO Auto-generated method stub
+      return mbDao.allMember();
+   }
 
-	@Override
-	public boolean inputnumMember(int memberId, String numMember) {
-		// TODO Auto-generated method stub
-		return mbDao.inputnumMember(memberId, numMember);
-	}
+   @Override
+   public boolean inputnumMember(int memberId, String numMember) {
+      // TODO Auto-generated method stub
+      return mbDao.inputnumMember(memberId, numMember);
+   }
+
+   @Override
+   public boolean deleteMember(int mbId) {
+      // TODO Auto-generated method stub
+      return mbDao.deleteMember(mbId);
+   }
 
 }
