@@ -30,7 +30,7 @@
 				<div class="list-menu">
 					<h4>후원</h4>
 					<ul class="list-unstyled">
-						<li><a href="${pageContext.request.contextPath}/support_info.woo"">후원 안내</a></li>
+						<li><a href="${pageContext.request.contextPath}/support_info.woo">후원 안내</a></li>
 						<li><a href="${pageContext.request.contextPath}/support.woo">후원 하기</a></li>
 					</ul>
 				</div>
@@ -38,7 +38,10 @@
 
 			<div class="col-sm-6 col-md-3 col-lg-2">
 				<div class="list-menu">
-					<h4><a href="${pageContext.request.contextPath}/content.woo">소식</a></h4>
+					<h4>소식</h4>
+					<ul class="list-unstyled">
+						<li><a href="${pageContext.request.contextPath}/content.woo">소식</a></li>
+					</ul>
 				</div>
 			</div>
 
