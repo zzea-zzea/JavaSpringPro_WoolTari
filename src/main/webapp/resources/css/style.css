@@ -4063,10 +4063,17 @@ font-family: 'Cafe24SsurroundAir';
 }
 .menu_new_pw_box .menu_new_pw_box_content .menu_new_span_box .menu_new_pw_box_pw,
  .menu_new_pw_box_pw1, .menu_new_pw_box_num_pw {
-      font-size: 11px;
+      font-size: 13px;
     font-weight: bold;
     font-family: 'Cafe24SsurroundAir';
     color: red;
+}
+.menu_new_span_box, .menu_new2_span_box{
+	margin-top: -30px;
+	
+}
+.menu_new_email_num{
+	margin-top: -70px;
 }
 
 

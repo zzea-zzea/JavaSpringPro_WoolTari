@@ -13,9 +13,12 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 		var a  = $("#rm_"+commentId).val();
 		if (chk) {
 			location.href='Deletecomment.woo?commentId='+ commentId+"&boardIndex="+a;
-			
 		}
-	}
+	} 	
+	function write_comment_de(commentId) {
+		var reply = document.getElementById("reply_"+commentId);
+		reply.style.display ='block';
+		}
 	function retouchcomment(commentId) {
 		var reply = document.getElementById("reply_show_"+commentId);
 		var retouch = document.getElementById("retouch_reply_"+commentId);
@@ -92,29 +95,28 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 					<p><c:out value="${community.content}" /></p>
 				</div>
 				<!-- community_content_view_imfo -->
-				<div class="image" id="image">
-					<div class="col-md-8">
-						<div class="row">
-							<c:if test="${not empty param['totalMB']}">
-						<span class="unit_mb" style="color: blue">
-							<b> 총 <c:out value="${param.countFiles}" 
-								default="0"/>  개
-							 파일들용량: ${param.totalMB}MB</b>
-						</span>
-					</c:if>
+<!-- 				<div class="image" id="image"> -->
+<!-- 					<div class="col-md-8"> -->
+<!-- 						<div class="row"> -->
+<%-- 							<c:if test="${not empty param['totalMB']}"> --%>
+<!-- 						<span class="unit_mb" style="color: blue"> -->
+<%-- 							<b> 총 <c:out value="${param.countFiles}"  --%>
+<%-- 								default="0"/>  개 --%>
+<%-- 							 파일들용량: ${param.totalMB}MB</b> --%>
+<!-- 						</span> -->
+<%-- 					</c:if> --%>
 					
-					<c:if test="${fpCount gt 0}">
-						<c:forEach var="fp" items="${fps}" varStatus="vs">
-						 <%@ include file="_file.jsp" %>
-						</c:forEach>					
-					</c:if>
-					<c:if test="${fpCount eq 0}">
-						파일이 없어요!
-					</c:if>
-						</div>
-					</div>
-				</div>
-				<div></div>
+<%-- 					<c:if test="${fpCount gt 0}"> --%>
+<%-- 						<c:forEach var="fp" items="${fps}" varStatus="vs"> --%>
+<%-- 						 <%@ include file="_file.jsp" %> --%>
+<%-- 						</c:forEach>					 --%>
+<%-- 					</c:if> --%>
+<%-- 					<c:if test="${fpCount eq 0}"> --%>
+<!-- 						파일이 없어요! -->
+<%-- 					</c:if> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 				<div class="community_imfo_retouch_delet" style="text-align: center;">
 			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
 				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
@@ -159,13 +161,18 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 												class="retouch_submit"></div>
 										</form>
 												<div class="reply_del_ret">
-													<button class="input_new_reply">댓글 쓰기</button>
+													<button class="input_new_reply" onclick="write_comment_de(${as.commentIndex})">댓글 쓰기</button>
 													<input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">
 													&nbsp;<a href="#" class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
 													<c:if test="${as.memberIndex eq mbPKId}">	
-													<a class="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
-														</c:if>
+													<a class="retouch_button" id="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
+													</c:if>
 												</div>
+<%-- 													<div class="community_reply" id="reply_${as.commentIndex}"> --%>
+<!-- 														<input type="text" placeholder="댓글을 입력해주세요" class="comment" name="content" size='70'>  -->
+<!-- 														<input type="submit" value="등록" class="comment_sumit"> -->
+<!-- 														<input type="reset" value="취소" class="reply_cancle"> -->
+<!-- 													</div> -->
 								</c:forEach>
 								</ul>
 							</c:when>
@@ -173,14 +180,8 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 								<i>아직 댓글이 하나도 없습니다! :)</i>
 							</c:when>
 						</c:choose>
-						<div class="community_reply" id="a">
-							<input type="image" src="${path}/resources/img/reply/woman.png"
-								class="comment_image_re"> <input type="text"
-								placeholder="댓글을 입력해주세요" class="reply_re" size="70px"> <input
-								type="button" value="등록" class="reply_sumit"
-								onclick="input_check()"> <input type="reset" value="취소"
-								class="reply_cancle">
-						</div>
+						<br>
+						<br>
 					</div>
 				</div>
 				<!-- community_comment_box -->
@@ -193,16 +194,12 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 </body>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-// $(document).ready(function(){
-// 		$('input_new_reply').click(function(){
-// 			$('#a').toggle();
-// 		})
-// 		$('.retouch_button').click(function() {
-// 			$('.retouch_reply').hide();
-// 			$('.retouch_reply').show();	
-// 		});
+$(document).ready(function(){
+		$('.retouch_button').click(function() {
+			$('.retouch_button').hide();	
+		});
 		
-// });
+});
 </script>
 <script>
 	function delete_check() {

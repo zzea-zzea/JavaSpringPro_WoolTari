@@ -24,9 +24,7 @@
 
    <%@ include file="../index.jsp"%>
 
-   <!--    <h2>모달창만들기</h2> -->
-   <a class="modal-open-btn" id="modal-open-btn">Login</a>
-   <!--    <div id="modal-overlay"> -->
+
    <div class="modal-wrapper">
 
       <div class="modal_step">

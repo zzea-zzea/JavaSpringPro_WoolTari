@@ -53,9 +53,6 @@ function showMyPage(mbId) {
 				<c:if test="${not empty mbLoginName}">
 					<li><a class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</a></li>
 				</c:if>
-				<c:if test="${empty mbLoginName}">
-					<li><a class="btn_def" onclick="noLogin()">Mypage</a></li>
-				</c:if>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>
