@@ -8,7 +8,7 @@
 <body>
    <%@ include file="../common/_header.jsp"%>
       <main class="new_content_main">
-         <div class="write_first_box">
+         <div class="write_first_box ma">
             <div class="new_title">
                <h3 class="title">
                   <span>새</span> 글 쓰기
