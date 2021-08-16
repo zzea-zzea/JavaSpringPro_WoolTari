@@ -1683,14 +1683,13 @@ background: #b38c8c;
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
 */
-#border {
-	height: 1000px;
+#border{
+	background: #f8f8f8;
 }
-
 #border .community_first_box {
 	/* 	height: 1000px; */
-	height: 700px;
-	margin: 100px auto;
+	height: fit-content;
+	margin: 0 auto;
 	width: 1000px;
 }
 
@@ -1723,15 +1722,14 @@ background: #b38c8c;
 }
 
 #border .community_first_box .search .search_main .new_write_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
+border-radius: 10px;
+    border: 0;
+    background: #6c757d;
+    line-height: 32px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 20px;
 }
 
 #border .community_first_box .community_content_table {
@@ -1805,9 +1803,6 @@ background: #b38c8c;
 페이지 파일명 : content_view.jsp
 */
 
-#border {
-	height: 1000px;
-}
 
 .community_first_view {
 	height: 1000px;
