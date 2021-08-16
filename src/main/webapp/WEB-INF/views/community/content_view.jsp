@@ -52,10 +52,10 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<main class="content_view_main">
-		<div id="border">
+		<div class="borders">
 			<div class="community_first_view">
 				<div class="community_first_view_title">
-					<h3>울타리 한가정부모커뮤니티.</h3>
+					<h3>${community.title}</h3>
 				</div>
 				<!-- community_first_view_title -->
 				<hr>
@@ -65,11 +65,6 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 							<dl>
 								<dt>카테고리</dt>
 								<dd id="a"></dd>
-							</dl>
-							<span>|</span>
-							<dl>
-								<dt>제목</dt>
-								<dd><c:out value="${community.title}" default="제목없음"/></dd>
 							</dl>
 							<span>|</span>
 							<dl>
@@ -91,7 +86,7 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 				<div class="community_content_view_imfo">
 					<p><c:out value="${community.content}" /></p>
 				</div>
-				<div class="community_imfo_retouch_delet" style="text-align: center;">
+				<div class="community_imfo_retouch_delet" style="text-align: center;height: 100px;">
 			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
 				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
 					<a class="btn_content" href="${pageContext.request
@@ -100,7 +95,7 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 				</c:if>
 			</c:if>
 				</div>
-					<c:out value="${asSize}" default="0" />개
+					현재까지 달린 댓글의 갯수는 <c:out value="${asSize}" default="0" />개입니다.
 					<br>
 					<form action="${pageContext.request.contextPath}/Writecomment.woo" method="post">
 						<div class="community_comment">
@@ -115,7 +110,7 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 					<div class="reply">
 						<c:choose>
 							<c:when test="${!empty asSize}">
-								<ul>
+								<ul class="comment_div_box">
 									<c:forEach var="as" items="${asList}">
 												<div class="reply_name">
 												<c:forEach var="mem" items="${member}">
