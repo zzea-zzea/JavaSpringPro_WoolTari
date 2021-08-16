@@ -340,7 +340,7 @@
                      </tr>
                      <tr>
                         <td>이름</td>
-                        <td><input id="name" type="text" name="name" maxlength="4"><span>* 이름은 한글만 가능합니다.</span></td>
+                        <td><input id="name" type="text" name="name" maxlength="4" onkeyup="this.value=this.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g;);"><span>* 이름은 한글만 가능합니다.</span></td>
                      </tr>
                      <tr>
                         <td>생년월일</td>

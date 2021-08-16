@@ -73,7 +73,10 @@ $(document).ready(function() {
                   </div>
                   </c:if>
                   <c:if test="${empty userCtList}">
+              		    <br>
                      <h3>&nbsp;&nbsp;&nbsp;&nbsp;게시글이 하나도 없습니다.</h3>
+                     <br>
+                     <a href="${pageContext.request.contextPath}/content.woo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시글 페이지로 가기</a>
                   </c:if>
                </section>
             </div>
