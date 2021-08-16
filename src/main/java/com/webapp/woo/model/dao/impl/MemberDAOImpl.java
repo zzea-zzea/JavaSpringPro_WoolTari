@@ -71,7 +71,7 @@ public class MemberDAOImpl implements IMemberDAO {
    @Override
    public boolean insertNewMember(MemberVO mb) {
       try {
-         int r = jtem.update("insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? )",
+         int r = jtem.update(SQL_INSERT_MEMBER_CRYPTO,
                mb.getId(), mb.getPw(), mb.getId(), mb.getName(), mb.getPhone(), mb.getBrith(), mb.getNickName(),
                mb.getGender(), mb.getEmail(), mb.getIsMember(), mb.getNumMember(), mb.getBuisness());
          return r == 1;

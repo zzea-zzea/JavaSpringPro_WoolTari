@@ -806,105 +806,141 @@ public class MainController {
 	      }   
 	   }
 
-	@RequestMapping(value = "sign_up.woo", method = RequestMethod.GET)
-	public ModelAndView singup(HttpServletRequest request) {
+	   @RequestMapping(value = "signUp.woo", method = RequestMethod.GET)
+	   public ModelAndView singupN(HttpServletRequest request) {
+	      
+	      ModelAndView mav = new ModelAndView("member/signUp");
+	      return mav;
+	      
+	   }
+	   @RequestMapping(value = "signUp_ok.woo", method = RequestMethod.GET)
+	   public ModelAndView singupOk(HttpServletRequest request) {
+	      
+	      ModelAndView mav = new ModelAndView("member/signUp_ok");
+	      return mav;
+	      
+	   }
 
-		ModelAndView mav = new ModelAndView("signup/sign_up");
-		return mav;
+	   @RequestMapping(value = "member_signUp.woo", method = RequestMethod.POST)
 
-	}
-	@RequestMapping(value = "signUp.woo", method = RequestMethod.GET)
-	public ModelAndView singupN(HttpServletRequest request) {
-		
-		ModelAndView mav = new ModelAndView("member/signUp");
-		return mav;
-		
-	}
-	@RequestMapping(value = "signUp_ok.woo", method = RequestMethod.GET)
-	public ModelAndView singupOk(HttpServletRequest request) {
-		
-		ModelAndView mav = new ModelAndView("member/signUp_ok");
-		return mav;
-		
-	}
+	   public ModelAndView memberJoinProc(HttpServletRequest request) {
+	      String id = request.getParameter("id");
+	      String pw = request.getParameter("pw");
+	      String name = request.getParameter("name");
+	      String phone1 = request.getParameter("phone1");
+	      String phone2 = request.getParameter("phone2");
+	      String phone3 = request.getParameter("phone3");
+	      String phone = phone1 + phone2 + phone3;
+	      String brith = request.getParameter("brith");
+	      String nickName = request.getParameter("nickname");
+	      String genderStr = request.getParameter("gender");
+	      int gender = 1;
+	      if (genderStr != null && !genderStr.isEmpty())
+	         gender = Integer.parseInt(genderStr);
+	      String email = request.getParameter("email");
+	      String isMemberStr = request.getParameter("ismember");
+	      int isMember = 1;
+	      if (isMemberStr != null && !isMemberStr.isEmpty())
+	         isMember = Integer.parseInt(isMemberStr);
+	      String numMember = null;
+	      String buisness = request.getParameter("buisness");
 
-	@RequestMapping(value = "member_join.woo", method = RequestMethod.POST)
+	      HttpSession ses = request.getSession();
 
-	public ModelAndView memberJoinProc(HttpServletRequest request) {
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
-		String brith = request.getParameter("brith");
-		String nickName = request.getParameter("nickname");
-		String genderStr = request.getParameter("gender");
-		int gender = 1;
-		if (genderStr != null && !genderStr.isEmpty())
-			gender = Integer.parseInt(genderStr);
-		String email = request.getParameter("email");
-		String isMemberStr = request.getParameter("ismember");
-		int isMember = 1;
-		if (isMemberStr != null && !isMemberStr.isEmpty())
-			isMember = Integer.parseInt(isMemberStr);
-		String numMember = request.getParameter("nummember");
-		String buisness = request.getParameter("buisness");
+	      ModelAndView mav = new ModelAndView();
 
-		HttpSession ses = request.getSession();
+	      // 로그인중복
+	      if (id != null && !id.isEmpty()) {
+	         boolean dup = this.mbSvc.idchackMember(id);
+	         if (dup) {
+	            // 이미 사용중인 login...
+	            System.out.println("회원 가입 실패: login 중복!!! + " + id);
+	            mav.setViewName("member/signUp"); // FW
+	            return mav;
+	         }
+	      } else {
+	         System.out.println("회원 가입 실패: login 파람 에러!");
+	         mav.setViewName("member/signUp"); // FW
+	         return mav;
+	      }
 
-		ModelAndView mav = new ModelAndView();
+	      // 별명중복
+	      if (nickName != null && !nickName.isEmpty()) {
+	         boolean dup = this.mbSvc.nickchackMember(nickName);
+	         if (dup) {
+	            System.out.println("회원 가입 실패: login 중복!!! + " + nickName);
+	            mav.setViewName("member/signUp"); // FW
+	            return mav;
+	         }
+	      } else {
+	         mav.addObject("msg", "회원 가입 실패: login 파람 에러!");
+	         System.out.println("회원 가입 실패: login 파람 에러!");
+	         mav.setViewName("member/signUp"); // FW
+	         return mav;
+	      }
+	      MemberVO mb = new MemberVO(id, pw, name, phone, brith, nickName, gender, email, isMember, numMember, buisness);
+	      boolean b = mbSvc.insertNewMember(mb);
 
-		// 로그인중복
-		if (id != null && !id.isEmpty()) {
-			boolean dup = this.mbSvc.idchackMember(id);
-			if (dup) {
-				// 이미 사용중인 login...
-				System.out.println("회원 가입 실패: login 중복!!! + " + id);
-				mav.setViewName("signup/sign_up"); // FW
-				return mav;
-			}
-		} else {
-			System.out.println("회원 가입 실패: login 파람 에러!");
-			mav.setViewName("signup/sign_up"); // FW
-			return mav;
-		}
+	      if (b) {
+	         if (fileSvc.makeMemberDirectory(id, ses)) {
+	            // DB에 회원가입 로그인 첫페이지로 리다이렉트
+	            System.out.println("회원 DB 가입 성공!! 축하~~~^^");
+	            mav.setViewName("redirect:signUp_ok.woo"); // RE
+	         } else {
+	            // 롤백? 할지.... 아니면 에러 안내후.. 수동으로
+	            // 혹은 후처리로... 고유폴더를 admin..나중에 생성할지..결정
+	            System.out.println("회원 DB 가입 성공!! 축하지만.. 폴더생성 실패!");
+	            mav.setViewName("redirect:signUp_ok.woo"); // RE
+	            // mav.setViewName("redirect:admin_faq.my"); //RE
+	         }
+	      } else {
+	         // DB에 회원가입이 최종 실패 시... mb_join_form.jsp 포워딩..
+	         System.out.println("회원 가입 실패: DB 에러!");
+	         mav.setViewName("member/signUp"); // FW
+	      }
 
-		// 별명중복
-		if (nickName != null && !nickName.isEmpty()) {
-			boolean dup = this.mbSvc.nickchackMember(nickName);
-			if (dup) {
-				System.out.println("회원 가입 실패: login 중복!!! + " + nickName);
-				mav.setViewName("signup/sign_up"); // FW
-				return mav;
-			}
-		} else {
-			mav.addObject("msg", "회원 가입 실패: login 파람 에러!");
-			System.out.println("회원 가입 실패: login 파람 에러!");
-			mav.setViewName("signup/sign_up"); // FW
-			return mav;
-		}
-		MemberVO mb = new MemberVO(id, pw, name, phone, brith, nickName, gender, email, isMember, numMember, buisness);
-		boolean b = mbSvc.insertNewMember(mb);
-
-		if (b) {
-			if (fileSvc.makeMemberDirectory(id, ses)) {
-				// DB에 회원가입 로그인 첫페이지로 리다이렉트
-				System.out.println("회원 DB 가입 성공!! 축하~~~^^");
-				mav.setViewName("redirect:login.woo"); // RE
-			} else {
-				// 롤백? 할지.... 아니면 에러 안내후.. 수동으로
-				// 혹은 후처리로... 고유폴더를 admin..나중에 생성할지..결정
-				System.out.println("회원 DB 가입 성공!! 축하지만.. 폴더생성 실패!");
-				mav.setViewName("redirect:login.woo"); // RE
-				// mav.setViewName("redirect:admin_faq.my"); //RE
-			}
-		} else {
-			// DB에 회원가입이 최종 실패 시... mb_join_form.jsp 포워딩..
-			System.out.println("회원 가입 실패: DB 에러!");
-			mav.setViewName("signup/sign_up"); // FW
-		}
-
-		return mav;
-	}
+	      return mav;
+	   }
+	   
+	   
+	   @RequestMapping(value = "member_dupcheck.woo",
+	            method = RequestMethod.GET)
+	    @ResponseBody
+	    public String memberDupCheckProc(
+	    @RequestParam(value="id", required = false , defaultValue = "id") String id) {
+	        // 아이디 중복 처리
+	        System.out.println("아이디명 중복 처리: " + id);
+	        if( id != null && !id.isEmpty() ) {
+	            if( mbSvc.idchackMember(id) ) {
+	                return "yes";
+	            } else {
+	                return "no";
+	            }
+	        } else {
+	            return "error";
+	        }
+	     
+	    }
+	   
+	   
+	   @RequestMapping(value = "member_nick_dupcheck.woo",
+	            method = RequestMethod.GET)
+	    @ResponseBody
+	    public String membernickDupCheckProc(
+	    @RequestParam(value="nickname", required = false , defaultValue = "nickname") String nickname) {
+	        // 아이디 중복 처리
+	        System.out.println("닉네임명 중복 처리: " + nickname);
+	        if( nickname != null && !nickname.isEmpty() ) {
+	            if( mbSvc.nickchackMember(nickname) ) {
+	                return "yes";
+	            } else {
+	                return "no";
+	            }
+	        } else {
+	            return "error";
+	        }
+	     
+	    }
 
 	@RequestMapping(value = "mypage.woo", method = RequestMethod.GET)
 	   public ModelAndView Mypage(HttpServletRequest request, Model model) {
