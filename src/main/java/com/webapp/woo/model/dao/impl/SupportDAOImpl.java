@@ -42,7 +42,7 @@ public class SupportDAOImpl implements ISupportDAO {
    @Override
    public boolean deleteSupport(int siId) {
       try {
-         int r = jtem.update("delete from wooltari_db.support where support_index = ?", siId);
+         int r = jtem.update("delete from support where support_index = ?", siId);
          return r == 1;
       } catch (DataAccessException e) {
          System.out.println(

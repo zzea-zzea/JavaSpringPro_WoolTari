@@ -128,11 +128,17 @@
    function write_check() {
       var answer = confirm("등록하시겠습니까?")
       if (answer == true) {
-         alert("등록되었습니다.");
-//          location.replace('${pageContext.request.contextPath}/content.woo');
+         if (document.getElementById("title").value.length == 0) {
+            alert("제목을 입력해주세요.");
+         } else if (document.getElementById("new_content").value.length == 0) {
+            alert("내용을 입력해주세요.");
+         } else {
+            alert("등록 되었습니다.");
+         }
       } else {
          alert("등록 취소되었습니다.");
-         location.replace('${pageContext.request.contextPath}/new_content.woo');
+         location
+               .replace('${pageContext.request.contextPath}/new_content.woo');
       }
    }
 </script>
