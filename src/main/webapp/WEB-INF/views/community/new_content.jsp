@@ -45,12 +45,6 @@
                      placeholder="내용 입력" rows="20" cols="111" maxlength="1024"
                      style="resize: none;" required></textarea>
                   <div class="counter">(0 / 1024)</div>
-<!--                </div> -->
-<!--                <div id="preview"></div> -->
-<!--                <input type="file" name="imgPath" class="inp-img" id='upload'   -->
-<!--                      size="64" placeholder="첨부 파일명"   -->
-<!--                      multiple="multiple"> -->
-<!--                <button type="button" class="btn-delete">삭제</button> -->
                <div class="input_btn">
                   <button class="input_btn" type="submit" onclick="write_check()">작성하기</button>
                   <button class="cancle_btn" onclick="cancle_check()">목록으로</button>

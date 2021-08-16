@@ -13,6 +13,15 @@
 								$(this).parent(".side_bar_content").children("ul").slideUp();
 							}
 						});
+				$(".childcare_content_menu>a").click(
+						function() {
+							if ($(this).parent(".childcare_content_menu.ho").children("div").is(':hidden')) {
+								$('.a').parent(".childcare_content_menu").children("div").slideUp();
+								$(this).parent(".childcare_content_menu.ho").children("div").slideDown();
+							} else {
+								$(this).parent(".childcare_content_menu.ho").children("div").slideUp();
+							}
+						});
 				$(".info_content1").click(function() {
 					$('.childcare_section').hide();
 					$('.childcare_section:eq(0)').show();
@@ -25,7 +34,6 @@
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
 					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
 				});
 				$(".info_content2").click(function() {
 					$('.childcare_section').hide();
@@ -38,7 +46,6 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content3").click(function() {
 					$('.childcare_section').hide();
@@ -51,7 +58,6 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content4").click(function() {
 					$('.childcare_section').hide();
@@ -64,7 +70,6 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content5").click(function() {
 					$('.childcare_section').hide();
@@ -78,7 +83,6 @@
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
 					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
 				});
 				$(".info_content6").click(function() {
 					$('.childcare_section').hide();
@@ -91,7 +95,6 @@
 					$('#content6').attr('class', 'sideli on');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content7").click(function() {
 					$('.childcare_section').hide();
@@ -104,7 +107,6 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli on');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content8").click(function() {
 					$('.childcare_section').hide();
@@ -117,20 +119,9 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli on');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
-				$(".childcare_content_menu>a").click(
-						function() {
-							if ($(this).parent(".childcare_content_menu.ho").children("div").is(':hidden')) {
-								$('.a').parent(".childcare_content_menu").children("div").slideUp();
-								$(this).parent(".childcare_content_menu.ho").children("div").slideDown();
-							} else {
-								$(this).parent(".childcare_content_menu.ho").children("div").slideUp();
-							}
-						});
 				$(".side_bar_content>a").eq(0).trigger("click");
 				$(".info_content1").trigger("click");
-				$(".childcare_content_menu.none").children("div").slideDown();
 			});
 </script>
 
@@ -468,10 +459,8 @@
 							생후 100일후부터 골격이 단단해지고 힘이 생기면서 아이가 스스로 목을 들 수 있게 돼요. 아기마다 성장속도에 차이가 있지만
 							빠른 아기들은 3개월이 채 안된 시기에 가능해지지만 느린 아기들의 경우 5~6개월이 지나도 누워만 있는 경우가 있어요. 고렇다고 조급해할 필요는 없답니다.
 							아기들의 성장속도는 차이가 있고 느리고 다 나쁜 것은 아니예요. 천천히 기다리며 도와주는 것이 필요합니다. 아기가 몸이나 고개레 힘을 주기 시작하고 지탱하려고
-							애를 쓰는 모습이 보이면 관심을 가지고 신경써줘야 해요. 아이가 깨어있는 시간 동안에는 잠깐씩 엎드려 놓아 아이가 목을 가눌 수 있게 연습해주세요. 그리고 터미타임에 신경써주는 것이 중요해요.
-							<br><br><b>터미타임이란?</b><br> 아이의 목 가누기를 도와주는 방법 중 하나인 터미타임. 아이가 스스로 목에 힘을 주거나 머리를 들어보려고
-							애를 쓴다며 목을 가눌 수 있도록 도와줘야 해요. 터미타임이란 배를 뜨스하는 터미와 시간을 뜻하는 타임의 합성얼 아기가 배를 엎드려 있는 시간을 뜻한답니다. 아기의 상체 힘을 길러주는 일종의 운동이라고
-							생각하시면 돼요. 보통 터미타임을 시작하는 시기는 정해진 것은 없으나 보통 생후 1개월부터 시작하는 편으로 스스로 머리를 들어보려고 애를 쓴다면 터미타임을 시작해도 좋아요.</span>
+							애를 쓰는 모습이 보이면 관심을 가지고 신경써줘야 해요. 아이가 깨어있는 시간 동안에는 잠깐씩 엎드려 놓아 아이가 목을 가눌 수 있게 연습해주세요.
+							</span>
 							<div class="childcare_content_menu_sub_insp">
 								<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 48 48"><defs><style>.cls-1{fill:#687d94;}.cls-2{fill:#edebf2;}.cls-3{fill:#fff;}.cls-4{fill:#c6c3d8;}.cls-5{fill:#72aaed;}.cls-6{fill:#a9a5c4;}.cls-7{fill:#f26674;}.cls-8{fill:#b5e08c;}.cls-9{fill:#2c435e;}</style></defs><title>checklist, medical, healthcare, pen, clipboard, clipchart</title><rect class="cls-1" x="0.5" y="2.46" width="35.25" height="45.04" rx="1.96"/><rect class="cls-2" x="3.44" y="5.4" width="29.38" height="39.17"/><circle class="cls-3" cx="18.13" cy="16.17" r="5.88"/><path class="cls-4" d="M10.29,1.48V7.35a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V1.48a1,1,0,0,0-1-1H11.27A1,1,0,0,0,10.29,1.48ZM24,6.37H12.25V2.46H24Z"/><rect class="cls-5" x="7.35" y="24.98" width="5.88" height="5.88"/><rect class="cls-5" x="7.35" y="33.79" width="5.88" height="5.88"/><rect class="cls-6" x="16.17" y="24.98" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="28.9" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="33.79" width="12.73" height="1.96"/><rect class="cls-6" x="16.17" y="37.71" width="12.73" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96"/><rect class="cls-7" x="14.21" y="15.19" width="7.83" height="1.96" transform="translate(34.29 -1.96) rotate(90)"/><rect class="cls-8" x="9.31" y="26.94" width="1.96" height="3.92" transform="translate(-17.42 15.74) rotate(-45)"/><rect class="cls-8" x="9.44" y="27.24" width="5.83" height="1.96" transform="translate(-16.34 17) rotate(-45)"/><rect class="cls-8" x="9.31" y="35.75" width="1.96" height="3.92" transform="translate(-23.65 18.32) rotate(-45)"/><rect class="cls-8" x="9.44" y="36.05" width="5.83" height="1.96" transform="translate(-22.57 19.58) rotate(-45)"/><path class="cls-9" d="M44.28,10.58l1.26,1.26,2,2v7.26a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1V14.62L42.89,12Z"/><path class="cls-5" d="M38.69,35.75l2,4.9h2l2-4.9V11.27a1,1,0,0,0-1-1H39.67a1,1,0,0,0-1,1Z"/><path class="cls-1" d="M40.65,40.65h2a0,0,0,0,1,0,0v1a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-1a0,0,0,0,1,0,0Z"/><path class="cls-9" d="M39.67,4.42h3.92a0,0,0,0,1,0,0V8.33a2,2,0,0,1-2,2h0a2,2,0,0,1-2-2V4.42a0,0,0,0,1,0,0Z" transform="translate(83.25 14.71) rotate(-180)"/></svg>
 								<span> <b>※ 주의사항</b> <br>
@@ -539,7 +528,7 @@
 								<br><br>
 								폐구균 4차 추가접종<br>
 								- 폐렴, 폐혈증, 뇌막염, 중이염을 예방<br>
-								-  생후 15 ~ 18개월 사이에 4차 추가접종<br>
+								- 생후 15 ~ 18개월 사이에 4차 추가접종<br>
 								<br>A형 간염<br>
 								- 급성산염을 예방<br>
 								-생후 12개월 이후에 1차 접종하고 6 ~ 18개월 후 추가 접종(제조사에 따라 접종시기가 다름)
@@ -547,8 +536,6 @@
 								일본뇌염접종<br>
 								- 돌이 지나고 일본 뇌염 경보가 내리면 예방 접종을 해요
 								- 접종 첫 해에는 1-2주 간격으로 2회 접종<br><br>
-								※병원에 갈때 마다 예방접종 수첩을 꼭 챙겨주세요.
-								<br> 수첩을 분실했다면, 병원에 접종기록을 문의하시거나 질병관리본부 예방접종 도우미 사이트를 이용하세요.
 								</span>
 							</div>
 						</div>

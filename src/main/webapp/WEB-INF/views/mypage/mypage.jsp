@@ -93,7 +93,7 @@
                               <tr>
                                  <td>구분</td>
                                  <td>
-                                    <c:if test="${member.isMember eq 1}">일반 회원</c:if>
+                                    <c:if test="${member.isMember eq 1}">개인</c:if>
                                     <c:if test="${member.isMember eq 2}">사업자</c:if>
                                  </td>
                               </tr>
