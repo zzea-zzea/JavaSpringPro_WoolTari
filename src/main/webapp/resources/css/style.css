@@ -2050,34 +2050,22 @@ font-size: 16px;
 
 .write_first_box .write_title .title {
 	padding: 15px 0;
-	text-align: center;
+	display: inline-block;
 }
 
 .write_first_box .write_title .title span {
 	color: pink;
 }
 
-.write_first_box .new_write_title {
-	margin: 0 auto;
-	height: 150px;
-	position: relative;
-}
 
-.write_first_box .new_write_title .title {
-/* 	position: absolute; */
-	top: 10px;
-/* 	left: 10px; */
-	font-weight: 900;
-}
 
 .write_first_box .new_write_title .input_title {
-/* 	position: absolute; */
-/* 	left: 60px; */
-	top: 10px;
-	border: none;
-	outline: none;
-	background: #f8f8f8;
-	border-radius: 20px;
+    width: 85%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background: #f8f8f8;
+    border-radius: 16px;
 }
 
 .write_first_box .new_write_title .category {
@@ -2087,11 +2075,7 @@ font-size: 16px;
 	font-weight: 900;
 }
 
-.write_first_box .new_write_title .category_sel {
-	position: absolute;
-	left: 80px;
-	top: 60px;
-}
+
 
 .write_first_box .new_write_title .phone {
 /* 	position: absolute; */
@@ -2131,20 +2115,19 @@ font-size: 16px;
 .write_first_box .new_write_content_box .new_write_content .new_content
 	{
 	outline: none;
-	border: none;
-	background: #f8f8f8;
-	border-radius: 20px;
-	word-wrap: break-word;
-	border-radius: 20px;
+    padding: 20px;
+    width: -webkit-fill-available;
+    border: none;
+    background: #f8f8f8;
+    border-radius: 20px;
+    word-wrap: break-word;
+    border-radius:16px;
 }
 
 .write_first_box .new_write_content_box .counter {
 	float: right;
 }
 
-.new_write_content_box .input_btn {
-	text-align: center;
-}
 
 .btn-delete {
 	border-radius: 50px;
@@ -2156,28 +2139,16 @@ font-size: 16px;
 	font-weight: bold;
 }
 
-.new_write_content_box .input_btn .input_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-	margin-top: 20px;
-}
 
 .new_write_content_box .input_btn .cancle_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
+	border-radius: 10px;
+    border: 0;
+    background: #6c757d;
+    line-height: 32px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 20px;
 	margin-left: 10px;
 }
 /*------------ 게시판 수정 end ------------*/
@@ -2200,23 +2171,14 @@ font-size: 16px;
 }
 
 .write_first_box .new_write_title {
-	margin: 0 auto;
-	height: 100px;
-	position: relative;
+	padding: 20px 0;
+    margin: 20px 0;
 }
 
 .write_first_box .new_write_content_box .new_write_content {
 	margin: 0 auto;
 }
 
-.write_first_box .new_write_content_box .new_write_content .new_content
-	{
-	outline: none;
-	/* 	border: none; */
-	height: 500px;
-	word-break: keep-all;
-	word-wrap: break-word;
-}
 
 .write_first_box .new_write_content_box .counter {
 	float: right;
@@ -2229,45 +2191,20 @@ font-size: 16px;
 }
 
 .write_first_box .new_write_title .write_title .left_title {
-	position: relative;
-	width: 600px;
+	width: 100%;
+	display: inline;
+}
+.write_first_box .new_write_title .write_title .rigth_category{
+	display: inline-block;
 }
 
-.write_first_box .new_write_title .write_title .left_title .title {
-	position: absolute;
-	left: 10px;
-	top: 25px;
-	font-weight: bold;
-}
-
-.write_first_box .new_write_title .write_title .left_title .input_title
-	{
-	position: absolute;
-	left: 50px;
-	top: 25px;
-}
-
-.write_first_box .new_write_title .write_title .rigth_category {
-	position: absolute;
-	left: 550px;
-	width: 200px;
-	height: 60px;
-	
-}
-
-.write_first_box .new_write_title .write_title .rigth_category .category
-	{
-	position: absolute;
-	left: 50px;
-	top: 25px;
-	font-weight: bold;
-}
 
 .write_first_box .new_write_title .write_title .rigth_category .category_sel
 	{
-	position: absolute;
-	left: 120px;
-	top: 25px;
+height: 50px;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    padding: 10px;
 }
 
 .write_first_box .new_write_content_box .input_img .preview {
@@ -2286,33 +2223,11 @@ font-size: 16px;
 }
 
 .new_write_content_box .input_btn {
+	    margin-top: 20px;
 	text-align: center;
 }
 
-.new_write_content_box .input_btn .input_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-	margin-top: 20px;
-}
 
-.new_write_content_box .input_btn .cancle_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
 /*------------ 게시판 수정 end ------------*/
 
 /*
@@ -2361,14 +2276,7 @@ font-size: 16px;
 	margin: 0 auto;
 }
 
-.write_first_box .new_write_content_box .new_write_content .new_content
-	{
-	outline: none;
-	/* 	border: none; */
-	height: 500px;
-	word-break: keep-all;
-	word-wrap: break-word;
-}
+
 
 .write_first_box .new_write_content_box .counter {
 	float: right;
@@ -2379,9 +2287,6 @@ font-size: 16px;
 	height: 50px;
 }
 
-.new_write_content_box .input_btn {
-	text-align: center;
-}
 
 .btn-delete {
 	border-radius: 50px;
@@ -2394,29 +2299,16 @@ font-size: 16px;
 }
 
 .new_write_content_box .input_btn .input_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-	margin-top: 20px;
+	    border-radius: 10px;
+    border: 0;
+    background: #6c757d;
+    line-height: 32px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px 20px;
 }
 
-.new_write_content_box .input_btn .cancle_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
 /*------------ 게시판 수정 end ------------*/
 
 /*
@@ -2431,36 +2323,8 @@ font-size: 16px;
 	width: 800px;
 }
 
-.write_first_box .write_title .title {
-	padding: 15px 0;
-	text-align: center;
-}
-
 .write_first_box .write_title .title span {
 	color: pink;
-}
-
-.write_first_box .new_write_title {
-	margin: 0 auto;
-	height: 150px;
-	position: relative;
-}
-
-.write_first_box .new_write_title .title {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	font-weight: 900;
-}
-
-.write_first_box .new_write_title .input_title {
-	position: absolute;
-	left: 60px;
-	top: 10px;
-	border: none;
-	outline: none;
-	background: #f8f8f8;
-	border-radius: 20px;
 }
 
 .write_first_box .new_write_title .writer {
@@ -2493,23 +2357,12 @@ font-size: 16px;
 	margin: 0 auto;
 }
 
-.write_first_box .new_write_content_box .new_write_content .new_content
-	{
-	outline: none;
-	border: none;
-	background: #f8f8f8;
-	border-radius: 20px;
-	word-wrap: break-word;
-	border-radius: 20px;
-}
 
 .write_first_box .new_write_content_box .counter {
 	float: right;
+	margin: 10px;
 }
 
-.new_write_content_box .input_btn {
-	text-align: center;
-}
 
 .btn-delete {
 	border-radius: 50px;
@@ -2521,30 +2374,8 @@ font-size: 16px;
 	font-weight: bold;
 }
 
-.new_write_content_box .input_btn .input_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-	margin-top: 20px;
-}
 
-.new_write_content_box .input_btn .cancle_btn {
-	border-radius: 50px;
-	border: 2px solid #f2b09b;
-	background: #fff;
-	line-height: 32px;
-	font-size: 13px;
-	color: #b96c6c;
-	font-weight: bold;
-	padding: 0 15px;
-	margin-left: 10px;
-}
+
 /*------------ 게시판 수정 end ------------*/
 
 

@@ -14,20 +14,17 @@
                   <span>새</span> 글 쓰기
                </h3>
             </div>
-               <form action="${pageContext.request
-         .contextPath}/new_content_add.woo" method="post" 
+               <form action="${pageContext.request.contextPath}/new_content_add.woo" method="post" 
           enctype="multipart/form-data">
             <hr>
              <input type="hidden" name="memberIndex" value="${mbPKId}">
             <div class="new_write_title">
                <div class="write_title">
                   <div class="left_title">
-                     <p class="title">제목:</p>
                      <input id="title" name="title" type="text" class="input_title" placeholder="제목을 입력하세요."
                         size="60px" required>
                   </div>
                   <div class="rigth_category">
-                     <p class="category">카테고리:</p>
                      <select class="category_sel" name="cate">
                         <option value="1" <c:if test="${cate == 1}"> selected </c:if>>일상</option>
                         <option value="2" <c:if test="${cate == 2}"> selected </c:if>>지원 정보</option>
