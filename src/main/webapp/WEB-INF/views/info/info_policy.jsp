@@ -25,7 +25,7 @@ $(document).ready(function() {
 				$('.su_txt').hide();
 				$('.gw_txt').show();
 				$('.gg_txt').hide();
-				$('.policy_content_maintxt').css('height','fit-content');
+				$('.policy_content_maintxt').css('height','600px');
 			}else {
 				if(type_si[z] == $('#main-city option:selected').val()){
 					$('.h2_title_si').text(type_si[z]+" 정책 정보");
