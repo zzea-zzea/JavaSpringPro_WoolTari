@@ -10,16 +10,16 @@ $(document).ready(function() {
 	var type_si = [ "서울", "부산", "대구", "인천", "광주", "대전","울산", "경기", "강원", "충북", "충남", "전북", "전남","경북", "경남", "제주" ];
 		for (var z = 0; z < type_si.length; z++) {
 			if (type_si[0] == $('#main-city option:selected').val()) {
-				$('.h2_title_si').text(type_si[z]+"정책 정보");
+				$('.h2_title_si').text(type_si[0]+"정책 정보");
 				$('.su_txt').show();
 				$(".hide").hide();
 			}else if(type_si[7] == $('#main-city option:selected').val()){
-				$('.h2_title_si').text(type_si[z]+"정책 정보");
+				$('.h2_title_si').text(type_si[7]+"정책 정보");
 				$('.su_txt').hide();
 				$('.gg_txt').show();
 				$('.gw_txt').hide();
 			}else if(type_si[8] == $('#main-city option:selected').val()){
-				$('.h2_title_si').text(type_si[z]+"정책 정보");
+				$('.h2_title_si').text(type_si[8]+"정책 정보");
 				$('.su_txt').hide();
 				$('.gw_txt').show();
 				$('.gg_txt').hide();
