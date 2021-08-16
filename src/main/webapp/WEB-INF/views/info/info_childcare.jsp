@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
 <script>
 	$(document).ready(function() {
 				$(".side_bar_content>a").click(
@@ -12,15 +11,6 @@
 								$(this).parent(".side_bar_content").children("ul").slideDown();
 							} else {
 								$(this).parent(".side_bar_content").children("ul").slideUp();
-							}
-						});
-				$(".childcare_content_menu>a").click(
-						function() {
-							if ($(this).parent(".childcare_content_menu.ho").children("div").is(':hidden')) {
-								$('.a').parent(".childcare_content_menu").children("div").slideUp();
-								$(this).parent(".childcare_content_menu.ho").children("div").slideDown();
-							} else {
-								$(this).parent(".childcare_content_menu.ho").children("div").slideUp();
 							}
 						});
 				$(".info_content1").click(function() {
@@ -87,7 +77,8 @@
 					$('#content6').attr('class', 'sideli');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').css('pointer-events' , 'none');
+					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
+					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
 				});
 				$(".info_content6").click(function() {
 					$('.childcare_section').hide();
@@ -100,8 +91,7 @@
 					$('#content6').attr('class', 'sideli on');
 					$('#content7').attr('class', 'sideli');
 					$('#content8').attr('class', 'sideli');
-					$('.childcare_content_menu>a').parent(".childcare_content_menu.").children("div").slideUp();
-					$('.childcare_content_menu>a').css('pointer-events' , 'auto');
+					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
 				$(".info_content7").click(function() {
 					$('.childcare_section').hide();
@@ -129,6 +119,15 @@
 					$('#content8').attr('class', 'sideli on');
 					$('.childcare_content_menu>a').css('pointer-events' , 'none');
 				});
+				$(".childcare_content_menu>a").click(
+						function() {
+							if ($(this).parent(".childcare_content_menu.ho").children("div").is(':hidden')) {
+								$('.a').parent(".childcare_content_menu").children("div").slideUp();
+								$(this).parent(".childcare_content_menu.ho").children("div").slideDown();
+							} else {
+								$(this).parent(".childcare_content_menu.ho").children("div").slideUp();
+							}
+						});
 				$(".side_bar_content>a").eq(0).trigger("click");
 				$(".info_content1").trigger("click");
 				$(".childcare_content_menu.none").children("div").slideDown();

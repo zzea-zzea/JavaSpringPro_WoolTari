@@ -522,7 +522,9 @@ public class MainController {
 		System.out.println(strMbId);
 		int mbId = Integer.parseInt(strMbId); // <<PK>>
 		MemberVO mb = this.mbSvc.selectOneMember(mbId);
-		String name = mb.getName();
+		String named = mb.getName();
+		String[] array = named.split("_");
+		String name = array[1];
 		mav.addObject("name", name);
 		return mav;
 	}
@@ -577,6 +579,7 @@ public class MainController {
 		boolean inputNum = false;
 		if(newmem.getIsMember() == 2) {
 			third_num = request.getParameter("third_num");
+			inputNum = true;
 		}
 		String first_num = request.getParameter("first_num");
 		String second_num = request.getParameter("second_num");
@@ -1026,6 +1029,40 @@ public class MainController {
 		}
 		return mav;
 	}
+	
+	   @RequestMapping(value = "Deletemypage.woo", method = RequestMethod.GET)
+	   public String deletemypageProc(HttpSession ses, Model model, @RequestParam(value = "mbId") int mbId) {
+	      List<CommentVO> deletecomment = CommentSVC.CommentListForBoard2(mbId);
+	      List<CommunityVO> deletecommunityVO = ctSvc.CommunityListForBoard(mbId);
+	      List<SupportVO> deletesupportVO = SupportSVC.oneUserSupport(mbId);
+	      for (int i = 0; i < deletecomment.size(); i++) {
+	         boolean r = CommentSVC.deleteComment(deletecomment.get(i).getcommentIndex());
+	         System.out.println("댓글r =" + r);
+	      }
+	      for (int i = 0; i < deletecommunityVO.size(); i++) {
+	         
+	         List<CommentVO> deletecomment2 = CommentSVC.CommentListForBoard(deletecommunityVO.get(i).getBoard_index());
+	         for (int j = 0; j < deletecomment2.size(); j++) {
+	            boolean r = CommentSVC.deleteComment(deletecomment.get(i).getcommentIndex());
+	            System.out.println("댓글r =" + r);
+	         }
+	         boolean r = ctSvc.deleteCommunity(deletecommunityVO.get(i).getBoard_index());
+	         System.out.println("댓글r =" + r);
+	      }
+	      for (int i = 0; i < deletesupportVO.size(); i++) {
+	         boolean r = SupportSVC.deleteSupport(deletesupportVO.get(i).getSupportIndex());
+	         System.out.println("댓글r =" + r);
+	      }
+	      boolean r = mbSvc.deleteMember(mbId);
+	       ses.invalidate();
+	      if (r) {
+
+	         return "redirect:main.woo";
+	      } else {
+	         System.out.println("회원 삭제 실패");
+	         return "redirect:/retouch_mypage.woo?mbId=" + mbId;
+	      }
+	   }
 
 	@RequestMapping(value = "mypage_sup.woo", method = RequestMethod.GET)
 	public ModelAndView MypageSupport(HttpServletRequest request) {

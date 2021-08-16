@@ -102,8 +102,8 @@ $(document).ready(function() {
 							<tr>
 								<td><c:if test="${ismember eq 1}">주민번호</c:if>
 								<c:if test="${ismember eq 2}">사업자 번호</c:if></td>
-								<td><c:if test="${ismember eq 1}"><input type="text" name="first_num" maxlength="6">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="7"></c:if>
-								<c:if test="${ismember eq 2}"><input type="text" name="first_num" maxlength="3">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="2">&nbsp;-&nbsp;<input name="third_num" type="password" maxlength="5"></c:if></td>
+								<td><c:if test="${ismember eq 1}"><input type="text" name="first_num" maxlength="6" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="7" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></c:if>
+								<c:if test="${ismember eq 2}"><input type="text" name="first_num" maxlength="3" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="2" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;-&nbsp;<input name="third_num" type="password" maxlength="5" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></c:if></td>
 							</tr>
 							<tr>
 								<td>성명</td>

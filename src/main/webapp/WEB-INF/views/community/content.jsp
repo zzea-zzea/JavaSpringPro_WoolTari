@@ -83,7 +83,6 @@
                <h4> 게시글이 현재 하나도 없네요! </h4>
             </c:if>   
                <c:if test="${not empty ctList}">         
-                        <% int i= ctSize; %>
                <c:forEach var="ct" items="${ctList}" varStatus="vs">
                   <c:if test="${not empty mbLoginName}">
                   <tr onclick="showOneArticle('${ct.board_index}')">

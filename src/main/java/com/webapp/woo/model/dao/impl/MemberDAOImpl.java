@@ -35,12 +35,13 @@ public class MemberDAOImpl implements IMemberDAO {
    // SQL 상수 정의부
 
    public static final String SQL_INSERT_MEMBER_CRYPTO // 암호화 aes,hex
-         = "insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,? ";
+         = "insert into member values(null,?,hex(aes_encrypt(?, ?)),?,?,?,?,?,?,?,?,?)";
 
    public static final String SQL_MEMBER_DUPCHECK = "select count(id) from member where id = ?"; // 1 or 0
 
    public static final String SQL_MEMBER_NICKCHECK = "select count(nick_name) from member where nick_name = ?"; // 1 or
-                                                                                       // 0
+     
+   private static final String SQL_MEMBER_DELETE_ONE = "delete from member where member_index = ?";// 0
 
    private static final String SQL_SELECT_ALL_MEMBERS = "select * from member order by joined_at desc";
 
@@ -258,4 +259,15 @@ public class MemberDAOImpl implements IMemberDAO {
 			return false;
 		}
 	}
+	   @Override
+	   public boolean deleteMember(int memberId) {
+	      try {
+	         int r = jtem.update(SQL_MEMBER_DELETE_ONE, memberId);
+	         return r == 1;
+	      } catch (DataAccessException e) {
+	         System.out.println(
+	               "dao: member 삭제 실패: " + memberId);
+	         return false;
+	      }   
+	   }
 }
