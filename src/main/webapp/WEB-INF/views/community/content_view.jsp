@@ -117,23 +117,24 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
                                        ${mem.nickName}
                                     </c:if>
                                     </c:forEach>
+                                    <fmt:formatDate value="${as.createDate}" pattern="yyyy.MM.dd"/>     
                                     </div>
                                     <div class="reply_show" id="reply_show_${as.commentIndex}" style="word-break:break-all;">${as.content}
                                        <div class="reply_del_ret">
                                           <input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">&nbsp;
                                           <c:if test="${as.memberIndex eq mbPKId}">   
-                                          <a class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
+                                          <a class="layer_button"  style="color: #fff;" onclick="deletecomment(${as.commentIndex})">삭제</a>
                                           <a class="retouch_button" style="color: #fff;"  id="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
                                           </c:if>
                                        </div>
                                     </div>
                                  <form action="${pageContext.request.contextPath}/retouch_comment.woo">
                                     <input type="hidden" name="boardIndex" value="${atId}">                     
-                                    <input type="hidden" name="memberIndex" value="${mbPKId}">      
+                                    <input type="hidden" name="memberIndex" value="${mbPKId}"> 
                                     <input type="hidden" name="commentId" value="${as.commentIndex}">
                                     <div class="retouch_reply" style="display: none" id="retouch_reply_${as.commentIndex}">
-                                       <input type="text"value="${as.content}" class="comment" name="comment" size='70'> 
-                                       <input type="submit" value="수정"class="retouch_submit">
+                                       <input type="text"value="${as.content}" class="comment" name="comment" size='70' style="border: 0;width: 91%;padding: 7px;border-radius: 6px;"> 
+                                       <input type="submit" value="수정"class="retouch_submit" style="font-size: 13px;background: #16aa16;padding: 10px;border-radius: 5px;font-weight: bold;border: 0;color: #fff;">
                                     </div>
                                  </form>
                         </c:forEach>
