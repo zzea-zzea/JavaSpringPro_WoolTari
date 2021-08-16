@@ -23,7 +23,6 @@
                      <c:if test="${empty userSpList}">
                         <h3>후원 내역이 없습니다.</h3>
                          <br>
-                        <a href="${pageContext.request.contextPath}/support_info.woo">후원하러가기</a>   
                      </c:if>
                      <c:if test="${not empty userSpList}">         
                         <table class="tables myaccordion table-hover" id="accordion">
