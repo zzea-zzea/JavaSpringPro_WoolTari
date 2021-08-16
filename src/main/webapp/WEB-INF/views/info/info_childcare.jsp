@@ -221,24 +221,10 @@
 								</div>
 							</div>
 							<div class="childcare_content_menu ho">
-								<a class="a">Q.&nbsp;배가 당기고 아파요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
-								<div class="childcare_content_menu_sub hide">
-									<span>허리나 하복부 또는 사타구니 주위에 통증이 나타납니다.</span>
-								</div>
-							</div>
-							<div class="childcare_content_menu ho">
 								<a class="a">Q.&nbsp;식성변화가 생겼어요</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
 								<div class="childcare_content_menu_sub hide">
 									<span>식욕이 갑자기 늘거나, 또는 예전에 좋아했거나, 싫어했던 식성이 반대로 변화합니다.</span>
-								</div>
-							</div>
-							<div class="childcare_content_menu ho">
-								<a class="a">Q.&nbsp;임신테스트 결과가 양성으로 나왔어요</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
-								<div class="childcare_content_menu_sub hide">
-									<span>마지막 관계 2주 후 소변테스트 결과가 양성으로 나왔다면 90% 이상 임신이 확실합니다.</span>
 								</div>
 							</div>
 						</div>
@@ -335,16 +321,6 @@
 							<span>아이를 키우기 위한 방법</span>
 						</div>
 						<div class="childcare_content">
-							<div class="childcare_content_menu ho">
-								<a class="a">Q.&nbsp;모유 수유의 장점</a>
-								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
-								<div class="childcare_content_menu_sub hide">
-									<span>모유는 출생후 초기에 필요한 모든 영양분을 골고루 갖추고 있습니다.피부와 피부의 접촉,
-										그리고 엄마의 심장소리를 아기에게 직접 듣게 함으로써 아기의 엄마에 대한 친밀도를 강화시켜 줍니다. 유아 초기에
-										발병할 수 있는 감기, 귓병, 설사등의 감염을 방지할 수 있습니다. 모유는 항상 아기에게 먹이기 적합한 온도로
-										보관되며, 언제든지 먹일 수 있습니다.</span>
-								</div>
-							</div>
 							<div class="childcare_content_menu ho">
 								<a class="a">Q.&nbsp;신생아가 잘 먹지 않을때</a>
 								<svg class="foldsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129"> <g> <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" /></g></svg>
