@@ -36,11 +36,11 @@
                $('#idmsg').removeClass('error');
                switch (res) {
                case "yes":
-                  msg = '이미 사용중인 아이디입니다';
+                  msg = '<font color=red style=font-size:12px;>이미 사용중인 아이디입니다.';
 
                   break;
                case "no":
-                  msg = '사용 가능한 아이디입니다';
+                  msg = '<font color=blue style=font-size:12px;>사용 가능한 아이디입니다.</font>';
                   $('.id_input').attr("check_result", "success");
                   break;
                case "error":
@@ -77,11 +77,11 @@
                $('#nickmsg').removeClass('error');
                switch (res) {
                case "yes":
-                  msg = '이미 사용중인 닉네임입니다';
+                  msg = '<font color=red style=font-size:12px;>이미 사용중인 닉네임입니다.';
 
                   break;
                case "no":
-                  msg = '사용 가능한 닉네임입니다';
+                  msg = '<font color=blue style=font-size:12px;>사용 가능한 닉네임입니다.</font>';
                   $('.nick_input').attr("check_result", "success");
                   break;
                case "error":
@@ -92,7 +92,7 @@
 
                }
                $('#nickmsg').addClass(res);
-               $('#nickmsg').html('<i>' + msg + '</i>');
+               $('#nickmsg').html('<a> ' + msg + '</a>');
 
             }
          });
@@ -380,7 +380,7 @@
                </table>
             </div>
             <div class="nextbtn">
-               <button type="button" id="btn">입력완료</button>
+               <a type="button" id="btn">입력완료</a>
             </div>
          </div>
       </main>

@@ -142,7 +142,7 @@ $(document).ready(function() {
 						<input type="text" name="depositor_name">
 					</div>
 				</div>
-				<div class="nextbtn"><button type="submit">후원하기</button></div>
+				<div class="nextbtn"><button class="nextbtn" type="submit">후원하기</button></div>
 			</div>
 		</main>
 	</form>

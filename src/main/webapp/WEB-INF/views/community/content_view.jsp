@@ -92,29 +92,28 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 					<p><c:out value="${community.content}" /></p>
 				</div>
 				<!-- community_content_view_imfo -->
-				<div class="image" id="image">
-					<div class="col-md-8">
-						<div class="row">
-							<c:if test="${not empty param['totalMB']}">
-						<span class="unit_mb" style="color: blue">
-							<b> 총 <c:out value="${param.countFiles}" 
-								default="0"/>  개
-							 파일들용량: ${param.totalMB}MB</b>
-						</span>
-					</c:if>
+<!-- 				<div class="image" id="image"> -->
+<!-- 					<div class="col-md-8"> -->
+<!-- 						<div class="row"> -->
+<%-- 							<c:if test="${not empty param['totalMB']}"> --%>
+<!-- 						<span class="unit_mb" style="color: blue"> -->
+<%-- 							<b> 총 <c:out value="${param.countFiles}"  --%>
+<%-- 								default="0"/>  개 --%>
+<%-- 							 파일들용량: ${param.totalMB}MB</b> --%>
+<!-- 						</span> -->
+<%-- 					</c:if> --%>
 					
-					<c:if test="${fpCount gt 0}">
-						<c:forEach var="fp" items="${fps}" varStatus="vs">
-						 <%@ include file="_file.jsp" %>
-						</c:forEach>					
-					</c:if>
-					<c:if test="${fpCount eq 0}">
-						파일이 없어요!
-					</c:if>
-						</div>
-					</div>
-				</div>
-				<div></div>
+<%-- 					<c:if test="${fpCount gt 0}"> --%>
+<%-- 						<c:forEach var="fp" items="${fps}" varStatus="vs"> --%>
+<%-- 						 <%@ include file="_file.jsp" %> --%>
+<%-- 						</c:forEach>					 --%>
+<%-- 					</c:if> --%>
+<%-- 					<c:if test="${fpCount eq 0}"> --%>
+<!-- 						파일이 없어요! -->
+<%-- 					</c:if> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 				<div class="community_imfo_retouch_delet" style="text-align: center;">
 			<c:if test="${not empty mbLoginName}"><!-- 누군가 로그인중.. -->
 				<c:if test="${mbPKId eq community.member_index}"> <!-- 글쓴이 본인인증 -->
@@ -163,7 +162,7 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 													<input id="rm_${as.commentIndex}" type="hidden" name="boardIndex" value="${atId}">
 													&nbsp;<a href="#" class="layer_button" onclick="deletecomment(${as.commentIndex})">삭제</a>
 													<c:if test="${as.memberIndex eq mbPKId}">	
-													<a class="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
+													<a class="retouch_button" id="retouch_button" onclick="retouchcomment(${as.commentIndex})">수정</a>
 														</c:if>
 												</div>
 								</c:forEach>
@@ -193,16 +192,15 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
 </body>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-// $(document).ready(function(){
-// 		$('input_new_reply').click(function(){
-// 			$('#a').toggle();
-// 		})
-// 		$('.retouch_button').click(function() {
-// 			$('.retouch_reply').hide();
-// 			$('.retouch_reply').show();	
-// 		});
+$(document).ready(function(){
+		$('input_new_reply').click(function(){
+			$('#a').toggle();
+		})
+		$('.retouch_button').click(function() {
+			$('.retouch_button').hide();	
+		});
 		
-// });
+});
 </script>
 <script>
 	function delete_check() {
