@@ -135,11 +135,11 @@ $(document).ready(function() {
 						</div>
 					</div>
 					<div class="bankbook_no_name">
-						<span class="bankbook_no_name_span">후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 김지혜)</span>
-					</div>
-					<div class="bankbook_no_name">
 						<span>입금자 명 </span>
 						<input type="text" name="depositor_name">
+					</div>
+					<div class="bankbook_no_name">
+						<span class="bankbook_no_name_span">후원전용 계좌 : 농축협 352-0168-6051-03 (예금주 : 김지혜)</span>
 					</div>
 				</div>
 				<div class="nextbtn"><button class="nextbtn" type="submit">후원하기</button></div>

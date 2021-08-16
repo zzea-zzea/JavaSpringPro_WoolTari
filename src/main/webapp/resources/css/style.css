@@ -1193,8 +1193,11 @@ width: 100%;
 
 .support_box  .support_content_benefits .table tbody tr td input {
 	outline: 0;
-	height: 40px;
-	border: 1px solid #dddddd;
+    background: #eeeeee;
+    border-radius: 8px;
+    padding: 0 20px;
+    height: 40px;
+    border: 0;
 }
 
 .support_box  .support_content_benefits .support_content_benefits_ti h3
@@ -1351,9 +1354,12 @@ width: 100%;
 }
 
 .support_content_benefits .bankbook_no_name input {
-	outline: 0;
-	height: 40px;
-	border: 1px solid #dddddd;
+    outline: 0;
+    background: #eeeeee;
+    border-radius: 8px;
+    padding: 0 20px;
+    height: 40px;
+    border: 0;
 	margin-left: 20px;
 }
 
