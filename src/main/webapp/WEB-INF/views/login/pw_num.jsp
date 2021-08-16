@@ -43,7 +43,6 @@
    <%@ include file="../index.jsp"%>
 
 
-   <a class="modal-open-btn" id="modal-open-btn">Login</a>
 
    <div class="modal-wrapper">
 
@@ -94,7 +93,9 @@
                         onKeyup="atPW();this.value=this.value.replace(/[^0-9]/g,'');" /> <br>
                         <br>
                         <br>
+                        <div class="menu_new_email_num">
                      <span class="menu_new_pw_box_num_pw" onkeyup="atPW();" id="pw_at_msg"></span>
+                  </div>
                   </div>
 
                </div>

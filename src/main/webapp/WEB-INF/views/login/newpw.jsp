@@ -20,6 +20,24 @@
         }
 
     }
+   
+   $(function() {
+	      $("#pw_at_msg").hide();
+	      $("#pw_at_msg1").hide();
+	      $("input").keyup(function() {
+	         var pwd1 = $('#password').val();
+	         var pwd2 = $('#password1').val();
+	         if (pwd1 != "" || pwd2 != "") {
+	            if (pwd1 == pwd2) {
+	               $("#pw_at_msg").hide();
+	               $("#pw_at_msg1").show();
+	            } else {
+	               $("#pw_at_msg").show();
+	               $("#pw_at_msg1").hide();
+	            }
+	         }
+	      });
+	   });
 
 
 </script>
@@ -35,7 +53,6 @@
    <%@ include file="../index.jsp"%>
 
 
-   <a class="modal-open-btn" id="modal-open-btn">Login</a>
 
    <div class="modal-wrapper">
 
@@ -75,8 +92,11 @@
 
                   <br> <input class="box_txtpw_re" placeholder="새 비밀번호 확인"
                      type="password" id="password1" onkeyup="atPW();"> <br>
-                  <span class="menu_new_pw_box_pw1" onkeyup="atPW();" id="pw_at_msg"></span>
-
+                     <div class="menu_new2_span_box">
+                 <span id="pw_at_msg"style="color: red; font-size:12px;">비밀번호가 일치하지 않습니다.</span> 
+                 <span id="pw_at_msg1"style="color: blue; font-size:12px;">비밀번호가 일치합니다.</span>
+                
+</div>
 
 
 

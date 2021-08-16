@@ -14,6 +14,12 @@ function showMyPage(mbId) {
 				+ mbId;
 		// 동기방식 get 이동... 			
 }
+
+function logout(){
+	if( confirm("정말 로그아웃 하시겠습니까?")){
+		location.href = href="${pageContext.request.contextPath}/logout.woo";
+	}
+}
 </script>
 <header id="header" class="header fixed-top d-flex align-items-center">
 	<div class="container d-flex align-items-center justify-content-between">
@@ -47,8 +53,7 @@ function showMyPage(mbId) {
                   href="${pageContext.request.contextPath}/login.woo"> Login</a></li>
             </c:if>
             <c:if test="${not empty mbLoginName}">
-               <li><a class="btn_def"
-                  href="${pageContext.request.contextPath}/logout.woo">Logout</a></li>
+                <li><a class="btn_def" onclick="logout()">Logout</a></li>
             </c:if>
 				<c:if test="${not empty mbLoginName}">
 					<li><a class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</a></li>
