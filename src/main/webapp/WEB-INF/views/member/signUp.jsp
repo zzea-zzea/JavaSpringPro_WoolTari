@@ -51,7 +51,7 @@
 
                }
                $('#idmsg').addClass(res);
-               $('#idmsg').html('<i>' + msg + '</i>');
+               $('#idmsg').html('<a>' + msg + '</a>');
 
             }
          });
@@ -122,7 +122,7 @@
                   return;
                }
                if ($('.id_input').attr("check_result") == "fail") {
-                  alert('아이디 중복확인을 해주세요');
+                  alert('아이디 중복확인을 해주세요.');
                   $('.id_input').focus();
                   return false;
                }
@@ -135,7 +135,7 @@
                }
 
                if ($('.nick_input').attr("check_result") == "fail") {
-                  alert('아이디 중복확인을 해주세요');
+                  alert('닉네임 중복확인을 해주세요.');
                   $('.nick_input').focus();
                   return false;
                }
@@ -218,20 +218,7 @@
          }
       });
       $("#click").trigger("click");
-
-      $("#name").keyup(function(event) {
-
-         if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
-
-            var inputVal = $(this).val();
-
-            $(this).val(inputVal.replace(/[a-z0-9]/gi, ''));
-
-         }
-
-      });
-
-      
+  
       
       $('#email').keyup(function(event) {
          if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
@@ -247,8 +234,14 @@
             }
         });
       
-
+      
+      $('#name').keyup(function() {
+  		var inputVal = $(this).val();
+  		 $(this).val((inputVal.replace(/[[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}=;,./ ]/g,'')));
+  	});
+	
    });
+   
    
 
    function chkPW() {
@@ -258,24 +251,33 @@
       var pw2 = $("#pw2").val();
 
       if (false === reg.test(pw)) {
-         document.getElementById("pw_msg").innerHTML = "*숫자,특수,영대소문자 조합 필수입니다.";
-      } else {
-         document.getElementById("pw_msg").innerHTML = "<font color=blue>비밀번호 사용 가능</font>";
-      }
-
-   }
-   function atPW() {
-      var pw = $("#pw").val();
-      var pw2 = $("#pw2").val();
-
-      if (pw != pw2) {
-         document.getElementById("pw_ok").innerHTML = "<font color=red >비밀번호가 일치하지 않습니다.</font>";
+         document.getElementById("pw_msg").innerHTML = "<font color=red>*숫자,특수,영대소문자 조합 필수입니다.</font>";
          return false;
       } else {
-         document.getElementById("pw_ok").innerHTML = "<font color=blue >비밀번호가 일치합니다.</font>";
-         return true;
+         document.getElementById("pw_msg").innerHTML = "<font color=blue>비밀번호 사용 가능</font>";
+     	return true;
       }
+    
    }
+   
+   
+   $(function() {
+	      $("#pw_at_msg").hide();
+	      $("#pw_at_msg1").hide();
+	      $("input").keyup(function() {
+	         var pwd1 = $('#pw').val();
+	         var pwd2 = $('#pw2').val();
+	         if (pwd1 != "" || pwd2 != "") {
+	            if (pwd1 == pwd2) {
+	               $("#pw_at_msg").hide();
+	               $("#pw_at_msg1").show();
+	            } else {
+	               $("#pw_at_msg").show();
+	               $("#pw_at_msg1").hide();
+	            }
+	         }
+	      });
+	   });
 </script>
 <script type="text/javascript">
    function keycheck1(x) {
@@ -289,6 +291,8 @@
          phone3.focus();
       }
    }
+   
+
 </script>
 
 <body>
@@ -331,28 +335,30 @@
                      <tr>
                         <td>비밀번호</td>
                         <td><input id="pw" type="password" name="pw"
-                           onkeyup="chkPW();"> <span id="pw_msg"></span></td>
+                           onkeyup="chkPW();"> <span id="pw_msg" style=font-size:12px;></span></td>
                      </tr>
                      <tr>
                         <td>비밀번호 확인</td>
-                        <td><input id="pw2" type="password" name="pw2"
-                           onkeyup="atPW();"> <span id="pw_ok"></span></td>
+                        <td><input id="pw2" type="password" name="pw2" 
+                           onkeyup="atPW();"> 
+                             <span id="pw_at_msg"style="color: red; font-size:12px;">비밀번호가 일치하지 않습니다.</span> 
+                  			<span id="pw_at_msg1"style="color: blue; font-size:12px;">비밀번호가 일치합니다.</span>
+                  			</td>
                      </tr>
                      <tr>
                         <td>이름</td>
-                        <td><input id="name" type="text" name="name" maxlength="4" onkeyup="this.value=this.value.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g;);"><span>* 이름은 한글만 가능합니다.</span></td>
+                        <td><input id="name" type="text" name="name" maxlength="4" ><span style=font-size:12px;>* 이름은 한글만 가능합니다.</span></td>
                      </tr>
                      <tr>
                         <td>생년월일</td>
                         <td><input id="brith" type="text" name="brith"
-                           maxlength="8"><span id="birth_check"
-                           onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"></span><span>* Ex)19970221</span></td>
+                           maxlength="8"  onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"><span style=font-size:12px;>* Ex)19970221</span></td>
                      </tr>
                      <tr id="a">
                         <td>사업자 번호</td>
                         <td><input id="buisness" type="text" name="buisness"
                            onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
-                           <span>* 숫자만 입력 해주세요.</span></td>
+                           <span style=font-size:12px;>* 숫자만 입력 해주세요.</span></td>
                      </tr>
                      <tr>
                         <td>전화번호</td>

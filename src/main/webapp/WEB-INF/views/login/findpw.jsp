@@ -45,7 +45,6 @@
    <%@ include file="../index.jsp"%>
 
 
-   <a class="modal-open-btn" id="modal-open-btn">Login</a>
 
    <div class="modal-wrapper">
 
