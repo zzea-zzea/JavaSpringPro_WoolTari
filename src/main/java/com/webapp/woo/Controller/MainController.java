@@ -209,8 +209,8 @@ public class MainController {
 				mav.addObject("local_si", local_si);
 				break;
 			case"경남" :
-				mav.addObject("centerLat", 35.406681);
-				mav.addObject("centerLng", 128.173946);
+				mav.addObject("centerLat", 35.014806);
+				mav.addObject("centerLng", 128.516313);
 				mav.addObject("local_si", local_si);
 				break;
 			case"제주" :

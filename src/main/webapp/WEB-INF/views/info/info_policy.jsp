@@ -7,29 +7,33 @@ $(document).ready(function() {
 	$(".hide").hide();
 	$('.h2_title_si').text("서울특별시 정책 정보");
 	$("#showbtn").click(function() {
-	var type_si = [ "서울", "부산", "대구", "인천", "광주", "대전","울산", "경기", "강원", "충북", "충남", "전북", "전남","경북", "경남", "제주" ];
+	var type_si = [ "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시","울산광역시", "경기도", "강원도", "충청북도", "충청남도", "전라북도", "전라남도","경상북도", "경상남도", "제주도" ];
 		for (var z = 0; z < type_si.length; z++) {
 			if (type_si[0] == $('#main-city option:selected').val()) {
-				$('.h2_title_si').text(type_si[0]+"정책 정보");
+				$('.h2_title_si').text(type_si[0]+" 정책 정보");
 				$('.su_txt').show();
 				$(".hide").hide();
+				$('.policy_content_maintxt').css('height','fit-content');
 			}else if(type_si[7] == $('#main-city option:selected').val()){
-				$('.h2_title_si').text(type_si[7]+"정책 정보");
+				$('.h2_title_si').text(type_si[7]+" 정책 정보");
 				$('.su_txt').hide();
 				$('.gg_txt').show();
 				$('.gw_txt').hide();
+				$('.policy_content_maintxt').css('height','fit-content');
 			}else if(type_si[8] == $('#main-city option:selected').val()){
-				$('.h2_title_si').text(type_si[8]+"정책 정보");
+				$('.h2_title_si').text(type_si[8]+" 정책 정보");
 				$('.su_txt').hide();
 				$('.gw_txt').show();
 				$('.gg_txt').hide();
+				$('.policy_content_maintxt').css('height','fit-content');
 			}else {
 				if(type_si[z] == $('#main-city option:selected').val()){
-					$('.h2_title_si').text(type_si[z]+"정책 정보");
+					$('.h2_title_si').text(type_si[z]+" 정책 정보");
 					$('.su_txt').hide();
 					$(".hide").hide();
 					$('.policy_content_maintxt_span').show();
 					$('.policy_content_maintxt_span').text(type_si[z]+" 은/는 아직 준비중 입니다.");
+					$('.policy_content_maintxt').css('height','600px');
 				}
 			}
 		}
@@ -46,22 +50,22 @@ $(document).ready(function() {
 			</div>
 			<div class="policy_content_search">
 				<select class="selectpicker le" data-size="5" id="main-city" name="local_si">
-					<option value="서울" selected>서울특별시</option>
-					<option value="경기">경기도</option>
-					<option value="강원">강원도</option>
-					<option value="부산">부산 광역시</option>
-					<option value="대구">대구 광역시</option>
-					<option value="인천">인천 광역시</option>
-					<option value="광주">광주 광역시</option>
-					<option value="대전">대전 광역시</option>
-					<option value="울산">울산 광역시</option>
-					<option value="충북">충청북도</option>
-					<option value="충남">충청남도</option>
-					<option value="전북">전라북도</option>
-					<option value="전남">전라남도</option>
-					<option value="경북">경상북도</option>
-					<option value="경남">경상남도</option>
-					<option value="제주">제주도</option>
+					<option value="서울특별시" selected>서울특별시</option>
+					<option value="경기도">경기도</option>
+					<option value="강원도">강원도</option>
+					<option value="부산광역시">부산광역시</option>
+					<option value="대구광역시">대구광역시</option>
+					<option value="인천광역시">인천광역시</option>
+					<option value="광주광역시">광주광역시</option>
+					<option value="대전광역시">대전광역시</option>
+					<option value="울산광역시">울산광역시</option>
+					<option value="충청북도">충청북도</option>
+					<option value="충청남도">충청남도</option>
+					<option value="전라북도">전라북도</option>
+					<option value="전라남도">전라남도</option>
+					<option value="경상북도">경상북도</option>
+					<option value="경상남도">경상남도</option>
+					<option value="제주도">제주도</option>
 				</select> <a id="showbtn"><button>검색</button></a>
 			</div>
 			<div class="policy_content_maintxt">
