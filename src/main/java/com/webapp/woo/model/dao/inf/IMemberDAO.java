@@ -16,6 +16,9 @@ public interface IMemberDAO {
 
    // - 별명 중복체크 할 수 있다.
    boolean nickchackMember(String nickName);
+   
+// - 별명 중복체크 할 수 있다.
+   boolean emailchackMember(String email);
 
    // - 로그인 할 수 있다. (세션, 암호화 인증)
    String decryptPassword(String id);// 패스워드를 암호화 풀어서 리턴
@@ -34,7 +37,7 @@ public interface IMemberDAO {
    // 멤버 조회
    MemberVO selectOneMember(int MemberIndex);
 
-   MemberVO selectOneMember(String ld);
+   MemberVO selectOneMember(String id);
 
    MemberVO selectOneMemberEmail(String email);
 

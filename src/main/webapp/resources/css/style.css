@@ -2372,6 +2372,84 @@ height: 50px;
 /*------------ 모덜창 end ------------*/
 
 
+/* ------------담당자 : 이주현------------ */
+/* 사용된 페이지 : 아이디 ,비밀번호찾기, 새비밀번호변경, 로그인 */
+/* 페이지 파일명 : find_id.jsp ,find_pw.jsp, login.jsp, change_pw.jsp */
+
+
+.modal_body{
+   box-sizing: border-box;
+}
+
+.modal_body .modal-overlay {
+   background: rgba(255, 255, 255, 0.25);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal_body .modal-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgb(0 0 0/ 34%);
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal_body .modal-wrapper .modal-box {
+   background: white;
+   border-radius: 10px;
+   width: 450px;
+   height: 460px;
+   padding: 30px;
+   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
+}
+
+.modal_body .modal-wrapper .modal-box.find {
+   height: 460px;
+   position: relative;
+}
+
+.modal_body .modal-wrapper .modal-box.ch {
+   height: 400px;
+   position: relative;
+}
+
+.modal-close-box {
+   text-align: right;
+}
+.modal_body .modal-wrapper .modal-box .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn{
+   background-color: white;
+   border: white;
+   float: right;
+}
+
+.modal_body .modal-wrapper .modal-box .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.find .modal-close-btn svg,
+.modal_body .modal-wrapper .modal-box.ch .modal-close-btn svg
+{
+   width: 20px;
+   opacity: 0.7;
+}
+
+.modal_body .modal-open-btn {
+   border-radius: 50px;
+   border: 2px solid #f2b09b;
+   background: #fff;
+   line-height: 32px;
+   font-size: 13px;
+   color: #b96c6c;
+   font-weight: bold;
+}
+
+
+/*------------ 모덜창 end ------------*/
+
+
 /*
 ------------담당자 : 이주현------------
 사용된 페이지 : 로그인페이지
@@ -2593,13 +2671,19 @@ height: 50px;
      opacity: 1;
 }
 .menu_choice_box .menu_choice_box_op .menu_choice_box_id{
-    colod: #f2f2f2;
     font-size: 17px;
 }
 .menu_choice_box .menu_choice_box_op .menu_choice_box_pw {
     float: right;
-    colod: #f2f2f2;
     font-size: 17px;
+}
+.menu_choice_box .menu_choice_box_op .menu_choice_box_id a{
+    colod: black;
+    text-decoration: none;
+}
+.menu_choice_box .menu_choice_box_op .menu_choice_box_pw a{
+    colod: black;
+    text-decoration: none;
 }
 
 .menu_id_box, .menu_pw_box,.menu_id_box .menu_id_box_content,
@@ -2700,6 +2784,11 @@ font-family: 'Cafe24SsurroundAir';
 }
 .menu_new_email_num{
    margin-top: -70px;
+}
+
+.newpw_span_msg_font{
+	font-weight: bold;
+    font-family: 'Cafe24SsurroundAir';
 }
 
 

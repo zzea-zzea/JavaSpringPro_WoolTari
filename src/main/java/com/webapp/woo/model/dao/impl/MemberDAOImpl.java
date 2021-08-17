@@ -41,6 +41,8 @@ public class MemberDAOImpl implements IMemberDAO {
 
    public static final String SQL_MEMBER_NICKCHECK = "select count(nick_name) from member where nick_name = ?"; // 1 or
      
+   public static final String SQL_MEMBER_EMAILCHECK = "select count(email) from member where email = ?"; 
+   
    private static final String SQL_MEMBER_DELETE_ONE = "delete from member where member_index = ?";// 0
 
    private static final String SQL_SELECT_ALL_MEMBERS = "select * from member order by joined_at desc";
@@ -176,7 +178,7 @@ public class MemberDAOImpl implements IMemberDAO {
       try {
          return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_ID, BeanPropertyRowMapper.newInstance(MemberVO.class), id);
       } catch (EmptyResultDataAccessException dae) {
-         System.out.println("ERROR: DB에 login이 일치하는 레코드 없음! - " + id);
+         System.out.println("ERROR: DB에 id가 일치하는 레코드 없음! - " + id);
          return null;
       } catch (DataAccessException dae) {
 
@@ -191,7 +193,7 @@ public class MemberDAOImpl implements IMemberDAO {
          return jtem.queryForObject(SQL_SELECT_ONE_MEMBER_EMAIL, BeanPropertyRowMapper.newInstance(MemberVO.class),
                email);
       } catch (EmptyResultDataAccessException dae) {
-         System.out.println("ERROR: DB에 Name이 일치하는 레코드 없음! - " + email);
+         System.out.println("ERROR: DB에 email이 일치하는 레코드 없음! - " + email);
          return null;
       } catch (DataAccessException dae) {
 
@@ -270,4 +272,13 @@ public class MemberDAOImpl implements IMemberDAO {
 	         return false;
 	      }   
 	   }
+
+	@Override
+	public boolean emailchackMember(String email) {
+		int r = jtem.queryForObject(SQL_MEMBER_EMAILCHECK, Integer.class, email);
+
+	      System.out.println(">> DAO : isDuplicatedMember() r : " + r);
+	      return r >= 1;
+	}
+	
 }

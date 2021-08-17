@@ -91,9 +91,9 @@ public class MemberSVCImpl implements IMemberSVC {
    }
 
    @Override
-   public MemberVO selectOneMember(String ld) {
+   public MemberVO selectOneMember(String id) {
       // TODO Auto-generated method stub
-      return mbDao.selectOneMember(ld);
+      return mbDao.selectOneMember(id);
    }
 
    @Override
@@ -132,4 +132,9 @@ public class MemberSVCImpl implements IMemberSVC {
       return mbDao.deleteMember(mbId);
    }
 
+@Override
+public boolean emailchackMember(String email) {
+	// TODO Auto-generated method stub
+	return mbDao.emailchackMember(email);
+}
 }

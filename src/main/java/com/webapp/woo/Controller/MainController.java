@@ -725,6 +725,7 @@ public class MainController {
 
 	         if (vo.getId().equals(id)) {
 	            session.setAttribute("email", vo.getEmail());
+	            session.setAttribute("id", vo.getId());
 
 	            String setfrom = "jh970221@gmail.com";
 	            String tomail = request.getParameter("email");
@@ -784,11 +785,12 @@ public class MainController {
 	   @RequestMapping(value = "/pw_new.woo", method = RequestMethod.POST)
 	   public String memberupdatePwProc(HttpServletRequest request, HttpSession session) throws IOException{
 	      
+		  String id = request.getParameter("id");
 	      String email = request.getParameter("email");
-	      MemberVO vo = mbSvc.selectOneMemberEmail(email);
+	      MemberVO vo = mbSvc.selectOneMember(id);
 	      String pw = request.getParameter("pw");
-	      vo.setPw(pw);
-	      System.out.println(email);      
+	      System.out.println(vo);
+	      vo.setPw(pw);    
 //	      vo.setEmail(email);
 	      
 	      boolean result = mbSvc.updateMemberPw(vo);
@@ -848,7 +850,6 @@ public class MainController {
 	      HttpSession ses = request.getSession();
 
 	      ModelAndView mav = new ModelAndView();
-
 	      // 로그인중복
 	      if (id != null && !id.isEmpty()) {
 	         boolean dup = this.mbSvc.idchackMember(id);
@@ -868,7 +869,7 @@ public class MainController {
 	      if (nickName != null && !nickName.isEmpty()) {
 	         boolean dup = this.mbSvc.nickchackMember(nickName);
 	         if (dup) {
-	            System.out.println("회원 가입 실패: login 중복!!! + " + nickName);
+	            System.out.println("회원 가입 실패: nickname 중복!!! + " + nickName);
 	            mav.setViewName("member/signUp"); // FW
 	            return mav;
 	         }
@@ -878,6 +879,23 @@ public class MainController {
 	         mav.setViewName("member/signUp"); // FW
 	         return mav;
 	      }
+	      
+	      //이메일중복
+	      if (email != null && !email.isEmpty()) {
+		         boolean dup = this.mbSvc.emailchackMember(email);
+		         if (dup) {
+		            System.out.println("회원 가입 실패: email 중복!!! + " + email);
+		            mav.setViewName("member/signUp"); // FW
+		            return mav;
+		         }
+		      } else {
+		         mav.addObject("msg", "회원 가입 실패: login 파람 에러!");
+		         System.out.println("회원 가입 실패: login 파람 에러!");
+		         mav.setViewName("member/signUp"); // FW
+		         return mav;
+		      }
+	      
+	      
 	      MemberVO mb = new MemberVO(id, pw, name, phone, brith, nickName, gender, email, isMember, numMember, buisness);
 	      boolean b = mbSvc.insertNewMember(mb);
 
@@ -932,6 +950,25 @@ public class MainController {
 	        System.out.println("닉네임명 중복 처리: " + nickname);
 	        if( nickname != null && !nickname.isEmpty() ) {
 	            if( mbSvc.nickchackMember(nickname) ) {
+	                return "yes";
+	            } else {
+	                return "no";
+	            }
+	        } else {
+	            return "error";
+	        }
+	     
+	    }
+	   
+	   @RequestMapping(value = "member_email_dupcheck.woo",
+	            method = RequestMethod.GET)
+	    @ResponseBody
+	    public String memberemailDupCheckProc(
+	    @RequestParam(value="email", required = false , defaultValue = "email") String email) {
+	        // 아이디 중복 처리
+	        System.out.println("이메일명 중복 처리: " + email);
+	        if( email != null && !email.isEmpty() ) {
+	            if( mbSvc.emailchackMember(email) ) {
 	                return "yes";
 	            } else {
 	                return "no";
