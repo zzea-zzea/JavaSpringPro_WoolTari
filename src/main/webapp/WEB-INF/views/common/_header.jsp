@@ -3,22 +3,16 @@
 <script>
 function noLogin(){
 	alert('로그인 후 이용가능');
-	//location.href = 'article_show.my?atId=' + atId; 
-	location.href = 
-		'${pageContext.request.contextPath}/login.woo';
+	location.href = '${pageContext.request.contextPath}/login.woo';
 }
 function showMyPage(mbId) {
-	
-	location.href = 
-		'${pageContext.request.contextPath}/mypage.woo?mbId='
-				+ mbId;
-		// 동기방식 get 이동... 			
+	location.href = '${pageContext.request.contextPath}/mypage.woo?mbId=' + mbId;
 }
-
+function showAdmin() {
+	location.href ='${pageContext.request.contextPath}/admin_mem.woo?';
+}
 function logout(){
-	if( confirm("정말 로그아웃 하시겠습니까?")){
-		location.href = href="${pageContext.request.contextPath}/logout.woo";
-	}
+	if( confirm("정말 로그아웃 하시겠습니까?")){ location.href = href="${pageContext.request.contextPath}/logout.woo"; }
 }
 </script>
 <header id="header" class="header fixed-top d-flex align-items-center">
@@ -45,20 +39,20 @@ function logout(){
 						<c:if test="${empty mbLoginName}">
 						<li><a onclick="noLogin()">후원 하기</a></li>
 						</c:if>
-					</ul></li>
+					</ul>
+				</li>
 				<li class="dropdown le"><a href="${pageContext.request.contextPath}/content.woo"><span>소식</span></a></li>
-
 				<c:if test="${empty mbLoginName}">
-               <li><a class="btn_def"
-                  href="${pageContext.request.contextPath}/login.woo"> Login</a></li>
-            </c:if>
-            <c:if test="${not empty mbLoginName}">
-                <li><button class="btn_def" onclick="logout()">Logout</button></li>
-            </c:if>
+					<li><a class="btn_def"  href="${pageContext.request.contextPath}/login.woo"> Login</a></li>
+				</c:if>
+				<c:if test="${not empty mbLoginName}">
+					<li><button class="btn_def" onclick="logout()">Logout</button></li>
+				</c:if>
 				<c:if test="${not empty mbLoginName}">
 					<li><button class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</button></li>
 				</c:if>
-			</ul>
+					<li><button class="btn_def ad" onclick="showAdmin()" >Admin</button></li>
+				</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>
 	</div>

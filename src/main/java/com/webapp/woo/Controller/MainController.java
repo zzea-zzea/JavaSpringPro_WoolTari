@@ -68,6 +68,28 @@ public class MainController {
 		return "index";
 	}
 
+	@RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
+	public ModelAndView AdminMember(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_mem");
+		return mav;
+	}
+	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
+	public ModelAndView AdminCenter(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_cen");
+		return mav;
+	}
+	@RequestMapping(value = "admin_boa.woo", method = RequestMethod.GET)
+	public ModelAndView AdminBoard(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_boa");
+		return mav;
+	}
+	@RequestMapping(value = "admin_sup.woo", method = RequestMethod.GET)
+	public ModelAndView AdminSupport(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_sup");
+		return mav;
+	}
+	
+	
 	@RequestMapping(value = "main.woo", method = RequestMethod.GET)
 	public ModelAndView MainIndexForm(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("index");

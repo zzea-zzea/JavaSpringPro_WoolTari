@@ -47,8 +47,6 @@ span {letter-spacing: 1px;}
 .fa {text-decoration: none;font-size: 13px;}
 main{font-family: 'Cafe24SsurroundAir';}
 .ma{padding-top: 120px;}
-.btn_def{ border-radius: 50px; border: 2px solid #f2b09b;background: #fff; line-height: 36px; font-size: 15px; color: #b96c6c; font-weight: bold;padding: 0px 22px; margin-left: 10px;}
-.btn_def:hover {background: #f2b09b;transition: 0.5s;color: #fff;}
 .search_btn {
 	padding: 13px 20px;
     border-radius: 5px;
@@ -149,6 +147,9 @@ main{font-family: 'Cafe24SsurroundAir';}
 	padding: 0px 22px;
 	font-size: 15px;
 }
+
+.navbar .btn_def.ad{border: 2px solid #007bff;color: #0a58ca;}
+.navbar .btn_def.ad:hover {background: #007bff;color: #fff;}
 
 .navbar li {
 	position: relative;
