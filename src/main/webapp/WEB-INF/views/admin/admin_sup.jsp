@@ -25,9 +25,6 @@
                      <div class="table-wrap">
                         <table class="tables myaccordion table-hover" id="accordion">
                               <% int i = 1; %>
-                             <c:if test="${empty SpList}">
-									<h4>회원이 현재 하나도 없네요!</h4>
-							</c:if>
                            <thead>
                               <tr>
                                  <th>NO.</th>
