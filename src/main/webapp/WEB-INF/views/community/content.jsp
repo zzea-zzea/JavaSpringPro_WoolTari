@@ -3,18 +3,12 @@
 <%@ include file="../common/_link.jsp"%>
 <script type="text/javascript">
 	function showOneArticle(atId) {
-		//location.href = 'article_show.my?atId=' + atId; 
-		location.href = '${pageContext.request.contextPath}/content_view.woo?atId='
-				+ atId;
-		// 동기방식 get 이동...          
+		location.href = '${pageContext.request.contextPath}/content_view.woo?atId=' + atId;
 	}
 
 	function showLoginPage() {
 		alert('로그인 후 이용가능');
-		//location.href = 'article_show.my?atId=' + atId; 
 		location.href = '${pageContext.request.contextPath}/login.woo';
-
-		// 동기방식 get 이동...          
 	}
 	$(document).ready(function() {
 		var num = "${ctSize}";
@@ -30,7 +24,6 @@
 </script>
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<!--    <form action="content.woo"> -->
 	<main class="content_main">
 		<div id="border">
 			<div class="community_first_box ma">
@@ -39,19 +32,6 @@
 				</div>
 				<div class="search">
 					<div class="search_main">
-						<%--                   <form action="${pageContext.request.contextPath}/content_search.woo" method="post"> --%>
-						<!--                      <select class="s_sel" id="s_sel"> -->
-						<%--                         <option value="1" ${param['target'] eq 'cate' ? ' selected':''}>일상</option> --%>
-						<%--                         <option value="2" ${param['target'] eq 'cate' ? ' selected':''}>지원 정보</option> --%>
-						<%--                         <option value="3" ${param['target'] eq 'cate' ? ' selected':''}>병원 정보</option> --%>
-						<%--                         <option value="4" ${param['target'] eq 'cate' ? ' selected':''}>시설 정보</option> --%>
-						<%--                         <option value="5" ${param['target'] eq 'cate' ? ' selected':''}>육아 정보</option> --%>
-						<%--                         <option value="6" ${param['target'] eq 'cate' ? ' selected':''}>무료 나눔</option> --%>
-						<%--                         <option value="7" ${param['target'] eq 'cate' ? ' selected':''}>공지 사항</option> --%>
-						<!--                      </select> -->
-						<%--                      <input type="hidden" id="keyword" name="keyword" value="${param.keyword}"> --%>
-						<!--                      <button class="search_btn" type="submit">검색</button> -->
-						<!--                      </form> -->
 						<c:if test="${not empty mbLoginName}">
 							<a href="${pageContext.request.contextPath}/new_content.woo"><input
 								type="submit" class="new_write_btn" value="글쓰기"></a>
@@ -72,7 +52,6 @@
 									<th>조회</th>
 								</tr>
 							</thead>
-
 							<tbody>
 								<c:if test="${empty ctList}">
 									<h4>게시글이 현재 하나도 없네요!</h4>
@@ -106,39 +85,22 @@
 				</div>
 			</div>
 			<div class="paging">
-				<!--          <a href="#" class="bt">첫 페이지</a> -->
 				<c:if test="${pn > 1}">
-					<a
-						href="${pageContext.request
-                  .contextPath}/content.woo?pg=${pn-1}"
-						class="bt">이전 페이지</a>
+					<a href="${pageContext.request.contextPath}/content.woo?pg=${pn-1}" class="bt">이전 페이지</a>
 				</c:if>
-
-				<!--                1페이지부터 maxPg페이지까지 인덱스 순차 표시 -->
 				<c:forEach begin="1" end="${maxPg}" step="1" varStatus="vs">
-
 					<c:if test="${vs.current eq pn}">
 						<a><b style="color: #6c757d; font-size: 1.2em;">${vs.current}</b></a>
 					</c:if>
-
 					<c:if test="${vs.current ne pn}">
-						<a
-							href="${pageContext.request
-                    .contextPath}/content.woo?pg=${vs.current}">${vs.current}</a>
+						<a href="${pageContext.request.contextPath}/content.woo?pg=${vs.current}">${vs.current}</a>
 					</c:if>
-
 				</c:forEach>
-
 				<c:if test="${pn < maxPg}">
-					<a
-						href="${pageContext.request
-                  .contextPath}/content.woo?pg=${pn+1}"
-						class="bt">다음 페이지</a>
+					<a href="${pageContext.request.contextPath}/content.woo?pg=${pn+1}" class="bt">다음 페이지</a>
 				</c:if>
-				<!--              <a href="#" class="bt">마지막 페이지</a>  -->
 			</div>
 		</div>
 	</main>
-	<!--    </form> -->
 </body>
 </html>

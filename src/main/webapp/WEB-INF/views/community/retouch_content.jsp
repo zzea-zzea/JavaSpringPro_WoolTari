@@ -31,28 +31,6 @@
 						<textarea name='content' class="new_content" rows="20" cols="111" maxlength="1200" style="resize: none;">${community.content}</textarea>
 						<div class="counter">(0 / 1024)</div>
 					</div>
-<!-- 					<div id="preview"></div> -->
-<%-- 					<c:if test="${not empty param['totalMB']}"> --%>
-<!-- 						<span class="unit_mb" style="color: blue"> -->
-<%-- 							<b> 총 <c:out value="${param.countFiles}"  --%>
-<%-- 								default="0"/>  개 --%>
-<%-- 							 파일들용량: ${param.totalMB}MB</b> --%>
-<!-- 						</span> -->
-<%-- 					</c:if> --%>
-					
-<%-- 					<c:if test="${fpCount gt 0}"> --%>
-<%-- 						<c:forEach var="fp" items="${fps}" varStatus="vs"> --%>
-<%-- 						 <%@ include file="_file.jsp" %> --%>
-<%-- 						</c:forEach>					 --%>
-<%-- 					</c:if> --%>
-<%-- 					<c:if test="${fpCount eq 0}"> --%>
-<!-- 						파일이 없어요! -->
-<%-- 					</c:if> --%>
-<!-- 					<input type="file" name="upfiles" class="inp-img" id='upload' -->
-<!-- 							size="64" placeholder="첨부 파일명"   -->
-<!-- 							multiple="multiple"> -->
-<!-- 					<button type="button" class="btn-delete">삭제</button> -->
-<!-- 					<div id='preview'></div> -->
 					<div class="input_btn">
 						<button class="input_btn" onclick="retouch_check()">수정하기</button>
 						<button class="cancle_btn" onclick="cancle_check()">돌아가기</button>

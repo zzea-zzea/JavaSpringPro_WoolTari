@@ -57,7 +57,6 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
             <div class="community_first_view_title">
                <h3>${community.title}</h3>
             </div>
-            <!-- community_first_view_title -->
             <hr>
             <div class="community_content_view">
                <div class="community_content_view_title">
@@ -77,12 +76,8 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
                         <dd><c:out value="${community.views}" default="0"/></dd>
                      </dl>
                   </div>
-                  <!-- community_imfo -->
-                  <!-- community_imfo_retouch_delet -->
                </div>
-               <!-- community_content_view_title -->
             </div>
-            <!-- community_content_view -->
             <div class="community_content_view_imfo">
                <p><c:out value="${community.content}" /></p>
             </div>
@@ -105,7 +100,6 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
                         class="comment_sumit">
                   </div>
                </form>
-               <!-- community_comment -->
                <div class="reply">
                   <c:choose>
                      <c:when test="${!empty asSize}">
@@ -148,12 +142,8 @@ i<%@ page language="java" contentType="text/html; charset=UTF-8"
                   <br>
                </div>
             </div>
-            <!-- community_comment_box -->
             <div class="blank"></div>
          </div>
-         <!-- community_first_view -->
-      </div>
-      <!-- border -->
       </main>
 </body>
 <script>
