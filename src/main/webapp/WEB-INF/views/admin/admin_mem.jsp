@@ -28,7 +28,6 @@
                <section class="childcare_section">
                   <div class="childcare_section_title">
                      <h2>회원 통계</h2>
-                     <span>후원 내역 조회는 이곳을 통해 확인해 주세요!</span>
                   </div>
                   <div class="childcare_content my">
                      <div class="table-wrap">
