@@ -41,7 +41,6 @@
                               <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
                                  <th scope="row"><%= i++ %></th>
                                  <td>무통장입금</td>
-                                 
                                  <td><c:if test="${sp.supportCenterType eq 1}">한부모 가정</c:if>
                                  <c:if test="${sp.supportCenterType eq 2}">미혼모 시설</c:if>
                                  <c:if test="${sp.supportCenterType eq 3}">법인 재단</c:if></td>

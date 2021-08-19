@@ -52,9 +52,6 @@
          }
       });
    });
-   
-   
-   
 </script>
 <body>
    <%@ include file="../common/_header.jsp"%>
@@ -64,15 +61,9 @@
          <div class="childcare_box myboa ma">
             <div class="side_bar my">
                <ul>
-                  <li class="side_bar_content mypage on"><a
-                     href="${pageContext.request.contextPath}/mypage.woo?mbId=${mbPKId}">회원
-                        정보</a></li>
-                  <%--                   <li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/retouch_mypage.woo?mbId=${mbPKId}">회원 정보 수정</a></li> --%>
-                  <li class="side_bar_content mypage"><a
-                     href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원
-                        내역조회</a></li>
+                  <li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/mypage.woo?mbId=${mbPKId}">회원 정보</a></li>
+                  <li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_sup.woo?mbId=${mbPKId}">후원 내역조회</a></li>
                   <li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/mypage_boa.woo?mbId=${mbPKId}">내게시글 조회</a></li>
-                  
                </ul>
             </div>
             <div class="info_content">

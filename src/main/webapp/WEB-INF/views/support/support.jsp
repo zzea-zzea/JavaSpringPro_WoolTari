@@ -81,7 +81,6 @@ $(document).ready(function() {
 							<input class="form-check-input" type="radio" name="price" id="inlineRadio5" value="200000" <c:if test="${price == 200000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio5">200,000원</label>
 						</div>
-<!-- 						inlineRadioOptions -->
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio" name="price" id="inlineRadio5" value="300000" <c:if test="${price == 300000}"> selected </c:if>>
 							<label class="form-check-label" for="inlineRadio5">300,000원</label>
@@ -146,7 +145,6 @@ $(document).ready(function() {
 			</div>
 		</main>
 	</form>
-	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {

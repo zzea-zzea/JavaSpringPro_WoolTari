@@ -5,14 +5,11 @@
 <c:forEach var="ct" items="${userCtList}" varStatus="vs">
 <script>
 $(document).ready(function() {
-   $(".${ct.board_index}").click(
-         function() {
-            $("#${ct.board_index}").toggle();
-            }
-         )
-         $(".${ct.board_index}").trigger("click");
-   
-         });
+	$(".${ct.board_index}").click( function() {
+		$("#${ct.board_index}").toggle();
+	});
+	$(".${ct.board_index}").trigger("click");
+});
 </script>
 </c:forEach>
    <%@ include file="../common/_header.jsp"%>
@@ -81,7 +78,6 @@ $(document).ready(function() {
             </div>
          </div>
       </main>
-   <%--    <%@ include file="./common/_footer.jsp"%> --%>
    <%@ include file="../common/_script.jsp"%>
 </body>
 </html>

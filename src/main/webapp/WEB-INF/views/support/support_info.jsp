@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
 <body>
 	<%@ include file="../common/_header.jsp"%>
 	<form action="support_info.woo">
@@ -74,7 +73,6 @@
 			</div>
 		</main>
 	</form>
-	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-
 <body>
    <%@ include file="../common/_header.jsp"%>
    <form action="signUp_ok.woo">
@@ -15,7 +14,6 @@
          </div>
       </main>
    </form>
-   <%--    <%@ include file="./common/_footer.jsp"%> --%>
    <%@ include file="../common/_script.jsp"%>
 </body>
 </html>

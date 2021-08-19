@@ -3,10 +3,7 @@
 <%@ include file="../common/_link.jsp"%>
 <script>
 	function showMyPage(mbId) {
-
-		location.href = '${pageContext.request.contextPath}/mypage.woo?mbId='
-				+ mbId;
-		// 동기방식 get 이동... 			
+		location.href = '${pageContext.request.contextPath}/mypage.woo?mbId=' + mbId;
 	}
 </script>
 <body>
@@ -19,9 +16,7 @@
 					<h3>
 						<b><c:out value="${name}"/></b> 님의 후원이 완료 되었습니다.
 					</h3>
-					<br> <img class="end_sup"
-						src="${path}/resources/img/end_sup.png" alt="img">
-					<!-- 					<span>후원자님의 소중한 나눔으로 세상에서 소외된 이웃에게 내일을 밝게 비춰주셔서 감사합니다.</span><br> -->
+					<br> <img class="end_sup"src="${path}/resources/img/end_sup.png" alt="img">
 					<div class="nextbtn">
 						<a onclick="showMyPage('${mbPKId}')">마이페이지 바로 가기</a>
 					</div>
@@ -30,7 +25,6 @@
 			</div>
 		</main>
 	</form>
-	<%-- 	<%@ include file="./common/_footer.jsp"%> --%>
 	<%@ include file="../common/_script.jsp"%>
 </body>
 </html>
