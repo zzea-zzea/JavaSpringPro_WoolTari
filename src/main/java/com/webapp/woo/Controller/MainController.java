@@ -1061,13 +1061,13 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
-	public ModelAndView AdminCenter(@RequestParam(value = "si", required = false, defaultValue = "서울") String local_si) {
+	public ModelAndView AdminCenter(@RequestParam(value = "local_si", required = false, defaultValue = "서울") String local_si) {
 
 		ModelAndView mav = new ModelAndView("admin/admin_cen");
-		List<LocationVO> lovo = LocationSVC.selectAllLocationList(local_si);
-		if (lovo != null) {
-			int lovSize = lovo.size();
-			mav.addObject("lovo", lovo);
+		List<LocationVO> adlovo = LocationSVC.selectAllLocationList(local_si);
+		if (adlovo != null) {
+			int lovSize = adlovo.size();
+			mav.addObject("adlovo", adlovo);
 			mav.addObject("lovSize", lovSize);
 			mav.addObject("local_si", local_si);
 		} else {

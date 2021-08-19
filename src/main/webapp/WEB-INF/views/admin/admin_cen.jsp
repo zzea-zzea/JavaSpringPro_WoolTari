@@ -7,49 +7,49 @@ $(document).ready( function() {
 	$(".hide").hide();
 	var local_si= '<c:out value="${local_si}"/>';
 	
-	var type_si = ["서울","부산","대구","인천","광주","대전","울산","경기","강원","충북","충남","전북","전남","경북","경남","제주","전체"];
+	var type_si = ["전체","서울","부산","대구","인천","광주","대전","울산","경기","강원","충북","충남","전북","전남","경북","경남","제주"];
 	for(var z = 0 ; z < type_si.length ; z++){
 		if(type_si[z]==local_si){
-			$("#localsel").val(type_si[z]).prop("selected", true);
+			$("#sel_si").val(type_si[z]).prop("selected", true);
 		}
 	}
 });
 function panTo() {
-	var selOp = document.getElementById("localsel").options.selectedIndex;
+	var selOp = document.getElementById("sel_si").options.selectedIndex;
 	if (selOp == 0) {
-			location.href = "info_center.woo?si=서울";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전체";
 		} else if (selOp == 1) {
-			location.href = "info_center.woo?si=부산";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=서울";
 		} else if (selOp == 2) {
-			location.href = "info_center.woo?si=대구";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=부산";
 		} else if (selOp == 3) {
-			location.href = "info_center.woo?si=인천";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=대구";
 		} else if (selOp == 4) {
-			location.href = "info_center.woo?si=광주";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=인천";
 		} else if (selOp == 5) {
-			location.href = "info_center.woo?si=대전";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=광주";
 		} else if (selOp == 6) {
-			location.href = "info_center.woo?si=울산";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=대전";
 		} else if (selOp == 7) {
-			location.href = "info_center.woo?si=경기";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=울산";
 		} else if (selOp == 8) {
-			location.href = "info_center.woo?si=강원";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경기";
 		} else if (selOp == 9) {
-			location.href = "info_center.woo?si=충북";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=강원";
 		} else if (selOp == 10) {
-			location.href = "info_center.woo?si=충남";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=충북";
 		} else if (selOp == 11) {
-			location.href = "info_center.woo?si=전북";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=충남";
 		} else if (selOp == 12) {
-			location.href = "info_center.woo?si=전남";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전북";
 		} else if (selOp == 13) {
-			location.href = "info_center.woo?si=경북";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전남";
 		} else if (selOp == 14) {
-			location.href = "info_center.woo?si=경남";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경북";
 		} else if (selOp == 15) {
-			location.href = "info_center.woo?si=제주";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경남";
 		} else if (selOp == 16) {
-			location.href = "info_center.woo?si=전체";
+			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=제주";
 		}
 	}
 </script>
@@ -72,7 +72,7 @@ function panTo() {
 						<div class="childcare_section_title">
 							<h2>시설 통계</h2>
 							<div class="button_def">
-								<select class="selectpicker le" data-size="5" id="localsel" name="local_si">
+								<select class="selectpicker le" data-size="5" id="sel_si" name="local_si">
 									<option value="전체" selected>전체</option>
 									<option value="서울" >서울</option>
 									<option value="부산">부산</option>
@@ -114,18 +114,18 @@ function panTo() {
 										</tr>
 									</thead>
 									<tbody>
-										<c:if test="${not empty lovo}">
-											<c:forEach var="lo" items="${lovo}" varStatus="lov">
+										<c:if test="${not empty adlovo}">
+											<c:forEach var="adlo" items="${adlovo}" varStatus="lov">
 												<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 													<td><input type="checkbox"></td>
-													<td><c:out value="${lo.local_si}" /></td>
-													<td><c:out value="${lo.local_gu}" /></td>
-													<td class="center_name"><c:out value="${lo.facility_name}" /></td>
-													<td><c:out value="${lo.facility_cate eq 1 ? '공동생활지원' : '기본생활시설'}" /></td>
-													<td><c:out value="${lo.phone_num}" /></td>
-													<td id="add_local"><c:out value="${lo.facility_add}" /></td>
-													<td class="lat hide"><c:out value="${lo.latitude}" /></td>
-													<td class="lng hide"><c:out value="${lo.hardness}" /></td>
+													<td><c:out value="${adlo.local_si}" /></td>
+													<td><c:out value="${adlo.local_gu}" /></td>
+													<td class="center_name"><c:out value="${adlo.facility_name}" /></td>
+													<td><c:out value="${adlo.facility_cate eq 1 ? '공동생활지원' : '기본생활시설'}" /></td>
+													<td><c:out value="${adlo.phone_num}" /></td>
+													<td id="add_local"><c:out value="${adlo.facility_add}" /></td>
+													<td class="lat hide"><c:out value="${adlo.latitude}" /></td>
+													<td class="lng hide"><c:out value="${adlo.hardness}" /></td>
 												</tr>
 											</c:forEach>
 										</c:if>

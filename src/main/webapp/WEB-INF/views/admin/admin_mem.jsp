@@ -11,7 +11,7 @@
 				<div class="side_bar ad">
 					<ul>
 						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/admin_mem.woo?">회원 통계</a></li>
-						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/admin_cen.woo?">시설 통계</a></li>
+						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_cen.woo?">시설 통계</a></li>
 						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_boa.woo?">게시글 통계</a></li>
 						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_sup.woo?">후원 통계</a></li>
 					</ul>
