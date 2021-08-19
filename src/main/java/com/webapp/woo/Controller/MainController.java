@@ -67,28 +67,6 @@ public class MainController {
 	public String defaultMember() {
 		return "index";
 	}
-
-	@RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
-	public ModelAndView AdminMember(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin/admin_mem");
-		return mav;
-	}
-	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
-	public ModelAndView AdminCenter(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin/admin_cen");
-		return mav;
-	}
-	@RequestMapping(value = "admin_boa.woo", method = RequestMethod.GET)
-	public ModelAndView AdminBoard(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin/admin_boa");
-		return mav;
-	}
-	@RequestMapping(value = "admin_sup.woo", method = RequestMethod.GET)
-	public ModelAndView AdminSupport(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin/admin_sup");
-		return mav;
-	}
-	
 	
 	@RequestMapping(value = "main.woo", method = RequestMethod.GET)
 	public ModelAndView MainIndexForm(HttpServletRequest request) {
@@ -456,10 +434,10 @@ public class MainController {
 			if (writerId == mbPKId) { // 글쓴이 본인이 로그인 중 맞음
 				model.addAttribute("community", ct);
 				List<String> mbLoginList = new ArrayList<>();
+				model.addAttribute("mbLoginList", mbLoginList);
 
 				String mbName = mbSvc.selectOneMember(ct.getMember_index()).getNickName(); // 서브쿼리역할
 				mbLoginList.add(mbName);
-				model.addAttribute("mbLoginList", mbLoginList);
 				return "community/retouch_content"; // FW
 			} else {
 				System.out.println("게시글 편집 폼 준비 실패: 게시글 작성자가 아님! - " + id);
@@ -677,10 +655,12 @@ public class MainController {
 	      ModelAndView mav = new ModelAndView();
 
 	      int loginResult = mbSvc.loginProcess(id, pw);
-
+	      MemberVO Admin = mbSvc.loginAdmin(id, pw);
+	      int AdminNum = Admin.getIsMember();
 	      if (loginResult == mycode.MB_LOGIN_OK) { // 로그인 인증 성공..
 	         System.out.println("로그인 인증 성공: " + id);
 
+	         ses.setAttribute("AdminNum", AdminNum); // 어드민인지 확인
 	         ses.setAttribute("mbLoginName", id); // 로그인명을 기억.. <<UQ>>
 	         MemberVO mb = mbSvc.selectOneMember(id);
 	         ses.setAttribute("mbPKId", mb.getMemberIndex()); // <<PK>> id 기억...
@@ -1189,9 +1169,39 @@ public class MainController {
 		return mav;
 	}
 
-//   @RequestMapping(value = "donate_main.woo", method = RequestMethod.GET)
-//   public ModelAndView DonateMain(HttpServletRequest request) {
-//      ModelAndView mav = new ModelAndView("support/donate_main");
-//      return mav;
-//   }
+	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
+	public ModelAndView AdminCenter(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_cen");
+		List<LocationVO> LoList = LocationSVC.AllLocationList();
+		mav.addObject("LoList", LoList);
+		mav.setViewName("admin/admin_cen");
+		return mav;
+	}
+	@RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
+	public ModelAndView AdminMember(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_mem");
+		List<MemberVO> MbList = mbSvc.allMember();
+		mav.addObject("MbList", MbList);
+		mav.setViewName("admin/admin_mem");
+		return mav;
+	}
+	
+	@RequestMapping(value = "admin_boa.woo", method = RequestMethod.GET)
+	public ModelAndView AdminBoard(HttpServletRequest request,Model model) {
+		ModelAndView mav = new ModelAndView("admin/admin_boa");
+		List<CommunityVO> CtList = ctSvc.selectAllCommunitys();
+		List<MemberVO> member = mbSvc.allMember();
+		mav.addObject("member", member);
+		mav.addObject("CtList", CtList);
+		mav.setViewName("admin/admin_boa");
+		return mav;
+	}
+	@RequestMapping(value = "admin_sup.woo", method = RequestMethod.GET)
+	public ModelAndView AdminSupport(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_sup");
+		List<SupportVO> SpList = SupportSVC.allSupport();
+		mav.addObject("SpList", SpList);
+		mav.setViewName("admin/admin_sup");
+		return mav;
+	}
 }

@@ -9,5 +9,6 @@ public interface ILocationSVC {
 
 	List<LocationVO> selectAllLocationList(String local_si);
 	
+	List<LocationVO> AllLocationList();
 }
 

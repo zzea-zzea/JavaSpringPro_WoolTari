@@ -54,6 +54,8 @@ public class MemberDAOImpl implements IMemberDAO {
    private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where id = ?";
 
    private static final String SQL_SELECT_ONE_MEMBER_EMAIL = "select * from member where email = ?";
+   
+   
 
    private static final String SQL_SELECT_IDFIND = "select id from member where name = ? AND email = ?";
 
@@ -279,6 +281,13 @@ public class MemberDAOImpl implements IMemberDAO {
 
 	      System.out.println(">> DAO : isDuplicatedMember() r : " + r);
 	      return r >= 1;
+	}
+
+	@Override
+	public MemberVO loginAdmin(String id, String pw) {
+
+		return jtem.queryForObject("select * from member where id=?", BeanPropertyRowMapper.newInstance(MemberVO.class),
+	               id);
 	}
 	
 }

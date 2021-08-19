@@ -8,4 +8,5 @@ public interface ILocationDAO {
 
 	List<LocationVO> selectAllLocationList(String local_si);
 
+	List<LocationVO> AllLocationList();
 }

@@ -33,6 +33,10 @@
                   <div class="childcare_content my">
                      <div class="table-wrap">
                         <table class="tables myaccordion table-hover" id="accordion">
+                              <% int i = 1; %>
+                             <c:if test="${empty SpList}">
+									<h4>회원이 현재 하나도 없네요!</h4>
+							</c:if>
                            <thead>
                               <tr>
                                  <th>NO.</th>
@@ -43,13 +47,19 @@
                               </tr>
                            </thead>
                            <tbody>
+								<c:if test="${not empty SpList}">
+								<c:forEach var="sp" items="${SpList}" varStatus="vs">
                               <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-                                 <th scope="row"></th>
+                                 <th scope="row"><%= i++ %></th>
                                  <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>한부모 가정</td>
+                                 <td><c:if test="${sp.supportCenterType eq 1}">한부모 가정</c:if>
+                                 <c:if test="${sp.supportCenterType eq 2}">미혼모 시설</c:if>
+                                 <c:if test="${sp.supportCenterType eq 3}">법인 재단</c:if></td>
+                                 <td><c:out value="${sp.price}"/>원</td>
+                                 <td><fmt:formatDate value="${sp.supportDate}" pattern="yyyy년 MM월 dd일"/></td>
                               </tr>
+                              </c:forEach>
+                              </c:if>
                            </tbody>
                         </table>
                      </div>

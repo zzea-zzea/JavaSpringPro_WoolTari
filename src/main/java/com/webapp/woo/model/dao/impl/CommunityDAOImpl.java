@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 import com.webapp.woo.model.dao.inf.ICommunityDAO;
 import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.CommunityVO;
+import com.webapp.woo.model.vo.MemberVO;
 
 @Repository  // DAO 빈 자동등록
 public class CommunityDAOImpl implements ICommunityDAO {
@@ -183,6 +184,11 @@ public class CommunityDAOImpl implements ICommunityDAO {
       return jtem.query("select * from board where member_index = ?", 
             BeanPropertyRowMapper.newInstance(CommunityVO.class), mbId);
    }
+
+@Override
+public List<CommunityVO> selectAllCommunitys() {
+	 return jtem.query("select * from wooltari_db.board", BeanPropertyRowMapper.newInstance(CommunityVO.class));
+}
 
    
 

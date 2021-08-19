@@ -27,29 +27,38 @@
             <div class="info_content">
                <section class="childcare_section">
                   <div class="childcare_section_title">
-                     <h2>회원통계</h2>
+                     <h2>회원 통계</h2>
                      <span>후원 내역 조회는 이곳을 통해 확인해 주세요!</span>
                   </div>
                   <div class="childcare_content my">
                      <div class="table-wrap">
                         <table class="tables myaccordion table-hover" id="accordion">
+                              <% int i = 1; %>
+                           <c:if test="${empty ctList}">
+									<h4>회원이 현재 하나도 없네요!</h4>
+								</c:if>
                            <thead>
                               <tr>
                                  <th>NO.</th>
-                                 <th>결제 방법</th>
-                                 <th>후원처</th>
-                                 <th>후원금액</th>
-                                 <th>후원 날짜</th>
+                                 <th>회원이름</th>
+                                 <th>아이디</th>
+                                 <th>후원인구분</th>
+                                 <th>전화번호</th>
                               </tr>
                            </thead>
                            <tbody>
+								<c:if test="${not empty MbList}">
+								<c:forEach var="mb" items="${MbList}" varStatus="vs">
                               <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-                                 <th scope="row"></th>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>한부모 가정</td>
+                                 <th scope="row"><%= i++ %></th>
+                                 <td><c:out value="${mb.name}"/></td>
+                                 <td><c:out value="${mb.id}"/></td>
+                                 <td><c:if test="${mb.isMember eq 1}">개인</c:if>
+                                 	 <c:if test="${mb.isMember eq 2}">법인</c:if></td>
+                                 <td><c:out value="${mb.phone}"/></td>
                               </tr>
+                              </c:forEach>
+                              </c:if>
                            </tbody>
                         </table>
                      </div>

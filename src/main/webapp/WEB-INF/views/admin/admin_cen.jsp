@@ -33,23 +33,31 @@
                   <div class="childcare_content my">
                      <div class="table-wrap">
                         <table class="tables myaccordion table-hover" id="accordion">
+                           	<%int i = 1; %>
+                           <c:if test="${empty ctList}">
+									<h4>게시글이 현재 하나도 없네요!</h4>
+								</c:if>
                            <thead>
                               <tr>
                                  <th>NO.</th>
-                                 <th>결제 방법</th>
-                                 <th>후원처</th>
-                                 <th>후원금액</th>
-                                 <th>후원 날짜</th>
+                                 <th>위치</th>
+                                 <th>이름</th>
+                                 <th>전화번호</th>
+                                 <th>주소</th>
                               </tr>
                            </thead>
                            <tbody>
+								<c:if test="${not empty LoList}">
+								<c:forEach var="lo" items="${LoList}" varStatus="vs">
                               <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-                                 <th scope="row"></th>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>한부모 가정</td>
+                                 <th scope="row"><%= i++ %></th>
+                                 <td><c:out value="${lo.local_si}"/></td>
+                                 <td><c:out value="${lo.facility_name}"/></td>
+                                 <td><c:out value="${lo.phone_num}"/></td>
+                                 <td><c:out value="${lo.facility_add}"/></td>
                               </tr>
+                              </c:forEach>
+                              </c:if>
                            </tbody>
                         </table>
                      </div>

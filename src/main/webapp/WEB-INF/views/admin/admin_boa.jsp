@@ -33,23 +33,37 @@
                   <div class="childcare_content my">
                      <div class="table-wrap">
                         <table class="tables myaccordion table-hover" id="accordion">
+								<%int i = 1; %>
+                           <c:if test="${empty ctList}">
+									<h4>게시글이 현재 하나도 없네요!</h4>
+								</c:if>
                            <thead>
                               <tr>
                                  <th>NO.</th>
-                                 <th>결제 방법</th>
-                                 <th>후원처</th>
-                                 <th>후원금액</th>
-                                 <th>후원 날짜</th>
+                                 <th>제목</th>
+                                 <th>작성자</th>
+                                 <th>조회수</th>
+                                 <th>작성 날짜</th>
                               </tr>
                            </thead>
                            <tbody>
+								<c:if test="${not empty CtList}">
+								<c:forEach var="ct" items="${CtList}" varStatus="vs">
                               <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-                                 <th scope="row"></th>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>무통장입금</td>
-                                 <td>한부모 가정</td>
+                                 <th scope="row"><%= i++ %></th>
+                                 <td><c:out value="${ct.title}"/></td>
+                                 <td>
+                                  <c:forEach var="mem" items="${member}">
+                                    <c:if test="${mem.memberIndex eq ct.member_index}">
+                                       ${mem.nickName}
+                                    </c:if>
+                                    </c:forEach>
+                                 </td>
+                                 <td><c:out value="${ct.views}"/></td>
+                                 <td><c:out value="${ct.write_date}"/></td>
                               </tr>
+                              </c:forEach>
+                              </c:if>
                            </tbody>
                         </table>
                      </div>

@@ -29,6 +29,7 @@ public interface ICommunityDAO {
    
 //   회원이 쓴 모든 게시글 가져오기?? (mypage..)
    List<CommunityVO> selectAllCommunitysForMember(int mbId); // <<FK>>
+   List<CommunityVO> selectAllCommunitys(); // <<FK>>
    
    List<CommunityVO> CommunityListForBoard(int mbId); // <<FK>>
    

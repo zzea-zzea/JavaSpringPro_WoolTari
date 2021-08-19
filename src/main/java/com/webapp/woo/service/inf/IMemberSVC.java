@@ -21,6 +21,7 @@ public interface IMemberSVC {
 
    // - 로그인 할 수 있다. (세션, 암호화 인증)
    int loginProcess(String id, String pw);// 패스워드를 암호화 풀어서 리턴
+   MemberVO loginAdmin(String id, String pw);// 패스워드를 암호화 풀어서 리턴
 
    String decryptPassword(String id);// 패스워드를 암호화 풀어서 리턴
 

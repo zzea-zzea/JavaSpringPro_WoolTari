@@ -24,6 +24,8 @@ public interface IMemberDAO {
    String decryptPassword(String id);// 패스워드를 암호화 풀어서 리턴
 
    String decryptPassword(int mbId); // 패스워드를 암호화 풀어서 리턴
+   
+   MemberVO loginAdmin(String id, String pw);
 
    // 아이디를 찾을 수 있다.
    MemberVO findidMember(String name, String email);

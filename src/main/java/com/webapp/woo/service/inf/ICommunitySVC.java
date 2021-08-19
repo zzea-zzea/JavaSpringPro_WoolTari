@@ -34,6 +34,7 @@ public interface ICommunitySVC {
    
 //   회원이 쓴 모든 게시글 가져오기?? (mypage..)
    List<CommunityVO> selectAllCommunitysForMember(int mbId); // <<FK>>
+   List<CommunityVO> selectAllCommunitys(); // <<FK>>
    
 //   비/회원은 전체 게시글을 리스트 조회할 수 있다. (페이지네이션, 정렬, 태깅-해시태그)
    List<CommunityVO> selectAllCommunitys(int pg); // pg가 기준점, 범위로 분리
