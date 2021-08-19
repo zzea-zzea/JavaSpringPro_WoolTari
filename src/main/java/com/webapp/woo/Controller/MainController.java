@@ -973,7 +973,7 @@ public class MainController {
 
 	@RequestMapping(value = "member_update.woo", method = RequestMethod.POST)
 	public ModelAndView memberUpdateProc(HttpServletRequest request) {
-		int memberIndex = Integer.parseInt(request.getParameter("memberIndex")); // hidden
+		int memberIndex = Integer.parseInt(request.getParameter("memberIndex"));
 		String name = request.getParameter("name");
 		String nickName = request.getParameter("nickName");
 		String id = request.getParameter("id");
@@ -1061,21 +1061,25 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
-	public ModelAndView AdminCenter(@RequestParam(value = "local_si", required = false, defaultValue = "서울") String local_si) {
+	public ModelAndView AdminCenter(
+			@RequestParam(value = "local_si", required = false, defaultValue = "전체") String local_si) {
 
 		ModelAndView mav = new ModelAndView("admin/admin_cen");
-		List<LocationVO> adlovo = LocationSVC.selectAllLocationList(local_si);
-		if (adlovo != null) {
-			int lovSize = adlovo.size();
+		List<LocationVO> adlovo;
+		if (local_si.equals("전체")) {
+			adlovo = LocationSVC.AllLocationList();
 			mav.addObject("adlovo", adlovo);
-			mav.addObject("lovSize", lovSize);
-			mav.addObject("local_si", local_si);
 		} else {
-			mav.addObject("msg", "없어 꺼져");
+			adlovo = LocationSVC.selectAllLocationList(local_si);
+			if (adlovo != null) {
+				int lovSize = adlovo.size();
+				mav.addObject("adlovo", adlovo);
+				mav.addObject("lovSize", lovSize);
+				mav.addObject("local_si", local_si);
+			} else {
+				mav.addObject("msg", "없어 꺼져");
+			}
 		}
-//			List<LocationVO> LoList = LocationSVC.AllLocationList();
-//			mav.addObject("LoList", LoList);
-//			mav.setViewName("admin/admin_cen");
 		return mav;
 	}
 
