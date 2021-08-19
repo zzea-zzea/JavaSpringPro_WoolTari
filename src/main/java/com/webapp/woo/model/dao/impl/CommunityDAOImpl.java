@@ -57,10 +57,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
       KeyHolder kh = new GeneratedKeyHolder();
       PreparedStatementCreator psc = new PreparedStatementCreator() {         
          @Override
-         public PreparedStatement createPreparedStatement(
-               Connection con) throws SQLException {
-      PreparedStatement pstmt = 
-         con.prepareStatement(SQL_COMMUNITY_INSERT,new String[] {"board_index"}); // pk id..
+         public PreparedStatement createPreparedStatement( Connection con) throws SQLException {
+      PreparedStatement pstmt =  con.prepareStatement(SQL_COMMUNITY_INSERT,new String[] {"board_index"}); // pk id..
       pstmt.setInt(1, at.getCate()); pstmt.setString(2, at.getTitle());
       pstmt.setString(3, at.getContent()); pstmt.setString(4, at.getImg_path());
       pstmt.setInt(5, at.getMember_index()); // <<FK>>
@@ -71,7 +69,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
       if( r == 1 ) {
          Number pk = kh.getKey();
          return pk.intValue(); // articles.id <<PK>> ai.. 
-      } else    return 0;            
+      } else 
+    	  return 0;            
    
    }
 

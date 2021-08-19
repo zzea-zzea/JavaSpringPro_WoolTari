@@ -1170,11 +1170,24 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "admin_cen.woo", method = RequestMethod.GET)
-	public ModelAndView AdminCenter(HttpServletRequest request) {
+	public ModelAndView AdminCenter(@RequestParam(value = "si", required = false, defaultValue = "전체") String local_si) {
+		
 		ModelAndView mav = new ModelAndView("admin/admin_cen");
-		List<LocationVO> LoList = LocationSVC.AllLocationList();
-		mav.addObject("LoList", LoList);
-		mav.setViewName("admin/admin_cen");
+		if(local_si == "전체") {
+			List<LocationVO> LoList = LocationSVC.AllLocationList();
+			mav.addObject("LoList", LoList);
+			mav.setViewName("admin/admin_cen");
+		}else {
+			List<LocationVO> lovo = LocationSVC.selectAllLocationList(local_si);
+			if (lovo != null) {
+				int lovSize = lovo.size();
+				mav.addObject("lovo", lovo);
+				mav.addObject("lovSize", lovSize);
+				mav.addObject("local_si", local_si);
+			} else {
+				mav.addObject("msg", "없어 꺼져");
+			}
+		}
 		return mav;
 	}
 	@RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
