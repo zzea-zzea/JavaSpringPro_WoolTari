@@ -32,6 +32,7 @@
                                  <th>후원처</th>
                                  <th>후원금액</th>
                                  <th>후원 날짜</th>
+                                 <th>회원 ID</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -45,6 +46,7 @@
                                  <c:if test="${sp.supportCenterType eq 3}">법인 재단</c:if></td>
                                  <td><c:out value="${sp.price}"/>원</td>
                                  <td><fmt:formatDate value="${sp.supportDate}" pattern="yyyy년 MM월 dd일"/></td>
+                                 <td>회원아이디명</td>
                               </tr>
                               </c:forEach>
                               </c:if>

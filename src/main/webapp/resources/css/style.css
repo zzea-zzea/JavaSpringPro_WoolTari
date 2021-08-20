@@ -1749,6 +1749,65 @@ background: #b38c8c;
    background: #dc3545;
 }
 
+
+/*--------------------------------------------------------------
+# 어드민_모달
+--------------------------------------------------------------*/
+.modal_body.admin .modal-wrapper .modal-box {
+	width: 650px;
+	height: fit-content;
+}
+
+.modal_body.admin .modal-wrapper .modal-box .form_div {
+	width: 100%;
+}
+
+.modal_body.admin .modal-wrapper .modal-box .form_div h3 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table{
+	margin-bottom: 100px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr td
+	{
+	padding: 20px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr .phone_si input{
+	width: 130px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr td input
+	{
+   outline: 0;
+    border: 0;
+    background: #edf0f5;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr:first-child>td {
+	width: 60px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def {
+	width: 100%;
+	display: flex;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def button{
+    width: 400px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto;;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def .suc_btn{
+	background: #ffaa07;
+}
+
 /*------------담당자 : 김진영,김지훈------------
 사용된 페이지 : 게시판 페이지
 페이지 파일명 : content.jsp
@@ -3244,66 +3303,4 @@ background: rgba( 185, 108, 108, 0.5);
 
 /*------------ 내가쓴글/댓글 end ------------*/
 
-/* ------------담당자 : 이주현------------ */
-/* 사용된 페이지 : 어드민 시설 */
-/* 페이지 파일명 : admin_cen */
 
-
-.modal_body{
-   box-sizing: border-box;
-}
-
-.modal_body .modal-overlay-new {
-   background: rgba(255, 255, 255, 0.25);
-   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.modal_body .modal-wrapper-new {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgb(0 0 0/ 34%);
-   display: none;
-   justify-content: center;
-   align-items: center;
-}
-
-.modal_body .modal-wrapper-new .modal-box-new {
-   background: white;
-   border-radius: 10px;
-   width: 450px;
-   height: 460px;
-   padding: 30px;
-   box-shadow: 0 0 20px rgb(0 0 0/ 20%);
-}
-
-
-
-.modal-close-box-new {
-   text-align: right;
-}
-.modal_body .modal-wrapper-new .modal-box-new .modal-close-btn-new{
-   background-color: white;
-   border: white;
-   float: right;
-}
-
-.modal_body .modal-wrapper-new .modal-box-new .modal-close-btn-new svg{
-   width: 20px;
-   opacity: 0.7;
-}
-
-.modal_body .modal-open-btn-new {
-   border-radius: 50px;
-   border: 2px solid #f2b09b;
-   background: #fff;
-   line-height: 32px;
-   font-size: 13px;
-   color: #b96c6c;
-   font-weight: bold;
-}
-
-
-/*------------ 모덜창 end ------------*/

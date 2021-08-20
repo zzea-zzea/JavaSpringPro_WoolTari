@@ -53,7 +53,7 @@ function panTo() {
 		}
 	}
 </script>
-<body class="modal_body">
+<body class="modal_body admin">
 	<%@ include file="../common/_header.jsp"%>
 	<!-- 	<form action="admin_cen.woo"> -->
 	<input type="hidden" name="mbId" value="${mbPKId}">
@@ -93,7 +93,6 @@ function panTo() {
 								<option value="제주">제주</option>
 							</select>
 							<button class="sea_btn" onclick="panTo()">검색</button>
-							<button class="cre_btn" id="modal-open-btn_new">추가</button>
 							<button class="ref_btn" id="modal-open-btn">수정</button>
 							<button class="del_btn">삭제</button>
 						</div>
@@ -139,7 +138,7 @@ function panTo() {
 				</section>
 			</div>
 		</div>
-	</main>
+	
 	<!-- 	</form> -->
 	<div id="modal-overlay">
 		<div class="modal-wrapper">
@@ -147,17 +146,40 @@ function panTo() {
 				<button id="modal-close-btn" class="modal-close-btn">
 					<svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"id="Capa_1" x="0px" y="0px" viewBox="0 0 52.001 52.001"style="enable-background: new 0 0 52.001 52.001;"xml:space="preserve"><g><g><path style="fill:#030104;" d="M47.743,41.758L33.955,26.001l13.788-15.758c2.343-2.344,2.343-6.143,0-8.486    c-2.345-2.343-6.144-2.342-8.486,0.001L26,16.91L12.743,1.758C10.4-0.584,6.602-0.585,4.257,1.757    c-2.343,2.344-2.343,6.143,0,8.486l13.788,15.758L4.257,41.758c-2.343,2.343-2.343,6.142-0.001,8.485    c2.344,2.344,6.143,2.344,8.487,0L26,35.091l13.257,15.152c2.345,2.344,6.144,2.344,8.487,0    C50.086,47.9,50.086,44.101,47.743,41.758z" /></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g> </g><g></g><g> </g><g></g><g></g><g></g></svg>
 				</button>
-				<div>시설 수정 모달창</div>
-			</div>
-		</div>
-	</div>
-	<div id="modal-overlay-new">
-		<div class="modal-wrapper-new">
-			<div class="modal-box-new">
-				<button id="modal-close-btn-new" class="modal-close-btn-new">
-					<svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"id="Capa_1" x="0px" y="0px" viewBox="0 0 52.001 52.001"style="enable-background: new 0 0 52.001 52.001;"xml:space="preserve"><g><g><path style="fill:#030104;" d="M47.743,41.758L33.955,26.001l13.788-15.758c2.343-2.344,2.343-6.143,0-8.486    c-2.345-2.343-6.144-2.342-8.486,0.001L26,16.91L12.743,1.758C10.4-0.584,6.602-0.585,4.257,1.757    c-2.343,2.344-2.343,6.143,0,8.486l13.788,15.758L4.257,41.758c-2.343,2.343-2.343,6.142-0.001,8.485    c2.344,2.344,6.143,2.344,8.487,0L26,35.091l13.257,15.152c2.345,2.344,6.144,2.344,8.487,0    C50.086,47.9,50.086,44.101,47.743,41.758z" /></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g> </g><g></g><g> </g><g></g><g></g><g></g></svg>
-				</button>
-				<div>시설 추가 모달창</div>
+				<div class="form_div">
+					<h3>시설수정</h3>
+					<table class="table">
+						<tbody>
+						   <tr>
+						      <td>지역시</td>
+						      <td>서울시</td>
+						   </tr>
+						   <tr>
+						      <td>지역구</td>
+						      <td>종로구</td>
+						   </tr>
+						   <tr>
+						      <td>시설명</td>
+						      <td><input type="text" placeholder="마음센터"></td>
+						   </tr>
+						   <tr>
+						      <td>시설구분</td>
+						      <td><input type="text" placeholder="공동생활지원"></td>
+						   </tr>
+						   <tr>
+						      <td>전화번호</td>
+						      <td class="phone_si"><input type="text" placeholder="010">&nbsp;-&nbsp;<input type="text" placeholder="0000">&nbsp;-&nbsp;<input type="text" placeholder="0000"></td>
+						   </tr>
+						   <tr>
+						      <td>시설주소</td>
+						      <td>경기도 하남시 땡땡로 땡땡길 땡땡-땡땡</td>
+						   </tr>
+						</tbody>
+                   </table>
+                   <div class="button_def">
+	                   <button class="suc_btn"> 수정 완료 </button>
+                   </div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -177,20 +199,7 @@ function panTo() {
     modalCloseBtn.addEventListener("click", () => {
         modalWrapper.style.display = "none";
     });
-    
-    const modalOpenBtnNew = document.getElementById("modal-open-btn_new");
-    const modalCloseBtnNew = document.getElementById("modal-close-btn-new");
-    const modalWrapperNew = document.querySelector(".modal-wrapper-new");
-
-          console.log(modalWrapperNew.style);
-
-          modalOpenBtnNew.addEventListener("click", () => {
-    modalWrapperNew.style.display = "flex";
-           });
-
-    modalCloseBtnNew.addEventListener("click", () => {
-        modalWrapperNew.style.display = "none";
-    });
 	</script>
+	</main>
 </body>
 </html>

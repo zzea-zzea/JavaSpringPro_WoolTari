@@ -55,8 +55,8 @@ $(document).ready(function() {
                                  <c:if test="${ct.cate eq 6}">무료나눔</c:if>
                                  <td class="${ct.board_index}"><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
                                  <c:if test="${not empty mbLoginName}">
-                                 <td><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">조회 하러 가기</a></td>
-                                    </c:if>
+                                 	<td><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">조회 하러 가기</a></td>
+                                 </c:if>
                               </tr>
                               <tr>
                                  <td colspan="6" id="${ct.board_index}" class="collapse show acc" data-parent="#accordion">
