@@ -31,10 +31,8 @@
 						</div>
 						<div class="childcare_content my">
 							<div class="table-wrap">
+								<%int i = 1;%>
 								<table class="tables myaccordion table-hover" id="accordion">
-									<%
-										int i = 1;
-									%>
 									<thead>
 										<tr>
 											<th>NO.</th>
@@ -54,16 +52,16 @@
 													<th scope="row"><%=i++%></th>
 													<td>무통장입금</td>
 													<td><c:if test="${sp.supportCenterType eq 1}">한부모 가정</c:if>
-														<c:if test="${sp.supportCenterType eq 2}">미혼모 시설</c:if> <c:if
-															test="${sp.supportCenterType eq 3}">법인 재단</c:if></td>
+														<c:if test="${sp.supportCenterType eq 2}">미혼모 시설</c:if>
+														<c:if test="${sp.supportCenterType eq 3}">법인 재단</c:if></td>
 													<td><c:out value="${sp.price}" />원</td>
-													<td><fmt:formatDate value="${sp.supportDate}"
-															pattern="yyyy년 MM월 dd일" /></td> `
+													<td><fmt:formatDate value="${sp.supportDate}" pattern="yyyy년 MM월 dd일" /></td>
 													<td><c:forEach var="mem" items="${member}">
 															<c:if test="${mem.memberIndex eq sp.memberIndex}">
-										${mem.nickName}
-									</c:if>
-														</c:forEach></td>
+																${mem.nickName}
+															</c:if>
+														</c:forEach>
+													</td>
 												</tr>
 											</c:forEach>
 										</c:if>
