@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <body class="modal_body admin">
 	<%@ include file="../common/_header.jsp"%>
-<!-- 	<form action="admin_mem.woo"> -->
+
 		<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="childcare_main admin">
 			<div class="childcare_box admin ma">
@@ -17,61 +17,63 @@
 					</ul>
 				</div>
 				<div class="info_content">
-					<section class="childcare_section">
-						<div class="childcare_section_title">
-							<h2>회원 통계</h2>
-							<div class="button_def">		
-								<button class="ref_btn" id="modal-open-btn">수정</button>
-								<button class="del_btn">탈퇴</button>
-							</div>
-						</div>
-						<div class="childcare_content my">
-							<div class="table-wrap">
-								<table class="tables ad myaccordion table-hover" id="accordion">
-									<thead>
-										<tr>
-											<th>#</th>
-											<th>회원이름</th>
-											<th>아이디</th>
-											<th>별명</th>
-											<th>생년월일</th>
-											<th>성별</th>
-											<th>이메일</th>
-											<th>후원인구분</th>
-											<th>전화번호</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:if test="${not empty MbList}">
-											<c:forEach var="mb" items="${MbList}" varStatus="vs">
-												<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-													<%-- <th scope="row"><%= i++ %></th> --%>
-													<th scope="row"><input type="checkbox"></th>
-													<td><c:out value="${mb.name}" /></td>
-													<td><c:out value="${mb.id}" /></td>
-													<td><c:out value="${mb.nickName}" /></td>
-													<td><c:out value="${mb.brith}" /></td>
-													<td><c:out value="${mb.gender}" /></td>
-													<td><c:out value="${mb.email}" /></td>
-													<td>
-														<c:if test="${mb.isMember eq 1}">개인</c:if> 
-														<c:if test="${mb.isMember eq 2}">법인</c:if> 
-														<c:if test="${mb.isMember eq 8}">탈퇴회원</c:if> 
-														<c:if test="${mb.isMember eq 9}">관리자</c:if>
-													</td>
-													<td><c:out value="${mb.phone}" /></td>
-												</tr>
-											</c:forEach>
-										</c:if>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</section>
+					<form action="change_mem.woo" method="post">
+               <section class="childcare_section">
+                  <div class="childcare_section_title">
+                     <h2>회원 통계</h2>
+                     <div class="button_def">      
+<!--                         <button class="ref_btn" id="modal-open-btn">수정</button> -->
+                        <button class="del_btn">탈퇴</button>
+                     </div>
+                  </div>
+                  <div class="childcare_content my">
+                     <div class="table-wrap">
+                        <table class="tables ad myaccordion table-hover" id="accordion">
+                           <thead>
+                              <tr>
+                                 <th>#</th>
+                                 <th>회원이름</th>
+                                 <th>아이디</th>
+                                 <th>별명</th>
+                                 <th>생년월일</th>
+                                 <th>성별</th>
+                                 <th>이메일</th>
+                                 <th>후원인구분</th>
+                                 <th>전화번호</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <c:if test="${not empty MbList}">
+                                 <c:forEach var="mb" items="${MbList}" varStatus="vs">
+                                    <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+                                       <th scope="row"><input type="checkbox" class="" value="${mb.memberIndex}" name="index"></th>
+                                       <td><c:out value="${mb.name}" /></td>
+                                       <td><c:out value="${mb.id}" /></td>
+                                       <td><c:out value="${mb.nickName}" /></td>
+                                       <td><c:out value="${mb.brith}" /></td>
+                                       <td><c:if test="${mb.gender eq 2}">여자</c:if> 
+                                       <c:if test="${mb.gender eq 1}">남자</c:if> </td>
+                                       <td><c:out value="${mb.email}" /></td>
+                                       <td>
+                                          <c:if test="${mb.isMember eq 1}">개인</c:if> 
+                                          <c:if test="${mb.isMember eq 2}">법인</c:if> 
+                                          <c:if test="${mb.isMember eq 8}">탈퇴회원</c:if> 
+                                          <c:if test="${mb.isMember eq 9}">관리자</c:if>   
+                                       </td>
+                                       <td><c:out value="${mb.phone}" /></td>
+                                    </tr>
+                                 </c:forEach>
+                              </c:if>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </section>
+               </form>
 				</div>
 			</div>
 		
-<!-- 	</form> -->
+
 		<div id="modal-overlay">
 			<div class="modal-wrapper">
 				<div class="modal-box">

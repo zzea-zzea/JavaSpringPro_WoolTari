@@ -3,18 +3,34 @@
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-<body >
+<body>
+	<script>
+		function my_check() {
+			alert("${msg}");
+		};
+		<c:if test="${not empty msg}">
+		my_check();
+		</c:if>
+	</script>
 	<%@ include file="../common/_header.jsp"%>
-<!-- 	<form action="admin_boa.woo"> -->
+	<form action="admin_boa_community.woo" method="POST">
 		<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="childcare_main admin">
 			<div class="childcare_box admin ma">
 				<div class="side_bar ad">
 					<ul>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/admin_mem.woo?">회원 통계</a></li>
-						<li class="side_bar_content mypage"><a href="${pageContext.request.contextPath}/admin_cen.woo?">시설 통계</a></li>
-						<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/admin_boa.woo?">게시글 통계</a></li>
-						<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_sup.woo?">후원 통계</a></li>
+						<li class="side_bar_content mypage"><a
+							href="${pageContext.request.contextPath}/admin_mem.woo?">회원
+								통계</a></li>
+						<li class="side_bar_content mypage"><a
+							href="${pageContext.request.contextPath}/admin_cen.woo?">시설
+								통계</a></li>
+						<li class="side_bar_content mypage on"><a
+							href="${pageContext.request.contextPath}/admin_boa.woo?">게시글
+								통계</a></li>
+						<li class="side_bar_content mypage "><a
+							href="${pageContext.request.contextPath}/admin_sup.woo?">후원
+								통계</a></li>
 					</ul>
 				</div>
 				<div class="info_content">
@@ -22,7 +38,7 @@
 						<div class="childcare_section_title">
 							<h2>게시글 통계</h2>
 							<div class="button_def">
-								<button class="del_btn">비활성화</button>
+								<button type="submit" class="del_btn">비활성화</button>
 							</div>
 						</div>
 						<div class="childcare_content my">
@@ -35,6 +51,7 @@
 											<th>내용</th>
 											<th>작성자</th>
 											<th>조회수</th>
+											<th>게시글 상태</th>
 											<th>작성 날짜</th>
 											<th>조회 하기</th>
 										</tr>
@@ -42,8 +59,11 @@
 									<tbody>
 										<c:if test="${not empty CtList}">
 											<c:forEach var="ct" items="${CtList}" varStatus="vs">
-												<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
-													<th scope="row"><input type="checkbox"></th>
+												<tr data-toggle="collapse" data-target="#collapseOne"
+													aria-expanded="true" aria-controls="collapseOne"
+													class="collapsed">
+													<th scope="row"><input type="checkbox"
+														value="${ct.board_index}" name="border"></th>
 													<td><c:out value="${ct.title}" /></td>
 													<td><c:out value="${ct.content}" /></td>
 													<td><c:forEach var="mem" items="${member}">
@@ -52,8 +72,13 @@
 															</c:if>
 														</c:forEach></td>
 													<td><c:out value="${ct.views}" /></td>
-													<td><fmt:formatDate value="${ct.write_date}" pattern="yyyy년 MM월 dd일" /></td>
-													<td><a class="btn_selected_gosite" href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">바로가기</a></td>
+													<td><c:if test="${ct.is_board eq 0}">활성화</c:if> 
+														<c:if test="${ct.is_board eq 1}">비활성화</c:if> 
+													</td>
+													<td><fmt:formatDate value="${ct.write_date}"
+															pattern="yyyy년 MM월 dd일" /></td>
+													<td><a class="btn_selected_gosite"
+														href="${pageContext.request.contextPath}/content_view.woo?atId=${ct.board_index}">바로가기</a></td>
 												</tr>
 											</c:forEach>
 										</c:if>
@@ -65,6 +90,7 @@
 				</div>
 			</div>
 		</main>
+	</form>
 	<%@ include file="../common/_script.jsp"%>
 </body>
 </html>

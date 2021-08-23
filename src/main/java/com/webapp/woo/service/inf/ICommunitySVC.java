@@ -58,6 +58,8 @@ public interface ICommunitySVC {
 
    List<CommunityVO> CommunityListForBoard(int mbId);
 
+   //회원을 비활성화시킨다
+   boolean activationCommunitys(int atId);
 
    
 

@@ -93,8 +93,8 @@ function panTo() {
 								<option value="제주">제주</option>
 							</select>
 							<button class="sea_btn" onclick="panTo()">검색</button>
-							<button class="ref_btn" id="modal-open-btn">수정</button>
-							<button class="del_btn">삭제</button>
+<!-- 							<button class="ref_btn" id="modal-open-btn">수정</button> -->
+<!-- 							<button class="del_btn">삭제</button> -->
 						</div>
 					</div>
 					<div class="childcare_content my">

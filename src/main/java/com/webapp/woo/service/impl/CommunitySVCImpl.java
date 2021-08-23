@@ -141,5 +141,13 @@ public List<CommunityVO> selectAllCommunitys() {
 	return ctDao.selectAllCommunitys();
 }
 
+@Override
+public boolean activationCommunitys(int atId) {
+	
+	
+	
+	return ctDao.activationCommunitys(atId);
+}
+
 
 }

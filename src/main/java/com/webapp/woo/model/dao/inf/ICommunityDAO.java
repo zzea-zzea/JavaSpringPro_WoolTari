@@ -52,5 +52,8 @@ public interface ICommunityDAO {
 
    List<CommunityVO> searchCommunity(String k, int offset, int searchPageSize, String orderBy);
    
+ //회원을 비활성화시킨다
+   boolean activationCommunitys(int atId);
+   
       
 }

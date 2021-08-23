@@ -58,6 +58,8 @@
 								</c:if>
 								<c:if test="${not empty ctList}">
 									<c:forEach var="ct" items="${ctList}" varStatus="vs">
+									
+									<c:if test="${ct.is_board eq 0}">
 										<c:if test="${not empty mbLoginName}">
 											<tr onclick="showOneArticle('${ct.board_index}')">
 										</c:if>
@@ -77,6 +79,8 @@
 										<td><fmt:formatDate value="${ct.write_date}"
 												pattern="yyyy년 MM월 dd일" /></td>
 										<td><c:out value="${ct.views}" default="0" /></td>
+									</c:if>
+										
 									</c:forEach>
 								</c:if>
 							</tbody>

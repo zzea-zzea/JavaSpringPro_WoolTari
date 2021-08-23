@@ -1083,32 +1083,74 @@ public class MainController {
 		return mav;
 	}
 
-	@RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
-	public ModelAndView AdminMember(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("admin/admin_mem");
-		List<MemberVO> MbList = mbSvc.allMember();
-		mav.addObject("MbList", MbList);
-		mav.setViewName("admin/admin_mem");
-		return mav;
-	}
+	   @RequestMapping(value = "admin_mem.woo", method = RequestMethod.GET)
+	   public ModelAndView AdminMember(HttpServletRequest request) {
+	      ModelAndView mav = new ModelAndView("admin/admin_mem");
+	      List<MemberVO> MbList = mbSvc.allMember();
+	      mav.addObject("MbList", MbList);
+	      mav.setViewName("admin/admin_mem");
+	      return mav;
+	   }
 
+
+	
 	@RequestMapping(value = "admin_boa.woo", method = RequestMethod.GET)
-	public ModelAndView AdminBoard(HttpServletRequest request, Model model) {
+	public ModelAndView AdminBoard(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin/admin_boa");
 		List<CommunityVO> CtList = ctSvc.selectAllCommunitys();
 		List<MemberVO> member = mbSvc.allMember();
 		mav.addObject("member", member);
 		mav.addObject("CtList", CtList);
 		mav.setViewName("admin/admin_boa");
+		
 		return mav;
+
 	}
 
 	@RequestMapping(value = "admin_sup.woo", method = RequestMethod.GET)
 	public ModelAndView AdminSupport(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin/admin_sup");
 		List<SupportVO> SpList = SupportSVC.allSupport();
+		List<MemberVO> member = mbSvc.allMember();
+		mav.addObject("member", member);
 		mav.addObject("SpList", SpList);
 		mav.setViewName("admin/admin_sup");
 		return mav;
 	}
+	
+	@RequestMapping(value = "admin_boa_community.woo", method = RequestMethod.POST)
+	public ModelAndView Adminboa(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		String index_board = request.getParameter("border");
+		int index = Integer.parseInt(index_board);
+ 		boolean r = ctSvc.activationCommunitys(index);
+ 		if(r == true) {
+ 			mav.setViewName("redirect:admin_boa.woo?");
+ 			System.out.println("성공");
+ 		}else {
+ 			mav.setViewName("redirect:admin_boa.woo?");
+ 			System.out.println("실패");
+ 		}
+ 		return mav;
+	}
+	@RequestMapping(value = "change_mem.woo", method = RequestMethod.POST)
+	   public ModelAndView ChangeMember(HttpServletRequest request) {
+	      String strMbId = request.getParameter("index");
+	      int mbId = Integer.parseInt(strMbId);
+	      boolean r = mbSvc.deleteMember(mbId);
+	      ModelAndView mav = new ModelAndView("admin/admin_mem");
+	      if (r) {
+	         mav.setViewName("redirect:admin_mem.woo?");
+	         System.out.println("성공");
+	      } else {
+	         mav.setViewName("redirect:admin_mem.woo?");
+	         System.out.println("실패");
+	      }
+	      return mav;
+	   }
+
+	
+	
 }
+
+

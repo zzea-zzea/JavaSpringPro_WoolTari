@@ -46,7 +46,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
    public static final String SQL_COMMUNITY_SEARCH_ALL_PG =
          "SELECT * FROM wooltari_db.board where "
          + "cate like concat('%',?,'%')";
-            
+   public static final String SQL_COMMUNITY_ACTIVATION=
+		   "update board set is_board = 1 where board_index = ?";
    
    @Autowired
    private JdbcTemplate jtem; // 자동주입 x
@@ -187,6 +188,17 @@ public class CommunityDAOImpl implements ICommunityDAO {
 @Override
 public List<CommunityVO> selectAllCommunitys() {
 	 return jtem.query("select * from wooltari_db.board", BeanPropertyRowMapper.newInstance(CommunityVO.class));
+}
+
+@Override
+public boolean activationCommunitys(int atId) {
+	try {
+        int r = jtem.update(SQL_COMMUNITY_ACTIVATION, atId);
+        return r == 1;
+     } catch (DataAccessException e) {
+        e.printStackTrace();
+        return false;
+     }
 }
 
    
