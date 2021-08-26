@@ -12,8 +12,34 @@
 		my_check();
 		</c:if>
 	</script>
+	<script type="text/javascript">
+	
+function checkOnlyOne(element) {
+	  
+	  const checkboxes 
+	      = document.getElementsByName("border");
+	  
+	  checkboxes.forEach((cb) => {
+	    cb.checked = false;
+	  })
+	  
+	  element.checked = true;
+	}
+	
+function CheckForm(form){
+	
+	var chk1 = document.form.check.checked;
+	
+	if(!chk1){
+		alert('비활성화할 게시글을 선택해 주세요.');
+		return false;
+	}
+}
+	
+	
+	</script>
 	<%@ include file="../common/_header.jsp"%>
-	<form action="admin_boa_community.woo" method="POST">
+	<form name="form" action="admin_boa_community.woo" method="POST" onSubmit="return CheckForm(this)">
 		<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="childcare_main admin">
 			<div class="childcare_box admin ma">
@@ -62,8 +88,8 @@
 												<tr data-toggle="collapse" data-target="#collapseOne"
 													aria-expanded="true" aria-controls="collapseOne"
 													class="collapsed">
-													<th scope="row"><input type="checkbox"
-														value="${ct.board_index}" name="border"></th>
+													<th scope="row"><input type="checkbox" id="check"
+														value="${ct.board_index}" name="border" onclick='checkOnlyOne(this)'></th>
 													<td><c:out value="${ct.title}" /></td>
 													<td><c:out value="${ct.content}" /></td>
 													<td><c:forEach var="mem" items="${member}">

@@ -52,6 +52,7 @@
 									<th>조회</th>
 								</tr>
 							</thead>
+							<%int i = 12; %>
 							<tbody>
 								<c:if test="${empty ctList}">
 									<h4>게시글이 현재 하나도 없네요!</h4>
@@ -66,7 +67,7 @@
 										<c:if test="${empty mbLoginName}">
 											<tr onclick="showLoginPage()">
 										</c:if>
-										<td><c:out value="${ctSize}" default="0" /></td>
+										<td><%=i-- %></td>
 										<td><c:out value="${ct.title}" default="제목없음" /></td>
 										<td><c:if test="${ct.cate eq 1}">일상</c:if> <c:if
 												test="${ct.cate eq 2}">지원정보</c:if> <c:if

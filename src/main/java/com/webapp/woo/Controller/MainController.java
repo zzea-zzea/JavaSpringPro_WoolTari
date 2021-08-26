@@ -598,7 +598,7 @@ public class MainController {
 		int loginResult = mbSvc.loginProcess(id, pw);
 		MemberVO Admin = mbSvc.loginAdmin(id, pw);
 		int AdminNum = Admin.getIsMember();
-		if (loginResult == mycode.MB_LOGIN_OK) {
+		if (loginResult == mycode.MB_LOGIN_OK  ) {
 			System.out.println("로그인 인증 성공: " + id);
 			ses.setAttribute("AdminNum", AdminNum);
 			ses.setAttribute("mbLoginName", id);
@@ -606,7 +606,7 @@ public class MainController {
 			ses.setAttribute("mbPKId", mb.getMemberIndex());
 			mav.setViewName("redirect:main.woo");
 			return mav;
-		} else {
+		}else {
 			mav.setViewName("login/login");
 			mav.addObject("msg", "존재하지 않는 계정이거나 아이디와 비밀번호가 일치하지 않습니다.");
 			return mav;
@@ -1111,13 +1111,40 @@ public class MainController {
 	public ModelAndView AdminSupport(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin/admin_sup");
 		List<SupportVO> SpList = SupportSVC.allSupport();
-		List<MemberVO> member = mbSvc.allMember();
-		mav.addObject("member", member);
 		mav.addObject("SpList", SpList);
 		mav.setViewName("admin/admin_sup");
+		List<SupportVO> SpList1 = new ArrayList<>();
+		List<SupportVO> SpList2 = new ArrayList<>();
+		List<SupportVO> SpList3 = new ArrayList<>();
+		for (int i = 0; i < SpList.size(); i++) {
+			if(SpList.get(i).getSupportCenterType() == 1 ) {
+				SpList1.add(SpList.get(i));
+			}
+			else if(SpList.get(i).getSupportCenterType() == 2) {
+				SpList2.add(SpList.get(i));
+			}
+			else {
+				SpList3.add(SpList.get(i));
+			}
+		}
+		int all = SpList.size();
+		int a = SpList1.size();
+		int b = SpList2.size();
+		int c = SpList3.size();
+		double num1 = ((double)a/(double)all) * 100.0;
+		double num2 = ((double)b/(double)all) * 100.0;
+		double num3 = ((double)c/(double)all) * 100.0;
+		int ab = (int)(num1 *100);
+		int bc = (int)(num2 * 100);
+		int ca = (int)(num3 * 100);
+		float Lnum1 = (float)(ab/100.0);
+		float Lnum2 = (float)(bc/100.0);
+		float Lnum3 = (float)(ca/100.0);
+		mav.addObject("Lnum1", Lnum1);
+		mav.addObject("Lnum2", Lnum2);
+		mav.addObject("Lnum3", Lnum3);
 		return mav;
 	}
-	
 	@RequestMapping(value = "admin_boa_community.woo", method = RequestMethod.POST)
 	public ModelAndView Adminboa(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
@@ -1136,9 +1163,12 @@ public class MainController {
 	@RequestMapping(value = "change_mem.woo", method = RequestMethod.POST)
 	   public ModelAndView ChangeMember(HttpServletRequest request) {
 	      String strMbId = request.getParameter("index");
-	      int mbId = Integer.parseInt(strMbId);
+	      ModelAndView mav = new ModelAndView();
+	      int mbId = Integer.parseInt(strMbId);   
+	    	  
+	      
 	      boolean r = mbSvc.deleteMember(mbId);
-	      ModelAndView mav = new ModelAndView("admin/admin_mem");
+	      mav.setViewName("admin/admin_mem");
 	      if (r) {
 	         mav.setViewName("redirect:admin_mem.woo?");
 	         System.out.println("성공");

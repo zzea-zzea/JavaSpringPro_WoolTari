@@ -17,39 +17,39 @@ $(document).ready( function() {
 function panTo() {
 	var selOp = document.getElementById("sel_si").options.selectedIndex;
 	if (selOp == 0) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전체";
+			location.href = "admin_cen.woo?&local_si=전체";
 		} else if (selOp == 1) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=서울";
+			location.href = "admin_cen.woo?&local_si=서울";
 		} else if (selOp == 2) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=부산";
+			location.href = "admin_cen.woo?&local_si=부산";
 		} else if (selOp == 3) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=대구";
+			location.href = "admin_cen.woo?&local_si=대구";
 		} else if (selOp == 4) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=인천";
+			location.href = "admin_cen.woo?&local_si=인천";
 		} else if (selOp == 5) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=광주";
+			location.href = "admin_cen.woo?&local_si=광주";
 		} else if (selOp == 6) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=대전";
+			location.href = "admin_cen.woo?&local_si=대전";
 		} else if (selOp == 7) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=울산";
+			location.href = "admin_cen.woo?&local_si=울산";
 		} else if (selOp == 8) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경기";
+			location.href = "admin_cen.woo?&local_si=경기";
 		} else if (selOp == 9) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=강원";
+			location.href = "admin_cen.woo?&local_si=강원";
 		} else if (selOp == 10) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=충북";
+			location.href = "admin_cen.woo?&local_si=충북";
 		} else if (selOp == 11) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=충남";
+			location.href = "admin_cen.woo?&local_si=충남";
 		} else if (selOp == 12) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전북";
+			location.href = "admin_cen.woo?&local_si=전북";
 		} else if (selOp == 13) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=전남";
+			location.href = "admin_cen.woo?&local_si=전남";
 		} else if (selOp == 14) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경북";
+			location.href = "admin_cen.woo?&local_si=경북";
 		} else if (selOp == 15) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=경남";
+			location.href = "admin_cen.woo?&local_si=경남";
 		} else if (selOp == 16) {
-			location.href = "admin_cen.woo?mbId="+mbId+"&local_si=제주";
+			location.href = "admin_cen.woo?&local_si=제주";
 		}
 	}
 </script>
