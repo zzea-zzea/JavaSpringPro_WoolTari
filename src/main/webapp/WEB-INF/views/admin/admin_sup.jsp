@@ -18,16 +18,12 @@
 			        renderTo: 'stat_plot'
 			    },
 			    title: {
-			        text: '울타리 총 후원 내역 통계'
+			        text: '후원처 별 누적 후원 내역 통계'
 			    },
 			    subtitle: {
 			        text: '한부모 가정, 미혼모 시설, 법인재단 (%)'
 			    },
 			    xAxis: {
-			    	title: {
-			    		text: '후원 통계'
-			    	},
-			        categories: ['울타리 누적 후원 통계'],
 			        crosshair: true
 			    },
 			    yAxis: {
@@ -69,17 +65,17 @@
 			    series: [{
 			        name: '한부모 가정',
 			        data: [${Lnum1}],
-			        color: '#FF0000'
+			        color: '#ffc107'
 			
 			    }, {
 			        name: '미혼모 시설',
 			        data: [${Lnum2}],
-			        color: '#00FF00'
+			        color: '#28a745'
 			
 			    }, {
 			        name: '법인재단',
 			        data: [${Lnum3}],
-			        color: '#0000FF'			
+			        color: '#0dcaf0'			
 			    }],
 			    credits: false
 			};
@@ -176,13 +172,13 @@
             </div>
             <br>
             <br>
-            <div id="stat_result">
-		<h3> 후원 통계 결과: </h3>
-		<figure class="highcharts-figure">
-			<div id="stat_plot"></div>
-		</figure> <BR>
-	</div>
-         </div>
+				<div id="stat_result">
+					<figure class="highcharts-figure">
+						<div id="stat_plot"></div>
+					</figure>
+					<br>
+				</div>
+			</div>
       </main>
    </form>
    <%@ include file="../common/_script.jsp"%>
