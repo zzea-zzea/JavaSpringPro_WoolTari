@@ -1,18 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
-
-
-
-
-
-
-
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
-
 <script type="text/javascript">
    var CTX = '${pageContext.request.contextPath}';
    $(document).ready(function() {
@@ -24,20 +14,15 @@
             type : 'get',
             url : tUrl,
             data : "id=" + login,
-
             success : function(res) {
-
                console.log("ajax: " + res);
-
                var msg = "";
-
                $('#idmsg').removeClass('yes');
                $('#idmsg').removeClass('no');
                $('#idmsg').removeClass('error');
                switch (res) {
                case "yes":
                   msg = '<font color=red style=font-size:12px;>이미 사용중인 아이디입니다.</font>';
-
                   break;
                case "no":
                   msg = '<font color=blue style=font-size:12px;>사용 가능한 아이디입니다.</font>';
@@ -48,11 +33,9 @@
                   break;
                default:
                   msg = "예외 발생!!!!!";
-
                }
                $('#idmsg').addClass(res);
                $('#idmsg').html('<a>' + msg + '</a>');
-
             }
          });
       });
@@ -65,20 +48,15 @@
             type : 'get',
             url : tUrl,
             data : "nickname=" + login,
-
             success : function(res) {
-
                console.log("ajax: " + res);
-
                var msg = "";
-
                $('#nickmsg').removeClass('yes');
                $('#nickmsg').removeClass('no');
                $('#nickmsg').removeClass('error');
                switch (res) {
                case "yes":
                   msg = '<font color=red style=font-size:12px;>이미 사용중인 닉네임입니다.</font>';
-
                   break;
                case "no":
                   msg = '<font color=blue style=font-size:12px;>사용 가능한 닉네임입니다.</font>';
@@ -89,11 +67,9 @@
                   break;
                default:
                   msg = "예외 발생!!!!!";
-
                }
                $('#nickmsg').addClass(res);
                $('#nickmsg').html('<a> ' + msg + '</a>');
-
             }
          });
       });
@@ -106,20 +82,15 @@
              type : 'get',
              url : tUrl,
              data : "email=" + login,
-
              success : function(res) {
-
                 console.log("ajax: " + res);
-
                 var msg = "";
-
                 $('#emailmsg').removeClass('yes');
                 $('#emailmsg').removeClass('no');
                 $('#emailmsg').removeClass('error');
                 switch (res) {
                 case "yes":
                    msg = '<font color=red style=font-size:12px;>이미 사용중인 이메일입니다.</font>';
-
                    break;
                 case "no":
                    msg = '<font color=blue style=font-size:12px;>사용 가능한 이메일입니다.</font>';
@@ -130,15 +101,12 @@
                    break;
                 default:
                    msg = "예외 발생!!!!!";
-
                 }
                 $('#emailmsg').addClass(res);
                 $('#emailmsg').html('<a> ' + msg + '</a>');
-
              }
           });
        });
-      
    });
 
    $(function() {
@@ -298,11 +266,6 @@
   	});
 	
    });
-   
-   
-
-   
-   
    $(function() {
 	      $("#pw_at_msg").hide();
 	      $("#pw_at_msg1").hide();
@@ -327,14 +290,11 @@
          phone2.focus();
       }
    }
-
    function keycheck2(x) {
       if (x.value.length == 4) {
          phone3.focus();
       }
    }
-   
-
 </script>
 
 <body>
@@ -366,7 +326,6 @@
 									check_result="fail" value="${empty param.id ? '': param.id}"
 									maxlength="12"> <span id="idmsg"></span>
 									<button type="button" id="idCheck" class="id_chack">중복확인</button></td>
-									
 							</tr>
 							<tr>
 								<td>닉네임</td>
@@ -426,11 +385,11 @@
 							</tr>
 							<tr>
 								<td>이메일</td>
-								<td><input type="text" name="email" class="email_input"
-									id="email" check_result="fail" value="${empty param.email ? '': param.email}">
+								<td>
+									<input type="text" name="email" class="email_input" id="email" check_result="fail" value="${empty param.email ? '': param.email}">
 									 <span id="emailmsg"></span>
-									<button type="button" id="emailCheck">중복확인</button></td>
-	
+									<button type="button" id="emailCheck">중복확인</button>
+								</td>
 							</tr> 
 						</tbody>
 					</table>
@@ -441,10 +400,6 @@
 			</div>
 		</main>
 	</form>
-
 	<%@ include file="../common/_script.jsp"%>
-	
-
-
 </body>
 </html>

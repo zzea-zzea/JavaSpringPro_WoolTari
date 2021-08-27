@@ -19,4 +19,10 @@ public class LocationSVCImpl  implements ILocationSVC {
 		return LocationDAO.selectAllLocationList(local_si);
 	}
 
+	@Override
+	public List<LocationVO> AllLocationList() {
+		// TODO Auto-generated method stub
+		return LocationDAO.AllLocationList();
+	}
+
 }

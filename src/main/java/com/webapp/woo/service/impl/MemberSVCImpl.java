@@ -137,4 +137,10 @@ public boolean emailchackMember(String email) {
 	// TODO Auto-generated method stub
 	return mbDao.emailchackMember(email);
 }
+
+@Override
+public MemberVO loginAdmin(String id, String pw) {
+	// TODO Auto-generated method stub
+	return mbDao.loginAdmin(id,pw);
+}
 }

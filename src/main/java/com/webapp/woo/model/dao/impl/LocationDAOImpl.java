@@ -24,4 +24,10 @@ public class LocationDAOImpl implements ILocationDAO {
 		return jtem.query("select * from center_location where local_si = ?", BeanPropertyRowMapper.newInstance(LocationVO.class), local_si);
 	}
 
+	@Override
+	public List<LocationVO> AllLocationList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

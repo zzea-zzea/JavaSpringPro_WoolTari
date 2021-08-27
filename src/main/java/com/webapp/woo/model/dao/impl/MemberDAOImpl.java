@@ -54,6 +54,8 @@ public class MemberDAOImpl implements IMemberDAO {
    private static final String SQL_SELECT_ONE_MEMBER_ID = "select * from member where id = ?";
 
    private static final String SQL_SELECT_ONE_MEMBER_EMAIL = "select * from member where email = ?";
+   
+   
 
    private static final String SQL_SELECT_IDFIND = "select id from member where name = ? AND email = ?";
 
@@ -261,24 +263,30 @@ public class MemberDAOImpl implements IMemberDAO {
 			return false;
 		}
 	}
-	   @Override
-	   public boolean deleteMember(int memberId) {
-	      try {
-	         int r = jtem.update(SQL_MEMBER_DELETE_ONE, memberId);
-	         return r == 1;
-	      } catch (DataAccessException e) {
-	         System.out.println(
-	               "dao: member 삭제 실패: " + memberId);
-	         return false;
-	      }   
-	   }
-
+	 @Override
+     public boolean deleteMember(int memberId) {
+        try {
+           int r = jtem.update("update member set is_member = 8 where member_index = ?", memberId);
+           return r == 1;
+        } catch (DataAccessException e) {
+           System.out.println(
+                 "dao: member 탈퇴 실패: " + memberId);
+           return false;
+        }   
+     }
 	@Override
 	public boolean emailchackMember(String email) {
 		int r = jtem.queryForObject(SQL_MEMBER_EMAILCHECK, Integer.class, email);
 
 	      System.out.println(">> DAO : isDuplicatedMember() r : " + r);
 	      return r >= 1;
+	}
+
+	@Override
+	public MemberVO loginAdmin(String id, String pw) {
+
+		return jtem.queryForObject("select * from member where id=?", BeanPropertyRowMapper.newInstance(MemberVO.class),
+	               id);
 	}
 	
 }

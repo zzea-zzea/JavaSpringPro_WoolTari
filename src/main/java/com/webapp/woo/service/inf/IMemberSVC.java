@@ -51,4 +51,6 @@ public interface IMemberSVC {
    
    // 한 멤버에 주민번호 등록
    boolean inputnumMember(int memberId, String numMember);
+
+MemberVO loginAdmin(String id, String pw);
 }

@@ -12,9 +12,16 @@ public class CommunityVO {
 	private Timestamp write_date;
 	private String img_path;
 	private int member_index;
+	private int is_board;
 	
 	
 	
+	public int getIs_board() {
+		return is_board;
+	}
+	public void setIs_board(int is_board) {
+		this.is_board = is_board;
+	}
 	public int getBoard_index() {
 		return board_index;
 	}

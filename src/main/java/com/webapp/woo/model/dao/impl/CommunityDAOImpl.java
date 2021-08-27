@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 import com.webapp.woo.model.dao.inf.ICommunityDAO;
 import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.CommunityVO;
+import com.webapp.woo.model.vo.MemberVO;
 
 @Repository  // DAO 빈 자동등록
 public class CommunityDAOImpl implements ICommunityDAO {
@@ -45,7 +46,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
    public static final String SQL_COMMUNITY_SEARCH_ALL_PG =
          "SELECT * FROM wooltari_db.board where "
          + "cate like concat('%',?,'%')";
-            
+   public static final String SQL_COMMUNITY_ACTIVATION=
+		   "update board set is_board = 1 where board_index = ?";
    
    @Autowired
    private JdbcTemplate jtem; // 자동주입 x
@@ -56,10 +58,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
       KeyHolder kh = new GeneratedKeyHolder();
       PreparedStatementCreator psc = new PreparedStatementCreator() {         
          @Override
-         public PreparedStatement createPreparedStatement(
-               Connection con) throws SQLException {
-      PreparedStatement pstmt = 
-         con.prepareStatement(SQL_COMMUNITY_INSERT,new String[] {"board_index"}); // pk id..
+         public PreparedStatement createPreparedStatement( Connection con) throws SQLException {
+      PreparedStatement pstmt =  con.prepareStatement(SQL_COMMUNITY_INSERT,new String[] {"board_index"}); // pk id..
       pstmt.setInt(1, at.getCate()); pstmt.setString(2, at.getTitle());
       pstmt.setString(3, at.getContent()); pstmt.setString(4, at.getImg_path());
       pstmt.setInt(5, at.getMember_index()); // <<FK>>
@@ -70,7 +70,8 @@ public class CommunityDAOImpl implements ICommunityDAO {
       if( r == 1 ) {
          Number pk = kh.getKey();
          return pk.intValue(); // articles.id <<PK>> ai.. 
-      } else    return 0;            
+      } else 
+    	  return 0;            
    
    }
 
@@ -183,6 +184,22 @@ public class CommunityDAOImpl implements ICommunityDAO {
       return jtem.query("select * from board where member_index = ?", 
             BeanPropertyRowMapper.newInstance(CommunityVO.class), mbId);
    }
+
+@Override
+public List<CommunityVO> selectAllCommunitys() {
+	 return jtem.query("select * from wooltari_db.board", BeanPropertyRowMapper.newInstance(CommunityVO.class));
+}
+
+@Override
+public boolean activationCommunitys(int atId) {
+	try {
+        int r = jtem.update(SQL_COMMUNITY_ACTIVATION, atId);
+        return r == 1;
+     } catch (DataAccessException e) {
+        e.printStackTrace();
+        return false;
+     }
+}
 
    
 

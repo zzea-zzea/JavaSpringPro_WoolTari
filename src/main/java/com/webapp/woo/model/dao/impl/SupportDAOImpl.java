@@ -51,4 +51,10 @@ public class SupportDAOImpl implements ISupportDAO {
       }   
    }
 
+@Override
+public List<SupportVO> allSupport() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 }
