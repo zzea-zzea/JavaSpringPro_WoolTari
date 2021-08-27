@@ -2,7 +2,6 @@
    pageEncoding="UTF-8"%>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-
 </script>
 <%@ include file="../common/_link.jsp"%>
 <body>
@@ -47,9 +46,10 @@
                   <button class="cancle_btn" onclick="cancle_check()">목록으로</button>
                </div>
             </div>
-            </form>
          </div>
-      </main>
+         </form>
+      </div>
+   </main>
 </body>
 <script
    src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -57,12 +57,10 @@
    $(function() {
       $('.new_content').keyup(function(e) {
          var content = $(this).val();
-         //          $(this).height((content.split('\n').length + 1) * 1.5 + 'em');
          $('.counter').html(content.length + '/1024');
       });
       $('.new_content').keyup();
    });
-   //# sourceURL=pen.js
 </script>
 <script type="text/javascript">
    var upload = document.querySelector('#upload');
@@ -96,17 +94,14 @@
 <script
    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-   // 등록 이미지 삭제 ( input file reset )
    function resetInputFile($input, $preview) {
       var agent = navigator.userAgent.toLowerCase();
       if ((navigator.appName == 'Netscape' && navigator.userAgent
             .search('Trident') != -1)
             || (agent.indexOf("msie") != -1)) {
-         // ie 일때
          $input.replaceWith($input.clone(true));
          $preview.empty();
       } else {
-         //other
          $input.val("");
          $preview.empty();
       }

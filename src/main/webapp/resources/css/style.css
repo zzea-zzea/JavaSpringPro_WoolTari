@@ -1447,6 +1447,7 @@ background: #b38c8c;
 	padding: 30px;
 	font-size: 14px;
 	color: #000;
+	text-align:center;
 	border-bottom: 2px solid #ececec;
 	background: #fff;
 }
@@ -1473,6 +1474,7 @@ background: #b38c8c;
 	border: none;
 	padding: 20px;
 	font-size: 14px;
+	text-align: center;
 }
 
 .tables tbody td.acc {
@@ -1678,6 +1680,132 @@ background: #b38c8c;
 .signUp_box  .signUp_content_benefits .signUp_content_benefits_ti h3 {
 	font-size: 25px;
 	margin-left: 10px;
+}
+
+/*--------------------------------------------------------------
+# 어드민
+--------------------------------------------------------------*/
+.childcare_main.admin {
+	background: #e7e7e7;
+}
+.childcare_box.admin{
+	width: 1400px;
+}
+.childcare_box.admin .side_bar{
+    width: 170px;
+}
+.side_bar.ad .side_bar_content{
+	background: #c3c8ce;
+	text-align: center;
+}
+.side_bar.ad .side_bar_content.mypage.on{
+	background: #6c757d;
+}
+.side_bar.ad .side_bar_content.mypage.on a{
+	color: #fff;
+}
+.tables.ad tbody th, .tables tbody td {
+	padding: 13px;
+}
+.childcare_box.admin .childcare_section .childcare_section_title{
+	display: inline;
+}
+.childcare_box.admin .childcare_section .childcare_section_title h2{
+	display: inline-block;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def{
+    float: right;
+    display: inline-block;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def button{
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+/*     letter-spacing: 3px; */
+	
+}
+.childcare_box .childcare_section .childcare_section_title .button_def .selectpicker{
+    padding: 13px 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 13%);
+    outline: none;
+    border: 0;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def .sea_btn{
+    background: #7777d4;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def .cre_btn{
+    background: #007bff;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def .ref_btn{
+    background: #28a745;
+}
+.childcare_box .childcare_section .childcare_section_title .button_def .del_btn{
+   background: #dc3545;
+}
+
+
+/*--------------------------------------------------------------
+# 어드민_모달
+--------------------------------------------------------------*/
+.modal_body.admin .modal-wrapper .modal-box {
+	width: 650px;
+	height: fit-content;
+}
+
+.modal_body.admin .modal-wrapper .modal-box .form_div {
+	width: 100%;
+}
+
+.modal_body.admin .modal-wrapper .modal-box .form_div h3 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table{
+	margin-bottom: 100px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr td
+	{
+	padding: 20px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr .phone_si input{
+	width: 130px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr td input
+	{
+   outline: 0;
+    border: 0;
+    background: #edf0f5;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .table tbody tr:first-child>td {
+	width: 60px;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def {
+	width: 100%;
+	display: flex;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def button{
+    width: 400px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto;;
+}
+.modal_body.admin .modal-wrapper .modal-box .form_div .button_def .suc_btn{
+	background: #ffaa07;
 }
 
 /*------------담당자 : 김진영,김지훈------------
@@ -3174,4 +3302,5 @@ background: rgba( 185, 108, 108, 0.5);
 
 
 /*------------ 내가쓴글/댓글 end ------------*/
+
 

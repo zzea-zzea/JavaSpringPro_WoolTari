@@ -33,10 +33,10 @@ public class SupportSCVImpl implements ISupportSVC {
       return isDAO.deleteSupport(siId);
    }
 
-@Override
-public List<SupportVO> allSupport() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public List<SupportVO> allSupport() {
+		// TODO Auto-generated method stub
+		return isDAO.allSupport();
+	}
 
 }

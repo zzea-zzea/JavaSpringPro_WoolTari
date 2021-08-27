@@ -51,7 +51,9 @@ function logout(){
 				<c:if test="${not empty mbLoginName}">
 					<li><button class="btn_def" onclick="showMyPage('${mbPKId}')">Mypage</button></li>
 				</c:if>
+				<c:if test="${AdminNum eq 9}">
 					<li><button class="btn_def ad" onclick="showAdmin()" >Admin</button></li>
+				</c:if>
 				</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>

@@ -135,5 +135,19 @@ public class CommunitySVCImpl implements ICommunitySVC {
       return ctDao.CommunityListForBoard(mbId);
    }
 
+@Override
+public List<CommunityVO> selectAllCommunitys() {
+	// TODO Auto-generated method stub
+	return ctDao.selectAllCommunitys();
+}
+
+@Override
+public boolean activationCommunitys(int atId) {
+	
+	
+	
+	return ctDao.activationCommunitys(atId);
+}
+
 
 }

@@ -12,7 +12,6 @@ function del(mbId) {
 </script>
 <body>
    <%@ include file="../common/_header.jsp"%>
-<!--    <form action="mypage.woo"> -->
       <main class="childcare_main my">
          <div class="childcare_box myboa ma">
             <div class="side_bar my">
@@ -35,8 +34,7 @@ function del(mbId) {
                            <tbody>
                               <tr>
                                  <td>이름</td>
-                                 <td><input type="text" id='name' name='name' 
-                                 size='20' required></td>
+                                 <td><input type="text" id='name' name='name'size='20' required></td>
                               </tr>
                               <tr>
                                  <td>휴대폰 번호</td>
@@ -53,7 +51,6 @@ function del(mbId) {
                               <tr class="danger">
                                  <td>새 비밀번호</td>
                                  <td><input type="password" maxlength="20" name="pw" required="required"></td>
-
                               </tr>
                               <tr class="danger">
                                  <td>비밀번호 확인</td>
@@ -69,8 +66,6 @@ function del(mbId) {
             </div>
          </div>
       </main>
-<!--    </form> -->
-<%--        <%@ include file="../common/_footer.jsp"%> --%>
    <%@ include file="../common/_script.jsp"%>
 </body>
 </html>

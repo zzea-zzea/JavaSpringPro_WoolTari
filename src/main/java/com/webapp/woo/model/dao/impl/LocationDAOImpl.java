@@ -13,6 +13,7 @@ import com.webapp.woo.model.dao.inf.ILocationDAO;
 import com.webapp.woo.model.vo.CommentVO;
 import com.webapp.woo.model.vo.Comment_deVO;
 import com.webapp.woo.model.vo.LocationVO;
+import com.webapp.woo.model.vo.SupportVO;
 @Repository
 public class LocationDAOImpl implements ILocationDAO {
 
@@ -26,8 +27,7 @@ public class LocationDAOImpl implements ILocationDAO {
 
 	@Override
 	public List<LocationVO> AllLocationList() {
-		// TODO Auto-generated method stub
-		return null;
+		return jtem.query("select * from wooltari_db.center_location", BeanPropertyRowMapper.newInstance(LocationVO.class));
 	}
 
 }

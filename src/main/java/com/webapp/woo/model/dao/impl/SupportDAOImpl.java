@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.webapp.woo.model.dao.inf.ISupportDAO;
 import com.webapp.woo.model.vo.CommunityVO;
+import com.webapp.woo.model.vo.MemberVO;
 import com.webapp.woo.model.vo.SupportVO;
 @Repository
 public class SupportDAOImpl implements ISupportDAO {
@@ -53,8 +54,7 @@ public class SupportDAOImpl implements ISupportDAO {
 
 @Override
 public List<SupportVO> allSupport() {
-	// TODO Auto-generated method stub
-	return null;
+	return jtem.query("select * from wooltari_db.support", BeanPropertyRowMapper.newInstance(SupportVO.class));
 }
 
 }
