@@ -1146,17 +1146,17 @@ public class MainController {
 		return mav;
 	}
 	@RequestMapping(value = "admin_boa_community.woo", method = RequestMethod.POST)
-	public ModelAndView Adminboa(HttpServletRequest request) {
+	public ModelAndView Adminboa(HttpServletRequest request, Model model) {
 		ModelAndView mav = new ModelAndView();
 		String index_board = request.getParameter("border");
 		int index = Integer.parseInt(index_board);
  		boolean r = ctSvc.activationCommunitys(index);
  		if(r == true) {
  			mav.setViewName("redirect:admin_boa.woo?");
- 			System.out.println("성공");
+ 			System.out.println("비활성화 성공 하였습니다");
  		}else {
  			mav.setViewName("redirect:admin_boa.woo?");
- 			System.out.println("실패");
+ 			System.out.println("비활성화 실패 하였습니다");
  		}
  		return mav;
 	}
@@ -1165,16 +1165,15 @@ public class MainController {
 	      String strMbId = request.getParameter("index");
 	      ModelAndView mav = new ModelAndView();
 	      int mbId = Integer.parseInt(strMbId);   
-	    	  
 	      
 	      boolean r = mbSvc.deleteMember(mbId);
 	      mav.setViewName("admin/admin_mem");
 	      if (r) {
 	         mav.setViewName("redirect:admin_mem.woo?");
-	         System.out.println("성공");
+	         System.out.println("회원 탈퇴를 성공 하였습니다");
 	      } else {
 	         mav.setViewName("redirect:admin_mem.woo?");
-	         System.out.println("실패");
+	         System.out.println("회원 탈퇴를 실패 하였습니다");
 	      }
 	      return mav;
 	   }

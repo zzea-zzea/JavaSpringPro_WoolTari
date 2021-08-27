@@ -102,7 +102,6 @@ function panTo() {
 							<table class="tables myaccordion table-hover" id="accordion">
 								<thead>
 									<tr>
-										<th>#</th>
 										<th>지역시</th>
 										<th>지역구</th>
 										<th>시설명</th>
@@ -119,7 +118,6 @@ function panTo() {
 											<tr data-toggle="collapse" data-target="#collapseOne"
 												aria-expanded="true" aria-controls="collapseOne"
 												class="collapsed">
-												<td><input type="checkbox"></td>
 												<td><c:out value="${adlo.local_si}" /></td>
 												<td><c:out value="${adlo.local_gu}" /></td>
 												<td class="center_name"><c:out value="${adlo.facility_name}" /></td>

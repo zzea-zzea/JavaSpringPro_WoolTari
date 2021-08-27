@@ -2,43 +2,27 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-		function my_check() {
-			alert("${msg}");
-		};
-		<c:if test="${not empty msg}">
-		my_check();
-		</c:if>
-	</script>
 <script type="text/javascript">
-	
+$(document).ready( function() {
+	$(".del_btn").attr("disabled", true);
+	$(".del_btn").css('background', '#b0b0b0');
+	$('.check_box').click(function(){
+		$(".del_btn").css('background', '#dc3545');
+	 	$(".del_btn").prop("disabled", false);
+	});
+});
 function checkOnlyOne(element) {
-	  
 	  const checkboxes  = document.getElementsByName("border");
-	  
 	  checkboxes.forEach((cb) => {
 	    cb.checked = false;
 	  })
 	  element.checked = true;
 	}
-	
-function CheckForm(form){
-	
-// 	var chk1 = document.form.check.checked;
-	var chk1 = $("input:checkbox[name='border[]']").is(":checked");
-	
-	if(!chk1){
-		alert('비활성화할 게시글을 선택해 주세요.');
-		console.log(chk1);
-		return false;
-	}
-}
-	
 </script>
 
 <body>
 	<%@ include file="../common/_header.jsp"%>
-	<form name="form" action="admin_boa_community.woo" method="POST"onSubmit="return CheckForm(this)">
+	<form name="form" action="admin_boa_community.woo" method="POST">
 		<input type="hidden" name="mbId" value="${mbPKId}">
 		<main class="childcare_main admin">
 			<div class="childcare_box admin ma">

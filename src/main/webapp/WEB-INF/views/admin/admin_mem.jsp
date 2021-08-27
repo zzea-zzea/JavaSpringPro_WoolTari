@@ -2,14 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<body class="modal_body admin">
-
 <script>
-	
+$(document).ready( function() {
+	$(".del_btn").attr("disabled", true);
+	$(".del_btn").css('background', '#b0b0b0');
+	$('.check_box').click(function(){
+		$(".del_btn").css('background', '#dc3545');
+	 	$(".del_btn").prop("disabled", false);
+	});
+});
 function checkOnlyOne(element) {
 	  
-	  const checkboxes 
-	      = document.getElementsByName("index");
+	  const checkboxes = document.getElementsByName("index");
 	  
 	  checkboxes.forEach((cb) => {
 	    cb.checked = false;
@@ -18,43 +22,27 @@ function checkOnlyOne(element) {
 	  element.checked = true;
 	}
 	
-function CheckForm(form){
-	
-	var chk1 = document.form.mem_check.checked;
-	
-	if(!chk1){
-		alert('탈퇴할 회원을 선택해 주세요.');
-		return false;
-	}
-}
-	
 	</script>
+<body class="modal_body admin">
 
 	<%@ include file="../common/_header.jsp"%>
-
 	<input type="hidden" name="mbId" value="${mbPKId}">
 	<main class="childcare_main admin">
 		<div class="childcare_box admin ma">
 			<div class="side_bar ad">
 				<ul>
-					<li class="side_bar_content mypage on"><a
-						href="${pageContext.request.contextPath}/admin_mem.woo?">회원 통계</a></li>
-					<li class="side_bar_content mypage "><a
-						href="${pageContext.request.contextPath}/admin_cen.woo?">시설 통계</a></li>
-					<li class="side_bar_content mypage "><a
-						href="${pageContext.request.contextPath}/admin_boa.woo?">게시글
-							통계</a></li>
-					<li class="side_bar_content mypage "><a
-						href="${pageContext.request.contextPath}/admin_sup.woo?">후원 통계</a></li>
+					<li class="side_bar_content mypage on"><a href="${pageContext.request.contextPath}/admin_mem.woo?">회원 통계</a></li>
+					<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_cen.woo?">시설 통계</a></li>
+					<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_boa.woo?">게시글 통계</a></li>
+					<li class="side_bar_content mypage "><a href="${pageContext.request.contextPath}/admin_sup.woo?">후원 통계</a></li>
 				</ul>
 			</div>
 			<div class="info_content">
-				<form name="form" action="change_mem.woo" method="post" onSubmit="return CheckForm(this)">
+				<form name="form" action="change_mem.woo" method="post">
 					<section class="childcare_section">
 						<div class="childcare_section_title">
 							<h2>회원 통계</h2>
 							<div class="button_def">
-								<!--                         <button class="ref_btn" id="modal-open-btn">수정</button> -->
 								<button class="del_btn">탈퇴</button>
 							</div>
 						</div>
@@ -77,11 +65,8 @@ function CheckForm(form){
 									<tbody>
 										<c:if test="${not empty MbList}">
 											<c:forEach var="mb" items="${MbList}" varStatus="vs">
-												<tr data-toggle="collapse" data-target="#collapseOne"
-													aria-expanded="true" aria-controls="collapseOne"
-													class="collapsed">
-													<th scope="row"><input type="checkbox" 
-														value="${mb.memberIndex}" id="mem_check" name="index" onclick='checkOnlyOne(this)'></th>
+												<tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+													<th scope="row"><input type="checkbox" class="check_box" value="${mb.memberIndex}" id="mem_check" name="index" onclick='checkOnlyOne(this)'></th>
 													<td><c:out value="${mb.name}" /></td>
 													<td><c:out value="${mb.id}" /></td>
 													<td><c:out value="${mb.nickName}" /></td>

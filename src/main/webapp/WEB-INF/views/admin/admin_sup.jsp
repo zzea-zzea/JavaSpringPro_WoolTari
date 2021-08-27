@@ -2,22 +2,13 @@
    pageEncoding="UTF-8"%>
 <%@ include file="../common/_link.jsp"%>
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<link rel="stylesheet" 
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<link rel="stylesheet"  href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
-
-<script src="${pageContext.request
-	.contextPath}/resources/chart/code/highcharts.js"></script>
-<script src="${pageContext.request
-	.contextPath}/resources/chart/code/modules/exporting.js"></script>
-<script src="${pageContext.request
-	.contextPath}/resources/chart/code/modules/export-data.js"></script>
-<script src="${pageContext.request
-	.contextPath}/resources/chart/code/modules/accessibility.js"></script>
-
+<script src="${pageContext.request.contextPath}/resources/chart/code/highcharts.js"></script>
+<script src="${pageContext.request.contextPath}/resources/chart/code/modules/exporting.js"></script>
+<script src="${pageContext.request.contextPath}/resources/chart/code/modules/export-data.js"></script>
+<script src="${pageContext.request.contextPath}/resources/chart/code/modules/accessibility.js"></script>
 <script type="text/javascript">
 	var CTX = '${pageContext.request.contextPath}';
 	$(document).ready(function() {	
