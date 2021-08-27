@@ -96,12 +96,15 @@ $(document).ready(function() {
 							<tr>
 								<td>후원인구분</td>
 								<td><c:if test="${ismember eq 1}">일반 회원</c:if>
+								<c:if test="${ismember eq 9}">관리자</c:if>
 								<c:if test="${ismember eq 2}">법인 재단</c:if></td>
 							</tr>
 							<tr>
 								<td><c:if test="${ismember eq 1}">주민번호</c:if>
+								<c:if test="${ismember eq 9}">주민번호</c:if>
 								<c:if test="${ismember eq 2}">사업자 번호</c:if></td>
 								<td><c:if test="${ismember eq 1}"><input type="text" name="first_num" maxlength="6" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="7" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></c:if>
+								<c:if test="${ismember eq 9}"><input type="text" name="first_num" maxlength="6" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp;-&nbsp;<input name="second_num" type="password" maxlength="7" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></c:if>
 								<c:if test="${ismember eq 2}"><input type="text" name="first_num" maxlength="30" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></c:if></td>
 							</tr>
 							<tr>
